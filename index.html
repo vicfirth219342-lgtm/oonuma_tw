@@ -431,6 +431,57 @@
     .horse-feat-title { font-family: var(--serif-jp); font-size: clamp(14px,1.4vw,17px); font-weight: 400; color: var(--ink); margin-bottom: 8px; }
     .horse-feat-desc { font-size: clamp(12px,1.1vw,13px); color: var(--gray-mid); line-height: 1.85; }
 
+    /* ===== CONCEPT MOVIE ===== */
+    #concept-movie {
+      background: var(--green-deep);
+      padding: var(--section-pad) clamp(24px,6vw,96px);
+    }
+    .concept-movie-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .concept-movie-header {
+      text-align: center;
+      margin-bottom: clamp(36px,5vw,60px);
+    }
+    .concept-movie-title {
+      font-family: var(--serif-jp);
+      font-size: clamp(22px,3vw,40px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.65;
+    }
+    .concept-movie-body {
+      font-size: clamp(13px,1.3vw,15px);
+      color: rgba(255,255,255,.6);
+      line-height: 2.1;
+      max-width: 640px;
+      margin: clamp(16px,2vw,24px) auto 0;
+    }
+    .concept-movie-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 24px 72px rgba(0,0,0,.45);
+    }
+    .concept-movie-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .concept-movie-note {
+      margin-top: clamp(16px,2vw,20px);
+      text-align: center;
+      font-size: 11px;
+      color: rgba(255,255,255,.28);
+      line-height: 1.8;
+      letter-spacing: .04em;
+    }
+
     /* ===== 11. OWNER EXPERIENCE ===== */
     #experience { background: var(--ink); padding: var(--section-pad) clamp(24px,6vw,96px); }
     .experience-inner { max-width: 1000px; margin: 0 auto; }
@@ -1080,6 +1131,36 @@
     </div>
   </section>
 
+  <!-- ===== CONCEPT MOVIE ===== -->
+  <section id="concept-movie">
+    <div class="concept-movie-inner">
+      <div class="concept-movie-header fade-up">
+        <p class="section-label">Concept Movie</p>
+        <h2 class="concept-movie-title">大沼の可能性を、映像で体感する。</h2>
+        <div class="divider divider-center"></div>
+        <p class="concept-movie-body">
+          本映像は、ONUMA PRIVATE RESORTが目指す世界観を伝えるために制作したイメージムービーです。
+          大沼の自然、温泉、食、馬、滞在体験が重なり合うことで生まれる、新しい北海道リゾートの可能性を表現しています。
+        </p>
+      </div>
+
+      <div class="concept-movie-frame fade-up">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/LoBX0BZg3MY?rel=0&playsinline=1"
+          title="ONUMA PRIVATE RESORT コンセプトムービー"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="concept-movie-note fade-up">
+        ※本映像はプロジェクトの世界観を表現するためのイメージムービーです。演出上、現地以外の映像を含みます。
+      </p>
+    </div>
+  </section>
+
   <!-- ===== 11. OWNER EXPERIENCE ===== -->
   <section id="experience">
     <div class="experience-inner">
@@ -1132,8 +1213,8 @@
             <div class="tl-heading">焚き火と、<br>満天の星空。</div>
             <p class="tl-desc">テラスに出ると、頭上に星が広がる。焚き火の音だけが静かに続く深夜。ここが「自分の場所」であることを、静かに実感する。</p>
           </div>
-          <!-- 画像差し替え場所: 夜空・焚き火イメージ (現状は大沼冬で代替) -->
-          <div class="tl-visual"><img src="大沼・駒ヶ岳/大沼四季/大沼_冬.png" alt="大沼の夜の景色" loading="lazy"></div>
+          <!-- 画像差し替え場所: 大沼・駒ヶ岳/星.jpg -->
+          <div class="tl-visual"><img src="大沼・駒ヶ岳/星.jpg" alt="大沼から見上げる満天の星空" loading="lazy"></div>
         </div>
       </div>
     </div>
