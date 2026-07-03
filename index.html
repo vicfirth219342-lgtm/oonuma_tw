@@ -712,7 +712,112 @@
     .modal-close { font-size: 12px; letter-spacing: .2em; color: var(--gray-mid); cursor: pointer; border: 1px solid rgba(0,0,0,.15); padding: 11px 28px; transition: border-color .3s; }
     .modal-close:hover { border-color: var(--ink); color: var(--ink); }
 
-    /* 中間CTA */
+    /* ===== 6 VILLAS ONLY ===== */
+    #six-villas {
+      background: var(--green-deep);
+      padding: var(--section-pad) clamp(24px,6vw,96px);
+    }
+    .sv-inner { max-width: 1100px; margin: 0 auto; }
+
+    .sv-header { margin-bottom: clamp(48px,6vw,80px); text-align: center; }
+    .sv-title {
+      font-family: var(--serif-jp); font-size: clamp(26px,3.2vw,46px);
+      font-weight: 300; color: var(--white); line-height: 1.55;
+      margin-bottom: clamp(16px,2vw,24px);
+    }
+    .sv-sub {
+      font-family: var(--sans-jp); font-size: clamp(13px,1.2vw,15px);
+      color: rgba(255,255,255,.5); line-height: 2; font-weight: 300;
+    }
+
+    /* 左右グリッド */
+    .sv-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: start; }
+
+    /* 左：仕様カード */
+    .sv-specs { display: flex; flex-direction: column; gap: 0; }
+    .sv-spec-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: clamp(18px,2.2vw,28px) 0;
+    }
+    .sv-spec-row:first-child { border-top: 1px solid rgba(255,255,255,.07); }
+    .sv-spec-label {
+      font-family: var(--serif-en); font-size: 9px;
+      letter-spacing: .35em; color: var(--gold); text-transform: uppercase;
+      display: flex; align-items: center;
+    }
+    .sv-spec-value {
+      font-family: var(--serif-jp); font-size: clamp(14px,1.5vw,20px);
+      font-weight: 300; color: var(--white); line-height: 1.4;
+    }
+    .sv-spec-large {
+      font-family: var(--serif-en); font-size: clamp(28px,3.2vw,46px);
+      font-weight: 300; color: var(--white); line-height: 1;
+    }
+
+    /* 管理費内容 */
+    .sv-mgmt { margin-top: clamp(28px,3.5vw,44px); }
+    .sv-mgmt-label {
+      font-family: var(--serif-en); font-size: 9px; letter-spacing: .35em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: clamp(12px,1.5vw,18px);
+    }
+    .sv-mgmt-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    }
+    .sv-mgmt-item {
+      font-family: var(--sans-jp); font-size: clamp(11px,1vw,13px);
+      color: rgba(255,255,255,.55); line-height: 1;
+      padding: 9px 0 9px 14px; border-bottom: 1px solid rgba(255,255,255,.05);
+      position: relative;
+    }
+    .sv-mgmt-item::before { content: '—'; position: absolute; left: 0; color: var(--gold-dark); }
+    .sv-mgmt-note {
+      font-size: 11px; color: rgba(255,255,255,.25);
+      margin-top: clamp(12px,1.5vw,16px); line-height: 1.8;
+    }
+
+    /* 右：特典 */
+    .sv-benefits { display: flex; flex-direction: column; gap: 0; }
+    .sv-benefit {
+      display: flex; gap: clamp(16px,2vw,24px); align-items: flex-start;
+      padding: clamp(18px,2.2vw,26px) 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .sv-benefit:first-child { border-top: 1px solid rgba(255,255,255,.07); }
+    .sv-benefit-icon {
+      flex-shrink: 0; width: clamp(32px,2.8vw,40px); height: clamp(32px,2.8vw,40px);
+      color: var(--gold); margin-top: 2px;
+    }
+    .sv-benefit-icon svg { width: 100%; height: 100%; }
+    .sv-benefit-body { display: flex; flex-direction: column; gap: 5px; }
+    .sv-benefit-en {
+      font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em;
+      color: var(--gold-light); text-transform: uppercase;
+    }
+    .sv-benefit-title {
+      font-family: var(--serif-jp); font-size: clamp(14px,1.4vw,17px);
+      font-weight: 300; color: var(--white); line-height: 1.4;
+    }
+    .sv-benefit-desc {
+      font-family: var(--sans-jp); font-size: clamp(11px,1vw,13px);
+      color: rgba(255,255,255,.48); line-height: 1.9; font-weight: 300;
+    }
+
+    /* CTA */
+    .sv-cta {
+      margin-top: clamp(48px,6vw,80px);
+      padding-top: clamp(32px,4vw,48px);
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex; flex-direction: column; align-items: center; gap: clamp(20px,2.5vw,28px);
+    }
+    .sv-cta-text {
+      font-family: var(--serif-jp); font-size: clamp(15px,1.6vw,20px);
+      font-weight: 300; color: rgba(255,255,255,.7); text-align: center; line-height: 1.8;
+    }
+    .sv-cta-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+    /* 中間CTA（後方互換のため残す） */
     .mid-cta { padding: clamp(56px,8vw,96px) clamp(24px,6vw,96px); text-align: center; }
     .mid-cta-title { font-family: var(--serif-jp); font-size: clamp(20px,2.8vw,38px); font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: clamp(28px,3.5vw,44px); }
     .mid-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -756,6 +861,8 @@
       .inv-data-row { grid-template-columns: repeat(2,1fr); }
       .why-body { grid-template-columns: 1fr; }
       .smart-body { grid-template-columns: 1fr; }
+      .sv-body { grid-template-columns: 1fr; }
+      .sv-spec-row { grid-template-columns: 5fr 7fr; gap: clamp(16px,2vw,24px); }
     }
     @media (max-width: 640px) {
       .limited-grid { grid-template-columns: repeat(2,1fr); }
@@ -1534,26 +1641,161 @@
     </div>
   </section>
 
-  <!-- ===== 中間CTA ===== -->
-  <div class="mid-cta" style="background:var(--green-mid);">
-    <p class="section-label" style="color:var(--gold-light); letter-spacing:.35em; margin-bottom:16px;" class="fade-up">6 Villas Only</p>
-    <h2 class="mid-cta-title fade-up">6棟限定のオーナーシップ。<br>今、その一棟を検討する。</h2>
-    <div class="fade-up" style="display:flex; justify-content:center; gap:clamp(24px,4vw,56px); margin-bottom:clamp(32px,4vw,48px); flex-wrap:wrap;">
-      <div style="text-align:center;">
-        <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.4em; color:var(--gold-light); text-transform:uppercase; margin-bottom:6px;">Site Area</div>
-        <div style="font-family:var(--serif-jp); font-size:clamp(14px,1.5vw,18px); font-weight:300; color:rgba(255,255,255,.85); letter-spacing:.04em;">約1ha（10,000㎡・約3,000坪）の専有区画</div>
+  <!-- ===== 6 VILLAS ONLY ===== -->
+  <section id="six-villas">
+    <div class="sv-inner">
+
+      <div class="sv-header fade-up">
+        <p class="section-label" style="color:var(--gold-light);">6 Villas Only</p>
+        <h2 class="sv-title">6棟限定のオーナーシップ。<br>6億円で何が手に入るのか。</h2>
+        <div class="divider" style="margin:0 auto;"></div>
+        <p class="sv-sub">
+          世界でわずか6組だけが手にできる、<br>
+          大沼のプライベートエステート。
+        </p>
       </div>
-      <div style="width:1px; background:rgba(255,255,255,.15); flex-shrink:0;"></div>
-      <div style="text-align:center;">
-        <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.4em; color:var(--gold-light); text-transform:uppercase; margin-bottom:6px;">Villa Floor Area</div>
-        <div style="font-family:var(--serif-jp); font-size:clamp(14px,1.5vw,18px); font-weight:300; color:rgba(255,255,255,.85); letter-spacing:.04em;">約350㎡のプライベートヴィラ</div>
+
+      <div class="sv-body">
+
+        <!-- 左：仕様・価格 -->
+        <div class="fade-up">
+          <div class="sv-specs">
+            <div class="sv-spec-row">
+              <div class="sv-spec-label">Asking Price</div>
+              <div>
+                <div style="font-family:var(--sans-jp); font-size:10px; color:rgba(255,255,255,.4); margin-bottom:4px;">販売価格</div>
+                <div class="sv-spec-large">6億円</div>
+              </div>
+            </div>
+            <div class="sv-spec-row">
+              <div class="sv-spec-label">Monthly Fee</div>
+              <div>
+                <div style="font-family:var(--sans-jp); font-size:10px; color:rgba(255,255,255,.4); margin-bottom:4px;">月額管理費</div>
+                <div class="sv-spec-large">50万円<span style="font-size:clamp(12px,1.2vw,16px); color:rgba(255,255,255,.45); font-family:var(--sans-jp);">/月</span></div>
+              </div>
+            </div>
+            <div class="sv-spec-row">
+              <div class="sv-spec-label">Site Area</div>
+              <div>
+                <div style="font-family:var(--sans-jp); font-size:10px; color:rgba(255,255,255,.4); margin-bottom:4px;">専有区画面積</div>
+                <div class="sv-spec-value">約1ha（10,000㎡）<br><span style="font-size:clamp(11px,1vw,13px); color:rgba(255,255,255,.45);">約3,000坪</span></div>
+              </div>
+            </div>
+            <div class="sv-spec-row">
+              <div class="sv-spec-label">Villa Area</div>
+              <div>
+                <div style="font-family:var(--sans-jp); font-size:10px; color:rgba(255,255,255,.4); margin-bottom:4px;">ヴィラ面積</div>
+                <div class="sv-spec-value">約350㎡</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 管理費に含まれる内容 -->
+          <div class="sv-mgmt">
+            <div class="sv-mgmt-label">Monthly Fee Includes</div>
+            <div class="sv-mgmt-grid">
+              <div class="sv-mgmt-item">ヴィラ管理・清掃</div>
+              <div class="sv-mgmt-item">共用施設管理</div>
+              <div class="sv-mgmt-item">レストラン棟管理</div>
+              <div class="sv-mgmt-item">温泉棟管理</div>
+              <div class="sv-mgmt-item">敷地管理</div>
+              <div class="sv-mgmt-item">24時間セキュリティ</div>
+              <div class="sv-mgmt-item">予約・チェックイン対応</div>
+              <div class="sv-mgmt-item">ゲスト対応</div>
+              <div class="sv-mgmt-item">コンシェルジュ</div>
+              <div class="sv-mgmt-item">冬季除雪</div>
+            </div>
+            <p class="sv-mgmt-note">※所有馬の飼育管理費は別途ご相談となります。</p>
+          </div>
+        </div>
+
+        <!-- 右：オーナー特典 -->
+        <div class="sv-benefits fade-up">
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M3.5 12c0-1.8 1.2-3 2.5-3s2.5 1.2 2.5 3-1.2 3-2.5 3-2.5-1.2-2.5-3z"/>
+                <path d="M8.5 12h7M20 8l-3 4 3 4M15.5 12c0 3-2.5 5-5.5 6"/>
+                <path d="M8.5 9V7a2 2 0 0 1 2-2h3"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Horse Membership</span>
+              <span class="sv-benefit-title">乗馬権</span>
+              <span class="sv-benefit-desc">敷地内の乗馬施設を自由に利用可能。<br>北海道の大自然の中で、馬との時間を日常に。</span>
+            </div>
+          </div>
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Priority Dining</span>
+              <span class="sv-benefit-title">レストラン優先予約権</span>
+              <span class="sv-benefit-desc">一般利用者に先行してリゾート内レストランを予約可能。<br>北海道の食材を活かしたコース料理を優先的に。</span>
+            </div>
+          </div>
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Priority Onsen</span>
+              <span class="sv-benefit-title">温泉優先予約権</span>
+              <span class="sv-benefit-desc">混雑時も優先的に温泉棟を利用可能。<br>北海道の大地が育む天然温泉を、特別な時間に。</span>
+            </div>
+          </div>
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Concierge</span>
+              <span class="sv-benefit-title">専属コンシェルジュサービス</span>
+              <span class="sv-benefit-desc">レストラン予約・配車手配・アクティビティ予約・観光案内などをワンストップでサポート。</span>
+            </div>
+          </div>
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Rental Program</span>
+              <span class="sv-benefit-title">宿泊運営プログラム参加権</span>
+              <span class="sv-benefit-desc">利用しない期間は宿泊運営に参加し、収益化を目指すことが可能。参考実質利回り 約7.89%。</span>
+            </div>
+          </div>
+
+        </div>
       </div>
+
+      <!-- CTA -->
+      <div class="sv-cta fade-up">
+        <p class="sv-cta-text">6棟限定。資料請求・個別相談を受け付けています。</p>
+        <div class="sv-cta-btns">
+          <a href="#contact" class="btn-primary">資料請求する</a>
+          <a href="#contact" class="btn-outline">オーナーシップについて相談する</a>
+        </div>
+      </div>
+
     </div>
-    <div class="mid-cta-btns fade-up">
-      <a href="#contact" class="btn-primary">資料請求する</a>
-      <a href="#contact" class="btn-outline">オーナーシップについて相談する</a>
-    </div>
-  </div>
+  </section>
 
   <!-- ===== 12. CTA ===== -->
   <section id="contact">
