@@ -428,6 +428,50 @@
 
     .inv-disclaimer { font-size: 11px; color: rgba(255,255,255,.28); line-height: 2; border-top: 1px solid rgba(255,255,255,.05); padding-top: clamp(16px,2vw,24px); }
 
+    /* ===== 6. WHY ONUMA MODEL ===== */
+    #why-onuma { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .why-inner { max-width: 1100px; margin: 0 auto; }
+    .why-header { margin-bottom: clamp(40px,5vw,64px); }
+    .why-title { font-family: var(--serif-jp); font-size: clamp(26px,3.2vw,48px); font-weight: 300; color: var(--ink); line-height: 1.55; }
+    .why-sub { font-family: var(--serif-jp); font-size: clamp(16px,1.8vw,22px); font-weight: 300; color: var(--ink); line-height: 1.9; margin-top: clamp(20px,2.5vw,32px); }
+    .why-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: start; margin-top: clamp(48px,6vw,72px); }
+    .why-text { font-family: var(--sans-jp); font-size: clamp(13px,1.3vw,15px); color: var(--gray-dark); line-height: 2.2; }
+    .why-text ul { margin: 12px 0 24px 0; padding: 0; list-style: none; }
+    .why-text ul li { padding: 7px 0 7px 18px; border-bottom: 1px solid rgba(0,0,0,.06); position: relative; font-size: clamp(12px,1.2vw,14px); color: var(--gray-mid); }
+    .why-text ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold-dark); }
+    .why-text strong { font-weight: 400; color: var(--ink); }
+    .why-img-wrap { position: relative; cursor: pointer; }
+    .why-img-wrap img { width: 100%; border-radius: 2px; box-shadow: 0 24px 64px rgba(0,0,0,.12); transition: transform .5s ease, box-shadow .5s ease; }
+    .why-img-wrap:hover img { transform: scale(1.015); box-shadow: 0 32px 80px rgba(0,0,0,.18); }
+    .why-img-caption { font-size: 10px; letter-spacing: .22em; color: var(--gray-mid); text-align: center; margin-top: 12px; text-transform: uppercase; }
+
+    /* ===== 8. SMART OWNER SYSTEM ===== */
+    #smart-owner { background: var(--black); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .smart-inner { max-width: 1100px; margin: 0 auto; }
+    .smart-header { margin-bottom: clamp(40px,5vw,64px); }
+    .smart-title { font-family: var(--serif-jp); font-size: clamp(26px,3.2vw,48px); font-weight: 300; color: var(--white); line-height: 1.55; }
+    .smart-sub { font-family: var(--serif-jp); font-size: clamp(15px,1.6vw,20px); font-weight: 300; color: rgba(255,255,255,.55); line-height: 1.9; margin-top: clamp(16px,2vw,24px); }
+    .smart-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: center; }
+    .smart-img-wrap { position: relative; cursor: pointer; }
+    .smart-img-wrap img { width: 100%; border-radius: 2px; box-shadow: 0 24px 64px rgba(0,0,0,.4); transition: transform .5s ease; }
+    .smart-img-wrap:hover img { transform: scale(1.015); }
+    .smart-features { display: flex; flex-direction: column; gap: 0; }
+    .smart-feature-item { padding: clamp(18px,2vw,24px) 0; border-bottom: 1px solid rgba(255,255,255,.06); display: flex; flex-direction: column; gap: 6px; }
+    .smart-feature-item:first-child { border-top: 1px solid rgba(255,255,255,.06); }
+    .smart-feature-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; }
+    .smart-feature-text { font-family: var(--sans-jp); font-size: clamp(13px,1.3vw,15px); color: rgba(255,255,255,.7); line-height: 1.8; }
+    .smart-disclaimer { font-size: 11px; color: rgba(255,255,255,.25); line-height: 2; border-top: 1px solid rgba(255,255,255,.06); padding-top: clamp(16px,2vw,24px); margin-top: clamp(40px,5vw,64px); }
+
+    /* Investment redesign (image-centric) */
+    .inv-img-wrap { position: relative; cursor: pointer; margin-bottom: clamp(32px,4vw,56px); border-radius: 2px; overflow: hidden; box-shadow: 0 24px 72px rgba(0,0,0,.5); }
+    .inv-img-wrap img { width: 100%; display: block; transition: transform .6s ease; }
+    .inv-img-wrap:hover img { transform: scale(1.01); }
+    .inv-data-row { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(1px,2px,2px); background: rgba(255,255,255,.06); margin-bottom: clamp(24px,3vw,36px); }
+    .inv-data-cell { background: var(--green-deep); padding: clamp(20px,2.5vw,32px) clamp(14px,1.8vw,22px); }
+    .inv-data-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 10px; }
+    .inv-data-value { font-family: var(--serif-en); font-size: clamp(18px,2vw,26px); font-weight: 300; color: var(--white); line-height: 1.2; }
+    .inv-data-unit { font-family: var(--sans-jp); font-size: 10px; color: rgba(255,255,255,.35); margin-top: 5px; }
+
     /* ===== 8. ONSEN ===== */
     #onsen { background: var(--black); padding: var(--section-pad) 0; }
     .onsen-inner { max-width: 1200px; margin: 0 auto; padding: 0 clamp(24px,6vw,96px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: center; }
@@ -625,10 +669,9 @@
       .footer-copy { text-align: left; }
       .form-row { grid-template-columns: 1fr; }
       .inv-flow { grid-template-columns: repeat(2,1fr); }
-      .inv-cost-items { flex-direction: column; }
-      .inv-cost-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.05); }
-      .inv-cost-item:last-child { border-bottom: none; }
-      .inv-noi-row { gap: clamp(24px,4vw,48px); }
+      .inv-data-row { grid-template-columns: repeat(2,1fr); }
+      .why-body { grid-template-columns: 1fr; }
+      .smart-body { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       .limited-grid { grid-template-columns: repeat(2,1fr); }
@@ -638,9 +681,12 @@
       .villa-grid { grid-template-columns: 1fr 1fr; }
       .fixed-cta { display: flex; }
       #contact { padding-bottom: calc(var(--section-pad) + 70px); }
+      .inv-data-row { grid-template-columns: 1fr 1fr; }
+      .hero-price-bar { gap: 14px; }
     }
     @media (max-width: 400px) {
       .limited-grid { grid-template-columns: 1fr; }
+      .inv-data-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -656,6 +702,7 @@
       <a href="#features">Features</a>
       <a href="#villas">Villas</a>
       <a href="#ownership">Ownership</a>
+      <a href="#why-onuma">Why Onuma</a>
       <a href="#investment">Investment</a>
       <a href="#contact" class="btn-nav">資料請求</a>
     </div>
@@ -1030,96 +1077,170 @@
     </div>
   </section>
 
-  <!-- ===== 7. INVESTMENT ===== -->
+  <!-- ===== 6. WHY ONUMA MODEL ===== -->
+  <section id="why-onuma">
+    <div class="why-inner">
+      <div class="why-header fade-up">
+        <p class="section-label section-label-dark">Why Onuma Model</p>
+        <h2 class="why-title">なぜONUMAモデルなのか。</h2>
+        <p class="why-sub">
+          別荘を所有する。<br>
+          しかし、管理に縛られない。
+        </p>
+        <div class="divider" style="background: rgba(0,0,0,.12);"></div>
+      </div>
+
+      <div class="why-body">
+        <div class="why-text fade-up">
+          <p>従来の別荘所有では、こうした課題がありました。</p>
+          <ul>
+            <li>除雪・維持管理の手間と費用</li>
+            <li>空室期間の固定費負担</li>
+            <li>個人での収益化の難しさ</li>
+            <li>老朽化・修繕の対応</li>
+          </ul>
+
+          <p style="margin-bottom:20px;"><strong>ONUMA PRIVATE RESORTでは、</strong>運営側が以下をすべて管理します。</p>
+          <ul>
+            <li>宿泊運営・フロント対応</li>
+            <li>施設全体の維持管理</li>
+            <li>コンシェルジュサービス</li>
+            <li>乗馬施設・放牧場の管理</li>
+            <li>温泉施設の運営・維持</li>
+            <li>レストラン・ダイニングの運営</li>
+          </ul>
+
+          <p style="margin-top:8px;">オーナーは、北海道で過ごす時間を楽しむことに集中できます。</p>
+        </div>
+
+        <div class="why-img-wrap fade-up">
+          <img src="比較.png" alt="従来別荘とONUMAモデルの比較" loading="lazy">
+          <p class="why-img-caption">Comparison — Traditional Villa vs. Onuma Model</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. INVESTMENT & RENTAL PROGRAM ===== -->
   <section id="investment">
     <div class="investment-inner">
 
       <div class="investment-header fade-up">
-        <p class="section-label">Investment</p>
-        <h2 class="investment-title">使わない日は、<br>収益を生む未来へ。</h2>
+        <p class="section-label">Investment &amp; Rental Program</p>
+        <h2 class="investment-title">使わない日は、<br>収益を生むヴィラへ。</h2>
         <div class="divider"></div>
         <p class="investment-lead">
-          ONUMA PRIVATE RESORTでは、オーナー不在期間に専任チームが宿泊運営を代行。<br>
-          高原リゾートの希少性と圧倒的な自然体験が、安定した稼働を支える。
+          オーナー利用と宿泊運営を両立することで、<br>
+          資産としての可能性を広げます。
         </p>
       </div>
 
-      <!-- シミュレーションフロー -->
-      <div class="inv-flow fade-up">
-        <div class="inv-flow-card">
-          <div class="inv-flow-label">Nightly Rate</div>
-          <div class="inv-flow-value">25万円</div>
-          <div class="inv-flow-unit">想定宿泊単価（1泊）</div>
+      <!-- 収益シミュレーション画像（メイン） -->
+      <div class="inv-img-wrap fade-up">
+        <img src="収益シミュレーション.png" alt="収益シミュレーション" loading="lazy">
+      </div>
+
+      <!-- 販売価格 + キーデータ -->
+      <div class="inv-data-row fade-up">
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Asking Price</div>
+          <div class="inv-data-value">1棟 6億円</div>
+          <div class="inv-data-unit">想定販売価格</div>
         </div>
-        <div class="inv-flow-card">
-          <div class="inv-flow-label">Occupancy</div>
-          <div class="inv-flow-value">60%</div>
-          <div class="inv-flow-unit">想定稼働率</div>
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Nightly Rate</div>
+          <div class="inv-data-value">25万円</div>
+          <div class="inv-data-unit">想定宿泊単価（1泊）</div>
         </div>
-        <div class="inv-flow-card">
-          <div class="inv-flow-label">Annual Nights</div>
-          <div class="inv-flow-value">219泊</div>
-          <div class="inv-flow-unit">年間稼働日数（想定）</div>
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Occupancy</div>
+          <div class="inv-data-value">60%</div>
+          <div class="inv-data-unit">想定稼働率</div>
         </div>
-        <div class="inv-flow-card">
-          <div class="inv-flow-label">Annual Revenue</div>
-          <div class="inv-flow-value">5,475万円</div>
-          <div class="inv-flow-unit">年間宿泊売上（想定）</div>
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Annual Revenue</div>
+          <div class="inv-data-value">5,475万円</div>
+          <div class="inv-data-unit">年間宿泊売上（想定）</div>
         </div>
       </div>
 
-      <!-- 年間コスト内訳 -->
-      <div class="inv-cost-block fade-up">
-        <div class="inv-cost-header">
-          <div class="inv-cost-header-label">Annual Cost</div>
-          <div class="inv-cost-header-value">740万円 <span style="font-size:12px;font-family:var(--sans-jp);color:rgba(255,255,255,.35);">/ 年間コスト合計</span></div>
+      <!-- コスト + NOI -->
+      <div class="inv-data-row fade-up" style="margin-bottom: clamp(40px,5vw,72px);">
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Annual Cost</div>
+          <div class="inv-data-value">740万円</div>
+          <div class="inv-data-unit">管理費600 / 税20 / 光熱120</div>
         </div>
-        <div class="inv-cost-items">
-          <div class="inv-cost-item">
-            <div class="inv-cost-item-label">管理費</div>
-            <div class="inv-cost-item-value">600万円</div>
-          </div>
-          <div class="inv-cost-item">
-            <div class="inv-cost-item-label">固定資産税</div>
-            <div class="inv-cost-item-value">20万円</div>
-          </div>
-          <div class="inv-cost-item">
-            <div class="inv-cost-item-label">光熱費</div>
-            <div class="inv-cost-item-value">120万円</div>
-          </div>
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Annual NOI</div>
+          <div class="inv-data-value">4,735万円</div>
+          <div class="inv-data-unit">年間純収益（想定）</div>
         </div>
-      </div>
-
-      <!-- NOI・利回り巨大表示 -->
-      <div class="inv-noi-row fade-up">
-        <div class="inv-noi-item">
-          <div class="inv-noi-label">Annual NOI</div>
-          <div class="inv-noi-value">約4,735万円</div>
-          <div class="inv-noi-unit">年間純収益（想定）</div>
+        <div class="inv-data-cell" style="grid-column: span 2; background: rgba(184,151,90,.12); border-left: 2px solid rgba(184,151,90,.35);">
+          <div class="inv-data-label" style="color:var(--gold);">参考実質利回り</div>
+          <div class="inv-data-value" style="font-size: clamp(32px,4vw,54px); color:var(--gold-light);">約7.89%</div>
+          <div class="inv-data-unit">NOI ÷ 販売価格（参考値）</div>
         </div>
-        <div class="inv-noi-item">
-          <div class="inv-noi-label">Asking Price</div>
-          <div class="inv-noi-value">6億円</div>
-          <div class="inv-noi-unit">想定販売価格（1棟）</div>
-        </div>
-      </div>
-
-      <div class="inv-yield-stage fade-up">
-        <p class="inv-yield-label">Estimated Net Yield</p>
-        <div class="inv-yield-num">7.89<span class="inv-yield-pct">%</span></div>
-        <p class="inv-yield-basis">想定実質利回り（NOI÷販売価格）</p>
       </div>
 
       <p class="inv-disclaimer fade-up">
-        ※掲載の収益シミュレーションは参考値であり、実際の収益・利回りを保証するものではありません。<br>
-        ※宿泊単価・稼働率・年間コストは市場環境や運営状況により変動します。<br>
+        ※本シミュレーションは参考値です。実際の収益を保証するものではありません。<br>
+        ※宿泊単価・稼働率・運営費等により変動します。<br>
         ※税務上の取り扱いについては、税理士等の専門家にご相談ください。
       </p>
 
     </div>
   </section>
 
-  <!-- ===== 8. ONSEN ===== -->
+  <!-- ===== 8. SMART OWNER SYSTEM ===== -->
+  <section id="smart-owner">
+    <div class="smart-inner">
+
+      <div class="smart-header fade-up">
+        <p class="section-label">Smart Owner System</p>
+        <h2 class="smart-title">予約・チェックインを、<br>もっとスマートに。</h2>
+        <div class="divider"></div>
+        <p class="smart-sub">
+          オーナー利用・宿泊運営・レストラン予約・乗馬体験・コンシェルジュ依頼などを、<br>
+          将来的に専用システムで一元管理できる環境を目指します。
+        </p>
+      </div>
+
+      <div class="smart-body fade-up">
+        <div class="smart-img-wrap">
+          <img src="アプリ管理.png" alt="スマートオーナーシステム イメージ" loading="lazy">
+        </div>
+
+        <div class="smart-features">
+          <div class="smart-feature-item">
+            <span class="smart-feature-label">Owner Stay</span>
+            <span class="smart-feature-text">オーナー利用日をオンラインで管理・設定できます。</span>
+          </div>
+          <div class="smart-feature-item">
+            <span class="smart-feature-label">Rental Operation</span>
+            <span class="smart-feature-text">ゲスト宿泊運営の稼働状況・収益レポートを確認できます。</span>
+          </div>
+          <div class="smart-feature-item">
+            <span class="smart-feature-label">Resort Booking</span>
+            <span class="smart-feature-text">温泉・レストラン・乗馬体験のリゾート施設予約が可能です。</span>
+          </div>
+          <div class="smart-feature-item">
+            <span class="smart-feature-label">Concierge</span>
+            <span class="smart-feature-text">滞在前後のコンシェルジュ依頼をアプリ上で完結できます。</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="smart-disclaimer fade-up">
+        ※掲載内容は構想段階のイメージを含みます。<br>
+        ※実際のシステム仕様は今後変更となる場合があります。<br>
+        ※現在提供中のサービスではありません。
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===== 9. ONSEN ===== -->
   <section id="onsen">
     <div class="onsen-inner">
       <div class="fade-up">
