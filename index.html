@@ -246,29 +246,83 @@
       color: var(--white); line-height: 1.55;
     }
 
-    /* ===== 4. MASTER PLAN ===== */
-    #masterplan {
-      background: var(--off-white);
-      padding: var(--section-pad) clamp(24px,6vw,96px);
+    /* ===== LIGHTBOX ===== */
+    .lb-overlay {
+      display: none; position: fixed; inset: 0; z-index: 300;
+      background: rgba(0,0,0,.92);
+      align-items: center; justify-content: center;
+      padding: clamp(16px,4vw,48px);
     }
-    .masterplan-inner { max-width: 1200px; margin: 0 auto; }
-    .masterplan-header { text-align: center; margin-bottom: clamp(48px,6vw,72px); }
-    .masterplan-header .section-label { color: var(--gold-dark); }
-    .masterplan-title {
-      font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300;
-      color: var(--ink); line-height: 1.6;
+    .lb-overlay.active { display: flex; flex-direction: column; }
+    .lb-img-wrap { position: relative; max-width: 90vw; max-height: 80vh; }
+    .lb-overlay img {
+      display: block; max-width: 90vw; max-height: 75vh;
+      object-fit: contain;
+      box-shadow: 0 24px 80px rgba(0,0,0,.6);
     }
-    /* 画像差し替え場所: マスタープラン.png */
-    .masterplan-img { width: 100%; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.1); margin-bottom: clamp(40px,5vw,60px); }
-    .masterplan-img img { width: 100%; object-fit: contain; }
-    .facility-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(0,0,0,.08); }
-    .facility-cell { background: var(--white); padding: clamp(18px,2vw,28px) clamp(14px,1.5vw,20px); text-align: center; }
-    .facility-cell-icon { color: var(--gold); width: 36px; height: 36px; margin: 0 auto 10px; }
-    .facility-cell-icon svg { width: 100%; height: 100%; }
-    .facility-cell-name { font-family: var(--serif-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 400; color: var(--ink); }
-    .facility-cell-sub { font-size: 10px; color: var(--gray-light); margin-top: 3px; letter-spacing: .05em; }
+    .lb-caption {
+      margin-top: 14px; text-align: center;
+      font-family: var(--sans-jp); font-size: 12px; letter-spacing: .12em;
+      color: rgba(255,255,255,.45);
+    }
+    .lb-close {
+      position: fixed; top: clamp(16px,3vw,28px); right: clamp(16px,3vw,28px);
+      width: 44px; height: 44px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.08); border-radius: 50%;
+      transition: background .2s;
+    }
+    .lb-close:hover { background: rgba(255,255,255,.18); }
+    .lb-close svg { width: 20px; height: 20px; stroke: rgba(255,255,255,.8); }
+    /* クリック可能な画像にカーソル表示 */
+    .zoomable { cursor: zoom-in; }
 
-    /* ===== 5. PRIVATE VILLAS ===== */
+    /* ===== ACCORDION (Ownership) ===== */
+    .accord-grid {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: clamp(6px,0.8vw,10px);
+    }
+    .accord-item {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition: border-color .3s;
+      overflow: hidden;
+    }
+    .accord-item.open { border-color: rgba(184,151,90,.3); }
+    .accord-trigger {
+      width: 100%; display: flex; align-items: center; gap: clamp(14px,1.8vw,20px);
+      padding: clamp(20px,2.5vw,28px) clamp(20px,2.5vw,28px);
+      cursor: pointer; border: none; background: transparent;
+      text-align: left;
+    }
+    .accord-icon {
+      flex-shrink: 0; width: 36px; height: 36px; color: var(--gold);
+    }
+    .accord-icon svg { width: 100%; height: 100%; }
+    .accord-title-wrap { flex: 1; }
+    .accord-title {
+      font-family: var(--serif-jp); font-size: clamp(14px,1.4vw,17px); font-weight: 400;
+      color: var(--white); line-height: 1.4;
+    }
+    .accord-arrow {
+      flex-shrink: 0; width: 20px; height: 20px; color: rgba(255,255,255,.4);
+      transition: transform .35s ease, color .3s;
+    }
+    .accord-arrow svg { width: 100%; height: 100%; }
+    .accord-item.open .accord-arrow { transform: rotate(180deg); color: var(--gold); }
+    .accord-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s cubic-bezier(.4,0,.2,1), padding .35s ease;
+      padding: 0 clamp(20px,2.5vw,28px);
+    }
+    .accord-item.open .accord-body { max-height: 300px; padding-bottom: clamp(20px,2.5vw,28px); }
+    .accord-body p {
+      font-size: clamp(13px,1.2vw,14px); color: rgba(255,255,255,.55);
+      line-height: 2.0; border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: clamp(14px,1.8vw,18px);
+    }
+
+    /* ===== 4. PRIVATE VILLAS ===== */
     #villas { background: var(--black); padding: var(--section-pad) clamp(24px,6vw,96px); }
     .villas-inner { max-width: 1200px; margin: 0 auto; }
     .villas-header { margin-bottom: clamp(44px,5.5vw,68px); }
@@ -453,8 +507,7 @@
     @media (max-width: 1024px) {
       .feature-grid { grid-template-columns: repeat(2,1fr); }
       .limited-grid { grid-template-columns: repeat(3,1fr); }
-      .facility-row { grid-template-columns: repeat(4,1fr); }
-      .service-grid { grid-template-columns: repeat(5,1fr); }
+      .accord-grid { grid-template-columns: repeat(2,1fr); }
       .horse-features { grid-template-columns: repeat(2,1fr); }
       .inv-grid { grid-template-columns: repeat(2,1fr); }
     }
@@ -464,7 +517,7 @@
       .limited-grid { grid-template-columns: repeat(2,1fr); }
       .villa-grid { grid-template-columns: repeat(2,1fr); }
       .villa-specs { grid-template-columns: 1fr; }
-      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .accord-grid { grid-template-columns: 1fr; }
       .onsen-inner { grid-template-columns: 1fr; }
       .dining-cols { grid-template-columns: 1fr; }
       .horse-features { grid-template-columns: 1fr; }
@@ -478,9 +531,8 @@
       .inv-sub-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      .facility-row { grid-template-columns: repeat(2,1fr); }
       .limited-grid { grid-template-columns: repeat(2,1fr); }
-      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .accord-grid { grid-template-columns: 1fr; }
       .horse-grid { grid-template-columns: 1fr 1fr; }
       .horse-photo:last-child { display: none; }
       .villa-grid { grid-template-columns: 1fr 1fr; }
@@ -711,66 +763,7 @@
     </div>
   </section>
 
-  <!-- ===== 4. MASTER PLAN ===== -->
-  <section id="masterplan">
-    <div class="masterplan-inner">
-      <div class="masterplan-header fade-up">
-        <p class="section-label section-label-dark">Master Plan</p>
-        <h2 class="masterplan-title">5.5万坪に描く、<br>6棟だけのリゾート構想。</h2>
-        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
-      </div>
-
-      <!-- 画像差し替え場所: マスタープラン.png (全体配置図) -->
-      <div class="masterplan-img fade-up">
-        <img src="マスタープラン.png" alt="ONUMA PRIVATE RESORT マスタープラン配置図" loading="lazy">
-      </div>
-
-      <div class="facility-row fade-up">
-        <div class="facility-cell">
-          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
-          <div class="facility-cell-name">プライベートヴィラ</div>
-          <div class="facility-cell-sub">6棟限定</div>
-        </div>
-        <div class="facility-cell">
-          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <div class="facility-cell-name">天然温泉棟</div>
-          <div class="facility-cell-sub">Onsen & Spa</div>
-        </div>
-        <div class="facility-cell">
-          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-          <div class="facility-cell-name">レストラン棟</div>
-          <div class="facility-cell-sub">Farm to Table</div>
-        </div>
-        <div class="facility-cell">
-          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/></svg></div>
-          <div class="facility-cell-name">放牧場</div>
-          <div class="facility-cell-sub">Pasture</div>
-        </div>
-        <div class="facility-cell">
-          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-          <div class="facility-cell-name">乗馬エリア</div>
-          <div class="facility-cell-sub">Horse Riding</div>
-        </div>
-        <div class="facility-cell">
-          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-          <div class="facility-cell-name">ホースセラピー</div>
-          <div class="facility-cell-sub">Wellness</div>
-        </div>
-        <div class="facility-cell">
-          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 009 9"/></svg></div>
-          <div class="facility-cell-name">パターゴルフ</div>
-          <div class="facility-cell-sub">Private Golf</div>
-        </div>
-        <div class="facility-cell">
-          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-          <div class="facility-cell-name">BBQスペース</div>
-          <div class="facility-cell-sub">Outdoor Dining</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 5. PRIVATE VILLAS ===== -->
+  <!-- ===== 4. PRIVATE VILLAS ===== -->
   <section id="villas">
     <div class="villas-inner">
       <div class="villas-header fade-up">
@@ -812,7 +805,7 @@
     </div>
   </section>
 
-  <!-- ===== 6. OWNERSHIP WITHOUT HASSLE ===== -->
+  <!-- ===== 5. OWNERSHIP WITHOUT HASSLE ===== -->
   <section id="ownership">
     <div class="ownership-inner">
       <div class="ownership-header fade-up">
@@ -825,52 +818,103 @@
         オーナーは北海道で過ごす時間を楽しむだけ。
       </p>
 
-      <div class="service-grid fade-up">
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
-          <div class="service-card-name">ヴィラ管理</div>
+      <div class="accord-grid fade-up">
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">ヴィラ管理</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>24時間体制で施設管理を行い、オーナー様とゲスト様が安心して滞在できる環境を整えます。セキュリティ面にも配慮し、リゾート全体の安全性を高めます。</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
-          <div class="service-card-name">清掃</div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3z"/><path d="M9 3v18"/><path d="M3 9h6"/><path d="M3 15h6"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">清掃</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>ヴィラだけでなく、レストラン棟・温泉棟・共用施設まで、専任スタッフが清掃を行います。常に清潔で快適なリゾート環境を維持します。</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div class="service-card-name">予約管理</div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">予約管理</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>オーナー利用、宿泊予約、チェックイン情報などを、将来的に専用のオンラインシステムで管理できる仕組みを目指します。詳細は資料にてご案内します。</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div class="service-card-name">チェックイン<br>対応</div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">チェックイン対応</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>ゲスト様のチェックイン時にはスタッフがご案内し、滞在開始をスムーズにサポートします。初めて訪れる方にも安心してご利用いただける体制を整えます。</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div class="service-card-name">ゲスト対応</div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">ゲスト対応</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>滞在中のご要望や緊急時の対応も運営スタッフが行います。宿泊ゲストの満足度を高め、オーナー様の負担を軽減します。</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-          <div class="service-card-name">除雪</div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3l1.5 1.5"/><path d="M7.5 7.5l1 1"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="4"/><path d="M5.5 18.5l1-1"/><path d="M17.5 6.5l1-1"/><path d="M18.5 18.5l-1-1"/><path d="M6.5 6.5l-1-1"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">除雪</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>冬季は敷地内の除雪作業を行います。雪の季節でも車でお越しいただきやすい環境を整え、北海道の冬を安心して楽しめるようにします。</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/></svg></div>
-          <div class="service-card-name">馬の飼育</div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">馬の飼育</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>専門の飼育員が常駐し、馬の給餌・健康管理・厩舎管理を行います。乗馬やホースセラピーを安全に提供できる体制を整えます。</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <div class="service-card-name">温泉管理</div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">温泉管理</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>温泉棟では温度管理、清掃、設備管理を行います。オーナー様、宿泊ゲスト、一般利用者が快適に利用できる温泉環境を維持します。</p></div>
         </div>
-        <div class="service-card">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div>
-          <div class="service-card-name">レストラン<br>運営</div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">レストラン運営</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>大沼和牛・函館近海の海鮮・地元野菜など、北海道の食材を活かした料理を提供します。オーナー様には優先予約や特別メニューの提供を想定しています。</p></div>
         </div>
-        <div class="service-card" style="border-color:rgba(184,151,90,.25); background:rgba(184,151,90,.06);">
-          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div class="service-card-name" style="color:var(--gold-light);">コンシェルジュ</div>
+
+        <div class="accord-item" style="border-color:rgba(184,151,90,.2); background:rgba(184,151,90,.04);">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon" style="color:var(--gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title" style="color:var(--gold-light);">コンシェルジュ</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>レストラン予約、施設予約、配車手配、アクティビティ手配など、滞在中のご要望にできる限り対応します。北海道での時間をより快適で特別なものにします。</p></div>
         </div>
+
       </div>
 
       <p class="ownership-cta-note fade-up">
         管理サービスの詳細・費用は資料にてご案内します。<br>
-        オーナー専用の予約システム構築を予定しています。
+        オーナー専用予約システムの構築を予定しています。
       </p>
     </div>
   </section>
@@ -1181,6 +1225,17 @@
     <a href="#contact" class="btn-primary">資料請求する</a>
   </div>
 
+  <!-- ライトボックス -->
+  <div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" aria-label="閉じる">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="lb-img-wrap">
+      <img id="lbImg" src="" alt="">
+    </div>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+
   <!-- 成功モーダル -->
   <div class="modal-overlay" id="successModal">
     <div class="modal-box">
@@ -1206,19 +1261,18 @@
   </div>
 
   <script>
-    // ナビスクロール
+    // ===== ナビスクロール =====
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // ヒーロースライドショー
+    // ===== ヒーロースライドショー =====
     const slides = document.querySelectorAll('.hero-slide');
     const indicatorsEl = document.getElementById('heroIndicators');
     let currentSlide = 0;
     let slideTimer;
 
-    // インジケーター生成
     slides.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
@@ -1235,14 +1289,10 @@
       clearInterval(slideTimer);
       slideTimer = setInterval(nextSlide, 5500);
     }
-
-    function nextSlide() {
-      goToSlide((currentSlide + 1) % slides.length);
-    }
-
+    function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
     slideTimer = setInterval(nextSlide, 5500);
 
-    // スムーズスクロール
+    // ===== スムーズスクロール =====
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
@@ -1251,21 +1301,72 @@
       });
     });
 
-    // フェードアップ
+    // ===== フェードアップ =====
     const fadeEls = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver(entries => {
+    const fadeObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const siblings = Array.from(entry.target.parentElement.querySelectorAll('.fade-up'));
         const idx = siblings.indexOf(entry.target);
         entry.target.style.transitionDelay = Math.min(idx * 60, 240) + 'ms';
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        fadeObserver.unobserve(entry.target);
       });
     }, { threshold: 0.1 });
-    fadeEls.forEach(el => observer.observe(el));
+    fadeEls.forEach(el => fadeObserver.observe(el));
 
-    // フォーム送信
+    // ===== ライトボックス =====
+    const lbOverlay = document.getElementById('lbOverlay');
+    const lbImg     = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbClose   = document.getElementById('lbClose');
+
+    // セクション内のすべての img を対象に（ヒーロースライド・ナビロゴは除く）
+    document.querySelectorAll('section img, .villa-aerial').forEach(img => {
+      img.classList.add('zoomable');
+      img.addEventListener('click', () => openLb(img.src, img.alt));
+    });
+
+    function openLb(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt;
+      lbCaption.textContent = alt || '';
+      lbOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLb() {
+      lbOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      // メモリ解放を少し遅らせる
+      setTimeout(() => { lbImg.src = ''; }, 300);
+    }
+
+    lbClose.addEventListener('click', closeLb);
+    lbOverlay.addEventListener('click', e => { if (e.target === lbOverlay) closeLb(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+    // ===== アコーディオン =====
+    document.querySelectorAll('.accord-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.accord-item');
+        const isOpen = item.classList.contains('open');
+
+        // 他のアイテムをすべて閉じる
+        document.querySelectorAll('.accord-item.open').forEach(openItem => {
+          openItem.classList.remove('open');
+          openItem.querySelector('.accord-trigger').setAttribute('aria-expanded', 'false');
+        });
+
+        // クリックしたものが閉じていれば開く
+        if (!isOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ===== フォーム送信 =====
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', async e => {
       e.preventDefault();
@@ -1291,7 +1392,8 @@
       }
     });
 
-    document.querySelectorAll('.modal-overlay').forEach(o => {
+    // フォーム用モーダルを背景クリックで閉じる
+    document.querySelectorAll('#successModal, #errorModal').forEach(o => {
       o.addEventListener('click', e => { if (e.target === o) o.classList.remove('active'); });
     });
   </script>
