@@ -161,6 +161,30 @@
     }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
+    /* ヒーロー価格バー */
+    .hero-price-bar {
+      display: flex; align-items: center; gap: clamp(20px,3vw,44px);
+      margin-bottom: clamp(24px,3vw,36px);
+      flex-wrap: wrap;
+    }
+    .hero-price-item { display: flex; flex-direction: column; gap: 4px; }
+    .hero-price-label {
+      font-family: var(--serif-en); font-size: 10px; letter-spacing: .32em;
+      color: var(--gold-light); text-transform: uppercase;
+    }
+    .hero-price-value {
+      font-family: var(--serif-jp); font-size: clamp(26px,3.5vw,48px);
+      font-weight: 300; color: var(--white); line-height: 1.1; letter-spacing: .02em;
+    }
+    .hero-yield-value {
+      font-family: var(--serif-en); font-size: clamp(20px,2.8vw,38px);
+      font-weight: 300; color: var(--gold-light); line-height: 1.1; letter-spacing: .02em;
+    }
+    .hero-price-sep {
+      width: 1px; height: clamp(32px,4vw,48px);
+      background: rgba(255,255,255,.2); flex-shrink: 0;
+    }
+
     /* スライドインジケーター */
     .hero-indicators {
       position: absolute; bottom: clamp(28px,4vw,44px); right: clamp(24px,4vw,56px);
@@ -367,20 +391,42 @@
     /* ===== 7. INVESTMENT ===== */
     #investment { background: var(--green-deep); padding: var(--section-pad) clamp(24px,6vw,96px); }
     .investment-inner { max-width: 1100px; margin: 0 auto; }
-    .investment-header { margin-bottom: clamp(48px,6vw,72px); }
+    .investment-header { margin-bottom: clamp(36px,5vw,60px); }
     .investment-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,44px); font-weight: 300; color: var(--white); line-height: 1.6; }
-    .inv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(8px,1vw,12px); margin-bottom: clamp(16px,2vw,20px); }
-    .inv-card { padding: clamp(24px,3vw,36px); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
-    .inv-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 10px; }
-    .inv-value { font-family: var(--serif-en); font-size: clamp(22px,2.5vw,34px); font-weight: 300; color: var(--white); line-height: 1.2; }
-    .inv-unit { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 4px; font-family: var(--sans-jp); }
-    .inv-highlight { background: rgba(184,151,90,.1); border-color: rgba(184,151,90,.28); }
-    .inv-highlight .inv-value { color: var(--gold-light); }
-    .inv-sub-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.06); margin-bottom: clamp(28px,3.5vw,40px); }
-    .inv-sub { background: rgba(255,255,255,.03); padding: clamp(14px,1.8vw,20px) clamp(14px,1.5vw,18px); }
-    .inv-sub-label { font-size: 10px; letter-spacing: .2em; color: var(--gold); margin-bottom: 6px; }
-    .inv-sub-value { font-size: clamp(15px,1.5vw,18px); font-family: var(--serif-en); color: rgba(255,255,255,.8); }
-    .inv-disclaimer { font-size: 11px; color: rgba(255,255,255,.3); line-height: 1.9; border-top: 1px solid rgba(255,255,255,.06); padding-top: clamp(16px,2vw,24px); }
+    .investment-lead { font-family: var(--sans-jp); font-size: clamp(13px,1.3vw,15px); color: rgba(255,255,255,.5); line-height: 2.1; margin-top: clamp(16px,2vw,24px); max-width: 640px; }
+
+    /* シミュレーションフロー */
+    .inv-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(6px,.8vw,10px); margin-bottom: clamp(24px,3vw,36px); }
+    .inv-flow-card { padding: clamp(18px,2.2vw,28px) clamp(14px,1.8vw,22px); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); display: flex; flex-direction: column; gap: 8px; }
+    .inv-flow-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .32em; color: var(--gold-light); text-transform: uppercase; }
+    .inv-flow-value { font-family: var(--serif-en); font-size: clamp(18px,2vw,28px); font-weight: 300; color: var(--white); line-height: 1.2; }
+    .inv-flow-unit { font-family: var(--sans-jp); font-size: 11px; color: rgba(255,255,255,.38); }
+
+    /* コスト内訳 */
+    .inv-cost-block { display: grid; grid-template-columns: auto 1fr; gap: 0; margin-bottom: clamp(20px,2.5vw,28px); border: 1px solid rgba(255,255,255,.07); }
+    .inv-cost-header { grid-column: 1/-1; padding: 14px clamp(14px,1.8vw,22px); background: rgba(255,255,255,.03); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .inv-cost-header-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; }
+    .inv-cost-header-value { font-family: var(--serif-en); font-size: clamp(16px,1.8vw,22px); color: var(--white); margin-top: 4px; }
+    .inv-cost-items { grid-column: 1/-1; display: flex; }
+    .inv-cost-item { flex: 1; padding: clamp(12px,1.5vw,18px) clamp(14px,1.8vw,22px); border-right: 1px solid rgba(255,255,255,.05); }
+    .inv-cost-item:last-child { border-right: none; }
+    .inv-cost-item-label { font-size: 10px; letter-spacing: .18em; color: rgba(255,255,255,.35); margin-bottom: 5px; }
+    .inv-cost-item-value { font-family: var(--serif-en); font-size: clamp(14px,1.4vw,17px); color: rgba(255,255,255,.65); }
+
+    /* 利回り巨大表示 */
+    .inv-yield-stage { text-align: center; padding: clamp(48px,7vw,96px) 0 clamp(40px,6vw,80px); border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); margin-bottom: clamp(28px,3.5vw,44px); }
+    .inv-yield-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: .5em; color: var(--gold); text-transform: uppercase; margin-bottom: clamp(16px,2vw,24px); }
+    .inv-yield-num { font-family: var(--serif-en); font-size: clamp(80px,14vw,180px); font-weight: 300; color: var(--white); line-height: 1; letter-spacing: -.01em; }
+    .inv-yield-pct { font-size: clamp(32px,5vw,72px); color: var(--gold-light); vertical-align: super; margin-left: 4px; }
+    .inv-yield-basis { font-family: var(--sans-jp); font-size: 12px; color: rgba(255,255,255,.3); margin-top: clamp(12px,1.5vw,18px); letter-spacing: .1em; }
+
+    .inv-noi-row { display: flex; justify-content: center; gap: clamp(40px,5vw,72px); margin-bottom: clamp(28px,3.5vw,44px); flex-wrap: wrap; }
+    .inv-noi-item { text-align: center; }
+    .inv-noi-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 8px; }
+    .inv-noi-value { font-family: var(--serif-en); font-size: clamp(20px,2.2vw,30px); font-weight: 300; color: var(--white); }
+    .inv-noi-unit { font-family: var(--sans-jp); font-size: 11px; color: rgba(255,255,255,.35); margin-top: 3px; }
+
+    .inv-disclaimer { font-size: 11px; color: rgba(255,255,255,.28); line-height: 2; border-top: 1px solid rgba(255,255,255,.05); padding-top: clamp(16px,2vw,24px); }
 
     /* ===== 8. ONSEN ===== */
     #onsen { background: var(--black); padding: var(--section-pad) 0; }
@@ -560,7 +606,7 @@
       .limited-grid { grid-template-columns: repeat(3,1fr); }
       .accord-grid { grid-template-columns: repeat(2,1fr); }
       .horse-features { grid-template-columns: repeat(2,1fr); }
-      .inv-grid { grid-template-columns: repeat(2,1fr); }
+      .inv-flow { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 768px) {
       .nav-links a:not(.btn-nav) { display: none; }
@@ -578,8 +624,11 @@
       .tl-item:nth-child(even) .tl-visual { order: unset; }
       .footer-copy { text-align: left; }
       .form-row { grid-template-columns: 1fr; }
-      .inv-grid { grid-template-columns: 1fr; }
-      .inv-sub-row { grid-template-columns: 1fr; }
+      .inv-flow { grid-template-columns: repeat(2,1fr); }
+      .inv-cost-items { flex-direction: column; }
+      .inv-cost-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.05); }
+      .inv-cost-item:last-child { border-bottom: none; }
+      .inv-noi-row { gap: clamp(24px,4vw,48px); }
     }
     @media (max-width: 640px) {
       .limited-grid { grid-template-columns: repeat(2,1fr); }
@@ -633,6 +682,17 @@
         温泉・美食・乗馬・ウェルネスが揃う<br>
         オーナーシップ型プライベートヴィラリゾート。
       </p>
+      <div class="hero-price-bar">
+        <div class="hero-price-item">
+          <span class="hero-price-label">Asking Price / 1 Villa</span>
+          <span class="hero-price-value">1棟 6億円</span>
+        </div>
+        <div class="hero-price-sep"></div>
+        <div class="hero-price-item">
+          <span class="hero-price-label">Estimated Net Yield</span>
+          <span class="hero-yield-value">7.89%</span>
+        </div>
+      </div>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">資料請求する</a>
         <a href="#features" class="btn-outline">オーナーシップについて相談する</a>
@@ -973,65 +1033,89 @@
   <!-- ===== 7. INVESTMENT ===== -->
   <section id="investment">
     <div class="investment-inner">
+
       <div class="investment-header fade-up">
         <p class="section-label">Investment</p>
-        <h2 class="investment-title">使わない日は、<br>収益を生むヴィラへ。</h2>
+        <h2 class="investment-title">使わない日は、<br>収益を生む未来へ。</h2>
         <div class="divider"></div>
+        <p class="investment-lead">
+          ONUMA PRIVATE RESORTでは、オーナー不在期間に専任チームが宿泊運営を代行。<br>
+          高原リゾートの希少性と圧倒的な自然体験が、安定した稼働を支える。
+        </p>
       </div>
 
-      <div class="inv-grid fade-up">
-        <div class="inv-card">
-          <div class="inv-label">Estimated Price</div>
-          <div class="inv-value">6億円〜</div>
-          <div class="inv-unit">想定販売価格（1棟）</div>
+      <!-- シミュレーションフロー -->
+      <div class="inv-flow fade-up">
+        <div class="inv-flow-card">
+          <div class="inv-flow-label">Nightly Rate</div>
+          <div class="inv-flow-value">25万円</div>
+          <div class="inv-flow-unit">想定宿泊単価（1泊）</div>
         </div>
-        <div class="inv-card">
-          <div class="inv-label">Nightly Rate</div>
-          <div class="inv-value">25万円</div>
-          <div class="inv-unit">想定宿泊単価（1泊）</div>
+        <div class="inv-flow-card">
+          <div class="inv-flow-label">Occupancy</div>
+          <div class="inv-flow-value">60%</div>
+          <div class="inv-flow-unit">想定稼働率</div>
         </div>
-        <div class="inv-card">
-          <div class="inv-label">Occupancy</div>
-          <div class="inv-value">60%</div>
-          <div class="inv-unit">想定稼働率</div>
+        <div class="inv-flow-card">
+          <div class="inv-flow-label">Annual Nights</div>
+          <div class="inv-flow-value">219泊</div>
+          <div class="inv-flow-unit">年間稼働日数（想定）</div>
         </div>
-        <div class="inv-card">
-          <div class="inv-label">Annual Revenue</div>
-          <div class="inv-value">約5,475万円</div>
-          <div class="inv-unit">年間宿泊売上（想定）</div>
-        </div>
-        <div class="inv-card">
-          <div class="inv-label">Annual Cost</div>
-          <div class="inv-value">約740万円</div>
-          <div class="inv-unit">管理費・固定費・光熱費合計</div>
-        </div>
-        <div class="inv-card inv-highlight">
-          <div class="inv-label">NOI / Yield</div>
-          <div class="inv-value">約4,735万円</div>
-          <div class="inv-unit">想定NOI ／ 実質利回り 約7.89%</div>
+        <div class="inv-flow-card">
+          <div class="inv-flow-label">Annual Revenue</div>
+          <div class="inv-flow-value">5,475万円</div>
+          <div class="inv-flow-unit">年間宿泊売上（想定）</div>
         </div>
       </div>
 
-      <div class="inv-sub-row fade-up">
-        <div class="inv-sub">
-          <div class="inv-sub-label">管理費</div>
-          <div class="inv-sub-value">600万円<span style="font-size:11px;opacity:.5;">/年</span></div>
+      <!-- 年間コスト内訳 -->
+      <div class="inv-cost-block fade-up">
+        <div class="inv-cost-header">
+          <div class="inv-cost-header-label">Annual Cost</div>
+          <div class="inv-cost-header-value">740万円 <span style="font-size:12px;font-family:var(--sans-jp);color:rgba(255,255,255,.35);">/ 年間コスト合計</span></div>
         </div>
-        <div class="inv-sub">
-          <div class="inv-sub-label">固定資産税</div>
-          <div class="inv-sub-value">20万円<span style="font-size:11px;opacity:.5;">/年</span></div>
+        <div class="inv-cost-items">
+          <div class="inv-cost-item">
+            <div class="inv-cost-item-label">管理費</div>
+            <div class="inv-cost-item-value">600万円</div>
+          </div>
+          <div class="inv-cost-item">
+            <div class="inv-cost-item-label">固定資産税</div>
+            <div class="inv-cost-item-value">20万円</div>
+          </div>
+          <div class="inv-cost-item">
+            <div class="inv-cost-item-label">光熱費</div>
+            <div class="inv-cost-item-value">120万円</div>
+          </div>
         </div>
-        <div class="inv-sub">
-          <div class="inv-sub-label">光熱費</div>
-          <div class="inv-sub-value">120万円<span style="font-size:11px;opacity:.5;">/年</span></div>
+      </div>
+
+      <!-- NOI・利回り巨大表示 -->
+      <div class="inv-noi-row fade-up">
+        <div class="inv-noi-item">
+          <div class="inv-noi-label">Annual NOI</div>
+          <div class="inv-noi-value">約4,735万円</div>
+          <div class="inv-noi-unit">年間純収益（想定）</div>
         </div>
+        <div class="inv-noi-item">
+          <div class="inv-noi-label">Asking Price</div>
+          <div class="inv-noi-value">6億円</div>
+          <div class="inv-noi-unit">想定販売価格（1棟）</div>
+        </div>
+      </div>
+
+      <div class="inv-yield-stage fade-up">
+        <p class="inv-yield-label">Estimated Net Yield</p>
+        <div class="inv-yield-num">7.89<span class="inv-yield-pct">%</span></div>
+        <p class="inv-yield-basis">想定実質利回り（NOI÷販売価格）</p>
       </div>
 
       <p class="inv-disclaimer fade-up">
-        ※掲載の収益シミュレーションは参考値であり、実際の収益を保証するものではありません。<br>
-        ※稼働率、宿泊単価、経費は運営状況により変動します。<br>
-        ※税務上の取り扱いについては、専門家にご相談ください。
+        ※掲載の収益シミュレーションは参考値であり、実際の収益・利回りを保証するものではありません。<br>
+        ※宿泊単価・稼働率・年間コストは市場環境や運営状況により変動します。<br>
+        ※税務上の取り扱いについては、税理士等の専門家にご相談ください。
       </p>
+
     </div>
   </section>
 
