@@ -103,27 +103,72 @@
     /* ===== 1. HERO SLIDESHOW ===== */
     #hero { position: relative; width: 100%; height: 100svh; min-height: 600px; overflow: hidden; }
 
-    /* 画像差し替え場所: ヒーロースライドショー用画像 (7枚) */
+    /* Ken Burns keyframes — 各スライドで始点を変えてリズムを出す */
+    @keyframes kb-center  { from { transform: scale(1.0) translate(0, 0);       } to { transform: scale(1.1) translate(0, 0);        } }
+    @keyframes kb-left    { from { transform: scale(1.0) translate(1%, 0);      } to { transform: scale(1.1) translate(-1%, -.5%);   } }
+    @keyframes kb-right   { from { transform: scale(1.0) translate(-1%, 0);     } to { transform: scale(1.1) translate(1%, -.5%);    } }
+    @keyframes kb-upleft  { from { transform: scale(1.0) translate(.8%, .8%);   } to { transform: scale(1.1) translate(-.8%, -.8%);  } }
+    @keyframes kb-upright { from { transform: scale(1.0) translate(-.8%, .8%);  } to { transform: scale(1.1) translate(.8%, -.8%);   } }
+    @keyframes kb-down    { from { transform: scale(1.02) translate(0, -.5%);   } to { transform: scale(1.1) translate(0, .5%);      } }
+    @keyframes kb-slow    { from { transform: scale(1.0) translate(0, 0);       } to { transform: scale(1.08) translate(0, 0);       } }
+
+    /* ヴィラ × 馬 スライドショー（7枚） */
     .hero-slide {
       position: absolute; inset: 0;
       background-size: cover; background-position: center;
-      opacity: 0; transition: opacity 1.4s ease;
+      opacity: 0; transition: opacity 1.8s ease;
+      will-change: transform, opacity;
     }
     .hero-slide.active { opacity: 1; }
-    /* スライド1: ヴィラ外観 */
-    .hero-slide:nth-child(1) { background-image: url('ヴィラ/外観.jpg'); background-position: center 40%; }
-    /* スライド2: 大沼・駒ヶ岳 */
-    .hero-slide:nth-child(2) { background-image: url('大沼・駒ヶ岳/大沼_駒ヶ岳.JPG'); background-position: center 35%; }
-    /* スライド3: 露天風呂 */
-    .hero-slide:nth-child(3) { background-image: url('レストラン・温泉棟/温泉/露天風呂.png'); }
-    /* スライド4: レストラン棟外観 */
-    .hero-slide:nth-child(4) { background-image: url('レストラン・温泉棟/レストラン/レストラン棟外観.JPG'); background-position: center 60%; }
-    /* スライド5: 乗馬 */
-    .hero-slide:nth-child(5) { background-image: url('放牧場/乗馬.jpg'); }
-    /* スライド6: 大沼湖 */
-    .hero-slide:nth-child(6) { background-image: url('大沼・駒ヶ岳/大沼四季/大沼_夏.png'); }
-    /* スライド7: ヴィラ内観（夜景代替） */
-    .hero-slide:nth-child(7) { background-image: url('ヴィラ/リビング.jpg'); }
+
+    /* ① ヴィラ外観（昼） */
+    .hero-slide:nth-child(1) {
+      background-image: url('ヴィラ/外観.jpg');
+      background-position: center 42%;
+    }
+    .hero-slide:nth-child(1).active { animation: kb-center 7s ease-in-out forwards; }
+
+    /* ② ヴィラ内装リビング */
+    .hero-slide:nth-child(2) {
+      background-image: url('ヴィラ/リビング.jpg');
+      background-position: center center;
+    }
+    .hero-slide:nth-child(2).active { animation: kb-left 7s ease-in-out forwards; }
+
+    /* ③ 馬の放牧風景 */
+    .hero-slide:nth-child(3) {
+      background-image: url('放牧場/乗馬.jpg');
+      background-position: center 38%;
+    }
+    .hero-slide:nth-child(3).active { animation: kb-right 7s ease-in-out forwards; }
+
+    /* ④ ヴィラ外観（別アングル・空撮） */
+    .hero-slide:nth-child(4) {
+      background-image: url('ヴィラ/上空ヴィライメージ.png');
+      background-position: center 50%;
+    }
+    .hero-slide:nth-child(4).active { animation: kb-upleft 7s ease-in-out forwards; }
+
+    /* ⑤ ヴィラ内装ダイニング */
+    .hero-slide:nth-child(5) {
+      background-image: url('ヴィラ/ダイニング.jpg');
+      background-position: center center;
+    }
+    .hero-slide:nth-child(5).active { animation: kb-upright 7s ease-in-out forwards; }
+
+    /* ⑥ オーナーと馬のふれあい */
+    .hero-slide:nth-child(6) {
+      background-image: url('放牧場/ホースセラピー.jpg');
+      background-position: center 35%;
+    }
+    .hero-slide:nth-child(6).active { animation: kb-down 7s ease-in-out forwards; }
+
+    /* ⑦ 乗馬（夕景イメージ） */
+    .hero-slide:nth-child(7) {
+      background-image: url('放牧場/乗馬２.jpg');
+      background-position: center 40%;
+    }
+    .hero-slide:nth-child(7).active { animation: kb-slow 7.5s ease-in-out forwards; }
 
     .hero-overlay {
       position: absolute; inset: 0;
@@ -1570,13 +1615,18 @@
       slides[currentSlide].classList.remove('active');
       document.querySelectorAll('.hero-dot')[currentSlide].classList.remove('active');
       currentSlide = n;
-      slides[currentSlide].classList.add('active');
+      const nextEl = slides[currentSlide];
+      // Ken Burns アニメーションをリセット（同じスライドに戻った時も再生）
+      nextEl.style.animation = 'none';
+      nextEl.offsetHeight; // reflow を強制
+      nextEl.style.animation = '';
+      nextEl.classList.add('active');
       document.querySelectorAll('.hero-dot')[currentSlide].classList.add('active');
       clearInterval(slideTimer);
-      slideTimer = setInterval(nextSlide, 5500);
+      slideTimer = setInterval(nextSlide, 6000);
     }
     function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
-    slideTimer = setInterval(nextSlide, 5500);
+    slideTimer = setInterval(nextSlide, 6000);
 
     // ===== スムーズスクロール =====
     document.querySelectorAll('a[href^="#"]').forEach(a => {
