@@ -8,7 +8,6 @@
   <meta property="og:title" content="ONUMA PRIVATE RESORT｜大沼に誕生する6棟限定プライベートヴィラ">
   <meta property="og:description" content="北海道・大沼国定公園を望む約5.5万坪の地に、温泉・レストラン・乗馬・ウェルネスが揃う6棟限定のプライベートヴィラリゾート構想。">
   <meta property="og:type" content="website">
-  <!-- og:image: ヴィラ/上空ヴィライメージ.png を本番URLに変更 -->
   <meta property="og:image" content="ヴィラ/上空ヴィライメージ.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -17,1311 +16,767 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== CSS変数 ===== */
+    /* ===== 変数 ===== */
     :root {
-      --gold:        #B8975A;
-      --gold-light:  #CEB07A;
-      --gold-dark:   #9A7A3F;
-      --white:       #FFFFFF;
-      --off-white:   #F5F3EE;
-      --cream:       #EDE8DF;
-      --black:       #080808;
-      --ink:         #161616;
-      --green-deep:  #1C2B1E;
-      --green-mid:   #2D4030;
-      --green-light: #3D5540;
-      --gray-dark:   #1A1A1A;
-      --gray-mid:    #5A5A5A;
-      --gray-light:  #9A9A9A;
+      --gold:       #B8975A;
+      --gold-light: #CEB07A;
+      --gold-dark:  #9A7A3F;
+      --white:      #FFFFFF;
+      --off-white:  #F5F3EE;
+      --cream:      #EDE8DF;
+      --black:      #080808;
+      --ink:        #161616;
+      --green-deep: #1C2B1E;
+      --green-mid:  #2D4030;
+      --gray-dark:  #1A1A1A;
+      --gray-mid:   #5A5A5A;
+      --gray-light: #9A9A9A;
 
       --serif-en: 'Cormorant Garamond', serif;
       --serif-jp: 'Noto Serif JP', serif;
       --sans-jp:  'Noto Sans JP', 'Helvetica Neue', sans-serif;
-
       --section-pad: clamp(80px, 10vw, 140px);
     }
 
     /* ===== リセット ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { overflow-x: hidden; scroll-behavior: smooth; }
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--sans-jp);
-      font-weight: 300;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { background: var(--black); color: var(--white); font-family: var(--sans-jp); font-weight: 300; -webkit-font-smoothing: antialiased; }
     img { display: block; max-width: 100%; height: auto; }
     a { color: inherit; text-decoration: none; }
 
-    /* ===== ナビゲーション ===== */
+    /* ===== ナビ ===== */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px clamp(24px, 5vw, 80px);
-      background: linear-gradient(to bottom, rgba(8,8,8,.7) 0%, transparent 100%);
-      transition: background .4s ease;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px clamp(24px, 5vw, 72px);
+      background: linear-gradient(to bottom, rgba(8,8,8,.65) 0%, transparent 100%);
+      transition: background .4s ease, padding .4s ease;
     }
-    nav.scrolled {
-      background: rgba(8,8,8,.92);
-      backdrop-filter: blur(8px);
-    }
-    .nav-logo {
-      font-family: var(--serif-en);
-      font-size: clamp(13px, 1.4vw, 17px);
-      font-weight: 400;
-      letter-spacing: .22em;
-      color: var(--white);
-    }
-    .nav-logo span {
-      display: block;
-      font-size: 9px;
-      letter-spacing: .3em;
-      color: var(--gold-light);
-      margin-top: 2px;
-    }
-    .nav-cta {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-    .nav-cta a {
-      font-size: 11px;
-      letter-spacing: .2em;
-      color: var(--gray-light);
-      transition: color .3s;
-    }
-    .nav-cta a:hover { color: var(--white); }
+    nav.scrolled { background: rgba(8,8,8,.94); backdrop-filter: blur(10px); padding-top: 16px; padding-bottom: 16px; }
+    .nav-logo { font-family: var(--serif-en); font-size: clamp(12px,1.3vw,16px); font-weight: 400; letter-spacing: .22em; }
+    .nav-logo span { display: block; font-size: 9px; letter-spacing: .3em; color: var(--gold-light); margin-top: 2px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 11px; letter-spacing: .18em; color: rgba(255,255,255,.6); transition: color .3s; }
+    .nav-links a:hover { color: var(--white); }
     .btn-nav {
-      font-size: 11px;
-      letter-spacing: .18em;
-      padding: 10px 22px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      font-size: 11px; letter-spacing: .18em; padding: 10px 22px;
+      border: 1px solid var(--gold); color: var(--gold);
       transition: background .3s, color .3s;
     }
-    .btn-nav:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
+    .btn-nav:hover { background: var(--gold); color: var(--black); }
 
-    /* ===== ボタン共通 ===== */
+    /* ===== ボタン ===== */
     .btn-primary {
-      display: inline-block;
-      padding: clamp(14px, 2vw, 18px) clamp(30px, 4vw, 52px);
-      background: var(--gold);
-      color: var(--black);
-      font-family: var(--sans-jp);
-      font-size: clamp(12px, 1.2vw, 14px);
-      font-weight: 400;
-      letter-spacing: .2em;
+      display: inline-block; padding: clamp(14px,2vw,18px) clamp(28px,4vw,50px);
+      background: var(--gold); color: var(--black);
+      font-family: var(--sans-jp); font-size: clamp(12px,1.2vw,14px); font-weight: 400; letter-spacing: .2em;
       transition: background .3s, transform .3s;
     }
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
     .btn-outline {
-      display: inline-block;
-      padding: clamp(14px, 2vw, 18px) clamp(30px, 4vw, 52px);
-      border: 1px solid rgba(255,255,255,.5);
-      color: var(--white);
-      font-family: var(--sans-jp);
-      font-size: clamp(12px, 1.2vw, 14px);
-      font-weight: 300;
-      letter-spacing: .2em;
-      transition: border-color .3s, color .3s, transform .3s;
+      display: inline-block; padding: clamp(14px,2vw,18px) clamp(28px,4vw,50px);
+      border: 1px solid rgba(255,255,255,.5); color: var(--white);
+      font-family: var(--sans-jp); font-size: clamp(12px,1.2vw,14px); font-weight: 300; letter-spacing: .2em;
+      transition: border-color .3s, transform .3s;
     }
-    .btn-outline:hover {
-      border-color: var(--white);
-      transform: translateY(-2px);
+    .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+    .btn-dark {
+      display: inline-block; padding: clamp(14px,2vw,18px) clamp(28px,4vw,50px);
+      background: var(--ink); color: var(--white);
+      font-family: var(--sans-jp); font-size: clamp(12px,1.2vw,14px); font-weight: 300; letter-spacing: .2em;
+      transition: background .3s, transform .3s; border: none; cursor: pointer; width: 100%;
     }
+    .btn-dark:hover { background: var(--green-deep); transform: translateY(-2px); }
 
-    /* ===== セクション共通 ===== */
+    /* ===== 共通 ===== */
     .section-label {
-      font-family: var(--serif-en);
-      font-size: clamp(10px, 1vw, 12px);
-      letter-spacing: .35em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: clamp(16px, 2vw, 24px);
+      font-family: var(--serif-en); font-size: 11px; letter-spacing: .35em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: clamp(14px,1.8vw,20px);
     }
-    .section-heading {
-      font-family: var(--serif-jp);
-      font-size: clamp(26px, 3.5vw, 50px);
-      font-weight: 300;
-      line-height: 1.7;
-      letter-spacing: .04em;
-    }
-    .section-heading-en {
-      font-family: var(--serif-en);
-      font-size: clamp(30px, 4.5vw, 64px);
-      font-weight: 300;
-      line-height: 1.3;
-      letter-spacing: .04em;
-      font-style: italic;
-    }
-    .divider-gold {
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-      margin: clamp(24px, 3vw, 36px) 0;
-    }
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .section-label-dark { color: var(--gold-dark); }
+    .divider { width: 36px; height: 1px; background: var(--gold); margin: clamp(20px,2.5vw,32px) 0; }
+    .divider-center { margin-left: auto; margin-right: auto; }
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
 
-    /* ===== 1. HERO ===== */
-    #hero {
-      position: relative;
-      width: 100%;
-      height: 100svh;
-      min-height: 600px;
-      overflow: hidden;
+    /* ===== 1. HERO SLIDESHOW ===== */
+    #hero { position: relative; width: 100%; height: 100svh; min-height: 600px; overflow: hidden; }
+
+    /* 画像差し替え場所: ヒーロースライドショー用画像 (7枚) */
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.4s ease;
     }
-    /* 画像差し替え場所: 大沼・駒ヶ岳/大沼_駒ヶ岳.JPG */
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('大沼・駒ヶ岳/大沼_駒ヶ岳.JPG');
-      background-size: cover;
-      background-position: center 30%;
-      transform: scale(1.05);
-      transition: transform 8s ease;
-    }
-    .hero-bg.loaded { transform: scale(1); }
+    .hero-slide.active { opacity: 1; }
+    /* スライド1: ヴィラ外観 */
+    .hero-slide:nth-child(1) { background-image: url('ヴィラ/外観.jpg'); background-position: center 40%; }
+    /* スライド2: 大沼・駒ヶ岳 */
+    .hero-slide:nth-child(2) { background-image: url('大沼・駒ヶ岳/大沼_駒ヶ岳.JPG'); background-position: center 35%; }
+    /* スライド3: 露天風呂 */
+    .hero-slide:nth-child(3) { background-image: url('レストラン・温泉棟/温泉/露天風呂.png'); }
+    /* スライド4: レストラン棟外観 */
+    .hero-slide:nth-child(4) { background-image: url('レストラン・温泉棟/レストラン/レストラン棟外観.JPG'); background-position: center 60%; }
+    /* スライド5: 乗馬 */
+    .hero-slide:nth-child(5) { background-image: url('放牧場/乗馬.jpg'); }
+    /* スライド6: 大沼湖 */
+    .hero-slide:nth-child(6) { background-image: url('大沼・駒ヶ岳/大沼四季/大沼_夏.png'); }
+    /* スライド7: ヴィラ内観（夜景代替） */
+    .hero-slide:nth-child(7) { background-image: url('ヴィラ/リビング.jpg'); }
+
     .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(8,8,8,.15) 0%,
-        rgba(8,8,8,.1)  40%,
-        rgba(8,8,8,.55) 75%,
-        rgba(8,8,8,.85) 100%
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(8,8,8,.2) 0%,
+        rgba(8,8,8,.15) 40%,
+        rgba(8,8,8,.55) 72%,
+        rgba(8,8,8,.88) 100%
       );
     }
     .hero-content {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(40px, 6vw, 100px) clamp(24px, 6vw, 100px);
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: clamp(40px,6vw,96px) clamp(24px,6vw,96px);
     }
-    .hero-badge {
-      font-family: var(--serif-en);
-      font-size: clamp(10px, 1vw, 12px);
-      letter-spacing: .35em;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      margin-bottom: clamp(20px, 3vw, 36px);
+    .hero-eyebrow {
+      font-family: var(--serif-en); font-size: clamp(10px,1vw,12px);
+      letter-spacing: .38em; color: var(--gold-light); text-transform: uppercase;
+      margin-bottom: clamp(10px,1.5vw,16px);
+    }
+    .hero-kicker {
+      font-family: var(--serif-jp); font-size: clamp(13px,1.4vw,17px); font-weight: 300;
+      letter-spacing: .12em; color: rgba(255,255,255,.75);
+      margin-bottom: clamp(8px,1vw,12px);
     }
     .hero-title {
-      font-family: var(--serif-jp);
-      font-size: clamp(30px, 5vw, 72px);
-      font-weight: 300;
-      line-height: 1.55;
-      letter-spacing: .06em;
-      word-break: keep-all;
-      overflow-wrap: normal;
-      line-break: strict;
-      max-width: 800px;
-      margin-bottom: clamp(20px, 2.5vw, 32px);
+      font-family: var(--serif-jp); font-size: clamp(32px,5.2vw,74px); font-weight: 300;
+      line-height: 1.5; letter-spacing: .05em; word-break: keep-all;
+      max-width: 820px; margin-bottom: clamp(20px,2.5vw,32px);
     }
-    .hero-subtitle {
-      font-family: var(--sans-jp);
-      font-size: clamp(13px, 1.4vw, 17px);
-      font-weight: 300;
-      line-height: 2.0;
-      color: rgba(255,255,255,.8);
-      max-width: 560px;
-      margin-bottom: clamp(32px, 4vw, 56px);
+    .hero-sub {
+      font-family: var(--sans-jp); font-size: clamp(13px,1.3vw,16px); font-weight: 300;
+      line-height: 2.1; color: rgba(255,255,255,.75);
+      max-width: 520px; margin-bottom: clamp(32px,4vw,52px);
     }
-    .hero-btns {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .hero-scroll {
-      position: absolute;
-      bottom: clamp(28px, 4vw, 48px);
-      right: clamp(24px, 4vw, 60px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--serif-en);
-      font-size: 10px;
-      letter-spacing: .3em;
-      color: rgba(255,255,255,.4);
-      text-transform: uppercase;
-    }
-    .hero-scroll::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 50px;
-      background: linear-gradient(to bottom, rgba(255,255,255,.3), transparent);
-      animation: scrollLine 2s ease-in-out infinite;
-    }
-    @keyframes scrollLine {
-      0%   { transform: scaleY(0); transform-origin: top; }
-      50%  { transform: scaleY(1); transform-origin: top; }
-      51%  { transform: scaleY(1); transform-origin: bottom; }
-      100% { transform: scaleY(0); transform-origin: bottom; }
-    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    /* ===== 2. 大沼という資産 ===== */
-    #onuma {
-      background: var(--green-deep);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
+    /* スライドインジケーター */
+    .hero-indicators {
+      position: absolute; bottom: clamp(28px,4vw,44px); right: clamp(24px,4vw,56px);
+      display: flex; gap: 8px; align-items: center;
     }
-    .onuma-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(48px, 6vw, 100px);
-      align-items: center;
+    .hero-dot {
+      width: 24px; height: 1px; background: rgba(255,255,255,.3);
+      transition: background .4s, width .4s; cursor: pointer;
     }
-    .onuma-text { }
-    .onuma-body {
-      font-size: clamp(14px, 1.3vw, 16px);
-      line-height: 2.2;
-      color: rgba(255,255,255,.72);
-      margin-top: clamp(20px, 2.5vw, 32px);
-    }
-    .onuma-seasons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: clamp(20px, 3vw, 36px);
-    }
-    .season-img {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-    /* 画像差し替え場所: 大沼・駒ヶ岳/大沼四季/ */
-    .season-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s ease;
-    }
-    .season-img:hover img { transform: scale(1.05); }
-    .season-img .season-label {
-      position: absolute;
-      bottom: 10px;
-      left: 12px;
-      font-size: 10px;
-      letter-spacing: .2em;
-      color: rgba(255,255,255,.7);
-      font-family: var(--serif-en);
-    }
-    .onuma-accent {
-      margin-top: clamp(32px, 4vw, 56px);
-      padding: clamp(20px, 2.5vw, 32px);
-      border-left: 2px solid var(--gold);
-      background: rgba(255,255,255,.03);
-    }
-    .onuma-accent p {
-      font-family: var(--serif-jp);
-      font-size: clamp(14px, 1.4vw, 17px);
-      font-weight: 300;
-      line-height: 1.9;
-      color: rgba(255,255,255,.85);
-    }
+    .hero-dot.active { background: var(--gold); width: 40px; }
 
-    /* ===== 3. Master Plan ===== */
-    #masterplan {
+    /* ===== 2. FEATURES ===== */
+    #features {
       background: var(--off-white);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
+      padding: var(--section-pad) clamp(24px,6vw,96px);
     }
-    .masterplan-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+    .features-inner { max-width: 1200px; margin: 0 auto; }
+    .features-header { text-align: center; margin-bottom: clamp(52px,7vw,88px); }
+    .features-header .section-label { color: var(--gold-dark); }
+    .features-title {
+      font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300;
+      color: var(--ink); line-height: 1.6; letter-spacing: .04em;
     }
-    .masterplan-header {
-      text-align: center;
-      margin-bottom: clamp(48px, 6vw, 80px);
+
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1px,0.15vw,2px);
+      background: rgba(0,0,0,.06);
     }
-    .masterplan-header .section-label { justify-content: center; display: flex; }
-    .masterplan-header .section-heading { color: var(--ink); }
-    .masterplan-header .divider-gold { margin: clamp(24px, 3vw, 36px) auto; }
-    /* 画像差し替え場所: マスタープラン.png */
-    .masterplan-map {
-      width: 100%;
-      border-radius: 2px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,.12);
-      margin-bottom: clamp(40px, 5vw, 64px);
-    }
-    .masterplan-map img {
-      width: 100%;
-      object-fit: contain;
-    }
-    .facility-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: rgba(0,0,0,.08);
-    }
-    .facility-item {
+    .feature-card {
       background: var(--white);
-      padding: clamp(20px, 2.5vw, 32px) clamp(16px, 2vw, 24px);
-      text-align: center;
+      padding: clamp(36px,4vw,56px) clamp(28px,3vw,44px);
+      display: flex; flex-direction: column;
+      transition: box-shadow .3s;
     }
-    .facility-icon {
-      width: 40px;
-      height: 40px;
-      margin: 0 auto clamp(10px, 1.5vw, 16px);
-      color: var(--gold);
+    .feature-card:hover { box-shadow: 0 0 0 2px var(--gold) inset; }
+    .feature-num {
+      font-family: var(--serif-en); font-size: clamp(52px,6vw,80px); font-weight: 300;
+      line-height: 1; color: var(--cream); letter-spacing: -.02em;
+      margin-bottom: clamp(16px,2vw,24px);
     }
-    .facility-icon svg { width: 100%; height: 100%; }
-    .facility-name {
-      font-family: var(--serif-jp);
-      font-size: clamp(13px, 1.3vw, 15px);
-      font-weight: 400;
-      color: var(--ink);
-      line-height: 1.5;
+    /* 画像差し替え場所: 各FEATUREカードの画像 */
+    .feature-img {
+      width: 100%; aspect-ratio: 16/9; overflow: hidden;
+      margin-bottom: clamp(20px,2.5vw,30px);
     }
-    .facility-sub {
-      font-size: 11px;
-      color: var(--gray-mid);
-      margin-top: 4px;
-      letter-spacing: .05em;
+    .feature-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .feature-card:hover .feature-img img { transform: scale(1.04); }
+    .feature-card-title {
+      font-family: var(--serif-jp); font-size: clamp(16px,1.6vw,20px); font-weight: 400;
+      color: var(--ink); line-height: 1.55; margin-bottom: clamp(12px,1.5vw,18px);
     }
-
-    /* ===== 4. Private Villas ===== */
-    #villas {
-      background: var(--black);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
-    }
-    .villas-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .villas-header {
-      margin-bottom: clamp(48px, 6vw, 80px);
-    }
-    .villas-header .section-heading { color: var(--white); }
-    /* 画像差し替え場所: ヴィラ/上空ヴィライメージ.png */
-    .villa-aerial {
-      width: 100%;
-      aspect-ratio: 16/7;
-      object-fit: cover;
-      object-position: center;
-      margin-bottom: clamp(32px, 4vw, 56px);
-    }
-    .villa-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: clamp(32px, 4vw, 56px);
-    }
-    /* 画像差し替え場所: ヴィラ/*.jpg */
-    .villa-img {
-      aspect-ratio: 4/3;
-      overflow: hidden;
-    }
-    .villa-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s ease;
-    }
-    .villa-img:hover img { transform: scale(1.05); }
-    .villa-features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(16px, 2vw, 24px);
-      margin-top: clamp(32px, 4vw, 56px);
-    }
-    .villa-feature {
-      padding: clamp(24px, 3vw, 36px);
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-    }
-    .villa-feature-label {
-      font-family: var(--serif-en);
-      font-size: 10px;
-      letter-spacing: .3em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .villa-feature-value {
-      font-family: var(--serif-jp);
-      font-size: clamp(18px, 2vw, 24px);
-      font-weight: 300;
-      line-height: 1.5;
-    }
-    .villa-feature-note {
-      font-size: 12px;
-      color: var(--gray-light);
-      margin-top: 8px;
-      line-height: 1.7;
+    .feature-card-body {
+      font-size: clamp(13px,1.1vw,14px); color: var(--gray-mid); line-height: 2.0; flex: 1;
     }
 
-    /* ===== 5. Onsen & Spa ===== */
-    #onsen {
+    /* ===== 3. LIMITED OWNERSHIP ===== */
+    #limited {
       background: var(--green-deep);
-      padding: var(--section-pad) 0;
+      padding: var(--section-pad) clamp(24px,6vw,96px);
     }
-    .onsen-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 clamp(24px, 6vw, 100px);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(48px, 6vw, 100px);
-      align-items: center;
+    .limited-inner { max-width: 1100px; margin: 0 auto; }
+    .limited-header { text-align: center; margin-bottom: clamp(52px,7vw,80px); }
+    .limited-title {
+      font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300;
+      color: var(--white); line-height: 1.6;
     }
-    /* 画像差し替え場所: レストラン・温泉棟/温泉/ */
-    .onsen-img-stack {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 8px;
+    .limited-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: clamp(10px,1.2vw,16px);
     }
-    .onsen-img-main {
-      grid-column: 1 / -1;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-    }
-    .onsen-img-sub {
-      aspect-ratio: 1/1;
-      overflow: hidden;
-    }
-    .onsen-img-main img,
-    .onsen-img-sub img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s ease;
-    }
-    .onsen-img-main:hover img,
-    .onsen-img-sub:hover img { transform: scale(1.05); }
-    .onsen-text .section-heading { color: var(--white); }
-    .onsen-body {
-      font-size: clamp(14px, 1.3vw, 16px);
-      line-height: 2.2;
-      color: rgba(255,255,255,.72);
-      margin-top: clamp(20px, 2.5vw, 32px);
-    }
-    .onsen-note {
-      margin-top: clamp(20px, 2.5vw, 32px);
-      padding: clamp(16px, 2vw, 24px);
-      border-left: 2px solid var(--gold);
-      background: rgba(255,255,255,.03);
-      font-size: clamp(13px, 1.2vw, 15px);
-      color: rgba(255,255,255,.65);
-      line-height: 1.9;
-    }
-
-    /* ===== 6. Farm to Table Dining ===== */
-    #dining {
-      background: var(--ink);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
-    }
-    .dining-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .dining-hero {
-      width: 100%;
-      /* 画像差し替え場所: レストラン・温泉棟/レストラン/レストラン棟外観.JPG */
-      aspect-ratio: 21/9;
-      overflow: hidden;
-      margin-bottom: clamp(40px, 5vw, 64px);
-    }
-    .dining-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 60%;
-    }
-    .dining-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(48px, 6vw, 80px);
-      align-items: start;
-    }
-    .dining-text .section-heading { color: var(--white); }
-    .dining-body {
-      font-size: clamp(14px, 1.3vw, 16px);
-      line-height: 2.2;
-      color: rgba(255,255,255,.72);
-      margin-top: clamp(20px, 2.5vw, 32px);
-    }
-    .dining-note {
-      margin-top: clamp(20px, 2.5vw, 32px);
-      font-size: clamp(13px, 1.2vw, 15px);
-      color: rgba(255,255,255,.45);
-      line-height: 1.9;
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: clamp(16px, 2vw, 24px);
-    }
-    /* 画像差し替え場所: レストラン・温泉棟/レストラン/料理1.jpg〜料理3.jpg */
-    .dining-photos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .dining-photo {
-      aspect-ratio: 1/1;
-      overflow: hidden;
-    }
-    .dining-photo:first-child {
-      grid-column: 1 / -1;
-      aspect-ratio: 16/9;
-    }
-    .dining-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s ease;
-    }
-    .dining-photo:hover img { transform: scale(1.05); }
-
-    /* ===== 7. Horse & Wellness ===== */
-    #horse {
-      background: var(--off-white);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
-    }
-    .horse-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .horse-header {
+    .limited-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+      padding: clamp(20px,2.5vw,32px) clamp(16px,2vw,24px);
       text-align: center;
-      margin-bottom: clamp(48px, 6vw, 80px);
-    }
-    .horse-header .section-label { justify-content: center; display: flex; }
-    .horse-header .section-heading { color: var(--ink); }
-    .horse-header .divider-gold { margin: clamp(24px, 3vw, 36px) auto; }
-    .horse-header .horse-lead {
-      font-size: clamp(14px, 1.4vw, 17px);
-      color: var(--gray-mid);
-      line-height: 2.0;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    /* 画像差し替え場所: 放牧場/*.jpg, 放牧場/*.png */
-    .horse-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: clamp(40px, 5vw, 56px);
-    }
-    .horse-img {
-      overflow: hidden;
-    }
-    .horse-img:nth-child(1) { aspect-ratio: 1/1; }
-    .horse-img:nth-child(2) { aspect-ratio: 1/1; }
-    .horse-img:nth-child(3) { aspect-ratio: 1/1; }
-    .horse-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s ease;
-    }
-    .horse-img:hover img { transform: scale(1.05); }
-    .horse-features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: clamp(16px, 2vw, 24px);
-    }
-    .horse-feature {
-      padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 30px);
-      background: var(--white);
-      border-bottom: 2px solid transparent;
-      transition: border-color .3s;
-    }
-    .horse-feature:hover { border-color: var(--gold); }
-    .horse-feature-label {
-      font-family: var(--serif-en);
-      font-size: 10px;
-      letter-spacing: .3em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .horse-feature-title {
-      font-family: var(--serif-jp);
-      font-size: clamp(15px, 1.4vw, 18px);
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 10px;
-    }
-    .horse-feature-desc {
-      font-size: clamp(12px, 1.1vw, 13px);
-      color: var(--gray-mid);
-      line-height: 1.85;
-    }
-
-    /* ===== 8. Ownership Without Hassle ===== */
-    #ownership {
-      background: var(--black);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
-    }
-    .ownership-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .ownership-header {
-      text-align: center;
-      margin-bottom: clamp(56px, 7vw, 96px);
-    }
-    .ownership-header .section-label { justify-content: center; display: flex; }
-    .ownership-header .section-heading { color: var(--white); }
-    .ownership-header .divider-gold { margin: clamp(24px, 3vw, 36px) auto; }
-    .ownership-lead {
-      font-size: clamp(14px, 1.4vw, 17px);
-      color: rgba(255,255,255,.6);
-      line-height: 2.0;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .service-categories {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(16px, 2vw, 24px);
-    }
-    .service-category {
-      padding: clamp(28px, 3.5vw, 44px) clamp(24px, 3vw, 36px);
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.06);
       transition: border-color .3s, background .3s;
     }
-    .service-category:hover {
-      border-color: rgba(184,151,90,.3);
-      background: rgba(255,255,255,.04);
-    }
-    .service-category-icon {
-      width: 44px;
-      height: 44px;
-      color: var(--gold);
-      margin-bottom: clamp(16px, 2vw, 24px);
-    }
-    .service-category-icon svg { width: 100%; height: 100%; }
-    .service-category-title {
-      font-family: var(--serif-jp);
-      font-size: clamp(16px, 1.6vw, 20px);
-      font-weight: 400;
-      margin-bottom: clamp(16px, 2vw, 20px);
-      color: var(--white);
-    }
-    .service-list {
-      list-style: none;
-    }
-    .service-list li {
-      font-size: clamp(12px, 1.1vw, 14px);
-      color: rgba(255,255,255,.55);
-      line-height: 1.75;
-      padding: 5px 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .service-list li::before {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 4px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 7px;
-    }
-    .ownership-note {
-      margin-top: clamp(40px, 5vw, 64px);
-      text-align: center;
-      font-size: clamp(13px, 1.2vw, 15px);
-      color: rgba(255,255,255,.45);
-      line-height: 1.9;
+    .limited-card:hover { border-color: rgba(184,151,90,.4); background: rgba(255,255,255,.07); }
+    .limited-card-icon { color: var(--gold); margin: 0 auto clamp(12px,1.5vw,16px); width: 32px; height: 32px; }
+    .limited-card-icon svg { width: 100%; height: 100%; }
+    .limited-card-title {
+      font-family: var(--serif-jp); font-size: clamp(13px,1.2vw,15px); font-weight: 400;
+      color: var(--white); line-height: 1.55;
     }
 
-    /* ===== 9. Investment & Rental ===== */
-    #investment {
-      background: var(--green-deep);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
-    }
-    .investment-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .investment-header {
-      margin-bottom: clamp(48px, 6vw, 72px);
-    }
-    .investment-header .section-heading { color: var(--white); }
-    .investment-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(12px, 1.5vw, 20px);
-      margin-bottom: clamp(32px, 4vw, 48px);
-    }
-    .inv-card {
-      padding: clamp(24px, 3vw, 36px);
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .inv-card-label {
-      font-family: var(--serif-en);
-      font-size: 10px;
-      letter-spacing: .3em;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .inv-card-value {
-      font-family: var(--serif-en);
-      font-size: clamp(22px, 2.5vw, 34px);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.2;
-    }
-    .inv-card-unit {
-      font-size: 13px;
-      color: rgba(255,255,255,.5);
-      margin-top: 4px;
-      font-family: var(--sans-jp);
-    }
-    .inv-highlight {
-      background: rgba(184,151,90,.12);
-      border: 1px solid rgba(184,151,90,.3);
-    }
-    .inv-highlight .inv-card-value { color: var(--gold-light); }
-    .investment-disclaimer {
-      font-size: 11px;
-      color: rgba(255,255,255,.35);
-      line-height: 1.8;
-      margin-top: clamp(24px, 3vw, 36px);
-      padding-top: clamp(16px, 2vw, 24px);
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-
-    /* ===== 10. Owner Experience ===== */
-    #experience {
-      background: var(--ink);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
-    }
-    .experience-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .experience-header {
-      text-align: center;
-      margin-bottom: clamp(56px, 7vw, 96px);
-    }
-    .experience-header .section-label { justify-content: center; display: flex; }
-    .experience-header .section-heading { color: var(--white); }
-    .experience-header .divider-gold { margin: clamp(24px, 3vw, 36px) auto; }
-    .timeline {
-      position: relative;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(184,151,90,.4) 15%, rgba(184,151,90,.4) 85%, transparent);
-      transform: translateX(-50%);
-    }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 80px);
-      margin-bottom: clamp(48px, 6vw, 72px);
-      align-items: center;
-    }
-    .timeline-item:nth-child(even) .timeline-content { order: 2; }
-    .timeline-item:nth-child(even) .timeline-visual { order: 1; }
-    .timeline-time {
-      font-family: var(--serif-en);
-      font-size: 11px;
-      letter-spacing: .3em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .timeline-title {
-      font-family: var(--serif-jp);
-      font-size: clamp(20px, 2vw, 28px);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.5;
-      margin-bottom: 14px;
-    }
-    .timeline-desc {
-      font-size: clamp(13px, 1.2vw, 15px);
-      color: rgba(255,255,255,.6);
-      line-height: 2.0;
-    }
-    /* 画像差し替え場所: 各タイムラインの背景画像 */
-    .timeline-visual {
-      aspect-ratio: 4/3;
-      overflow: hidden;
-    }
-    .timeline-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* ===== 11. CTA / お問い合わせ ===== */
-    #contact {
+    /* ===== 4. MASTER PLAN ===== */
+    #masterplan {
       background: var(--off-white);
-      padding: var(--section-pad) clamp(24px, 6vw, 100px);
+      padding: var(--section-pad) clamp(24px,6vw,96px);
     }
-    .contact-inner {
-      max-width: 760px;
-      margin: 0 auto;
+    .masterplan-inner { max-width: 1200px; margin: 0 auto; }
+    .masterplan-header { text-align: center; margin-bottom: clamp(48px,6vw,72px); }
+    .masterplan-header .section-label { color: var(--gold-dark); }
+    .masterplan-title {
+      font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300;
+      color: var(--ink); line-height: 1.6;
     }
-    .contact-header {
-      text-align: center;
-      margin-bottom: clamp(48px, 6vw, 72px);
+    /* 画像差し替え場所: マスタープラン.png */
+    .masterplan-img { width: 100%; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.1); margin-bottom: clamp(40px,5vw,60px); }
+    .masterplan-img img { width: 100%; object-fit: contain; }
+    .facility-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(0,0,0,.08); }
+    .facility-cell { background: var(--white); padding: clamp(18px,2vw,28px) clamp(14px,1.5vw,20px); text-align: center; }
+    .facility-cell-icon { color: var(--gold); width: 36px; height: 36px; margin: 0 auto 10px; }
+    .facility-cell-icon svg { width: 100%; height: 100%; }
+    .facility-cell-name { font-family: var(--serif-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 400; color: var(--ink); }
+    .facility-cell-sub { font-size: 10px; color: var(--gray-light); margin-top: 3px; letter-spacing: .05em; }
+
+    /* ===== 5. PRIVATE VILLAS ===== */
+    #villas { background: var(--black); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .villas-inner { max-width: 1200px; margin: 0 auto; }
+    .villas-header { margin-bottom: clamp(44px,5.5vw,68px); }
+    .villas-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,44px); font-weight: 300; color: var(--white); line-height: 1.6; }
+    /* 画像差し替え場所: ヴィラ/上空ヴィライメージ.png */
+    .villa-aerial { width: 100%; aspect-ratio: 21/9; object-fit: cover; object-position: center; margin-bottom: clamp(24px,3vw,36px); }
+    /* 画像差し替え場所: ヴィラ/ 各室内・外観 */
+    .villa-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: clamp(36px,4.5vw,56px); }
+    .villa-img { aspect-ratio: 4/3; overflow: hidden; }
+    .villa-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .villa-img:hover img { transform: scale(1.04); }
+    .villa-specs { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(1px,.15vw,2px); background: rgba(255,255,255,.06); }
+    .villa-spec { background: rgba(255,255,255,.03); padding: clamp(24px,3vw,36px) clamp(20px,2.5vw,30px); }
+    .villa-spec-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: .3em; color: var(--gold); margin-bottom: 10px; }
+    .villa-spec-value { font-family: var(--serif-jp); font-size: clamp(18px,2vw,26px); font-weight: 300; line-height: 1.4; }
+    .villa-spec-note { font-size: 12px; color: var(--gray-light); margin-top: 8px; line-height: 1.7; }
+
+    /* ===== 6. OWNERSHIP WITHOUT HASSLE ===== */
+    #ownership { background: var(--ink); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .ownership-inner { max-width: 1100px; margin: 0 auto; }
+    .ownership-header { text-align: center; margin-bottom: clamp(16px,2vw,24px); }
+    .ownership-title { font-family: var(--serif-jp); font-size: clamp(26px,3.5vw,50px); font-weight: 300; color: var(--white); line-height: 1.65; }
+    .ownership-lead {
+      text-align: center; font-size: clamp(14px,1.4vw,17px); color: rgba(255,255,255,.6);
+      line-height: 2.1; max-width: 600px; margin: clamp(20px,2.5vw,32px) auto clamp(52px,7vw,80px);
     }
-    .contact-header .section-label { justify-content: center; display: flex; }
-    .contact-header .section-heading { color: var(--ink); }
-    .contact-header .divider-gold { margin: clamp(24px, 3vw, 36px) auto; }
-    .contact-lead {
-      font-size: clamp(14px, 1.3vw, 16px);
-      color: var(--gray-mid);
-      line-height: 1.9;
-      max-width: 520px;
-      margin: 0 auto;
+    .service-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; }
+    .service-card {
+      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06);
+      padding: clamp(24px,3vw,36px) clamp(14px,1.5vw,20px); text-align: center;
+      transition: border-color .3s, background .3s;
     }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: clamp(16px, 2vw, 20px);
+    .service-card:hover { border-color: rgba(184,151,90,.3); background: rgba(255,255,255,.05); }
+    .service-card-icon { color: var(--gold); width: 32px; height: 32px; margin: 0 auto clamp(10px,1.2vw,14px); }
+    .service-card-icon svg { width: 100%; height: 100%; }
+    .service-card-name { font-family: var(--serif-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 400; color: var(--white); line-height: 1.5; }
+    .ownership-cta-note {
+      margin-top: clamp(40px,5vw,60px); text-align: center;
+      font-size: clamp(13px,1.2vw,15px); color: rgba(255,255,255,.45); line-height: 1.9;
     }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(12px, 1.5vw, 20px);
+
+    /* ===== 7. INVESTMENT ===== */
+    #investment { background: var(--green-deep); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .investment-inner { max-width: 1100px; margin: 0 auto; }
+    .investment-header { margin-bottom: clamp(48px,6vw,72px); }
+    .investment-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,44px); font-weight: 300; color: var(--white); line-height: 1.6; }
+    .inv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(8px,1vw,12px); margin-bottom: clamp(16px,2vw,20px); }
+    .inv-card { padding: clamp(24px,3vw,36px); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .inv-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 10px; }
+    .inv-value { font-family: var(--serif-en); font-size: clamp(22px,2.5vw,34px); font-weight: 300; color: var(--white); line-height: 1.2; }
+    .inv-unit { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 4px; font-family: var(--sans-jp); }
+    .inv-highlight { background: rgba(184,151,90,.1); border-color: rgba(184,151,90,.28); }
+    .inv-highlight .inv-value { color: var(--gold-light); }
+    .inv-sub-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.06); margin-bottom: clamp(28px,3.5vw,40px); }
+    .inv-sub { background: rgba(255,255,255,.03); padding: clamp(14px,1.8vw,20px) clamp(14px,1.5vw,18px); }
+    .inv-sub-label { font-size: 10px; letter-spacing: .2em; color: var(--gold); margin-bottom: 6px; }
+    .inv-sub-value { font-size: clamp(15px,1.5vw,18px); font-family: var(--serif-en); color: rgba(255,255,255,.8); }
+    .inv-disclaimer { font-size: 11px; color: rgba(255,255,255,.3); line-height: 1.9; border-top: 1px solid rgba(255,255,255,.06); padding-top: clamp(16px,2vw,24px); }
+
+    /* ===== 8. ONSEN ===== */
+    #onsen { background: var(--black); padding: var(--section-pad) 0; }
+    .onsen-inner { max-width: 1200px; margin: 0 auto; padding: 0 clamp(24px,6vw,96px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: center; }
+    /* 画像差し替え場所: レストラン・温泉棟/温泉/ */
+    .onsen-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .onsen-img-main { grid-column: 1/-1; aspect-ratio: 16/9; overflow: hidden; }
+    .onsen-img-sub { aspect-ratio: 1/1; overflow: hidden; }
+    .onsen-img-main img, .onsen-img-sub img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .onsen-img-main:hover img, .onsen-img-sub:hover img { transform: scale(1.04); }
+    .onsen-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300; color: var(--white); line-height: 1.65; }
+    .onsen-body { font-size: clamp(13px,1.3vw,15px); color: rgba(255,255,255,.65); line-height: 2.2; margin-top: clamp(18px,2.5vw,28px); }
+    .onsen-note { margin-top: clamp(18px,2vw,26px); padding: clamp(14px,1.8vw,20px); border-left: 2px solid var(--gold); background: rgba(255,255,255,.03); font-size: clamp(12px,1.1vw,14px); color: rgba(255,255,255,.55); line-height: 1.9; }
+
+    /* ===== 9. DINING ===== */
+    #dining { background: var(--ink); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .dining-inner { max-width: 1200px; margin: 0 auto; }
+    /* 画像差し替え場所: レストラン・温泉棟/レストラン/レストラン棟外観.JPG */
+    .dining-hero-img { width: 100%; aspect-ratio: 21/9; overflow: hidden; margin-bottom: clamp(40px,5vw,60px); }
+    .dining-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+    .dining-cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,80px); align-items: start; }
+    .dining-title { font-family: var(--serif-jp); font-size: clamp(22px,2.8vw,40px); font-weight: 300; color: var(--white); line-height: 1.65; }
+    .dining-body { font-size: clamp(13px,1.3vw,15px); color: rgba(255,255,255,.65); line-height: 2.2; margin-top: clamp(18px,2.5vw,28px); }
+    .dining-note { margin-top: clamp(18px,2vw,26px); font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.9; border-top: 1px solid rgba(255,255,255,.08); padding-top: clamp(14px,1.8vw,20px); }
+    /* 画像差し替え場所: レストラン・温泉棟/レストラン/料理1〜3, 内観 */
+    .dining-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .dining-photo { aspect-ratio: 1/1; overflow: hidden; }
+    .dining-photo:first-child { grid-column: 1/-1; aspect-ratio: 16/9; }
+    .dining-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .dining-photo:hover img { transform: scale(1.04); }
+
+    /* ===== 10. HORSE ===== */
+    #horse { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .horse-inner { max-width: 1200px; margin: 0 auto; }
+    .horse-header { text-align: center; margin-bottom: clamp(48px,6vw,72px); }
+    .horse-header .section-label { color: var(--gold-dark); }
+    .horse-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300; color: var(--ink); line-height: 1.6; }
+    .horse-lead { font-size: clamp(13px,1.3vw,15px); color: var(--gray-mid); line-height: 2.0; max-width: 560px; margin: clamp(16px,2vw,24px) auto 0; }
+    /* 画像差し替え場所: 放牧場/ 各馬・乗馬・ホースセラピー画像 */
+    .horse-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: clamp(40px,5vw,56px); }
+    .horse-photo { aspect-ratio: 1/1; overflow: hidden; }
+    .horse-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .horse-photo:hover img { transform: scale(1.04); }
+    .horse-features { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(12px,1.5vw,18px); }
+    .horse-feat { padding: clamp(24px,3vw,36px) clamp(18px,2vw,26px); background: var(--white); border-bottom: 2px solid transparent; transition: border-color .3s; }
+    .horse-feat:hover { border-color: var(--gold); }
+    .horse-feat-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: .3em; color: var(--gold); margin-bottom: 10px; }
+    .horse-feat-title { font-family: var(--serif-jp); font-size: clamp(14px,1.4vw,17px); font-weight: 400; color: var(--ink); margin-bottom: 8px; }
+    .horse-feat-desc { font-size: clamp(12px,1.1vw,13px); color: var(--gray-mid); line-height: 1.85; }
+
+    /* ===== 11. OWNER EXPERIENCE ===== */
+    #experience { background: var(--ink); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .experience-inner { max-width: 1000px; margin: 0 auto; }
+    .experience-header { text-align: center; margin-bottom: clamp(56px,7vw,90px); }
+    .experience-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300; color: var(--white); line-height: 1.6; }
+    .timeline { position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, rgba(184,151,90,.35) 10%, rgba(184,151,90,.35) 90%, transparent); transform: translateX(-50%); }
+    .tl-item { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,72px); margin-bottom: clamp(44px,5.5vw,68px); align-items: center; }
+    .tl-item:nth-child(even) .tl-text { order: 2; }
+    .tl-item:nth-child(even) .tl-visual { order: 1; }
+    .tl-time { font-family: var(--serif-en); font-size: 11px; letter-spacing: .3em; color: var(--gold); margin-bottom: 12px; }
+    .tl-heading { font-family: var(--serif-jp); font-size: clamp(18px,2vw,26px); font-weight: 300; color: var(--white); line-height: 1.55; margin-bottom: 12px; }
+    .tl-desc { font-size: clamp(13px,1.2vw,14px); color: rgba(255,255,255,.58); line-height: 2.0; }
+    /* 画像差し替え場所: タイムライン各コマの写真 */
+    .tl-visual { aspect-ratio: 4/3; overflow: hidden; }
+    .tl-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== 12. CTA ===== */
+    #contact { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .contact-inner { max-width: 720px; margin: 0 auto; }
+    .contact-header { text-align: center; margin-bottom: clamp(44px,5.5vw,68px); }
+    .contact-header .section-label { color: var(--gold-dark); }
+    .contact-title { font-family: var(--serif-jp); font-size: clamp(22px,2.8vw,40px); font-weight: 300; color: var(--ink); line-height: 1.65; }
+    .contact-lead { font-size: clamp(13px,1.3vw,15px); color: var(--gray-mid); line-height: 1.9; max-width: 480px; margin: clamp(16px,2vw,22px) auto 0; }
+    .contact-form { display: flex; flex-direction: column; gap: clamp(14px,1.8vw,18px); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px,1.2vw,16px); }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-label { font-size: 11px; letter-spacing: .15em; color: var(--gray-mid); }
+    .form-label span { color: var(--gold-dark); margin-left: 3px; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 13px 15px; background: var(--white); border: 1px solid rgba(0,0,0,.12);
+      color: var(--ink); font-family: var(--sans-jp); font-size: 14px; font-weight: 300;
+      outline: none; transition: border-color .3s; -webkit-appearance: none;
     }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .form-group label {
-      font-size: 11px;
-      letter-spacing: .15em;
-      color: var(--gray-mid);
-      font-family: var(--sans-jp);
-    }
-    .form-group label span {
-      color: var(--gold-dark);
-      margin-left: 4px;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 16px;
-      background: var(--white);
-      border: 1px solid rgba(0,0,0,.12);
-      color: var(--ink);
-      font-family: var(--sans-jp);
-      font-size: 14px;
-      font-weight: 300;
-      outline: none;
-      transition: border-color .3s;
-      -webkit-appearance: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--gold);
-    }
-    .form-group textarea { height: 120px; resize: vertical; }
-    .form-submit {
-      text-align: center;
-      margin-top: clamp(8px, 1.5vw, 16px);
-    }
-    .btn-submit {
-      width: 100%;
-      padding: clamp(16px, 2vw, 22px);
-      background: var(--ink);
-      color: var(--white);
-      font-family: var(--sans-jp);
-      font-size: clamp(13px, 1.3vw, 15px);
-      font-weight: 300;
-      letter-spacing: .25em;
-      border: none;
-      cursor: pointer;
-      transition: background .3s;
-    }
-    .btn-submit:hover { background: var(--green-deep); }
-    .form-note {
-      font-size: 11px;
-      color: var(--gray-light);
-      text-align: center;
-      margin-top: 16px;
-      line-height: 1.8;
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { height: 110px; resize: vertical; }
+    .form-submit { margin-top: 4px; }
+    .form-note { font-size: 11px; color: var(--gray-light); text-align: center; margin-top: 14px; line-height: 1.8; }
+
+    /* 法的注記 */
+    .legal-note {
+      max-width: 720px; margin: clamp(32px,4vw,48px) auto 0; padding-top: clamp(20px,2.5vw,28px);
+      border-top: 1px solid rgba(0,0,0,.08);
+      font-size: 11px; color: var(--gray-light); line-height: 2.0;
     }
 
     /* モーダル */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.7);
-      z-index: 200;
-      align-items: center;
-      justify-content: center;
-    }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 200; align-items: center; justify-content: center; }
     .modal-overlay.active { display: flex; }
-    .modal-box {
-      background: var(--off-white);
-      padding: clamp(40px, 5vw, 60px);
-      max-width: 480px;
-      width: 90%;
-      text-align: center;
-    }
-    .modal-icon { color: var(--gold); margin-bottom: 20px; }
-    .modal-title {
-      font-family: var(--serif-jp);
-      font-size: clamp(18px, 2vw, 24px);
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-    .modal-body {
-      font-size: 14px;
-      color: var(--gray-mid);
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-    .modal-close {
-      font-size: 13px;
-      letter-spacing: .2em;
-      color: var(--gray-mid);
-      cursor: pointer;
-      border: 1px solid rgba(0,0,0,.15);
-      padding: 12px 32px;
-      transition: border-color .3s;
-    }
+    .modal-box { background: var(--off-white); padding: clamp(36px,5vw,56px); max-width: 440px; width: 90%; text-align: center; }
+    .modal-icon { color: var(--gold); margin-bottom: 18px; }
+    .modal-title { font-family: var(--serif-jp); font-size: clamp(17px,1.8vw,22px); color: var(--ink); margin-bottom: 10px; }
+    .modal-body { font-size: 13px; color: var(--gray-mid); line-height: 1.85; margin-bottom: 22px; }
+    .modal-close { font-size: 12px; letter-spacing: .2em; color: var(--gray-mid); cursor: pointer; border: 1px solid rgba(0,0,0,.15); padding: 11px 28px; transition: border-color .3s; }
     .modal-close:hover { border-color: var(--ink); color: var(--ink); }
 
-    /* ===== フッター ===== */
-    footer {
-      background: var(--black);
-      padding: clamp(48px, 6vw, 72px) clamp(24px, 6vw, 100px) clamp(32px, 4vw, 48px);
-      border-top: 1px solid rgba(255,255,255,.05);
-    }
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 40px;
-      align-items: end;
-    }
-    .footer-logo {
-      font-family: var(--serif-en);
-      font-size: 20px;
-      letter-spacing: .22em;
-      color: var(--white);
-      margin-bottom: 10px;
-    }
-    .footer-sub {
-      font-size: 11px;
-      letter-spacing: .2em;
-      color: var(--gray-light);
-    }
-    .footer-right {
-      text-align: right;
-    }
-    .footer-copy {
-      font-size: 11px;
-      color: rgba(255,255,255,.25);
-      line-height: 1.8;
-    }
+    /* 中間CTA */
+    .mid-cta { padding: clamp(56px,8vw,96px) clamp(24px,6vw,96px); text-align: center; }
+    .mid-cta-title { font-family: var(--serif-jp); font-size: clamp(20px,2.8vw,38px); font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: clamp(28px,3.5vw,44px); }
+    .mid-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-    /* ===== スマホ固定CTA ===== */
-    .fixed-cta {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      background: rgba(8,8,8,.95);
-      backdrop-filter: blur(8px);
-      padding: 12px 16px;
-      padding-bottom: calc(12px + env(safe-area-inset-bottom));
-      flex-direction: row;
-      gap: 8px;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-    .fixed-cta a {
-      flex: 1;
-      padding: 13px 8px;
-      text-align: center;
-      font-size: 12px;
-      letter-spacing: .12em;
-    }
+    /* フッター */
+    footer { background: var(--black); padding: clamp(44px,6vw,68px) clamp(24px,6vw,96px) clamp(28px,4vw,44px); border-top: 1px solid rgba(255,255,255,.05); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-family: var(--serif-en); font-size: 18px; letter-spacing: .22em; margin-bottom: 8px; }
+    .footer-sub { font-size: 11px; letter-spacing: .15em; color: var(--gray-light); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.22); line-height: 1.85; text-align: right; }
+
+    /* スマホ固定CTA */
+    .fixed-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; background: rgba(8,8,8,.95); backdrop-filter: blur(8px); padding: 12px 16px; padding-bottom: calc(12px + env(safe-area-inset-bottom)); flex-direction: row; gap: 8px; border-top: 1px solid rgba(255,255,255,.06); }
+    .fixed-cta a { flex: 1; padding: 13px 8px; text-align: center; font-size: 12px; letter-spacing: .1em; }
 
     /* ===== レスポンシブ ===== */
     @media (max-width: 1024px) {
-      .facility-grid { grid-template-columns: repeat(4, 1fr); }
-      .service-categories { grid-template-columns: repeat(2, 1fr); }
-      .horse-features { grid-template-columns: repeat(2, 1fr); }
-      .investment-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid { grid-template-columns: repeat(2,1fr); }
+      .limited-grid { grid-template-columns: repeat(3,1fr); }
+      .facility-row { grid-template-columns: repeat(4,1fr); }
+      .service-grid { grid-template-columns: repeat(5,1fr); }
+      .horse-features { grid-template-columns: repeat(2,1fr); }
+      .inv-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 768px) {
-      .nav-cta a:not(.btn-nav) { display: none; }
-      .onuma-inner { grid-template-columns: 1fr; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .limited-grid { grid-template-columns: repeat(2,1fr); }
+      .villa-grid { grid-template-columns: repeat(2,1fr); }
+      .villa-specs { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
       .onsen-inner { grid-template-columns: 1fr; }
-      .dining-layout { grid-template-columns: 1fr; }
-      .villa-grid { grid-template-columns: repeat(2, 1fr); }
-      .villa-features { grid-template-columns: 1fr 1fr; }
+      .dining-cols { grid-template-columns: 1fr; }
+      .horse-features { grid-template-columns: 1fr; }
       .timeline::before { display: none; }
-      .timeline-item { grid-template-columns: 1fr; gap: 20px; }
-      .timeline-item:nth-child(even) .timeline-content { order: unset; }
-      .timeline-item:nth-child(even) .timeline-visual { order: unset; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-right { text-align: left; }
+      .tl-item { grid-template-columns: 1fr; gap: 18px; }
+      .tl-item:nth-child(even) .tl-text { order: unset; }
+      .tl-item:nth-child(even) .tl-visual { order: unset; }
+      .footer-copy { text-align: left; }
       .form-row { grid-template-columns: 1fr; }
+      .inv-grid { grid-template-columns: 1fr; }
+      .inv-sub-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      .facility-grid { grid-template-columns: repeat(2, 1fr); }
+      .facility-row { grid-template-columns: repeat(2,1fr); }
+      .limited-grid { grid-template-columns: repeat(2,1fr); }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
       .horse-grid { grid-template-columns: 1fr 1fr; }
-      .horse-img:nth-child(3) { display: none; }
-      .service-categories { grid-template-columns: 1fr; }
-      .horse-features { grid-template-columns: 1fr; }
-      .investment-grid { grid-template-columns: 1fr 1fr; }
-      .villa-features { grid-template-columns: 1fr; }
+      .horse-photo:last-child { display: none; }
+      .villa-grid { grid-template-columns: 1fr 1fr; }
       .fixed-cta { display: flex; }
       #contact { padding-bottom: calc(var(--section-pad) + 70px); }
     }
     @media (max-width: 400px) {
-      .investment-grid { grid-template-columns: 1fr; }
+      .limited-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== ナビゲーション ===== -->
+  <!-- ===== ナビ ===== -->
   <nav id="nav">
     <div class="nav-logo">
       ONUMA PRIVATE RESORT
       <span>HOKKAIDO, JAPAN</span>
     </div>
-    <div class="nav-cta">
-      <a href="#masterplan">Master Plan</a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
       <a href="#villas">Villas</a>
       <a href="#ownership">Ownership</a>
+      <a href="#investment">Investment</a>
       <a href="#contact" class="btn-nav">資料請求</a>
     </div>
   </nav>
 
   <!-- ===== 1. HERO ===== -->
-  <!-- 画像差し替え場所: .hero-bg の background-image を変更 -->
-  <!-- 現在: 大沼・駒ヶ岳/大沼_駒ヶ岳.JPG -->
   <section id="hero">
-    <div class="hero-bg" id="heroBg"></div>
+    <!-- 画像差し替え場所: .hero-slide の background-image (CSS内 .hero-slide:nth-child(1)〜(7)) -->
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-badge fade-up">ONUMA PRIVATE RESORT — HOKKAIDO</p>
-      <h1 class="hero-title fade-up">5.5万坪の<br>大自然を所有する。</h1>
-      <p class="hero-subtitle fade-up">
-        大沼国定公園を望む北海道の地に、<br>
+      <p class="hero-eyebrow">ONUMA PRIVATE RESORT — HOKKAIDO</p>
+      <p class="hero-kicker">6棟限定ヴィラオーナー募集</p>
+      <h1 class="hero-title">5.5万坪の<br>大自然を所有する。</h1>
+      <p class="hero-sub">
+        北海道・大沼国定公園を望む地に、<br>
         温泉・美食・乗馬・ウェルネスが揃う<br>
-        6棟限定のプライベートヴィラリゾート。
+        オーナーシップ型プライベートヴィラリゾート。
       </p>
-      <div class="hero-btns fade-up">
+      <div class="hero-btns">
         <a href="#contact" class="btn-primary">資料請求する</a>
-        <a href="#masterplan" class="btn-outline">プロジェクトを見る</a>
+        <a href="#features" class="btn-outline">オーナーシップについて相談する</a>
       </div>
     </div>
-    <div class="hero-scroll">Scroll</div>
+    <div class="hero-indicators" id="heroIndicators"></div>
   </section>
 
-  <!-- ===== 2. 大沼という資産 ===== -->
-  <section id="onuma">
-    <div class="onuma-inner">
-      <div class="onuma-text fade-up">
-        <p class="section-label">The Land</p>
-        <h2 class="section-heading">
-          北海道・大沼。<br>
-          まだ知られていない、<br>
-          静かなラグジュアリー。
-        </h2>
-        <div class="divider-gold"></div>
-        <p class="onuma-body">
-          函館から車でおよそ30分。大沼国定公園に隣接するこの地は、
-          駒ヶ岳を映す湖面と四季折々の自然が訪れる者を静かに包む。<br><br>
-          ニセコとは異なる、観光地化されていない余白。
-          喧騒から離れた北海道の本質が、ここにはある。<br><br>
-          春の新緑、夏の湖、秋の紅葉、冬の雪景色。
-          365日、表情を変え続ける大地の上に、
-          新しい富の在り方を描く。
-        </p>
-        <div class="onuma-accent">
-          <p>
-            「所有する資産」としての価値だけでなく、<br>
-            「滞在する価値」そのものを届ける——<br>
-            それがONUMA PRIVATE RESORTの原点です。
-          </p>
-        </div>
+  <!-- ===== 2. FEATURES ===== -->
+  <section id="features">
+    <div class="features-inner">
+      <div class="features-header fade-up">
+        <p class="section-label section-label-dark">Features</p>
+        <h2 class="features-title">ONUMA PRIVATE RESORTの仕組み</h2>
+        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
       </div>
-      <div class="fade-up">
-        <!-- 画像差し替え場所: 大沼・駒ヶ岳/大沼四季/ の各季節画像 -->
-        <div class="onuma-seasons">
-          <div class="season-img">
-            <img src="大沼・駒ヶ岳/大沼四季/大沼_春.png" alt="大沼の春の風景" loading="lazy">
-            <span class="season-label">Spring</span>
+
+      <div class="feature-grid">
+
+        <!-- 01 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">01</div>
+          <!-- 画像差し替え場所: ヴィラ/リビング.jpg（オーナー利用イメージ） -->
+          <div class="feature-img">
+            <img src="ヴィラ/リビング.jpg" alt="オーナーが利用できるヴィラリビング" loading="lazy">
           </div>
-          <div class="season-img">
-            <img src="大沼・駒ヶ岳/大沼四季/大沼_夏.png" alt="大沼の夏の風景" loading="lazy">
-            <span class="season-label">Summer</span>
-          </div>
-          <div class="season-img">
-            <img src="大沼・駒ヶ岳/大沼四季/大沼_秋.png" alt="大沼の秋の風景" loading="lazy">
-            <span class="season-label">Autumn</span>
-          </div>
-          <div class="season-img">
-            <img src="大沼・駒ヶ岳/大沼四季/大沼_冬.png" alt="大沼の冬の風景" loading="lazy">
-            <span class="season-label">Winter</span>
-          </div>
+          <div class="feature-card-title">オーナーが利用できる<br>特別なヴィラ</div>
+          <p class="feature-card-body">購入後は、オーナー自身の別荘として利用できます。家族やゲストとともに、北海道・大沼で過ごす時間を自由に楽しめます。</p>
         </div>
+
+        <!-- 02 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">02</div>
+          <!-- 画像差し替え場所: ヴィラ/上空ヴィライメージ.png（資産保有イメージ） -->
+          <div class="feature-img">
+            <img src="ヴィラ/上空ヴィライメージ.png" alt="ヴィラ上空 資産保有イメージ" loading="lazy">
+          </div>
+          <div class="feature-card-title">資産として保有</div>
+          <p class="feature-card-body">ヴィラは所有資産として保有できる計画です。将来的な売却・相続も視野に入れた、リゾートオーナーシップとして設計します。</p>
+        </div>
+
+        <!-- 03 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">03</div>
+          <!-- 画像差し替え場所: ヴィラ/ベッドルーム.jpg（宿泊運用イメージ） -->
+          <div class="feature-img">
+            <img src="ヴィラ/ベッドルーム.jpg" alt="宿泊運用イメージ" loading="lazy">
+          </div>
+          <div class="feature-card-title">使わない日は<br>宿泊運用</div>
+          <p class="feature-card-body">オーナーが利用しない日は、宿泊施設として運用することで収益化を目指します。想定宿泊単価は1泊25万円、稼働率60%のシミュレーションを掲載します。</p>
+        </div>
+
+        <!-- 04 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">04</div>
+          <!-- 画像差し替え場所: ヴィラ/外観.jpg（管理代行イメージ） -->
+          <div class="feature-img">
+            <img src="ヴィラ/外観.jpg" alt="管理代行 ヴィラ外観" loading="lazy">
+          </div>
+          <div class="feature-card-title">維持管理は<br>すべて不要</div>
+          <p class="feature-card-body">清掃、建物管理、予約管理、チェックイン対応、ゲスト対応、除雪、温泉・レストラン棟の管理、馬の飼育まで、運営側が一括して担う設計です。</p>
+        </div>
+
+        <!-- 05 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">05</div>
+          <!-- 画像差し替え場所: レストラン・温泉棟/温泉/露天風呂.png（温泉・美食・乗馬） -->
+          <div class="feature-img">
+            <img src="レストラン・温泉棟/温泉/露天風呂.png" alt="温泉・美食・乗馬リゾートサービス" loading="lazy">
+          </div>
+          <div class="feature-card-title">温泉・美食・乗馬を<br>日常に</div>
+          <p class="feature-card-body">敷地内には温泉棟、レストラン棟、放牧場、乗馬・ホースセラピーエリアを備えます。オーナーには優先利用・特典利用を想定しています。</p>
+        </div>
+
+        <!-- 06 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">06</div>
+          <!-- 画像差し替え場所: ヴィラ/ダイニング.jpg（スマートオーナーシップイメージ） -->
+          <div class="feature-img">
+            <img src="ヴィラ/ダイニング.jpg" alt="スマートオーナーシップイメージ" loading="lazy">
+          </div>
+          <div class="feature-card-title">予約・チェックインを<br>スマートに</div>
+          <p class="feature-card-body">オーナー利用、ゲスト宿泊、レストラン予約、乗馬体験、コンシェルジュ相談などを、将来的にオンラインまたはアプリで完結できる仕組みを目指します。</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ===== 3. Master Plan ===== -->
+  <!-- ===== 3. LIMITED OWNERSHIP ===== -->
+  <section id="limited">
+    <div class="limited-inner">
+      <div class="limited-header fade-up">
+        <p class="section-label">Limited Ownership</p>
+        <h2 class="limited-title">このプロジェクトで手に入るもの</h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="limited-grid fade-up">
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <div class="limited-card-title">約1,000㎡<br>専有区画</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <div class="limited-card-title">約300㎡<br>プライベートヴィラ</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="limited-card-title">6棟限定</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 009 9"/></svg>
+          </div>
+          <div class="limited-card-title">プライベート<br>パターゴルフ</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="limited-card-title">BBQスペース</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="limited-card-title">温泉<br>優先利用</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <div class="limited-card-title">レストラン<br>優先予約</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/></svg>
+          </div>
+          <div class="limited-card-title">乗馬利用<br>特典</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="limited-card-title">コンシェルジュ<br>サービス</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="limited-card-title">宿泊運営<br>代行</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="limited-card-title">管理・清掃<br>サービス</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. MASTER PLAN ===== -->
   <section id="masterplan">
     <div class="masterplan-inner">
       <div class="masterplan-header fade-up">
-        <p class="section-label">Master Plan</p>
-        <h2 class="section-heading" style="color:var(--ink);">
-          5.5万坪に描く、<br>6棟だけのリゾート構想。
-        </h2>
-        <div class="divider-gold"></div>
+        <p class="section-label section-label-dark">Master Plan</p>
+        <h2 class="masterplan-title">5.5万坪に描く、<br>6棟だけのリゾート構想。</h2>
+        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
       </div>
 
-      <!-- 画像差し替え場所: マスタープラン.png (全体配置図・空撮) -->
-      <div class="masterplan-map fade-up">
+      <!-- 画像差し替え場所: マスタープラン.png (全体配置図) -->
+      <div class="masterplan-img fade-up">
         <img src="マスタープラン.png" alt="ONUMA PRIVATE RESORT マスタープラン配置図" loading="lazy">
       </div>
 
-      <div class="facility-grid fade-up">
-        <div class="facility-item">
-          <div class="facility-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-              <polyline points="9,22 9,12 15,12 15,22"/>
-            </svg>
-          </div>
-          <div class="facility-name">プライベートヴィラ</div>
-          <div class="facility-sub">6棟限定</div>
+      <div class="facility-row fade-up">
+        <div class="facility-cell">
+          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+          <div class="facility-cell-name">プライベートヴィラ</div>
+          <div class="facility-cell-sub">6棟限定</div>
         </div>
-        <div class="facility-item">
-          <div class="facility-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-          </div>
-          <div class="facility-name">天然温泉棟</div>
-          <div class="facility-sub">Onsen & Spa</div>
+        <div class="facility-cell">
+          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="facility-cell-name">天然温泉棟</div>
+          <div class="facility-cell-sub">Onsen & Spa</div>
         </div>
-        <div class="facility-item">
-          <div class="facility-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M18 8h1a4 4 0 010 8h-1"/>
-              <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
-              <line x1="6" y1="1" x2="6" y2="4"/>
-              <line x1="10" y1="1" x2="10" y2="4"/>
-              <line x1="14" y1="1" x2="14" y2="4"/>
-            </svg>
-          </div>
-          <div class="facility-name">レストラン棟</div>
-          <div class="facility-sub">Farm to Table</div>
+        <div class="facility-cell">
+          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <div class="facility-cell-name">レストラン棟</div>
+          <div class="facility-cell-sub">Farm to Table</div>
         </div>
-        <div class="facility-item">
-          <div class="facility-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/>
-              <path d="M4.28 19.5a4 4 0 003.72.5"/>
-            </svg>
-          </div>
-          <div class="facility-name">放牧場</div>
-          <div class="facility-sub">Pasture</div>
+        <div class="facility-cell">
+          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/></svg></div>
+          <div class="facility-cell-name">放牧場</div>
+          <div class="facility-cell-sub">Pasture</div>
         </div>
-        <div class="facility-item">
-          <div class="facility-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 8v4l3 3"/>
-            </svg>
-          </div>
-          <div class="facility-name">乗馬エリア</div>
-          <div class="facility-sub">Horse Riding</div>
+        <div class="facility-cell">
+          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div class="facility-cell-name">乗馬エリア</div>
+          <div class="facility-cell-sub">Horse Riding</div>
         </div>
-        <div class="facility-item">
-          <div class="facility-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-            </svg>
-          </div>
-          <div class="facility-name">ホースセラピー</div>
-          <div class="facility-sub">Wellness</div>
+        <div class="facility-cell">
+          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div class="facility-cell-name">ホースセラピー</div>
+          <div class="facility-cell-sub">Wellness</div>
         </div>
-        <div class="facility-item">
-          <div class="facility-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="18" cy="18" r="3"/>
-              <circle cx="6" cy="6" r="3"/>
-              <path d="M6 21V9a9 9 0 009 9"/>
-            </svg>
-          </div>
-          <div class="facility-name">パターゴルフ</div>
-          <div class="facility-sub">Private Golf</div>
+        <div class="facility-cell">
+          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 009 9"/></svg></div>
+          <div class="facility-cell-name">パターゴルフ</div>
+          <div class="facility-cell-sub">Private Golf</div>
         </div>
-        <div class="facility-item">
-          <div class="facility-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
-          <div class="facility-name">BBQスペース</div>
-          <div class="facility-sub">Outdoor Dining</div>
+        <div class="facility-cell">
+          <div class="facility-cell-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="facility-cell-name">BBQスペース</div>
+          <div class="facility-cell-sub">Outdoor Dining</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 4. Private Villas ===== -->
+  <!-- ===== 5. PRIVATE VILLAS ===== -->
   <section id="villas">
     <div class="villas-inner">
       <div class="villas-header fade-up">
         <p class="section-label">Private Villas</p>
-        <h2 class="section-heading">
-          約1,000㎡の区画に、<br>約300㎡のプライベートヴィラ。
-        </h2>
-        <div class="divider-gold"></div>
+        <h2 class="villas-title">約1,000㎡の区画に、<br>約300㎡のプライベートヴィラ。</h2>
+        <div class="divider"></div>
       </div>
 
       <!-- 画像差し替え場所: ヴィラ/上空ヴィライメージ.png -->
@@ -1329,523 +784,335 @@
 
       <!-- 画像差し替え場所: ヴィラ/ 各室内・外観写真 -->
       <div class="villa-grid fade-up">
-        <div class="villa-img">
-          <img src="ヴィラ/外観.jpg" alt="ヴィラ外観" loading="lazy">
-        </div>
-        <div class="villa-img">
-          <img src="ヴィラ/リビング.jpg" alt="ヴィラリビング" loading="lazy">
-        </div>
-        <div class="villa-img">
-          <img src="ヴィラ/ベッドルーム.jpg" alt="ヴィラベッドルーム" loading="lazy">
-        </div>
-        <div class="villa-img">
-          <img src="ヴィラ/ダイニング.jpg" alt="ヴィラダイニング" loading="lazy">
-        </div>
-        <div class="villa-img">
-          <img src="ヴィラ/バスルーム.jpg" alt="ヴィラバスルーム" loading="lazy">
-        </div>
-        <div class="villa-img">
-          <img src="ヴィラ/プライベートゴルフ.jpg" alt="プライベートパターゴルフ" loading="lazy">
-        </div>
+        <div class="villa-img"><img src="ヴィラ/外観.jpg" alt="ヴィラ外観" loading="lazy"></div>
+        <div class="villa-img"><img src="ヴィラ/リビング.jpg" alt="ヴィラリビング" loading="lazy"></div>
+        <div class="villa-img"><img src="ヴィラ/ベッドルーム.jpg" alt="ヴィラベッドルーム" loading="lazy"></div>
+        <div class="villa-img"><img src="ヴィラ/ダイニング.jpg" alt="ヴィラダイニング" loading="lazy"></div>
+        <div class="villa-img"><img src="ヴィラ/バスルーム.jpg" alt="ヴィラバスルーム" loading="lazy"></div>
+        <div class="villa-img"><img src="ヴィラ/プライベートゴルフ.jpg" alt="プライベートパターゴルフ" loading="lazy"></div>
       </div>
 
-      <div class="villa-features fade-up">
-        <div class="villa-feature">
-          <div class="villa-feature-label">Scale</div>
-          <div class="villa-feature-value">6棟限定</div>
-          <div class="villa-feature-note">希少性を守るため、これ以上増やさない。</div>
+      <div class="villa-specs fade-up">
+        <div class="villa-spec">
+          <div class="villa-spec-label">Scale</div>
+          <div class="villa-spec-value">6棟限定</div>
+          <div class="villa-spec-note">希少性を守るため、これ以上は増やさない。</div>
         </div>
-        <div class="villa-feature">
-          <div class="villa-feature-label">Site Area</div>
-          <div class="villa-feature-value">約1,000㎡</div>
-          <div class="villa-feature-note">各ヴィラに独立した広大な区画。</div>
+        <div class="villa-spec">
+          <div class="villa-spec-label">Site / Floor</div>
+          <div class="villa-spec-value">約1,000㎡ /<br>約300㎡</div>
+          <div class="villa-spec-note">独立した広大な区画に、ゆとりある居住空間。</div>
         </div>
-        <div class="villa-feature">
-          <div class="villa-feature-label">Floor Area</div>
-          <div class="villa-feature-value">約300㎡</div>
-          <div class="villa-feature-note">家族やゲストとゆとりある滞在を。</div>
-        </div>
-        <div class="villa-feature">
-          <div class="villa-feature-label">Amenities</div>
-          <div class="villa-feature-value">専用設備</div>
-          <div class="villa-feature-note">テラス、BBQ、パターゴルフ付き。</div>
-        </div>
-        <div class="villa-feature">
-          <div class="villa-feature-label">Flexibility</div>
-          <div class="villa-feature-value">使いながら<br>運用する</div>
-          <div class="villa-feature-note">自ら使わない日は宿泊施設として稼働。</div>
-        </div>
-        <div class="villa-feature">
-          <div class="villa-feature-label">Privacy</div>
-          <div class="villa-feature-value">独立した<br>敷地</div>
-          <div class="villa-feature-note">他棟との干渉を排した設計。</div>
+        <div class="villa-spec">
+          <div class="villa-spec-label">Included</div>
+          <div class="villa-spec-value">テラス、BBQ、<br>パターゴルフ</div>
+          <div class="villa-spec-note">各ヴィラに専用アウトドア設備を配備。</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 5. Onsen & Spa ===== -->
-  <section id="onsen">
-    <div class="onsen-inner">
-      <div class="fade-up">
-        <!-- 画像差し替え場所: レストラン・温泉棟/温泉/ -->
-        <div class="onsen-img-stack">
-          <div class="onsen-img-main">
-            <img src="レストラン・温泉棟/温泉/露天風呂.png" alt="リゾート内露天風呂" loading="lazy">
-          </div>
-          <div class="onsen-img-sub">
-            <img src="レストラン・温泉棟/温泉/室内温泉.png" alt="リゾート内室内温泉" loading="lazy">
-          </div>
-          <div class="onsen-img-sub">
-            <img src="レストラン・温泉棟/温泉/温泉脱衣所.png" alt="温泉脱衣所" loading="lazy">
-          </div>
-        </div>
-      </div>
-      <div class="onsen-text fade-up">
-        <p class="section-label">Onsen & Spa</p>
-        <h2 class="section-heading">
-          敷地内に息づく、<br>天然温泉。
-        </h2>
-        <div class="divider-gold"></div>
-        <p class="onsen-body">
-          敷地内の温泉棟は、ヴィラオーナーと宿泊ゲスト、
-          一般利用者を迎えるリゾート内温泉施設。<br><br>
-          日常的に運営されることで、施設の品質と維持管理を保ち、
-          リゾート全体の価値を高め続けます。<br><br>
-          駒ヶ岳を望む露天風呂。四季の移ろいを感じながら、
-          北海道の湯に身を委ねる時間。
-        </p>
-        <div class="onsen-note">
-          ヴィラオーナーには優先利用・特典利用を設ける想定です。
-          詳細は資料をご確認ください。
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 6. Farm to Table Dining ===== -->
-  <section id="dining">
-    <div class="dining-inner">
-      <!-- 画像差し替え場所: レストラン・温泉棟/レストラン/レストラン棟外観.JPG -->
-      <div class="dining-hero fade-up">
-        <img src="レストラン・温泉棟/レストラン/レストラン棟外観.JPG" alt="リゾートレストラン棟外観" loading="lazy">
-      </div>
-
-      <div class="dining-layout">
-        <div class="dining-text fade-up">
-          <p class="section-label">Farm to Table</p>
-          <h2 class="section-heading">
-            大沼の恵みを味わう、<br>リゾートダイニング。
-          </h2>
-          <div class="divider-gold"></div>
-          <p class="dining-body">
-            大沼和牛、函館近海の海鮮、道南の旬野菜。
-            この地だけで生まれる食材が、
-            一皿の上に集まる。<br><br>
-            レストラン棟はリゾート内のダイニングとして、
-            宿泊ゲストや一般のお客様にもひらかれた場所。
-            日常的に稼働する食の場が、
-            リゾートに活気と価値をもたらします。
-          </p>
-          <div class="dining-note">
-            ヴィラオーナーには優先予約・特別メニューなどの特典を想定しています。
-          </div>
-        </div>
-        <!-- 画像差し替え場所: レストラン・温泉棟/レストラン/料理1.jpg〜料理3.jpg, レストラン内観.png -->
-        <div class="dining-photos fade-up">
-          <div class="dining-photo">
-            <img src="レストラン・温泉棟/レストラン/レストラン内観.png" alt="レストラン内観" loading="lazy">
-          </div>
-          <div class="dining-photo">
-            <img src="レストラン・温泉棟/レストラン/料理１.jpg" alt="大沼の食材を使った料理" loading="lazy">
-          </div>
-          <div class="dining-photo">
-            <img src="レストラン・温泉棟/レストラン/料理２.jpg" alt="北海道の旬食材の料理" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 7. Horse & Wellness ===== -->
-  <section id="horse">
-    <div class="horse-inner">
-      <div class="horse-header fade-up">
-        <p class="section-label">Horse & Wellness</p>
-        <h2 class="section-heading" style="color:var(--ink);">
-          馬と過ごす、<br>北海道のウェルネス。
-        </h2>
-        <div class="divider-gold"></div>
-        <p class="horse-lead">
-          広大な放牧場で馬が草をはむ朝の光景。
-          乗馬体験、ホースセラピー、引退馬との触れ合い。
-          他のどこにもない、生き物との共存が
-          このリゾートの核心にある。
-        </p>
-      </div>
-
-      <!-- 画像差し替え場所: 放牧場/ 各馬・乗馬・ホースセラピー画像 -->
-      <div class="horse-grid fade-up">
-        <div class="horse-img">
-          <img src="放牧場/乗馬.jpg" alt="リゾート内乗馬体験" loading="lazy">
-        </div>
-        <div class="horse-img">
-          <img src="放牧場/ホースセラピー.jpg" alt="ホースセラピー" loading="lazy">
-        </div>
-        <div class="horse-img">
-          <img src="放牧場/乗馬・ふれあい場.png" alt="馬とのふれあい場" loading="lazy">
-        </div>
-      </div>
-
-      <div class="horse-features fade-up">
-        <div class="horse-feature">
-          <div class="horse-feature-label">Activity</div>
-          <div class="horse-feature-title">乗馬体験</div>
-          <div class="horse-feature-desc">
-            大自然の中を馬と歩く体験。
-            初心者から上級者まで、
-            インストラクターが丁寧に対応します。
-          </div>
-        </div>
-        <div class="horse-feature">
-          <div class="horse-feature-label">Therapy</div>
-          <div class="horse-feature-title">ホースセラピー</div>
-          <div class="horse-feature-desc">
-            馬との触れ合いが心身に与える
-            ポジティブな効果。
-            子どもから大人まで体験できるプログラム。
-          </div>
-        </div>
-        <div class="horse-feature">
-          <div class="horse-feature-label">Welfare</div>
-          <div class="horse-feature-title">引退馬支援</div>
-          <div class="horse-feature-desc">
-            競走馬や乗用馬として生涯を終えた馬たちに
-            第二の居場所を。
-            リゾートが担う、もうひとつの役割。
-          </div>
-        </div>
-        <div class="horse-feature">
-          <div class="horse-feature-label">Nature</div>
-          <div class="horse-feature-title">放牧場の景観</div>
-          <div class="horse-feature-desc">
-            朝霧の中、馬が草をはむ景色。
-            それ自体がこのリゾートにしか
-            存在しない価値です。
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 8. Ownership Without Hassle ===== -->
+  <!-- ===== 6. OWNERSHIP WITHOUT HASSLE ===== -->
   <section id="ownership">
     <div class="ownership-inner">
       <div class="ownership-header fade-up">
-        <p class="section-label">Ownership</p>
-        <h2 class="section-heading">
-          所有する。<br>しかし、管理する必要はない。
-        </h2>
-        <div class="divider-gold"></div>
-        <p class="ownership-lead">
-          オーナーはヴィラを所有しながら、日常的な管理・運営はすべて
-          運営チームが担います。訪れたい時に訪れ、
-          離れている間も資産としてヴィラは動き続ける。
-        </p>
+        <p class="section-label">Ownership Without Hassle</p>
+        <h2 class="ownership-title">所有する。<br>しかし、管理する必要はない。</h2>
       </div>
+      <p class="ownership-lead fade-up">
+        ヴィラ管理、宿泊運営、馬の飼育、<br>
+        温泉・レストラン棟の管理、コンシェルジュまで。<br>
+        オーナーは北海道で過ごす時間を楽しむだけ。
+      </p>
 
-      <div class="service-categories fade-up">
-        <!-- ヴィラ管理 -->
-        <div class="service-category">
-          <div class="service-category-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-              <polyline points="9,22 9,12 15,12 15,22"/>
-            </svg>
-          </div>
-          <div class="service-category-title">ヴィラ管理</div>
-          <ul class="service-list">
-            <li>定期清掃・建物点検</li>
-            <li>設備保守・修繕対応</li>
-            <li>庭木・外構管理</li>
-            <li>冬期除雪・凍結対策</li>
-          </ul>
+      <div class="service-grid fade-up">
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+          <div class="service-card-name">ヴィラ管理</div>
         </div>
-        <!-- 宿泊運営 -->
-        <div class="service-category">
-          <div class="service-category-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-              <line x1="8" y1="21" x2="16" y2="21"/>
-              <line x1="12" y1="17" x2="12" y2="21"/>
-            </svg>
-          </div>
-          <div class="service-category-title">宿泊運営</div>
-          <ul class="service-list">
-            <li>予約・決済管理</li>
-            <li>チェックイン・アウト対応</li>
-            <li>ゲストサポート</li>
-            <li>宿泊後清掃・リセット</li>
-          </ul>
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+          <div class="service-card-name">清掃</div>
         </div>
-        <!-- 馬の飼育管理 -->
-        <div class="service-category">
-          <div class="service-category-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/>
-            </svg>
-          </div>
-          <div class="service-category-title">馬の飼育管理</div>
-          <ul class="service-list">
-            <li>給餌・日常ケア</li>
-            <li>健康管理・獣医対応</li>
-            <li>厩舎・放牧場管理</li>
-            <li>乗馬・セラピー運営</li>
-          </ul>
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="service-card-name">予約管理</div>
         </div>
-        <!-- 温泉・レストラン棟 -->
-        <div class="service-category">
-          <div class="service-category-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-          </div>
-          <div class="service-category-title">温泉・共用施設</div>
-          <ul class="service-list">
-            <li>温泉施設の日常運営</li>
-            <li>レストラン運営管理</li>
-            <li>共用エリア清掃</li>
-            <li>設備・衛生管理</li>
-          </ul>
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="service-card-name">チェックイン<br>対応</div>
         </div>
-        <!-- コンシェルジュ -->
-        <div class="service-category">
-          <div class="service-category-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </div>
-          <div class="service-category-title">コンシェルジュ</div>
-          <ul class="service-list">
-            <li>空港・駅送迎手配</li>
-            <li>レストラン・施設予約</li>
-            <li>アクティビティ手配</li>
-            <li>滞在中の総合サポート</li>
-          </ul>
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="service-card-name">ゲスト対応</div>
         </div>
-        <!-- まとめカード -->
-        <div class="service-category" style="border-color: rgba(184,151,90,.25); background: rgba(184,151,90,.06);">
-          <div class="service-category-icon" style="opacity:.6;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-          </div>
-          <div class="service-category-title" style="color:var(--gold-light);">
-            すべて、<br>お任せください。
-          </div>
-          <p style="font-size:13px; color:rgba(255,255,255,.5); line-height:1.85; margin-top:12px;">
-            オーナーがすべきことは、<br>
-            ただ「訪れること」だけ。<br>
-            管理の煩わしさから解放された、<br>
-            新しいリゾートオーナーシップ。
-          </p>
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div class="service-card-name">除雪</div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/></svg></div>
+          <div class="service-card-name">馬の飼育</div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="service-card-name">温泉管理</div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div>
+          <div class="service-card-name">レストラン<br>運営</div>
+        </div>
+        <div class="service-card" style="border-color:rgba(184,151,90,.25); background:rgba(184,151,90,.06);">
+          <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="service-card-name" style="color:var(--gold-light);">コンシェルジュ</div>
         </div>
       </div>
 
-      <p class="ownership-note fade-up">
-        管理サービスの詳細・費用については、資料にて詳しくご案内しています。<br>
-        まずはお気軽にお問い合わせください。
+      <p class="ownership-cta-note fade-up">
+        管理サービスの詳細・費用は資料にてご案内します。<br>
+        オーナー専用の予約システム構築を予定しています。
       </p>
     </div>
   </section>
 
-  <!-- ===== 9. Investment & Rental ===== -->
+  <!-- ===== 7. INVESTMENT ===== -->
   <section id="investment">
     <div class="investment-inner">
       <div class="investment-header fade-up">
         <p class="section-label">Investment</p>
-        <h2 class="section-heading">
-          使わない日は、<br>収益を生むヴィラへ。
-        </h2>
-        <div class="divider-gold"></div>
+        <h2 class="investment-title">使わない日は、<br>収益を生むヴィラへ。</h2>
+        <div class="divider"></div>
       </div>
 
-      <div class="investment-grid fade-up">
+      <div class="inv-grid fade-up">
         <div class="inv-card">
-          <div class="inv-card-label">Estimated Price</div>
-          <div class="inv-card-value">6億円〜</div>
-          <div class="inv-card-unit">想定販売価格（1棟）</div>
+          <div class="inv-label">Estimated Price</div>
+          <div class="inv-value">6億円〜</div>
+          <div class="inv-unit">想定販売価格（1棟）</div>
         </div>
         <div class="inv-card">
-          <div class="inv-card-label">Nightly Rate</div>
-          <div class="inv-card-value">25万円</div>
-          <div class="inv-card-unit">想定宿泊単価（1泊）</div>
+          <div class="inv-label">Nightly Rate</div>
+          <div class="inv-value">25万円</div>
+          <div class="inv-unit">想定宿泊単価（1泊）</div>
         </div>
         <div class="inv-card">
-          <div class="inv-card-label">Occupancy</div>
-          <div class="inv-card-value">60%</div>
-          <div class="inv-card-unit">想定稼働率</div>
+          <div class="inv-label">Occupancy</div>
+          <div class="inv-value">60%</div>
+          <div class="inv-unit">想定稼働率</div>
         </div>
         <div class="inv-card">
-          <div class="inv-card-label">Annual Revenue</div>
-          <div class="inv-card-value">約5,475万円</div>
-          <div class="inv-card-unit">年間宿泊売上（想定）</div>
+          <div class="inv-label">Annual Revenue</div>
+          <div class="inv-value">約5,475万円</div>
+          <div class="inv-unit">年間宿泊売上（想定）</div>
         </div>
         <div class="inv-card">
-          <div class="inv-card-label">Annual Cost</div>
-          <div class="inv-card-value">約740万円</div>
-          <div class="inv-card-unit">管理費・固定費・光熱費合計</div>
+          <div class="inv-label">Annual Cost</div>
+          <div class="inv-value">約740万円</div>
+          <div class="inv-unit">管理費・固定費・光熱費合計</div>
         </div>
         <div class="inv-card inv-highlight">
-          <div class="inv-card-label">NOI / Yield</div>
-          <div class="inv-card-value">約4,735万円</div>
-          <div class="inv-card-unit">想定NOI ／ 実質利回り 約7.89%</div>
+          <div class="inv-label">NOI / Yield</div>
+          <div class="inv-value">約4,735万円</div>
+          <div class="inv-unit">想定NOI ／ 実質利回り 約7.89%</div>
         </div>
       </div>
 
-      <div style="margin-top: clamp(24px,3vw,36px); display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.06);" class="fade-up">
-        <div style="background:rgba(255,255,255,.03); padding:clamp(16px,2vw,24px);">
-          <div style="font-size:11px; letter-spacing:.2em; color:var(--gold); margin-bottom:8px;">管理費</div>
-          <div style="font-size:18px; font-family:var(--serif-en); color:rgba(255,255,255,.85);">600万円<span style="font-size:12px; color:rgba(255,255,255,.4);">/年</span></div>
+      <div class="inv-sub-row fade-up">
+        <div class="inv-sub">
+          <div class="inv-sub-label">管理費</div>
+          <div class="inv-sub-value">600万円<span style="font-size:11px;opacity:.5;">/年</span></div>
         </div>
-        <div style="background:rgba(255,255,255,.03); padding:clamp(16px,2vw,24px);">
-          <div style="font-size:11px; letter-spacing:.2em; color:var(--gold); margin-bottom:8px;">固定資産税</div>
-          <div style="font-size:18px; font-family:var(--serif-en); color:rgba(255,255,255,.85);">20万円<span style="font-size:12px; color:rgba(255,255,255,.4);">/年</span></div>
+        <div class="inv-sub">
+          <div class="inv-sub-label">固定資産税</div>
+          <div class="inv-sub-value">20万円<span style="font-size:11px;opacity:.5;">/年</span></div>
         </div>
-        <div style="background:rgba(255,255,255,.03); padding:clamp(16px,2vw,24px);">
-          <div style="font-size:11px; letter-spacing:.2em; color:var(--gold); margin-bottom:8px;">光熱費</div>
-          <div style="font-size:18px; font-family:var(--serif-en); color:rgba(255,255,255,.85);">120万円<span style="font-size:12px; color:rgba(255,255,255,.4);">/年</span></div>
+        <div class="inv-sub">
+          <div class="inv-sub-label">光熱費</div>
+          <div class="inv-sub-value">120万円<span style="font-size:11px;opacity:.5;">/年</span></div>
         </div>
       </div>
 
-      <p class="investment-disclaimer fade-up">
-        ※上記はシミュレーションであり、実際の収益を保証するものではありません。<br>
+      <p class="inv-disclaimer fade-up">
+        ※掲載の収益シミュレーションは参考値であり、実際の収益を保証するものではありません。<br>
         ※稼働率、宿泊単価、経費は運営状況により変動します。<br>
         ※税務上の取り扱いについては、専門家にご相談ください。
       </p>
     </div>
   </section>
 
-  <!-- ===== 10. Owner Experience ===== -->
+  <!-- ===== 8. ONSEN ===== -->
+  <section id="onsen">
+    <div class="onsen-inner">
+      <div class="fade-up">
+        <!-- 画像差し替え場所: レストラン・温泉棟/温泉/ -->
+        <div class="onsen-imgs">
+          <div class="onsen-img-main"><img src="レストラン・温泉棟/温泉/露天風呂.png" alt="リゾート内露天風呂" loading="lazy"></div>
+          <div class="onsen-img-sub"><img src="レストラン・温泉棟/温泉/室内温泉.png" alt="室内温泉" loading="lazy"></div>
+          <div class="onsen-img-sub"><img src="レストラン・温泉棟/温泉/温泉脱衣所.png" alt="温泉脱衣所" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <p class="section-label">Onsen & Spa</p>
+        <h2 class="onsen-title">敷地内に息づく、<br>天然温泉。</h2>
+        <div class="divider"></div>
+        <p class="onsen-body">
+          敷地内の温泉棟は、ヴィラオーナーと宿泊ゲスト、一般利用者を迎えるリゾート内温泉施設。日常的に運営されることで、施設の品質と維持管理を保ち、リゾート全体の価値を高め続けます。
+        </p>
+        <div class="onsen-note">
+          ヴィラオーナーには優先利用・特典利用を設ける想定です。<br>
+          詳細は資料にてご案内します。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. DINING ===== -->
+  <section id="dining">
+    <div class="dining-inner">
+      <!-- 画像差し替え場所: レストラン・温泉棟/レストラン/レストラン棟外観.JPG -->
+      <div class="dining-hero-img fade-up">
+        <img src="レストラン・温泉棟/レストラン/レストラン棟外観.JPG" alt="リゾートレストラン棟外観" loading="lazy">
+      </div>
+      <div class="dining-cols">
+        <div class="fade-up">
+          <p class="section-label">Farm to Table</p>
+          <h2 class="dining-title">大沼の恵みを味わう、<br>リゾートダイニング。</h2>
+          <div class="divider"></div>
+          <p class="dining-body">
+            大沼和牛、函館近海の海鮮、道南の旬野菜。この地だけで生まれる食材が、一皿の上に集まる。<br><br>
+            レストラン棟はリゾート内のダイニングとして、宿泊ゲストや一般のお客様にもひらかれた場所。日常的に稼働する食の場が、リゾートに活気と価値をもたらします。
+          </p>
+          <div class="dining-note">ヴィラオーナーには優先予約・特別メニューなどの特典を想定しています。</div>
+        </div>
+        <!-- 画像差し替え場所: レストラン内観、料理1〜3 -->
+        <div class="dining-photos fade-up">
+          <div class="dining-photo"><img src="レストラン・温泉棟/レストラン/レストラン内観.png" alt="レストラン内観" loading="lazy"></div>
+          <div class="dining-photo"><img src="レストラン・温泉棟/レストラン/料理１.jpg" alt="大沼の食材を使った料理" loading="lazy"></div>
+          <div class="dining-photo"><img src="レストラン・温泉棟/レストラン/料理２.jpg" alt="北海道の旬食材の料理" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10. HORSE ===== -->
+  <section id="horse">
+    <div class="horse-inner">
+      <div class="horse-header fade-up">
+        <p class="section-label section-label-dark">Horse & Wellness</p>
+        <h2 class="horse-title">馬と過ごす、<br>北海道のウェルネス。</h2>
+        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
+        <p class="horse-lead">広大な放牧場で馬が草をはむ朝の光景。乗馬体験、ホースセラピー、引退馬との触れ合い。他のどこにもない、生き物との共存がこのリゾートの核心にある。</p>
+      </div>
+
+      <!-- 画像差し替え場所: 放牧場/ 各馬・乗馬・ホースセラピー画像 -->
+      <div class="horse-grid fade-up">
+        <div class="horse-photo"><img src="放牧場/乗馬.jpg" alt="リゾート内乗馬体験" loading="lazy"></div>
+        <div class="horse-photo"><img src="放牧場/ホースセラピー.jpg" alt="ホースセラピー" loading="lazy"></div>
+        <div class="horse-photo"><img src="放牧場/乗馬・ふれあい場.png" alt="馬とのふれあい場" loading="lazy"></div>
+      </div>
+
+      <div class="horse-features fade-up">
+        <div class="horse-feat">
+          <div class="horse-feat-label">Activity</div>
+          <div class="horse-feat-title">乗馬体験</div>
+          <div class="horse-feat-desc">大自然の中を馬と歩く体験。初心者から上級者まで、インストラクターが対応します。</div>
+        </div>
+        <div class="horse-feat">
+          <div class="horse-feat-label">Therapy</div>
+          <div class="horse-feat-title">ホースセラピー</div>
+          <div class="horse-feat-desc">馬との触れ合いが心身に与えるポジティブな効果。子どもから大人まで体験できます。</div>
+        </div>
+        <div class="horse-feat">
+          <div class="horse-feat-label">Welfare</div>
+          <div class="horse-feat-title">引退馬支援</div>
+          <div class="horse-feat-desc">競走馬や乗用馬として生涯を終えた馬たちに第二の居場所を。リゾートが担うもうひとつの役割。</div>
+        </div>
+        <div class="horse-feat">
+          <div class="horse-feat-label">Nature</div>
+          <div class="horse-feat-title">放牧場の景観</div>
+          <div class="horse-feat-desc">朝霧の中、馬が草をはむ景色。それ自体がこのリゾートにしか存在しない価値です。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 11. OWNER EXPERIENCE ===== -->
   <section id="experience">
     <div class="experience-inner">
       <div class="experience-header fade-up">
         <p class="section-label">A Day in ONUMA</p>
-        <h2 class="section-heading">
-          ここで過ごす、ある一日。
-        </h2>
-        <div class="divider-gold"></div>
+        <h2 class="experience-title">ここで過ごす、ある一日。</h2>
+        <div class="divider divider-center"></div>
       </div>
 
       <div class="timeline">
-        <div class="timeline-item fade-up">
-          <div class="timeline-content">
-            <div class="timeline-time">Morning — 07:00</div>
-            <div class="timeline-title">テラスでコーヒー、<br>駒ヶ岳を眺める朝。</div>
-            <div class="timeline-desc">
-              霧が晴れると、湖面に空が映り込む。
-              鳥の声だけが聞こえる朝。
-              東京にいた頃の時間とは、まるで違う。
-            </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Morning — 07:00</div>
+            <div class="tl-heading">テラスでコーヒー、<br>駒ヶ岳を眺める朝。</div>
+            <p class="tl-desc">霧が晴れると、湖面に空が映り込む。鳥の声だけが聞こえる朝。東京にいた頃の時間とは、まるで違う。</p>
           </div>
-          <!-- 画像差し替え場所: 朝のテラス・景観イメージ (大沼・駒ヶ岳/大沼_駒ヶ岳.JPG など) -->
-          <div class="timeline-visual">
-            <img src="大沼・駒ヶ岳/大沼_駒ヶ岳.JPG" alt="大沼駒ヶ岳の朝の景色" loading="lazy">
-          </div>
+          <!-- 画像差し替え場所: 大沼・駒ヶ岳/大沼_駒ヶ岳.JPG -->
+          <div class="tl-visual"><img src="大沼・駒ヶ岳/大沼_駒ヶ岳.JPG" alt="大沼駒ヶ岳の朝の景色" loading="lazy"></div>
         </div>
-
-        <div class="timeline-item fade-up">
-          <div class="timeline-content">
-            <div class="timeline-time">Afternoon — 13:00</div>
-            <div class="timeline-title">馬と歩く、<br>緑の中の午後。</div>
-            <div class="timeline-desc">
-              広大な放牧場を、馬と並んで歩く時間。
-              都市での生産性とは異なる「豊かさ」が
-              ここにはある。
-            </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Afternoon — 13:00</div>
+            <div class="tl-heading">馬と歩く、<br>緑の中の午後。</div>
+            <p class="tl-desc">広大な放牧場を、馬と並んで歩く時間。都市での生産性とは異なる「豊かさ」がここにはある。</p>
           </div>
-          <!-- 画像差し替え場所: 放牧場/乗馬.jpg などの馬・乗馬イメージ -->
-          <div class="timeline-visual">
-            <img src="放牧場/乗馬２.jpg" alt="大自然の中の乗馬" loading="lazy">
-          </div>
+          <!-- 画像差し替え場所: 放牧場/乗馬２.jpg -->
+          <div class="tl-visual"><img src="放牧場/乗馬２.jpg" alt="大自然の中の乗馬" loading="lazy"></div>
         </div>
-
-        <div class="timeline-item fade-up">
-          <div class="timeline-content">
-            <div class="timeline-time">Evening — 17:00</div>
-            <div class="timeline-title">温泉で、<br>一日の疲れを手放す。</div>
-            <div class="timeline-desc">
-              夕陽が山肌を染める頃、露天風呂へ。
-              湯の温もりとともに、時間感覚が溶ける。
-            </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Evening — 17:00</div>
+            <div class="tl-heading">温泉で、<br>一日の疲れを手放す。</div>
+            <p class="tl-desc">夕陽が山肌を染める頃、露天風呂へ。湯の温もりとともに、時間感覚が溶ける。</p>
           </div>
           <!-- 画像差し替え場所: レストラン・温泉棟/温泉/露天風呂.png -->
-          <div class="timeline-visual">
-            <img src="レストラン・温泉棟/温泉/露天風呂.png" alt="リゾート内露天風呂" loading="lazy">
-          </div>
+          <div class="tl-visual"><img src="レストラン・温泉棟/温泉/露天風呂.png" alt="リゾート内露天風呂" loading="lazy"></div>
         </div>
-
-        <div class="timeline-item fade-up">
-          <div class="timeline-content">
-            <div class="timeline-time">Dinner — 19:30</div>
-            <div class="timeline-title">大沼和牛と、<br>函館の海鮮と。</div>
-            <div class="timeline-desc">
-              この土地で育った命を、この場所でいただく。
-              一皿ごとに、北海道の深さが宿っている。
-            </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Dinner — 19:30</div>
+            <div class="tl-heading">大沼和牛と、<br>函館の海鮮と。</div>
+            <p class="tl-desc">この土地で育った命を、この場所でいただく。一皿ごとに、北海道の深さが宿っている。</p>
           </div>
-          <!-- 画像差し替え場所: レストラン・温泉棟/レストラン/料理3.jpg など -->
-          <div class="timeline-visual">
-            <img src="レストラン・温泉棟/レストラン/料理３.jpg" alt="大沼和牛と函館海鮮のディナー" loading="lazy">
-          </div>
+          <!-- 画像差し替え場所: レストラン・温泉棟/レストラン/料理３.jpg -->
+          <div class="tl-visual"><img src="レストラン・温泉棟/レストラン/料理３.jpg" alt="大沼和牛と函館海鮮のディナー" loading="lazy"></div>
         </div>
-
-        <div class="timeline-item fade-up">
-          <div class="timeline-content">
-            <div class="timeline-time">Late Night — 22:00</div>
-            <div class="timeline-title">焚き火と、<br>満天の星空。</div>
-            <div class="timeline-desc">
-              テラスに出ると、頭上に星が広がる。
-              焚き火の音だけが静かに続く、深夜。
-              ここが「自分の場所」であることを、
-              静かに実感する。
-            </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Late Night — 22:00</div>
+            <div class="tl-heading">焚き火と、<br>満天の星空。</div>
+            <p class="tl-desc">テラスに出ると、頭上に星が広がる。焚き火の音だけが静かに続く深夜。ここが「自分の場所」であることを、静かに実感する。</p>
           </div>
-          <!-- 画像差し替え場所: 夜空・焚き火イメージ (現状は大沼冬の写真で代替) -->
-          <div class="timeline-visual">
-            <img src="大沼・駒ヶ岳/大沼四季/大沼_冬.png" alt="大沼の夜の景色" loading="lazy">
-          </div>
+          <!-- 画像差し替え場所: 夜空・焚き火イメージ (現状は大沼冬で代替) -->
+          <div class="tl-visual"><img src="大沼・駒ヶ岳/大沼四季/大沼_冬.png" alt="大沼の夜の景色" loading="lazy"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== 中間CTA ===== -->
-  <section style="background:var(--green-mid); padding:clamp(56px,8vw,96px) clamp(24px,6vw,100px); text-align:center;">
-    <p style="font-family:var(--serif-en); font-size:11px; letter-spacing:.35em; color:var(--gold-light); text-transform:uppercase; margin-bottom:20px;" class="fade-up">6 Villas Only</p>
-    <h2 style="font-family:var(--serif-jp); font-size:clamp(22px,3vw,40px); font-weight:300; color:var(--white); line-height:1.7; margin-bottom:32px;" class="fade-up">
-      6棟限定のオーナーシップ。<br>
-      今、その一棟を検討する。
-    </h2>
-    <a href="#contact" class="btn-primary fade-up">資料請求する</a>
-  </section>
+  <div class="mid-cta" style="background:var(--green-mid);">
+    <p class="section-label" style="color:var(--gold-light); letter-spacing:.35em; margin-bottom:16px;" class="fade-up">6 Villas Only</p>
+    <h2 class="mid-cta-title fade-up">6棟限定のオーナーシップ。<br>今、その一棟を検討する。</h2>
+    <div class="mid-cta-btns fade-up">
+      <a href="#contact" class="btn-primary">資料請求する</a>
+      <a href="#contact" class="btn-outline">オーナーシップについて相談する</a>
+    </div>
+  </div>
 
-  <!-- ===== 11. CTA / Contact ===== -->
+  <!-- ===== 12. CTA ===== -->
   <section id="contact">
     <div class="contact-inner">
       <div class="contact-header fade-up">
-        <p class="section-label">Contact</p>
-        <h2 class="section-heading" style="color:var(--ink);">
-          ONUMA PRIVATE RESORTの<br>資料を受け取る。
-        </h2>
-        <div class="divider-gold"></div>
-        <p class="contact-lead">
-          6棟限定のヴィラオーナーシップについて、
-          詳細資料をご希望の方はお問い合わせください。
-          担当者より個別にご連絡いたします。
-        </p>
+        <p class="section-label section-label-dark">Contact</p>
+        <h2 class="contact-title">ONUMA PRIVATE RESORTの<br>資料を受け取る。</h2>
+        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
+        <p class="contact-lead">6棟限定のヴィラオーナーシップについて、詳細資料をご希望の方はお問い合わせください。担当者より個別にご連絡いたします。</p>
       </div>
 
       <form id="contact-form" class="contact-form fade-up"
@@ -1855,40 +1122,39 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label>お名前<span>*</span></label>
+            <label class="form-label">お名前<span>*</span></label>
             <input type="text" name="name" placeholder="山田 太郎" required>
           </div>
           <div class="form-group">
-            <label>会社名</label>
+            <label class="form-label">会社名</label>
             <input type="text" name="company" placeholder="株式会社○○">
           </div>
         </div>
-
         <div class="form-row">
           <div class="form-group">
-            <label>メールアドレス<span>*</span></label>
+            <label class="form-label">メールアドレス<span>*</span></label>
             <input type="email" name="email" placeholder="example@email.com" required>
           </div>
           <div class="form-group">
-            <label>電話番号</label>
+            <label class="form-label">電話番号</label>
             <input type="tel" name="tel" placeholder="090-0000-0000">
           </div>
         </div>
-
         <div class="form-group">
-          <label>ご相談内容</label>
+          <label class="form-label">ご相談内容</label>
           <textarea name="message" placeholder="ご質問・ご要望などお気軽にご記入ください。"></textarea>
         </div>
-
         <div class="form-submit">
-          <button type="submit" class="btn-submit">資料請求する</button>
+          <button type="submit" class="btn-dark">資料請求する</button>
         </div>
-
-        <p class="form-note">
-          送信いただいた個人情報は、資料送付および個別ご案内にのみ使用いたします。<br>
-          第三者への提供は行いません。
-        </p>
+        <p class="form-note">送信いただいた個人情報は、資料送付および個別ご案内にのみ使用いたします。</p>
       </form>
+
+      <div class="legal-note fade-up">
+        ※掲載の収益シミュレーションは参考値であり、実際の収益を保証するものではありません。<br>
+        ※計画内容、サービス内容、料金、運営方式は今後変更となる場合があります。<br>
+        ※画像には完成予想CG・イメージを含みます。
+      </div>
     </div>
   </section>
 
@@ -1899,9 +1165,9 @@
         <div class="footer-logo">ONUMA PRIVATE RESORT</div>
         <div class="footer-sub">北海道・大沼国定公園エリア｜6棟限定プライベートヴィラ</div>
       </div>
-      <div class="footer-right">
+      <div>
         <p class="footer-copy">
-          本資料に記載の情報は計画段階のものであり、<br>
+          本資料に記載の情報は計画段階のものです。<br>
           変更となる場合があります。<br>
           © 2025 ONUMA PRIVATE RESORT
         </p>
@@ -1909,112 +1175,106 @@
     </div>
   </footer>
 
-  <!-- ===== スマホ固定CTA ===== -->
+  <!-- スマホ固定CTA -->
   <div class="fixed-cta">
-    <a href="tel:0000000000" class="btn-outline" style="font-size:11px;">電話で相談</a>
+    <a href="tel:0000000000" class="btn-outline" style="font-size:11px; letter-spacing:.08em;">電話で相談</a>
     <a href="#contact" class="btn-primary">資料請求する</a>
   </div>
 
-  <!-- ===== 成功モーダル ===== -->
+  <!-- 成功モーダル -->
   <div class="modal-overlay" id="successModal">
     <div class="modal-box">
       <div class="modal-icon">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-          <polyline points="22 4 12 14.01 9 11.01"/>
-        </svg>
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       </div>
       <div class="modal-title">ありがとうございます</div>
-      <div class="modal-body">
-        資料請求を承りました。<br>
-        担当者より3営業日以内にご連絡いたします。
-      </div>
-      <button class="modal-close" onclick="document.getElementById('successModal').classList.remove('active')">
-        閉じる
-      </button>
+      <div class="modal-body">資料請求を承りました。<br>担当者より3営業日以内にご連絡いたします。</div>
+      <button class="modal-close" onclick="document.getElementById('successModal').classList.remove('active')">閉じる</button>
     </div>
   </div>
 
-  <!-- ===== エラーモーダル ===== -->
+  <!-- エラーモーダル -->
   <div class="modal-overlay" id="errorModal">
     <div class="modal-box">
       <div class="modal-icon" style="color:#c0392b;">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="15" y1="9" x2="9" y2="15"/>
-          <line x1="9" y1="9" x2="15" y2="15"/>
-        </svg>
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
       </div>
       <div class="modal-title">送信できませんでした</div>
-      <div class="modal-body">
-        申し訳ありません、送信中にエラーが発生しました。<br>
-        しばらく時間をおいて再度お試しいただくか、<br>
-        直接メールにてご連絡ください。
-      </div>
-      <button class="modal-close" onclick="document.getElementById('errorModal').classList.remove('active')">
-        閉じる
-      </button>
+      <div class="modal-body">申し訳ありません、送信中にエラーが発生しました。<br>しばらくおいて再度お試しください。</div>
+      <button class="modal-close" onclick="document.getElementById('errorModal').classList.remove('active')">閉じる</button>
     </div>
   </div>
 
   <script>
-    // ナビゲーションスクロール
+    // ナビスクロール
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ヒーロースライドショー
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicatorsEl = document.getElementById('heroIndicators');
+    let currentSlide = 0;
+    let slideTimer;
+
+    // インジケーター生成
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(i));
+      indicatorsEl.appendChild(dot);
     });
 
-    // ヒーロー背景のスケールアニメーション
-    const heroBg = document.getElementById('heroBg');
-    window.addEventListener('load', () => {
-      heroBg.classList.add('loaded');
-    });
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      document.querySelectorAll('.hero-dot')[currentSlide].classList.remove('active');
+      currentSlide = n;
+      slides[currentSlide].classList.add('active');
+      document.querySelectorAll('.hero-dot')[currentSlide].classList.add('active');
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextSlide, 5500);
+    }
 
-    // スムーズスクロール (ナビリンク)
+    function nextSlide() {
+      goToSlide((currentSlide + 1) % slides.length);
+    }
+
+    slideTimer = setInterval(nextSlide, 5500);
+
+    // スムーズスクロール
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-          const offset = 80;
-          const top = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
       });
     });
 
-    // フェードアップ アニメーション
+    // フェードアップ
     const fadeEls = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          // stagger: 同一親要素内の兄弟要素に遅延
-          const delay = Array.from(entry.target.parentElement.querySelectorAll('.fade-up'))
-            .indexOf(entry.target) * 55;
-          entry.target.style.transitionDelay = Math.min(delay, 250) + 'ms';
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.fade-up'));
+        const idx = siblings.indexOf(entry.target);
+        entry.target.style.transitionDelay = Math.min(idx * 60, 240) + 'ms';
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     fadeEls.forEach(el => observer.observe(el));
-
-    // ヒーローのfade-upを即時発動
-    document.querySelectorAll('.hero-content .fade-up').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), 300 + i * 150);
-    });
 
     // フォーム送信
     const form = document.getElementById('contact-form');
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
-      const btn = form.querySelector('.btn-submit');
+      const btn = form.querySelector('button[type="submit"]');
       btn.textContent = '送信中...';
       btn.disabled = true;
       try {
         const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
+          method: 'POST', body: new FormData(form),
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
@@ -2031,11 +1291,8 @@
       }
     });
 
-    // モーダル背景クリックで閉じる
-    document.querySelectorAll('.modal-overlay').forEach(overlay => {
-      overlay.addEventListener('click', e => {
-        if (e.target === overlay) overlay.classList.remove('active');
-      });
+    document.querySelectorAll('.modal-overlay').forEach(o => {
+      o.addEventListener('click', e => { if (e.target === o) o.classList.remove('active'); });
     });
   </script>
 </body>
