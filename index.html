@@ -208,26 +208,62 @@
 
     /* ヒーロー価格バー */
     .hero-price-bar {
-      display: flex; align-items: center; gap: clamp(20px,3vw,44px);
-      margin-bottom: clamp(24px,3vw,36px);
-      flex-wrap: wrap;
+      display: flex; align-items: stretch; gap: 0;
+      margin-bottom: clamp(28px,3.5vw,44px);
     }
-    .hero-price-item { display: flex; flex-direction: column; gap: 4px; }
-    .hero-price-label {
-      font-family: var(--serif-en); font-size: 10px; letter-spacing: .32em;
-      color: var(--gold-light); text-transform: uppercase;
+    /* 左：販売価格 */
+    .hero-price-col-left {
+      display: flex; flex-direction: column; gap: 5px;
+      padding-right: clamp(24px,3.5vw,52px);
     }
-    .hero-price-value {
-      font-family: var(--serif-jp); font-size: clamp(26px,3.5vw,48px);
-      font-weight: 300; color: var(--white); line-height: 1.1; letter-spacing: .02em;
+    /* 縦区切り線 */
+    .hero-price-divider {
+      width: 1px; flex-shrink: 0;
+      background: rgba(255,255,255,.18);
+      margin: 0; align-self: stretch;
     }
-    .hero-yield-value {
-      font-family: var(--serif-en); font-size: clamp(20px,2.8vw,38px);
-      font-weight: 300; color: var(--gold-light); line-height: 1.1; letter-spacing: .02em;
+    /* 右：利回り + 利益 */
+    .hero-price-col-right {
+      display: flex; flex-direction: column; gap: clamp(14px,1.8vw,22px);
+      padding-left: clamp(24px,3.5vw,52px);
     }
-    .hero-price-sep {
-      width: 1px; height: clamp(32px,4vw,48px);
-      background: rgba(255,255,255,.2); flex-shrink: 0;
+    .hero-price-sub-item { display: flex; flex-direction: column; gap: 3px; }
+
+    /* 共通ラベル */
+    .hp-en-label {
+      font-family: var(--serif-en); font-size: 9px; letter-spacing: .4em;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 2px;
+    }
+    .hp-jp-label {
+      font-family: var(--sans-jp); font-size: clamp(10px,.9vw,11px); font-weight: 300;
+      color: rgba(255,255,255,.45); letter-spacing: .12em;
+    }
+
+    /* ① 6億円 — 最大 */
+    .hp-price-value {
+      font-family: var(--serif-jp); font-size: clamp(48px,7vw,96px);
+      font-weight: 300; color: var(--white); line-height: 1; letter-spacing: .02em;
+    }
+
+    /* ② 約7.89% — 大 */
+    .hp-yield-value {
+      font-family: var(--serif-en); font-size: clamp(32px,4.5vw,62px);
+      font-weight: 300; color: var(--gold-light); line-height: 1; letter-spacing: .01em;
+    }
+
+    /* ③ 約4,735万円 — 中 */
+    .hp-profit-value {
+      font-family: var(--serif-en); font-size: clamp(18px,2vw,28px);
+      font-weight: 300; color: rgba(255,255,255,.82); line-height: 1.1; letter-spacing: .01em;
+    }
+
+    /* ヒーロー注意書き */
+    .hero-disclaimer {
+      position: absolute; bottom: clamp(14px,2vw,20px); left: clamp(24px,6vw,96px);
+      right: clamp(80px,12vw,180px); /* インジケーターと重ならないよう右余白確保 */
+      font-family: var(--sans-jp); font-size: 10px; font-weight: 300;
+      color: rgba(255,255,255,.32); line-height: 1.7; letter-spacing: .04em;
+      pointer-events: none; z-index: 2;
     }
 
     /* スライドインジケーター */
@@ -727,7 +763,15 @@
       .fixed-cta { display: flex; }
       #contact { padding-bottom: calc(var(--section-pad) + 70px); }
       .inv-data-row { grid-template-columns: 1fr 1fr; }
-      .hero-price-bar { gap: 14px; }
+      .hero-price-col-left { padding-right: clamp(16px,4vw,24px); }
+      .hero-price-col-right { padding-left: clamp(16px,4vw,24px); gap: 12px; }
+    }
+    @media (max-width: 420px) {
+      /* スマホ縦: 縦積みに変える */
+      .hero-price-bar { flex-direction: column; gap: clamp(14px,4vw,20px); }
+      .hero-price-divider { display: none; }
+      .hero-price-col-left { padding-right: 0; }
+      .hero-price-col-right { padding-left: 0; }
     }
     @media (max-width: 400px) {
       .limited-grid { grid-template-columns: 1fr; }
@@ -775,14 +819,27 @@
         オーナーシップ型プライベートヴィラリゾート。
       </p>
       <div class="hero-price-bar">
-        <div class="hero-price-item">
-          <span class="hero-price-label">Asking Price / 1 Villa</span>
-          <span class="hero-price-value">1棟 6億円</span>
+        <!-- 左：販売価格 -->
+        <div class="hero-price-col-left">
+          <span class="hp-en-label">Asking Price</span>
+          <span class="hp-jp-label">販売価格</span>
+          <span class="hp-price-value">6億円</span>
         </div>
-        <div class="hero-price-sep"></div>
-        <div class="hero-price-item">
-          <span class="hero-price-label">Estimated Net Yield</span>
-          <span class="hero-yield-value">7.89%</span>
+
+        <div class="hero-price-divider"></div>
+
+        <!-- 右：利回り + 年間利益 -->
+        <div class="hero-price-col-right">
+          <div class="hero-price-sub-item">
+            <span class="hp-en-label">Estimated Net Yield</span>
+            <span class="hp-jp-label">参考実質利回り</span>
+            <span class="hp-yield-value">約7.89%</span>
+          </div>
+          <div class="hero-price-sub-item">
+            <span class="hp-en-label">Annual Estimated Profit</span>
+            <span class="hp-jp-label">年間想定利益</span>
+            <span class="hp-profit-value">約4,735万円</span>
+          </div>
         </div>
       </div>
       <div class="hero-btns">
@@ -791,6 +848,10 @@
       </div>
     </div>
     <div class="hero-indicators" id="heroIndicators"></div>
+    <!-- ヒーロー内注意書き -->
+    <p class="hero-disclaimer">
+      ※参考実質利回りおよび年間想定利益はシミュレーションに基づく参考値です。将来の収益や利回りを保証するものではありません。
+    </p>
   </section>
 
   <!-- ===== 2. FEATURES ===== -->
