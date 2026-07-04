@@ -454,7 +454,8 @@
     .wni-header { margin-bottom: clamp(56px,7vw,88px); }
     .wni-eyebrow { font-family: var(--serif-en); font-size: 9px; letter-spacing: .45em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: clamp(14px,1.8vw,20px); }
     .wni-title { font-family: var(--serif-jp); font-size: clamp(28px,3.5vw,52px); font-weight: 300; color: var(--ink); line-height: 1.5; margin-bottom: clamp(18px,2.2vw,28px); }
-    .wni-sub { font-family: var(--serif-jp); font-size: clamp(13px,1.2vw,15px); font-weight: 300; color: var(--gray-mid); line-height: 1.95; max-width: 560px; }
+    .wni-sub { font-family: var(--serif-jp); font-size: clamp(13px,1.2vw,15px); font-weight: 300; color: var(--gray-mid); line-height: 1.95; white-space: nowrap; }
+    @media (max-width: 640px) { .wni-sub { white-space: normal; word-break: keep-all; overflow-wrap: normal; } }
     .wni-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(16px,2vw,28px); }
     .wni-card {
       background: var(--white); border-radius: 2px;
