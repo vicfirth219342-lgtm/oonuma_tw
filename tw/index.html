@@ -1012,13 +1012,53 @@
       .inv-data-row { grid-template-columns: 1fr 1fr; }
       .hero-price-col-left { padding-right: clamp(16px,4vw,24px); }
       .hero-price-col-right { padding-left: clamp(16px,4vw,24px); gap: 12px; }
+
+      /* ── ヒーロー：ボタン・注記・インジケーターの重なり解消 ── */
+      /* hero-content の下余白を大きく取り、ボタンがdisclaimerと重ならないようにする */
+      .hero-content {
+        padding-bottom: 96px;
+      }
+      /* ボタンを縦並びにして幅いっぱいに */
+      .hero-btns {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 300px;
+      }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-outline {
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+      /* 注記：右余白をモバイル幅に合わせ縮小・行間確保 */
+      .hero-disclaimer {
+        bottom: 16px;
+        left: clamp(20px, 5vw, 36px);
+        right: clamp(20px, 5vw, 36px);
+        font-size: 10px;
+        line-height: 1.8;
+      }
+      /* インジケーター：注記と被らないよう上方へ */
+      .hero-indicators {
+        bottom: auto;
+        top: clamp(80px, 14vw, 110px);
+        right: clamp(20px, 5vw, 36px);
+      }
     }
     @media (max-width: 420px) {
-      /* スマホ縦: 縦積みに変える */
+      /* スマホ縦小型: 価格バー縦積み */
       .hero-price-bar { flex-direction: column; gap: clamp(14px,4vw,20px); }
       .hero-price-divider { display: none; }
       .hero-price-col-left { padding-right: 0; }
       .hero-price-col-right { padding-left: 0; }
+      /* 極小端末: さらに下余白を確保 */
+      .hero-content { padding-bottom: 110px; }
+      .hero-disclaimer {
+        bottom: 14px;
+        font-size: 9.5px;
+        line-height: 1.75;
+      }
     }
     @media (max-width: 400px) {
       .limited-grid { grid-template-columns: 1fr; }
