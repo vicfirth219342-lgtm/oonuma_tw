@@ -448,6 +448,91 @@
     .villa-spec-value { font-family: var(--serif-jp); font-size: clamp(18px,2vw,26px); font-weight: 300; line-height: 1.4; }
     .villa-spec-note { font-size: 12px; color: var(--gray-light); margin-top: 8px; line-height: 1.7; }
 
+    /* ===== 4.5 WELLNEST HOME ===== */
+    #wellnest { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .wn-inner { max-width: 1100px; margin: 0 auto; }
+    .wn-header { margin-bottom: clamp(48px,6vw,72px); }
+    .wn-title { font-family: var(--serif-jp); font-size: clamp(26px,3.2vw,46px); font-weight: 300; color: var(--ink); line-height: 1.55; margin-bottom: clamp(16px,2vw,24px); }
+    .wn-sub { font-family: var(--sans-jp); font-size: clamp(13px,1.2vw,15px); color: var(--gray-mid); line-height: 2.1; font-weight: 300; max-width: 640px; }
+
+    .wn-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(12px,1.5vw,20px); margin-bottom: clamp(40px,5vw,64px); }
+
+    .wn-card {
+      position: relative; cursor: pointer; overflow: hidden;
+      background: var(--white); border-radius: 2px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+    .wn-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.12); }
+
+    .wn-card-img-wrap { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+    .wn-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .5s ease; display: block; }
+    .wn-card:hover .wn-card-img-wrap img { transform: scale(1.06); filter: brightness(.75); }
+
+    /* 写真上のヒントオーバーレイ */
+    .wn-card-hint {
+      position: absolute; top: 0; left: 0; right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, transparent 100%);
+      display: flex; align-items: center; gap: 7px;
+      font-family: var(--serif-en); font-size: 10px; letter-spacing: .22em;
+      color: rgba(255,255,255,.85); text-transform: uppercase;
+      transition: opacity .4s;
+      pointer-events: none;
+    }
+    .wn-card-hint-icon {
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.7);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; line-height: 1; color: rgba(255,255,255,.9);
+      flex-shrink: 0;
+    }
+
+    .wn-card-body { padding: clamp(16px,1.8vw,22px); }
+    .wn-card-num { font-family: var(--serif-en); font-size: 11px; letter-spacing: .3em; color: var(--gold-dark); margin-bottom: 6px; }
+    .wn-card-title { font-family: var(--serif-jp); font-size: clamp(13px,1.3vw,16px); font-weight: 300; color: var(--ink); line-height: 1.55; margin-bottom: 5px; }
+    .wn-card-sub { font-family: var(--sans-jp); font-size: clamp(11px,1vw,12px); color: var(--gray-mid); line-height: 1.7; }
+
+    /* WELLNEST モーダル */
+    .wn-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 300;
+      background: rgba(0,0,0,.82); align-items: center; justify-content: center;
+      padding: clamp(16px,4vw,48px);
+    }
+    .wn-modal-overlay.active { display: flex; }
+    .wn-modal-box {
+      background: var(--white); max-width: 680px; width: 100%;
+      max-height: 90vh; overflow-y: auto; position: relative;
+      display: grid; grid-template-columns: 1fr 1fr;
+      box-shadow: 0 32px 80px rgba(0,0,0,.5);
+    }
+    .wn-modal-img-col { position: relative; }
+    .wn-modal-img-col img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 260px; }
+    .wn-modal-text-col { padding: clamp(28px,4vw,44px) clamp(20px,3vw,36px); display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
+    .wn-modal-en { font-family: var(--serif-en); font-size: 9px; letter-spacing: .4em; color: var(--gold-dark); text-transform: uppercase; }
+    .wn-modal-title { font-family: var(--serif-jp); font-size: clamp(15px,1.6vw,20px); font-weight: 300; color: var(--ink); line-height: 1.5; }
+    .wn-modal-sub { font-family: var(--sans-jp); font-size: clamp(11px,1vw,13px); color: var(--gray-mid); line-height: 1.7; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .wn-modal-desc { font-family: var(--sans-jp); font-size: clamp(12px,1.1vw,14px); color: var(--gray-dark); line-height: 2.1; font-weight: 300; white-space: pre-line; }
+    .wn-modal-close {
+      position: absolute; top: 14px; right: 16px;
+      width: 32px; height: 32px; background: rgba(0,0,0,.55); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;
+      border-radius: 50%; transition: background .3s;
+    }
+    .wn-modal-close:hover { background: rgba(0,0,0,.8); }
+
+    /* ボトムリンクボタン */
+    .wn-link-wrap { text-align: center; }
+    .wn-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--serif-en); font-size: 11px; letter-spacing: .28em;
+      color: var(--ink); text-transform: uppercase;
+      border-bottom: 1px solid rgba(0,0,0,.3); padding-bottom: 3px;
+      transition: color .3s, border-color .3s;
+    }
+    .wn-link:hover { color: var(--gold-dark); border-color: var(--gold-dark); }
+    .wn-link svg { width: 14px; height: 14px; }
+
     /* ===== 6. OWNERSHIP WITHOUT HASSLE ===== */
     #ownership { background: var(--ink); padding: var(--section-pad) clamp(24px,6vw,96px); }
     .ownership-inner { max-width: 1100px; margin: 0 auto; }
@@ -863,6 +948,9 @@
       .smart-body { grid-template-columns: 1fr; }
       .sv-body { grid-template-columns: 1fr; }
       .sv-spec-row { grid-template-columns: 5fr 7fr; gap: clamp(16px,2vw,24px); }
+      .wn-grid { grid-template-columns: repeat(2,1fr); }
+      .wn-modal-box { grid-template-columns: 1fr; }
+      .wn-modal-img-col img { min-height: 200px; max-height: 280px; }
     }
     @media (max-width: 640px) {
       .limited-grid { grid-template-columns: repeat(2,1fr); }
@@ -1178,6 +1266,222 @@
       </div>
     </div>
   </section>
+
+  <!-- ===== 4.5 WELLNEST HOME ===== -->
+  <section id="wellnest">
+    <div class="wn-inner">
+
+      <div class="wn-header fade-up">
+        <p class="section-label section-label-dark">Wellnest Home × Onuma</p>
+        <h2 class="wn-title">100年後も価値が続く理由。</h2>
+        <div class="divider" style="background:var(--gold-dark);"></div>
+        <p class="wn-sub">
+          高断熱・高気密・耐震・調湿・換気。<br>
+          北海道の厳しい環境だからこそ、建築性能が資産価値を支えます。
+        </p>
+      </div>
+
+      <div class="wn-grid">
+
+        <!-- 01 蔵 -->
+        <div class="wn-card fade-up"
+          data-num="01"
+          data-en="The Kura"
+          data-title="日本古来の高性能建築「蔵」"
+          data-sub="日本の気候風土に適した&#10;先人の知恵を現代の住まいに生かす"
+          data-desc="適切な維持管理で100年以上持つほど耐久性の高い建物、それは「蔵」です。&#10;&#10;蔵は家の宝を守る場所。&#10;&#10;断熱性、気密性、調湿性、耐久性、防火性に優れています。&#10;&#10;土や木、漆喰などの自然素材を生かした蔵造りに学び、私たちは長く快適に暮らせる住まいを追求しています。"
+          data-img="基本性能/蔵.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/蔵.webp" alt="日本古来の高性能建築 蔵" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">01</div>
+            <div class="wn-card-title">日本古来の高性能建築「蔵」</div>
+            <div class="wn-card-sub">先人の知恵を現代の住まいに生かす</div>
+          </div>
+        </div>
+
+        <!-- 02 気密性能 -->
+        <div class="wn-card fade-up"
+          data-num="02"
+          data-en="Airtightness"
+          data-title="ウェルネストホームの気密性能"
+          data-sub="気密測定は中間と完成の2回&#10;C値0.2㎠/㎡以下が必須"
+          data-desc="「C値」は、建物全体の隙間面積（㎠）を延床面積（㎡）で割った数値で、値が小さいほど気密性が高いことを表します。&#10;&#10;ウェルネストホームの平均C値は0.2㎠/㎡。&#10;&#10;100㎡の家に換算すると、隙間面積は約20㎠（切手3.8枚分）。&#10;&#10;圧倒的な高気密性能を実現しています。"
+          data-img="基本性能/機密性能.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/機密性能.webp" alt="気密性能 C値0.2" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">02</div>
+            <div class="wn-card-title">ウェルネストホームの気密性能</div>
+            <div class="wn-card-sub">C値0.2㎠/㎡以下が必須</div>
+          </div>
+        </div>
+
+        <!-- 03 断熱性能 -->
+        <div class="wn-card fade-up"
+          data-num="03"
+          data-en="Insulation"
+          data-title="ウェルネストホームの断熱性能"
+          data-sub="平均UA値0.25W/㎡・K&#10;断熱等級7が標準仕様"
+          data-desc="住宅の断熱性能はUA値で表されます。&#10;&#10;ウェルネストホームの平均UA値は0.25W/㎡・K。&#10;&#10;省エネ基準を大きく上回る性能により、冬は暖かく、夏は涼しい快適な住環境を実現します。"
+          data-img="基本性能/断熱性能.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/断熱性能.webp" alt="断熱性能 UA値0.25" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">03</div>
+            <div class="wn-card-title">ウェルネストホームの断熱性能</div>
+            <div class="wn-card-sub">断熱等級7が標準仕様</div>
+          </div>
+        </div>
+
+        <!-- 04 防音性能 -->
+        <div class="wn-card fade-up"
+          data-num="04"
+          data-en="Soundproofing"
+          data-title="高気密・高断熱の家は音も静か"
+          data-sub="屋外の騒音を100分の1以下まで低減"
+          data-desc="窓と壁の高い遮音性能により、&#10;&#10;地下鉄や救急車のサイレンに相当する騒音も大幅に低減。&#10;&#10;図書館レベルの静かな環境を実現し、心からくつろげる空間を提供します。"
+          data-img="基本性能/防音.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/防音.webp" alt="防音性能" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">04</div>
+            <div class="wn-card-title">高気密・高断熱の家は音も静か</div>
+            <div class="wn-card-sub">屋外の騒音を100分の1以下まで低減</div>
+          </div>
+        </div>
+
+        <!-- 05 耐震性能 -->
+        <div class="wn-card fade-up"
+          data-num="05"
+          data-en="Seismic Performance"
+          data-title="ウェルネストホームの耐震性能"
+          data-sub="耐震等級3が標準仕様"
+          data-desc="耐震等級3は、&#10;&#10;警察署や消防署など防災拠点と同等レベルの耐震性能です。&#10;&#10;ウェルネストホームでは最高等級である耐震等級3を標準仕様としています。"
+          data-img="基本性能/耐震.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/耐震.webp" alt="耐震等級3" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">05</div>
+            <div class="wn-card-title">ウェルネストホームの耐震性能</div>
+            <div class="wn-card-sub">耐震等級3が標準仕様</div>
+          </div>
+        </div>
+
+        <!-- 06 調湿性能 -->
+        <div class="wn-card fade-up"
+          data-num="06"
+          data-en="Humidity Control"
+          data-title="一年中、心地よい湿度で暮らす"
+          data-sub="ジメジメしない&#10;乾燥しすぎない"
+          data-desc="高い気密性能と調湿建材により、&#10;&#10;室内の湿度を一定に保ちます。&#10;&#10;さらにAI制御により換気設備と空調が連携し、&#10;&#10;快適な湿度環境を維持します。"
+          data-img="基本性能/調湿.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/調湿.webp" alt="調湿性能" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">06</div>
+            <div class="wn-card-title">一年中、心地よい湿度で暮らす</div>
+            <div class="wn-card-sub">ジメジメしない。乾燥しすぎない。</div>
+          </div>
+        </div>
+
+        <!-- 07 換気性能 -->
+        <div class="wn-card fade-up"
+          data-num="07"
+          data-en="Ventilation"
+          data-title="室内の温度を変えない換気"
+          data-sub="熱交換率87％の第1種換気"
+          data-desc="熱交換型の第1種換気システムを採用。&#10;&#10;排気する空気の熱を回収しながら換気を行うことで、&#10;&#10;室内温度をほとんど変えずに新鮮な空気を取り入れます。"
+          data-img="基本性能/換気.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/換気.webp" alt="換気性能 熱交換率87%" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">07</div>
+            <div class="wn-card-title">室内の温度を変えない換気</div>
+            <div class="wn-card-sub">熱交換率87％の第1種換気</div>
+          </div>
+        </div>
+
+        <!-- 08 省エネ性能 -->
+        <div class="wn-card fade-up"
+          data-num="08"
+          data-en="Energy Saving"
+          data-title="エネルギーコストがかからない家"
+          data-sub="自家消費率最大95％"
+          data-desc="太陽光発電と蓄電池、&#10;&#10;次世代HEMSによるエネルギーマネジメントにより、&#10;&#10;エネルギーの自給自足を目指します。"
+          data-img="基本性能/省エネ.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/省エネ.webp" alt="省エネ性能 自家消費率95%" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">08</div>
+            <div class="wn-card-title">エネルギーコストがかからない家</div>
+            <div class="wn-card-sub">自家消費率最大95％</div>
+          </div>
+        </div>
+
+        <!-- 09 デザイン -->
+        <div class="wn-card fade-up"
+          data-num="09"
+          data-en="Design"
+          data-title="100年住み継ぐ美しさ"
+          data-sub="時代を超えて受け継がれる&#10;シンプルなデザイン"
+          data-desc="100年後も愛される住まいには、&#10;&#10;流行に左右されない普遍的な美しさが必要です。&#10;&#10;日本の伝統建築「蔵」に通じる無駄のないデザインを大切にしています。"
+          data-img="基本性能/デザイン.webp">
+          <div class="wn-card-img-wrap">
+            <img src="基本性能/デザイン.webp" alt="100年住み継ぐデザイン" loading="lazy">
+            <div class="wn-card-hint"><div class="wn-card-hint-icon">＋</div>タップで詳細を見る</div>
+          </div>
+          <div class="wn-card-body">
+            <div class="wn-card-num">09</div>
+            <div class="wn-card-title">100年住み継ぐ美しさ</div>
+            <div class="wn-card-sub">普遍的なシンプルデザイン</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ボトムリンク -->
+      <div class="wn-link-wrap fade-up">
+        <a href="https://wellnesthome.jp/performance" target="_blank" rel="noopener" class="wn-link">
+          Wellnest Home の建築性能を詳しく見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WELLNEST HOME モーダル -->
+  <div class="wn-modal-overlay" id="wnModal" role="dialog" aria-modal="true">
+    <div class="wn-modal-box">
+      <div class="wn-modal-img-col">
+        <img id="wnModalImg" src="" alt="">
+      </div>
+      <div class="wn-modal-text-col">
+        <span class="wn-modal-en" id="wnModalEn"></span>
+        <h3 class="wn-modal-title" id="wnModalTitle"></h3>
+        <p class="wn-modal-sub" id="wnModalSub"></p>
+        <p class="wn-modal-desc" id="wnModalDesc"></p>
+      </div>
+      <button class="wn-modal-close" id="wnModalClose" aria-label="閉じる">×</button>
+    </div>
+  </div>
 
   <!-- ===== 5. OWNERSHIP WITHOUT HASSLE ===== -->
   <section id="ownership">
@@ -2000,6 +2304,39 @@
     lbClose.addEventListener('click', closeLb);
     lbOverlay.addEventListener('click', e => { if (e.target === lbOverlay) closeLb(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+    // ===== WELLNEST HOME モーダル =====
+    (function() {
+      const overlay  = document.getElementById('wnModal');
+      const imgEl    = document.getElementById('wnModalImg');
+      const enEl     = document.getElementById('wnModalEn');
+      const titleEl  = document.getElementById('wnModalTitle');
+      const subEl    = document.getElementById('wnModalSub');
+      const descEl   = document.getElementById('wnModalDesc');
+      const closeBtn = document.getElementById('wnModalClose');
+
+      document.querySelectorAll('.wn-card').forEach(card => {
+        card.addEventListener('click', () => {
+          imgEl.src      = card.dataset.img;
+          imgEl.alt      = card.dataset.title;
+          enEl.textContent    = card.dataset.en;
+          titleEl.textContent = card.dataset.title;
+          subEl.textContent   = card.dataset.sub.replace(/&#10;/g, '\n');
+          descEl.textContent  = card.dataset.desc.replace(/&#10;/g, '\n');
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeWnModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => { imgEl.src = ''; }, 300);
+      }
+      closeBtn.addEventListener('click', closeWnModal);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeWnModal(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('active')) closeWnModal(); });
+    })();
 
     // ===== アコーディオン =====
     document.querySelectorAll('.accord-trigger').forEach(trigger => {
