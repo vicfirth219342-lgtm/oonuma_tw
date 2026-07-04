@@ -2281,7 +2281,7 @@
     const lbClose   = document.getElementById('lbClose');
 
     // セクション内のすべての img を対象に（ヒーロースライド・ナビロゴは除く）
-    document.querySelectorAll('section img, .villa-aerial').forEach(img => {
+    document.querySelectorAll('section img:not(.wn-card img), .villa-aerial').forEach(img => {
       img.classList.add('zoomable');
       img.addEventListener('click', () => openLb(img.src, img.alt));
     });
