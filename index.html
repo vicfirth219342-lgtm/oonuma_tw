@@ -448,6 +448,32 @@
     .villa-spec-value { font-family: var(--serif-jp); font-size: clamp(18px,2vw,26px); font-weight: 300; line-height: 1.4; }
     .villa-spec-note { font-size: 12px; color: var(--gray-light); margin-top: 8px; line-height: 1.7; }
 
+    /* ===== 4.4 WELLNEST INTRO ===== */
+    #wellnest-intro { background: var(--white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .wni-inner { max-width: 1100px; margin: 0 auto; }
+    .wni-header { margin-bottom: clamp(48px,6vw,72px); }
+    .wni-eyebrow { font-family: var(--serif-en); font-size: 9px; letter-spacing: .45em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: clamp(12px,1.5vw,18px); }
+    .wni-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,44px); font-weight: 300; color: var(--ink); line-height: 1.55; }
+    .wni-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(16px,2vw,28px); }
+    .wni-card {
+      background: var(--white); border-radius: 2px;
+      padding: clamp(32px,4vw,52px) clamp(24px,3vw,40px);
+      box-shadow: 0 2px 18px rgba(0,0,0,.07), 0 0 0 1px rgba(0,0,0,.04);
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .wni-card-num {
+      font-family: var(--serif-en); font-size: clamp(64px,8vw,108px);
+      font-weight: 300; line-height: 1; color: rgba(0,0,0,.045);
+      position: absolute; top: clamp(10px,1.5vw,18px); right: clamp(12px,2vw,20px);
+      letter-spacing: -.02em; pointer-events: none; user-select: none;
+    }
+    .wni-card-en { font-family: var(--serif-en); font-size: 9px; letter-spacing: .38em; color: var(--gold-dark); text-transform: uppercase; }
+    .wni-card-title { font-family: var(--serif-jp); font-size: clamp(15px,1.6vw,20px); font-weight: 300; color: var(--ink); line-height: 1.5; }
+    .wni-card-sub { font-family: var(--serif-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 300; color: var(--gray-mid); line-height: 1.6; }
+    .wni-divider { width: 28px; height: 1px; background: var(--gold); }
+    .wni-card-body { font-family: var(--sans-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 300; color: var(--gray-dark); line-height: 2.2; flex: 1; }
+
     /* ===== 4.5 WELLNEST HOME ===== */
     #wellnest { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
     .wn-inner { max-width: 1100px; margin: 0 auto; }
@@ -953,6 +979,7 @@
       .form-row { grid-template-columns: 1fr; }
       .inv-flow { grid-template-columns: repeat(2,1fr); }
       .inv-data-row { grid-template-columns: repeat(2,1fr); }
+      .wni-grid { grid-template-columns: 1fr; }
       .why-body { grid-template-columns: 1fr; }
       .smart-body { grid-template-columns: 1fr; }
       .sv-body { grid-template-columns: 1fr; }
@@ -1272,6 +1299,52 @@
           <div class="villa-spec-value">テラス、BBQ、<br>パターゴルフ</div>
           <div class="villa-spec-note">各ヴィラに専用アウトドア設備を配備。</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4.4 WELLNEST INTRO ===== -->
+  <section id="wellnest-intro">
+    <div class="wni-inner">
+
+      <div class="wni-header fade-up">
+        <p class="wni-eyebrow">Wellnest Home × Onuma</p>
+        <h2 class="wni-title">なぜ、WELLNEST HOMEなのか。</h2>
+        <div class="divider" style="background:var(--gold-dark);"></div>
+      </div>
+
+      <div class="wni-grid">
+
+        <!-- 01 -->
+        <div class="wni-card fade-up">
+          <div class="wni-card-num">01</div>
+          <span class="wni-card-en">About Wellnest Home</span>
+          <h3 class="wni-card-title">WELLNEST HOMEとは？</h3>
+          <p class="wni-card-sub">100年先を見据えた住まいづくり</p>
+          <div class="wni-divider"></div>
+          <p class="wni-card-body">Wellnest Homeは、高断熱・高気密・計画換気によって、一年を通して快適で健康的な住環境を追求する住宅ブランドです。<br><br>木造建築の可能性を最大限に活かし、世代を超えて受け継がれる「100年住宅」を目指しています。<br><br>高い耐久性と省エネルギー性能を兼ね備えた住まいづくりを行っています。</p>
+        </div>
+
+        <!-- 02 -->
+        <div class="wni-card fade-up">
+          <div class="wni-card-num">02</div>
+          <span class="wni-card-en">Why Wellnest Home</span>
+          <h3 class="wni-card-title">なぜWellnest Homeなのか？</h3>
+          <p class="wni-card-sub">建築性能が、滞在体験を変える。</p>
+          <div class="wni-divider"></div>
+          <p class="wni-card-body">北海道の自然を楽しむためには、美しいデザインだけでなく、厳しい寒さや積雪に耐える建築性能が欠かせません。<br><br>高断熱・高気密・計画換気によって、冬は暖かく、夏は涼しく、室内の温度差を抑えた快適な環境を実現。<br><br>快適性と健康、そして建物の長寿命化を両立する思想に共感し、本プロジェクトのパートナーとして選びました。</p>
+        </div>
+
+        <!-- 03 -->
+        <div class="wni-card fade-up">
+          <div class="wni-card-num">03</div>
+          <span class="wni-card-en">Wellnest Home × Onuma</span>
+          <h3 class="wni-card-title">WELLNEST HOME × ONUMA</h3>
+          <p class="wni-card-sub">大沼の自然を、100年後へ。</p>
+          <div class="wni-divider"></div>
+          <p class="wni-card-body">駒ヶ岳や大沼の雄大な自然を楽しみながら、冬も夏も快適に過ごせるヴィラを目指します。<br><br>環境負荷を抑える木造建築と、高性能な住環境を融合することで、この土地の価値を未来へ受け継ぐリゾートを構想しています。<br><br>単なる別荘ではなく、自然と共生する次世代の資産として。</p>
+        </div>
+
       </div>
     </div>
   </section>
