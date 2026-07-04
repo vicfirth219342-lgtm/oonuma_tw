@@ -459,11 +459,15 @@
     .wni-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(16px,2vw,28px); }
     .wni-card {
       background: var(--white); border-radius: 2px;
-      padding: clamp(32px,4vw,52px) clamp(24px,3vw,40px);
+      padding: 0;
       box-shadow: 0 2px 18px rgba(0,0,0,.07), 0 0 0 1px rgba(0,0,0,.04);
       position: relative; overflow: hidden;
-      display: flex; flex-direction: column; gap: 14px;
+      display: flex; flex-direction: column; gap: 0;
     }
+    .wni-card-img-wrap { width: 100%; height: 260px; overflow: hidden; flex-shrink: 0; }
+    .wni-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in; transition: transform .5s ease; }
+    .wni-card-img-wrap img:hover { transform: scale(1.04); }
+    .wni-card-content { padding: clamp(28px,3.5vw,44px) clamp(24px,3vw,40px); display: flex; flex-direction: column; gap: 14px; flex: 1; position: relative; }
     .wni-card-num {
       font-family: var(--serif-en); font-size: clamp(64px,8vw,108px);
       font-weight: 300; line-height: 1; color: rgba(0,0,0,.045);
@@ -1320,32 +1324,47 @@
 
         <!-- 01 -->
         <div class="wni-card fade-up">
-          <div class="wni-card-num">01</div>
-          <span class="wni-card-en">About Wellnest Home</span>
-          <h3 class="wni-card-title">WELLNEST HOMEとは？</h3>
-          <p class="wni-card-sub">100年先を見据えた住まいづくり</p>
-          <div class="wni-divider"></div>
-          <p class="wni-card-body">Wellnest Homeは、高断熱・高気密・計画換気によって、一年を通して快適で健康的な住環境を追求する住宅ブランドです。<br><br>木造建築の可能性を最大限に活かし、世代を超えて受け継がれる「100年住宅」を目指しています。<br><br>高い耐久性と省エネルギー性能を兼ね備えた住まいづくりを行っています。</p>
+          <div class="wni-card-img-wrap">
+            <img src="images/wellnest-about.webp" alt="WELLNEST HOME 木造建築" loading="lazy">
+          </div>
+          <div class="wni-card-content">
+            <div class="wni-card-num">01</div>
+            <span class="wni-card-en">About Wellnest Home</span>
+            <h3 class="wni-card-title">WELLNEST HOMEとは？</h3>
+            <p class="wni-card-sub">100年先を見据えた住まいづくり</p>
+            <div class="wni-divider"></div>
+            <p class="wni-card-body">Wellnest Homeは、高断熱・高気密・計画換気によって、一年を通して快適で健康的な住環境を追求する住宅ブランドです。<br><br>木造建築の可能性を最大限に活かし、世代を超えて受け継がれる「100年住宅」を目指しています。<br><br>高い耐久性と省エネルギー性能を兼ね備えた住まいづくりを行っています。</p>
+          </div>
         </div>
 
         <!-- 02 -->
         <div class="wni-card fade-up">
-          <div class="wni-card-num">02</div>
-          <span class="wni-card-en">Why Wellnest Home</span>
-          <h3 class="wni-card-title">なぜWellnest Homeなのか？</h3>
-          <p class="wni-card-sub">建築性能が、滞在体験を変える。</p>
-          <div class="wni-divider"></div>
-          <p class="wni-card-body">北海道の自然を楽しむためには、美しいデザインだけでなく、厳しい寒さや積雪に耐える建築性能が欠かせません。<br><br>高断熱・高気密・計画換気によって、冬は暖かく、夏は涼しく、室内の温度差を抑えた快適な環境を実現。<br><br>快適性と健康、そして建物の長寿命化を追求するWellnest Homeの思想は、この土地を100年先へ受け継いでいきたいという私たちの想いと重なっています。</p>
+          <div class="wni-card-img-wrap">
+            <img src="images/wellnest-why.webp" alt="高断熱・高気密の建築性能" loading="lazy">
+          </div>
+          <div class="wni-card-content">
+            <div class="wni-card-num">02</div>
+            <span class="wni-card-en">Why Wellnest Home</span>
+            <h3 class="wni-card-title">なぜWellnest Homeなのか？</h3>
+            <p class="wni-card-sub">建築性能が、滞在体験を変える。</p>
+            <div class="wni-divider"></div>
+            <p class="wni-card-body">北海道の自然を楽しむためには、美しいデザインだけでなく、厳しい寒さや積雪に耐える建築性能が欠かせません。<br><br>高断熱・高気密・計画換気によって、冬は暖かく、夏は涼しく、室内の温度差を抑えた快適な環境を実現。<br><br>快適性と健康、そして建物の長寿命化を追求するWellnest Homeの思想は、この土地を100年先へ受け継いでいきたいという私たちの想いと重なっています。</p>
+          </div>
         </div>
 
         <!-- 03 -->
         <div class="wni-card fade-up">
-          <div class="wni-card-num">03</div>
-          <span class="wni-card-en">Wellnest Home × Onuma</span>
-          <h3 class="wni-card-title">WELLNEST HOME × ONUMA</h3>
-          <p class="wni-card-sub">大沼の自然を、100年後へ。</p>
-          <div class="wni-divider"></div>
-          <p class="wni-card-body">駒ヶ岳や大沼の雄大な自然を楽しみながら、冬も夏も快適に過ごせるヴィラを目指します。<br><br>環境負荷を抑える木造建築と、高性能な住環境を融合することで、この土地の価値を未来へ受け継ぐリゾートを構想しています。<br><br>単なる別荘ではなく、自然と共生する次世代の資産として。</p>
+          <div class="wni-card-img-wrap">
+            <img src="images/wellnest-onuma.webp" alt="WELLNEST HOME × 大沼" loading="lazy">
+          </div>
+          <div class="wni-card-content">
+            <div class="wni-card-num">03</div>
+            <span class="wni-card-en">Wellnest Home × Onuma</span>
+            <h3 class="wni-card-title">WELLNEST HOME × ONUMA</h3>
+            <p class="wni-card-sub">大沼の自然を、100年後へ。</p>
+            <div class="wni-divider"></div>
+            <p class="wni-card-body">駒ヶ岳や大沼の雄大な自然を楽しみながら、冬も夏も快適に過ごせるヴィラを目指します。<br><br>環境負荷を抑える木造建築と、高性能な住環境を融合することで、この土地の価値を未来へ受け継ぐリゾートを構想しています。<br><br>単なる別荘ではなく、自然と共生する次世代の資産として。</p>
+          </div>
         </div>
 
       </div>
