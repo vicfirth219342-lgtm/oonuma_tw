@@ -2478,9 +2478,12 @@
           form.reset();
           document.getElementById('successModal').classList.add('active');
         } else {
+          const data = await res.json().catch(() => ({}));
+          console.error('Formspree error', res.status, data);
           document.getElementById('errorModal').classList.add('active');
         }
-      } catch {
+      } catch (err) {
+        console.error('Formspree fetch error', err);
         document.getElementById('errorModal').classList.add('active');
       } finally {
         btn.textContent = '資料請求する';
