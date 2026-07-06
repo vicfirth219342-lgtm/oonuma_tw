@@ -835,6 +835,58 @@
       font-size: 11px; color: var(--gray-light); line-height: 2.0;
     }
 
+    /* ===== SPONSORS ===== */
+    #sponsors {
+      background: var(--off-white);
+      padding: clamp(64px,8vw,100px) clamp(24px,6vw,96px);
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+    .sponsors-inner { max-width: 1100px; margin: 0 auto; }
+    .sponsors-header { text-align: center; margin-bottom: clamp(40px,5vw,60px); }
+    .sponsors-title {
+      font-family: var(--serif-jp);
+      font-size: clamp(18px,2vw,26px);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: .18em;
+    }
+    .sponsors-title::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      margin: 14px auto 0;
+    }
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: clamp(14px,2vw,24px);
+    }
+    .sponsor-card {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(18px,2.5vw,28px) clamp(14px,2vw,22px);
+      box-shadow: 0 1px 6px rgba(0,0,0,.05);
+    }
+    .sponsor-card img {
+      max-width: 100%;
+      max-height: 56px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .sponsors-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
+      .sponsor-card img { max-height: 44px; }
+    }
+
     /* モーダル */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 200; align-items: center; justify-content: center; }
     .modal-overlay.active { display: flex; }
@@ -2044,6 +2096,27 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ===== 協贊企業 ===== -->
+  <section id="sponsors">
+    <div class="sponsors-inner">
+      <div class="sponsors-header fade-up">
+        <h2 class="sponsors-title">協贊企業</h2>
+      </div>
+      <div class="sponsors-grid fade-up">
+        <div class="sponsor-card"><img src="../sponsors/cocochiyo.png" alt="cocochiyo" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/fairway.png" alt="Fairway" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/wellnesthome.png" alt="Wellnest Home" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/pado-musee.png" alt="ぱどミュゼ" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/hobsons.png" alt="ホブソンズ" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/issatsu-no-kai.png" alt="一冊の会" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/nanae-town.png" alt="七飯町役場" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/hokuden.png" alt="北電" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/komatsu-uchida.png" alt="小松内田" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../sponsors/nagareyama.png" alt="流山" loading="lazy"></div>
+      </div>
     </div>
   </section>
 
