@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>大沼度假別墅｜北海道大沼國定公園 5.5萬坪 限量16棟專案</title>
-<meta name="description" content="北海道大沼國定公園。5.5萬坪的土地上，僅16棟度假別墅。備有天然溫泉、餐廳、騎馬設施，獨一無二的度假別墅業主計畫。">
+<meta name="description" content="北海道大沼國定公園。5.5萬坪的土地上，僅16棟度假別墅。土地取得、度假村事業化、1棟業主，3種參與方式供您選擇。">
 <meta property="og:title" content="大沼度假別墅｜限量16棟專案">
-<meta property="og:description" content="北海道大沼國定公園。5.5萬坪的土地上，僅16棟度假別墅。">
+<meta property="og:description" content="北海道大沼國定公園。5.5萬坪的土地上，僅16棟度假別墅。3種參與方式。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="../../ヴィラ/リビング.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -30,18 +30,16 @@ body{background:var(--black);color:var(--white);font-family:var(--sans-jp);font-
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px clamp(20px,4vw,60px);display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s}
 nav.scrolled{background:rgba(8,8,8,.92);backdrop-filter:blur(12px);padding:14px clamp(20px,4vw,60px)}
 .nav-logo{font-family:var(--serif-en);font-size:clamp(13px,1.4vw,16px);letter-spacing:.18em;color:var(--gold);font-weight:300}
-.nav-links{display:flex;gap:clamp(16px,2.5vw,36px);list-style:none}
-.nav-links a{font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.7);transition:color .3s}
+.nav-links{display:flex;gap:clamp(14px,2vw,30px);list-style:none}
+.nav-links a{font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.7);transition:color .3s}
 .nav-links a:hover{color:var(--gold)}
-.nav-cta{background:var(--gold);color:var(--black);font-size:11px;letter-spacing:.15em;padding:10px 22px;font-family:var(--sans-jp);font-weight:500;transition:background .3s}
+.nav-cta{background:var(--gold);color:var(--black);font-size:11px;letter-spacing:.12em;padding:10px 22px;font-family:var(--sans-jp);font-weight:500;transition:background .3s}
 .nav-cta:hover{background:var(--gold-light)}
 @media(max-width:768px){.nav-links{display:none}}
 
-/* HERO */
 #hero{position:relative;height:100svh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end}
 .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
 .hero-slide.active{opacity:1}
@@ -50,40 +48,39 @@ nav.scrolled{background:rgba(8,8,8,.92);backdrop-filter:blur(12px);padding:14px 
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.35) 50%,rgba(0,0,0,.1) 100%)}
 .hero-content{position:relative;z-index:2;padding:clamp(40px,6vw,80px) clamp(24px,5vw,80px);max-width:1100px;width:100%}
 .hero-eyebrow{font-family:var(--serif-en);font-size:clamp(11px,1.2vw,13px);letter-spacing:.35em;color:var(--gold);font-weight:300;margin-bottom:24px;text-transform:uppercase}
-.hero-title{font-family:var(--serif-jp);font-size:clamp(26px,4.2vw,60px);font-weight:300;line-height:1.55;word-break:keep-all;margin-bottom:28px;max-width:780px}
-.hero-subtitle{font-size:clamp(13px,1.4vw,16px);color:rgba(255,255,255,.72);letter-spacing:.04em;margin-bottom:40px;line-height:2}
-.hero-stats{display:flex;gap:clamp(24px,4vw,56px);margin-bottom:44px;flex-wrap:wrap}
+.hero-title{font-family:var(--serif-jp);font-size:clamp(24px,4vw,58px);font-weight:300;line-height:1.55;word-break:keep-all;margin-bottom:20px;max-width:780px}
+.hero-subtitle{font-size:clamp(13px,1.4vw,16px);color:rgba(255,255,255,.72);letter-spacing:.04em;margin-bottom:16px;line-height:2}
+.hero-plan-note{font-size:clamp(11px,1.1vw,13px);color:rgba(184,151,90,.85);letter-spacing:.08em;margin-bottom:36px;border-left:2px solid rgba(184,151,90,.5);padding-left:14px;line-height:1.9}
+.hero-stats{display:flex;gap:clamp(24px,4vw,56px);margin-bottom:40px;flex-wrap:wrap}
 .hero-stat{border-left:1px solid rgba(184,151,90,.4);padding-left:20px}
 .hero-stat-num{font-family:var(--serif-en);font-size:clamp(22px,2.8vw,38px);color:var(--gold);font-weight:300;letter-spacing:.04em;line-height:1}
 .hero-stat-label{font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.55);margin-top:6px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{background:var(--gold);color:var(--black);font-size:12px;letter-spacing:.15em;padding:16px 36px;font-weight:500;transition:background .3s;font-family:var(--sans-jp)}
+.btn-primary{background:var(--gold);color:var(--black);font-size:12px;letter-spacing:.12em;padding:16px 36px;font-weight:500;transition:background .3s;font-family:var(--sans-jp)}
 .btn-primary:hover{background:var(--gold-light)}
-.btn-outline{border:1px solid rgba(255,255,255,.4);color:var(--white);font-size:12px;letter-spacing:.12em;padding:15px 36px;transition:border-color .3s,color .3s;font-family:var(--sans-jp)}
+.btn-outline{border:1px solid rgba(255,255,255,.4);color:var(--white);font-size:12px;letter-spacing:.1em;padding:15px 36px;transition:border-color .3s,color .3s;font-family:var(--sans-jp)}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 .hero-dots{position:absolute;bottom:32px;right:clamp(24px,4vw,60px);z-index:3;display:flex;flex-direction:column;gap:8px}
 .hero-dot{width:4px;height:24px;background:rgba(255,255,255,.25);cursor:pointer;transition:background .3s,height .3s}
 .hero-dot.active{background:var(--gold);height:36px}
 
-/* SECTION COMMONS */
 section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .sec-label{font-family:var(--serif-en);font-size:11px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
-.sec-title{font-family:var(--serif-jp);font-size:clamp(24px,3.2vw,44px);font-weight:300;line-height:1.5;margin-bottom:clamp(20px,3vw,36px)}
+.sec-title{font-family:var(--serif-jp);font-size:clamp(22px,3vw,42px);font-weight:300;line-height:1.5;margin-bottom:clamp(18px,2.5vw,32px)}
 .sec-lead{font-size:clamp(14px,1.5vw,17px);line-height:2;color:rgba(255,255,255,.72);max-width:680px;margin-bottom:clamp(40px,5vw,70px)}
 .inner{max-width:1200px;margin:0 auto}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
 .fade-up.visible{opacity:1;transform:none}
 
-/* ② PROJECT */
 #project{background:var(--ink)}
 .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);align-items:start}
 .project-image{position:relative}
 .project-image img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.project-badge{position:absolute;top:20px;left:20px;background:rgba(8,8,8,.7);border:1px solid rgba(184,151,90,.4);padding:10px 18px;font-size:11px;letter-spacing:.15em;color:var(--gold)}
+.project-badge{position:absolute;top:20px;left:20px;background:rgba(8,8,8,.7);border:1px solid rgba(184,151,90,.4);padding:10px 18px;font-size:11px;letter-spacing:.12em;color:var(--gold)}
 .project-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);margin-top:clamp(24px,3vw,40px)}
 .project-stat{background:var(--ink);padding:22px 18px;text-align:center}
-.project-stat-num{font-family:var(--serif-en);font-size:clamp(16px,1.8vw,24px);color:var(--gold);font-weight:300;letter-spacing:.04em}
-.project-stat-label{font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-top:5px}
+.project-stat-num{font-family:var(--serif-en);font-size:clamp(15px,1.7vw,22px);color:var(--gold);font-weight:300;letter-spacing:.04em}
+.project-stat-label{font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.5);margin-top:5px}
 .facility-list{margin-top:clamp(28px,3.5vw,48px);display:flex;flex-direction:column}
 .facility-item{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .facility-item:last-child{border-bottom:none}
@@ -93,7 +90,6 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .facility-note{font-size:11px;color:var(--gray-light);margin-left:auto;letter-spacing:.03em}
 @media(max-width:900px){.project-grid{grid-template-columns:1fr}}
 
-/* ③ WHY */
 #why{background:var(--black)}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px);margin-top:clamp(40px,5vw,70px)}
 .why-card{position:relative;overflow:hidden;aspect-ratio:3/4}
@@ -102,7 +98,7 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .why-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.1) 60%)}
 .why-card-content{position:absolute;bottom:0;left:0;right:0;padding:24px 22px}
 .why-card-en{font-family:var(--serif-en);font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:8px;text-transform:uppercase}
-.why-card-title{font-family:var(--serif-jp);font-size:clamp(15px,1.7vw,20px);font-weight:300;margin-bottom:10px}
+.why-card-title{font-family:var(--serif-jp);font-size:clamp(14px,1.6vw,19px);font-weight:300;margin-bottom:10px}
 .why-card-text{font-size:12px;line-height:1.9;color:rgba(255,255,255,.72)}
 .why-access{margin-top:clamp(50px,6vw,80px);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:clamp(28px,4vw,52px)}
 .why-access-title{font-family:var(--serif-jp);font-size:clamp(15px,1.7vw,20px);font-weight:300;margin-bottom:28px;color:var(--gold)}
@@ -114,7 +110,6 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}.access-items{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.why-grid{grid-template-columns:1fr}.access-items{grid-template-columns:1fr}}
 
-/* ④ EXPERIENCES */
 #experiences{background:var(--green-deep)}
 .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,2vw,24px);margin-top:clamp(40px,5vw,70px)}
 .exp-card{position:relative;overflow:hidden}
@@ -129,7 +124,6 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .exp-card.large img{aspect-ratio:21/9}
 @media(max-width:700px){.exp-grid{grid-template-columns:1fr}.exp-card.large img{aspect-ratio:4/3}}
 
-/* ⑤ WELLNEST */
 #wellnest{background:var(--off-white)}
 .wellnest-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
 .wellnest-image img{width:100%;aspect-ratio:3/4;object-fit:cover}
@@ -145,7 +139,45 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .wellnest-feat-text{font-size:13px;line-height:1.9;color:var(--gray-mid)}
 @media(max-width:900px){.wellnest-inner{grid-template-columns:1fr}}
 
-/* ⑥ MODEL */
+/* PLANS */
+#plans{background:var(--gray-dark)}
+.plans-intro{max-width:780px;margin-bottom:clamp(48px,6vw,80px)}
+.plans-lead{font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:rgba(255,255,255,.72);margin-top:clamp(16px,2vw,24px)}
+.plan-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px);margin-top:clamp(40px,5vw,70px)}
+.plan-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);padding:clamp(28px,3.5vw,48px) clamp(20px,3vw,36px);position:relative;transition:border-color .4s,background .4s}
+.plan-card:hover{border-color:rgba(184,151,90,.35);background:rgba(184,151,90,.06)}
+.plan-num{font-family:var(--serif-en);font-size:clamp(36px,5vw,60px);color:rgba(184,151,90,.18);font-weight:300;line-height:1;margin-bottom:20px}
+.plan-tag{font-family:var(--serif-en);font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.plan-title{font-family:var(--serif-jp);font-size:clamp(15px,1.7vw,19px);font-weight:300;line-height:1.5;margin-bottom:18px;color:var(--white)}
+.plan-price-label{font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.45);margin-bottom:6px}
+.plan-price{font-family:var(--serif-en);font-size:clamp(18px,2.2vw,28px);color:var(--gold);font-weight:300;letter-spacing:.02em;margin-bottom:24px}
+.plan-desc{font-size:13px;line-height:2;color:rgba(255,255,255,.65);margin-bottom:24px}
+.plan-features{list-style:none;display:flex;flex-direction:column}
+.plan-features li{font-size:12px;line-height:1.8;color:rgba(255,255,255,.6);padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:flex-start;gap:10px}
+.plan-features li:last-child{border-bottom:none}
+.plan-features li::before{content:'—';color:var(--gold);font-size:10px;flex-shrink:0;margin-top:3px}
+.plan-exit{margin-top:22px;padding:14px 16px;background:rgba(184,151,90,.08);border-left:2px solid rgba(184,151,90,.35);font-size:12px;color:rgba(255,255,255,.6);line-height:1.8}
+.plan-exit-label{font-family:var(--serif-en);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
+.plan2-rev{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.plan2-rev-item{background:rgba(0,0,0,.25);padding:10px 8px;text-align:center}
+.plan2-rev-occ{font-family:var(--serif-en);font-size:clamp(14px,1.6vw,18px);color:var(--gold);font-weight:300;line-height:1}
+.plan2-rev-occ span{font-size:.65em}
+.plan2-rev-label{font-size:9px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin:4px 0}
+.plan2-rev-rates{font-size:10px;color:rgba(255,255,255,.55);line-height:1.7}
+.plan2-rev-rates strong{color:var(--gold-light)}
+
+/* Comparison */
+#comparison-wrap .comp-table-wrap{overflow-x:auto;margin-top:clamp(40px,5vw,70px)}
+.comp-table{width:100%;border-collapse:collapse;min-width:700px}
+.comp-table th,.comp-table td{padding:16px 20px;text-align:left;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;line-height:1.7;vertical-align:top}
+.comp-table th{font-family:var(--serif-en);font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;background:rgba(255,255,255,.03);font-weight:400}
+.comp-table td:first-child{color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.06em;white-space:nowrap}
+.comp-table td:nth-child(2),.comp-table td:nth-child(3),.comp-table td:nth-child(4){color:rgba(255,255,255,.8)}
+.comp-table .comp-plan-header{font-family:var(--serif-jp);font-size:13px;font-weight:400;color:var(--white)}
+.comp-table .comp-price{font-family:var(--serif-en);font-size:15px;color:var(--gold);font-weight:300}
+.comp-highlight{background:rgba(184,151,90,.06)}
+
+/* MODEL */
 #model{background:var(--gray-dark)}
 .model-intro{max-width:700px;margin-bottom:clamp(48px,6vw,76px)}
 .model-flow{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding-bottom:8px}
@@ -161,23 +193,26 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .model-note{margin-top:clamp(28px,4vw,48px);padding:26px 30px;background:rgba(184,151,90,.08);border-left:2px solid var(--gold);font-size:14px;line-height:2;color:rgba(255,255,255,.8)}
 @media(max-width:768px){.model-flow{flex-direction:column;gap:12px}.model-step::after{content:'↓';right:auto;bottom:-20px;left:50%;transform:translateX(-50%)}.model-step{min-width:auto}}
 
-/* ⑦ TEAM */
-#team{background:var(--ink)}
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.5vw,32px);margin-top:clamp(48px,6vw,76px)}
-.team-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:clamp(26px,3vw,42px) clamp(18px,2.5vw,30px)}
-.team-card-role{font-family:var(--serif-en);font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:12px;text-transform:uppercase}
-.team-card-name{font-family:var(--serif-jp);font-size:clamp(15px,1.7vw,20px);font-weight:300;margin-bottom:14px;line-height:1.4}
-.team-card-desc{font-size:13px;line-height:1.9;color:rgba(255,255,255,.6)}
-.team-specialists{margin-top:clamp(36px,4.5vw,60px);padding:clamp(28px,4vw,48px);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
-.team-specialists-title{font-family:var(--serif-jp);font-size:clamp(15px,1.7vw,19px);font-weight:300;margin-bottom:24px;color:var(--gold)}
-.specialist-tags{display:flex;flex-wrap:wrap;gap:10px}
-.specialist-tag{border:1px solid rgba(184,151,90,.3);padding:8px 16px;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.7)}
-@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.team-grid{grid-template-columns:1fr}}
+/* REVENUE */
+#revenue{background:var(--green-deep)}
+.revenue-intro{max-width:700px;margin-bottom:clamp(40px,5vw,64px)}
+.revenue-price{font-family:var(--serif-jp);font-size:clamp(14px,1.7vw,20px);color:rgba(255,255,255,.8);margin-bottom:clamp(32px,4vw,52px)}
+.revenue-price span{font-family:var(--serif-en);font-size:clamp(22px,2.8vw,40px);color:var(--gold);font-weight:300;letter-spacing:.02em}
+.revenue-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+.rev-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:clamp(26px,3vw,42px) clamp(18px,2.5vw,30px);position:relative;transition:border-color .3s,background .3s}
+.rev-card:hover{border-color:rgba(184,151,90,.4);background:rgba(184,151,90,.07)}
+.rev-card.featured{border-color:rgba(184,151,90,.5);background:rgba(184,151,90,.1)}
+.rev-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:10px;letter-spacing:.15em;padding:5px 14px;white-space:nowrap;font-weight:500}
+.rev-occupancy{font-family:var(--serif-en);font-size:clamp(26px,3.2vw,44px);color:var(--gold);font-weight:300;line-height:1;margin-bottom:6px}
+.rev-occupancy-label{font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:22px}
+.rev-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.rev-row:last-child{border-bottom:none}
+.rev-label{font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.03em}
+.rev-val{font-family:var(--serif-en);font-size:clamp(17px,1.9vw,23px);color:var(--white);font-weight:300}
+.rev-val.gold{color:var(--gold)}
+.rev-disclaimer{margin-top:clamp(24px,3vw,40px);padding:18px 22px;background:rgba(0,0,0,.25);font-size:11px;line-height:1.9;color:rgba(255,255,255,.4);border-left:2px solid rgba(184,151,90,.2)}
+@media(max-width:900px){.revenue-cards{grid-template-columns:1fr}.plan-cards{grid-template-columns:1fr}.plan2-rev{grid-template-columns:repeat(3,1fr)}}
 
-/* ⑧ MANAGEMENT */
-#management{background:var(--black)}
-.mgmt-intro{max-width:680px;margin-bottom:clamp(48px,6vw,76px)}
 .accordion{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.06)}
 .accordion-item{background:var(--black)}
 .accordion-header{display:flex;align-items:center;justify-content:space-between;padding:20px 26px;cursor:pointer;gap:14px;transition:background .3s}
@@ -195,34 +230,33 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .mgmt-owner-text{font-size:13px;line-height:2;color:rgba(255,255,255,.7)}
 @media(max-width:700px){.mgmt-owner{grid-template-columns:1fr}}
 
-/* ⑨ REVENUE */
-#revenue{background:var(--green-deep)}
-.revenue-intro{max-width:700px;margin-bottom:clamp(40px,5vw,64px)}
-.revenue-price{font-family:var(--serif-jp);font-size:clamp(15px,1.8vw,22px);color:rgba(255,255,255,.8);margin-bottom:clamp(32px,4vw,52px)}
-.revenue-price span{font-family:var(--serif-en);font-size:clamp(24px,3vw,42px);color:var(--gold);font-weight:300;letter-spacing:.02em}
-.revenue-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
-.rev-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:clamp(26px,3vw,42px) clamp(18px,2.5vw,30px);position:relative;transition:border-color .3s,background .3s}
-.rev-card:hover{border-color:rgba(184,151,90,.4);background:rgba(184,151,90,.07)}
-.rev-card.featured{border-color:rgba(184,151,90,.5);background:rgba(184,151,90,.1)}
-.rev-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:10px;letter-spacing:.15em;padding:5px 14px;white-space:nowrap;font-weight:500}
-.rev-occupancy{font-family:var(--serif-en);font-size:clamp(26px,3.2vw,44px);color:var(--gold);font-weight:300;line-height:1;margin-bottom:6px}
-.rev-occupancy-label{font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:22px}
-.rev-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.rev-row:last-child{border-bottom:none}
-.rev-label{font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.03em}
-.rev-val{font-family:var(--serif-en);font-size:clamp(17px,1.9vw,23px);color:var(--white);font-weight:300}
-.rev-val.gold{color:var(--gold)}
-.rev-disclaimer{margin-top:clamp(24px,3vw,40px);padding:18px 22px;background:rgba(0,0,0,.25);font-size:11px;line-height:1.9;color:rgba(255,255,255,.4);border-left:2px solid rgba(184,151,90,.2)}
-@media(max-width:900px){.revenue-cards{grid-template-columns:1fr}}
+/* OPS */
+#ops{background:var(--black)}
+.ops-intro{max-width:700px;margin-bottom:clamp(48px,6vw,76px)}
+.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.5vw,32px);margin-bottom:clamp(36px,5vw,60px)}
+.ops-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:clamp(26px,3vw,42px) clamp(18px,2.5vw,30px)}
+.ops-card-role{font-family:var(--serif-en);font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:12px;text-transform:uppercase}
+.ops-card-name{font-family:var(--serif-jp);font-size:clamp(15px,1.7vw,20px);font-weight:300;margin-bottom:14px;line-height:1.4}
+.ops-card-desc{font-size:13px;line-height:1.9;color:rgba(255,255,255,.6)}
+.ops-tags-wrap{padding:clamp(28px,4vw,48px);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-bottom:clamp(40px,5vw,70px)}
+.ops-tags-title{font-family:var(--serif-jp);font-size:clamp(15px,1.7vw,19px);font-weight:300;margin-bottom:24px;color:var(--gold)}
+.ops-tags{display:flex;flex-wrap:wrap;gap:10px}
+.ops-tag{border:1px solid rgba(184,151,90,.3);padding:8px 16px;font-size:12px;letter-spacing:.04em;color:rgba(255,255,255,.7)}
+@media(max-width:900px){.ops-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ops-grid{grid-template-columns:1fr}}
 
 /* SPONSORS */
-#sponsors{background:var(--ink);padding:clamp(48px,7vw,88px) clamp(24px,5vw,80px)}
-.sponsors-label{font-family:var(--serif-en);font-size:11px;letter-spacing:.3em;color:var(--gray-light);text-align:center;margin-bottom:34px;text-transform:uppercase}
-.sponsors-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(18px,4vw,48px)}
-.sponsors-grid img{height:34px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.42;transition:opacity .3s}
-.sponsors-grid img:hover{opacity:.78}
+#sponsors{background:var(--ink);padding:clamp(60px,8vw,100px) clamp(24px,5vw,80px)}
+.sponsors-inner{max-width:1000px;margin:0 auto;text-align:center}
+.sponsors-section-label{font-family:var(--serif-en);font-size:11px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.sponsors-section-title{font-family:var(--serif-jp);font-size:clamp(18px,2.2vw,28px);font-weight:300;color:var(--white);margin-bottom:14px}
+.sponsors-section-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:clamp(40px,5vw,64px);line-height:1.9}
+.sponsors-divider{width:40px;height:1px;background:var(--gold);margin:0 auto clamp(40px,5vw,64px)}
+.sponsors-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(28px,5vw,60px) clamp(32px,6vw,72px)}
+.sponsors-grid img{height:32px;width:auto;max-width:120px;object-fit:contain;filter:brightness(0) invert(1);opacity:.38;transition:opacity .4s}
+.sponsors-grid img:hover{opacity:.75}
 
-/* ⑩ CONTACT */
+/* CONTACT */
 #contact{background:var(--off-white);padding:var(--section-pad) clamp(24px,5vw,80px)}
 .contact-inner{max-width:720px;margin:0 auto}
 .contact-inner .sec-label{color:var(--gold-dark)}
@@ -236,12 +270,11 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .form-group textarea{resize:vertical;min-height:120px}
 .form-group select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A5A5A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.form-submit{width:100%;background:var(--gold-dark);color:#fff;font-family:var(--sans-jp);font-size:13px;letter-spacing:.15em;padding:17px;border:none;cursor:pointer;transition:background .3s;font-weight:400;margin-top:6px}
+.form-submit{width:100%;background:var(--gold-dark);color:#fff;font-family:var(--sans-jp);font-size:13px;letter-spacing:.12em;padding:17px;border:none;cursor:pointer;transition:background .3s;font-weight:400;margin-top:6px}
 .form-submit:hover{background:var(--gold)}
 .form-note{font-size:11px;color:var(--gray-light);margin-top:14px;line-height:1.9}
 @media(max-width:560px){.form-row{grid-template-columns:1fr}}
 
-/* MODALS */
 .modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .4s}
 .modal.active{opacity:1;pointer-events:auto}
 .modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.7);cursor:pointer}
@@ -252,20 +285,19 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .modal-icon svg{width:26px;height:26px}
 .modal-title{font-family:var(--serif-jp);font-size:19px;font-weight:400;color:var(--ink);margin-bottom:10px}
 .modal-text{font-size:13px;line-height:1.9;color:var(--gray-mid)}
-.modal-close{margin-top:26px;background:var(--gold-dark);color:#fff;border:none;padding:11px 34px;font-family:var(--sans-jp);font-size:13px;letter-spacing:.12em;cursor:pointer;transition:background .3s}
+.modal-close{margin-top:26px;background:var(--gold-dark);color:#fff;border:none;padding:11px 34px;font-family:var(--sans-jp);font-size:13px;letter-spacing:.1em;cursor:pointer;transition:background .3s}
 .modal-close:hover{background:var(--gold)}
 
-/* MOBILE FIXED CTA */
 .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(8,8,8,.95);border-top:1px solid rgba(184,151,90,.25);padding:12px 16px calc(12px + env(safe-area-inset-bottom));flex-direction:row;gap:10px}
 @media(max-width:768px){.mobile-cta{display:flex}}
-.mobile-cta a{flex:1;text-align:center;font-size:11px;letter-spacing:.1em;padding:12px 8px;font-family:var(--sans-jp)}
+.mobile-cta a{flex:1;text-align:center;font-size:11px;letter-spacing:.08em;padding:12px 8px;font-family:var(--sans-jp)}
 .mobile-cta-primary{background:var(--gold);color:var(--black);font-weight:500}
 .mobile-cta-secondary{border:1px solid rgba(255,255,255,.3);color:var(--white)}
 
-/* FOOTER */
 footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
 .footer-logo{font-family:var(--serif-en);font-size:14px;letter-spacing:.25em;color:var(--gold);margin-bottom:12px}
-.footer-text{font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.32);line-height:2}
+.footer-text{font-size:11px;color:rgba(255,255,255,.32);line-height:2}
+@media(max-width:900px){.comp-table th,.comp-table td{padding:12px 14px;font-size:12px}}
 </style>
 </head>
 <body>
@@ -276,7 +308,7 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
     <li><a href="#why">大沼的魅力</a></li>
     <li><a href="#experiences">體驗</a></li>
     <li><a href="#wellnest">Wellnest Home</a></li>
-    <li><a href="#model">大沼模式</a></li>
+    <li><a href="#plans">3種參與方式</a></li>
     <li><a href="#revenue">收益</a></li>
     <li><a href="#contact">聯絡我們</a></li>
   </ul>
@@ -294,7 +326,8 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   <div class="hero-content">
     <div class="hero-eyebrow">Hokkaido Onuma Quasi-National Park</div>
     <h1 class="hero-title">北海道的大地上，<br>僅16棟度假別墅誕生。</h1>
-    <p class="hero-subtitle">坐擁5.5萬坪國定公園的自然懷抱，<br>天然溫泉、餐廳、騎馬設施一應俱全，<br>舉世無雙的度假別墅。</p>
+    <p class="hero-subtitle">坐擁5.5萬坪國定公園的自然懷抱，<br>天然溫泉、餐廳、騎馬設施一應俱全，<br>舉世無雙的度假別墅專案。</p>
+    <p class="hero-plan-note">土地取得、度假村事業化、1棟業主。<br>依目的選擇的3種參與方式。</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-num">55,021<span style="font-size:.5em;margin-left:4px">坪</span></div>
@@ -305,19 +338,19 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
         <div class="hero-stat-label">限量棟數</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">60<span style="font-size:.55em;margin-left:2px">%</span></div>
-        <div class="hero-stat-label">預計入住率（基準值）</div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">參與方式</div>
       </div>
     </div>
     <div class="hero-btns">
-      <a href="#project" class="btn-primary">查看專案概要</a>
+      <a href="#plans" class="btn-primary">查看3種參與方式</a>
       <a href="#contact" class="btn-outline">索取資料・聯絡我們</a>
     </div>
   </div>
   <div class="hero-dots" id="heroIndicators"></div>
 </section>
 
-<!-- ② PROJECT OVERVIEW -->
+<!-- ② PROJECT -->
 <section id="project">
   <div class="inner">
     <div class="sec-label fade-up">Project Overview</div>
@@ -336,30 +369,12 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
       <div class="fade-up">
         <p style="font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:rgba(255,255,255,.75);margin-bottom:clamp(28px,3.5vw,44px)">北海道大沼國定公園。眺望駒ヶ岳、大沼湖廣闊延伸的這片土地上，5.5萬坪的度假村正在開發。別墅僅16棟。每棟約300坪土地搭配Wellnest Home精心打造的別墅，成為專屬於您的特別場所。</p>
         <div class="facility-list">
-          <div class="facility-item">
-            <div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
-            <span class="facility-name">私人度假別墅</span><span class="facility-note">限量16棟</span>
-          </div>
-          <div class="facility-item">
-            <div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <span class="facility-name">天然溫泉（露天・室內）</span><span class="facility-note">共用設施</span>
-          </div>
-          <div class="facility-item">
-            <div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
-            <span class="facility-name">餐廳棟</span><span class="facility-note">共用設施</span>
-          </div>
-          <div class="facility-item">
-            <div class="facility-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="9" ry="3"/><path d="M12 14V4"/><path d="M8 7c0-2.2 1.8-4 4-4s4 1.8 4 4"/></svg></div>
-            <span class="facility-name">騎馬設施・牧場</span><span class="facility-note">共用設施</span>
-          </div>
-          <div class="facility-item">
-            <div class="facility-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-            <span class="facility-name">馬匹治療區域</span><span class="facility-note">共用設施</span>
-          </div>
-          <div class="facility-item">
-            <div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/></svg></div>
-            <span class="facility-name">自然散策區域</span><span class="facility-note">園區全域</span>
-          </div>
+          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div><span class="facility-name">私人度假別墅</span><span class="facility-note">限量16棟</span></div>
+          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="facility-name">天然溫泉（露天・室內）</span><span class="facility-note">共用設施</span></div>
+          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div><span class="facility-name">餐廳棟</span><span class="facility-note">共用設施</span></div>
+          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="9" ry="3"/><path d="M12 14V4"/><path d="M8 7c0-2.2 1.8-4 4-4s4 1.8 4 4"/></svg></div><span class="facility-name">騎馬設施・牧場</span><span class="facility-note">共用設施</span></div>
+          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><span class="facility-name">馬匹治療區域</span><span class="facility-note">共用設施</span></div>
+          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/></svg></div><span class="facility-name">自然散策區域</span><span class="facility-note">園區全域</span></div>
         </div>
       </div>
     </div>
@@ -404,18 +419,9 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
     <div class="why-access fade-up">
       <h3 class="why-access-title">交通 — 距離城市的遠近，恰到好處。</h3>
       <div class="access-items">
-        <div class="access-item">
-          <div><span class="access-num">約20</span><span class="access-unit">分</span></div>
-          <div class="access-label">從函館機場開車</div>
-        </div>
-        <div class="access-item">
-          <div><span class="access-num">約3</span><span class="access-unit">小時</span></div>
-          <div class="access-label">東京至函館機場（飛機）</div>
-        </div>
-        <div class="access-item">
-          <div><span class="access-num">2031</span></div>
-          <div class="access-label">北海道新幹線（新函館北斗站）預計開通</div>
-        </div>
+        <div class="access-item"><div><span class="access-num">約20</span><span class="access-unit">分</span></div><div class="access-label">從函館機場開車</div></div>
+        <div class="access-item"><div><span class="access-num">約3</span><span class="access-unit">小時</span></div><div class="access-label">東京至函館機場（飛機）</div></div>
+        <div class="access-item"><div><span class="access-num">2031</span></div><div class="access-label">北海道新幹線（新函館北斗站）預計開通</div></div>
       </div>
     </div>
   </div>
@@ -501,24 +507,15 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
           <div class="wellnest-features">
             <div class="wellnest-feat">
               <div class="wellnest-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-              <div>
-                <div class="wellnest-feat-title">高隔熱・高氣密</div>
-                <p class="wellnest-feat-text">即使在北海道的冬天也能實現舒適的室內環境。抑制能源成本，長期維持資產價值。</p>
-              </div>
+              <div><div class="wellnest-feat-title">高隔熱・高氣密</div><p class="wellnest-feat-text">即使在北海道的冬天也能實現舒適的室內環境。抑制能源成本，長期維持資產價值。</p></div>
             </div>
             <div class="wellnest-feat">
               <div class="wellnest-feat-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-              <div>
-                <div class="wellnest-feat-title">天然材料的堅持</div>
-                <p class="wellnest-feat-text">不依賴化學物質、使用天然素材的內裝。長期守護居住者健康的設計理念。</p>
-              </div>
+              <div><div class="wellnest-feat-title">天然材料的堅持</div><p class="wellnest-feat-text">不依賴化學物質、使用天然素材的內裝。長期守護居住者健康的設計理念。</p></div>
             </div>
             <div class="wellnest-feat">
               <div class="wellnest-feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-              <div>
-                <div class="wellnest-feat-title">100年後仍保有價值的耐久性</div>
-                <p class="wellnest-feat-text">日本住宅平均壽命約30年。Wellnest Home從設計階段就內建可居住100年的耐久性。</p>
-              </div>
+              <div><div class="wellnest-feat-title">100年後仍保有價值的耐久性</div><p class="wellnest-feat-text">日本住宅平均壽命約30年。Wellnest Home從設計階段就內建可居住100年的耐久性。</p></div>
             </div>
           </div>
         </div>
@@ -527,10 +524,163 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   </div>
 </section>
 
-<!-- ⑥ ONUMA MODEL -->
+<!-- ⑥ 3種參與方式 -->
+<section id="plans">
+  <div class="inner">
+    <div class="sec-label fade-up">Participation Plans</div>
+    <h2 class="sec-title fade-up" style="color:var(--white)">3種參與方式</h2>
+    <div class="plans-intro fade-up">
+      <p style="font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.75);line-height:1.9;margin-bottom:16px">依目的與投資方針選擇，<br>參與大沼專案的3種方式。</p>
+      <p class="plans-lead">本專案運用約5.5萬坪土地與16棟別墅開發構想，為投資人、事業者、個人業主各自的目的，提供3種參與方式。</p>
+    </div>
+    <div class="plan-cards">
+
+      <!-- Plan ① -->
+      <div class="plan-card fade-up">
+        <div class="plan-num">01</div>
+        <div class="plan-tag">Land Acquisition &amp; Exit</div>
+        <h3 class="plan-title">土地取得＋<br>附開發計畫事業出售</h3>
+        <div class="plan-price-label">初始投資</div>
+        <div class="plan-price">約8.17億日圓</div>
+        <p class="plan-desc">取得約5.5萬坪土地，整備包含16棟別墅、天然溫泉、餐廳、騎馬設施等的開發計畫與事業構想後，以開發專案形式出售給飯店業者、度假村業者、開發商、投資基金等。</p>
+        <ul class="plan-features">
+          <li>在建築前階段提升事業價值</li>
+          <li>比建設全部16棟可控制初始投資</li>
+          <li>無需承擔營運風險，以事業出售為目標</li>
+          <li>可預期相對早期的投資回收</li>
+        </ul>
+        <div class="plan-exit">
+          <div class="plan-exit-label">Exit</div>
+          以附開發計畫土地・事業形式出售<br>
+          <span style="font-size:11px;color:rgba(255,255,255,.45)">明細：土地取得費 約8億日圓 ／ 取得相關費用 約1,715萬日圓</span>
+        </div>
+      </div>
+
+      <!-- Plan ② -->
+      <div class="plan-card fade-up">
+        <div class="plan-num">02</div>
+        <div class="plan-tag">Full Resort Development</div>
+        <h3 class="plan-title">16棟別墅開發・<br>度假村事業化</h3>
+        <div class="plan-price-label">預計總事業費</div>
+        <div class="plan-price">約21.1億日圓</div>
+        <p class="plan-desc">取得土地後，整備16棟別墅、天然溫泉、餐廳、騎馬設施、馬匹療法設施等，將大沼打造為代表性健康度假村的事業計畫。完工後可選擇長期營運、整體事業出售、與投資基金或飯店業者共同事業化等多種出口。</p>
+        <ul class="plan-features">
+          <li>長期住宿營運收益</li>
+          <li>完工後亦可出售事業</li>
+          <li>建立度假村品牌與資產價值</li>
+          <li>預設國內外飯店業者或投資人的出口</li>
+        </ul>
+        <div style="margin-top:18px;margin-bottom:4px;font-size:10px;letter-spacing:.08em;color:rgba(255,255,255,.4)">16棟整體收益模擬（參考）</div>
+        <div class="plan2-rev">
+          <div class="plan2-rev-item">
+            <div class="plan2-rev-occ">50<span>%</span></div>
+            <div class="plan2-rev-label">入住率</div>
+            <div class="plan2-rev-rates">表面 <strong>14.3%</strong><br>淨值 13.1%</div>
+          </div>
+          <div class="plan2-rev-item" style="background:rgba(184,151,90,.15);border:1px solid rgba(184,151,90,.3)">
+            <div class="plan2-rev-occ">60<span>%</span></div>
+            <div class="plan2-rev-label">入住率</div>
+            <div class="plan2-rev-rates">表面 <strong>17.2%</strong><br>淨值 15.8%</div>
+          </div>
+          <div class="plan2-rev-item">
+            <div class="plan2-rev-occ">70<span>%</span></div>
+            <div class="plan2-rev-label">入住率</div>
+            <div class="plan2-rev-rates">表面 <strong>20.1%</strong><br>淨值 18.4%</div>
+          </div>
+        </div>
+        <div class="plan-exit" style="margin-top:14px">
+          <div class="plan-exit-label">Exit</div>
+          長期營運、事業出售、共同事業化
+        </div>
+      </div>
+
+      <!-- Plan ③ -->
+      <div class="plan-card fade-up">
+        <div class="plan-num">03</div>
+        <div class="plan-tag">Villa Owner</div>
+        <h3 class="plan-title">1棟別墅業主</h3>
+        <div class="plan-price-label">購入價格</div>
+        <div class="plan-price">約9,993萬日圓</div>
+        <p class="plan-desc">購入約300坪土地與1棟別墅，可作為自己或家人的度假別墅、長期滯留、雙據點生活等自由使用。不使用的期間，由以株式會社Ido為核心的專業團隊作為住宿設施運營。</p>
+        <ul class="plan-features">
+          <li>以資產形式持有別墅</li>
+          <li>可自行住宿、居住、長期滯留</li>
+          <li>不使用的日子交付住宿運營</li>
+          <li>管理・清潔・預約・客人對應全委託專業團隊</li>
+          <li>溫泉・餐廳・騎馬・馬匹療法優先使用</li>
+        </ul>
+        <div class="plan-exit">
+          <div class="plan-exit-label">Exit</div>
+          自用、持續持有、未來出售
+        </div>
+        <a href="#model" style="display:block;margin-top:18px;text-align:center;font-size:11px;letter-spacing:.1em;color:var(--gold);border:1px solid rgba(184,151,90,.35);padding:11px 16px;transition:background .3s">查看方案③詳細說明 ↓</a>
+      </div>
+
+    </div>
+
+    <!-- 比較表 -->
+    <div style="margin-top:clamp(56px,7vw,100px)" id="comparison-wrap">
+      <div class="sec-label fade-up" style="margin-bottom:14px">Comparison</div>
+      <h3 class="fade-up" style="font-family:var(--serif-jp);font-size:clamp(18px,2.2vw,30px);font-weight:300;color:var(--white);margin-bottom:clamp(28px,4vw,48px)">依目的選擇的3種方案</h3>
+      <div class="comp-table-wrap fade-up">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="comp-plan-header">方案①<br>土地取得＋事業出售</th>
+              <th class="comp-plan-header comp-highlight">方案②<br>16棟開發・事業化</th>
+              <th class="comp-plan-header">方案③<br>1棟業主</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>初始投資</td>
+              <td><span class="comp-price">約8.17億日圓</span></td>
+              <td class="comp-highlight"><span class="comp-price">約21.1億日圓</span></td>
+              <td><span class="comp-price">約9,993萬日圓</span></td>
+            </tr>
+            <tr>
+              <td>主要收益</td>
+              <td>提升事業價值後的出售收益</td>
+              <td class="comp-highlight">住宿營運收益、完工後事業出售收益</td>
+              <td>不使用期間的住宿運營收益</td>
+            </tr>
+            <tr>
+              <td>持有期間</td>
+              <td>相對短期（建築前出售）</td>
+              <td class="comp-highlight">中～長期</td>
+              <td>長期（持續持有）</td>
+            </tr>
+            <tr>
+              <td>營運負擔</td>
+              <td>無（出售後）</td>
+              <td class="comp-highlight">由專業團隊對應</td>
+              <td>由專業團隊對應（業主無需負擔）</td>
+            </tr>
+            <tr>
+              <td>主要出口</td>
+              <td>出售給飯店業者・開發商・投資基金</td>
+              <td class="comp-highlight">長期營運、事業出售、共同事業化</td>
+              <td>自用、持續持有、未來出售</td>
+            </tr>
+            <tr>
+              <td>預設對象</td>
+              <td>重視早期回收的投資人・開發商</td>
+              <td class="comp-highlight">以度假村事業化為目標的投資人・法人</td>
+              <td>尋求別墅・雙據點生活・資產形成的個人</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rev-disclaimer fade-up" style="margin-top:20px">※本方案所記載數值・報酬率為模擬數值，不保證實際收益。因市場環境・營運狀況而有所變動。投資判斷請自行承擔責任。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ MODEL (方案③詳細) -->
 <section id="model">
   <div class="inner">
-    <div class="sec-label fade-up">Ownership Model</div>
+    <div class="sec-label fade-up">Plan 03 — Detail</div>
     <h2 class="sec-title fade-up" style="color:var(--white)">擁有別墅。<br>卻不被管理所束縛。</h2>
     <div class="model-intro fade-up">
       <p style="font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:rgba(255,255,255,.72)">大沼模式是別墅業主制度的全新型態。擁有的同時，不使用的日子交給專業團隊運營，一切管理由他們承擔。業主只需「使用享受」大沼即可。</p>
@@ -567,144 +717,10 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   </div>
 </section>
 
-<!-- ⑦ PROJECT TEAM -->
-<section id="team">
-  <div class="inner">
-    <div class="sec-label fade-up">Project Team</div>
-    <h2 class="sec-title fade-up" style="color:var(--white)">支撐本專案的團隊。</h2>
-    <p style="font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:rgba(255,255,255,.72);max-width:680px;margin-bottom:clamp(40px,5vw,60px)" class="fade-up">日本頂級建築師、度假村運營專業人士，以及各領域頂尖專家齊聚一堂。在大沼實現世界級度假村。</p>
-    <div class="team-grid">
-      <div class="team-card fade-up">
-        <div class="team-card-role">Architecture</div>
-        <h3 class="team-card-name">Wellnest Home</h3>
-        <p class="team-card-desc">以日本最高水準隔熱・耐久性能著稱的住宅建商。以「100年後仍保有價值的住宅」為設計理念核心。提供能應對大沼嚴酷氣候的高品質別墅。</p>
-      </div>
-      <div class="team-card fade-up">
-        <div class="team-card-role">Planning &amp; Operations</div>
-        <h3 class="team-card-name">株式會社 Ido</h3>
-        <p class="team-card-desc">負責本專案企劃・運營管理的核心企業。統一管理16棟別墅的運營、設施管理及與業主的溝通。承擔守護與培育整個度假村價值的角色。</p>
-      </div>
-      <div class="team-card fade-up">
-        <div class="team-card-role">Specialist Team</div>
-        <h3 class="team-card-name">各領域專家</h3>
-        <p class="team-card-desc">住宿・餐飲・溫泉・建物管理・清潔・行銷・騎馬各領域，由專業團隊全時待命。建構讓業主無需擔憂管理問題的完善體制。</p>
-      </div>
-    </div>
-    <div class="team-specialists fade-up">
-      <h3 class="team-specialists-title">專業團隊負責領域</h3>
-      <div class="specialist-tags">
-        <span class="specialist-tag">住宿預約管理</span>
-        <span class="specialist-tag">餐飲・餐廳</span>
-        <span class="specialist-tag">溫泉設施管理</span>
-        <span class="specialist-tag">建物維護</span>
-        <span class="specialist-tag">清潔・客房服務</span>
-        <span class="specialist-tag">行銷・招客</span>
-        <span class="specialist-tag">騎馬・馬匹飼育管理</span>
-        <span class="specialist-tag">除雪・冬季管理</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ⑧ MANAGEMENT -->
-<section id="management">
-  <div class="inner">
-    <div class="sec-label fade-up">Management</div>
-    <h2 class="sec-title fade-up" style="color:var(--white)">業主，只需享受使用。</h2>
-    <div class="mgmt-intro fade-up">
-      <p style="font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:rgba(255,255,255,.72)">別墅管理的一切繁瑣，全由專業團隊承擔。業主只需來到大沼，享受體驗即可。</p>
-    </div>
-    <div class="accordion fade-up">
-      <div class="accordion-item open">
-        <div class="accordion-header">
-          <span class="accordion-title">預約管理 / 入住・退房對應</span>
-          <div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">從住宿預約受理到客人的入住・退房對應，全部由專業人員負責。對業主的報告僅限月報。</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <span class="accordion-title">住客對應・客訴處理</span>
-          <div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">客人的詢問、需求、問題處理，全由Ido運營團隊24小時對應。業主完全不需要直接處理。</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <span class="accordion-title">清潔・客房整備</span>
-          <div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">退房後的清潔、換床換被、補充備品，全由專業人員執行。始終維持飯店等級的狀態。</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <span class="accordion-title">建物維護・定期檢查</span>
-          <div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">設備定期檢查、修繕、消耗品補充一併管理。結合Wellnest Home的高耐久設計，長期維持資產價值。</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <span class="accordion-title">除雪・冬季特別管理</span>
-          <div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">北海道冬季不可或缺的除雪作業由專業團隊負責。積雪季節也確保交通與建物安全。</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <span class="accordion-title">溫泉設施管理</span>
-          <div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">天然溫泉的水質管理、清潔、設備維護由專業人員執行。始終維持安全舒適的溫泉環境。</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <span class="accordion-title">餐廳・餐飲設施管理</span>
-          <div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">從食材採購到廚師管理，統一負責餐飲設施整體運營。持續進行活用道南食材的菜單開發。</div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-header">
-          <span class="accordion-title">騎馬設施・馬匹飼育管理</span>
-          <div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        </div>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">馬匹健康管理、牧場維護、騎馬教練安排，由專業團隊統一管理騎馬設施全體。</div>
-        </div>
-      </div>
-    </div>
-    <div class="mgmt-owner">
-      <div class="mgmt-owner-card fade-up">
-        <h3 class="mgmt-owner-title">業主優先使用</h3>
-        <p class="mgmt-owner-text">溫泉、餐廳、騎馬設施業主可優先使用。住宿自己別墅期間，可以特別賓客身分享受所有設施。</p>
-      </div>
-      <div class="mgmt-owner-card fade-up">
-        <h3 class="mgmt-owner-title">月度報告</h3>
-        <p class="mgmt-owner-text">以月報形式提供入住實績、收益狀況、設施狀態。業主即使身在遠方，也能即時掌握度假村狀況。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ⑨ REVENUE -->
+<!-- ⑧ REVENUE (方案③ — 1棟收益模擬) -->
 <section id="revenue">
   <div class="inner">
-    <div class="sec-label fade-up">Revenue Simulation</div>
+    <div class="sec-label fade-up">Plan 03 — Revenue Simulation</div>
     <h2 class="sec-title fade-up" style="color:var(--white)">不使用的日子，讓別墅產生收益。</h2>
     <div class="revenue-intro fade-up">
       <p style="font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:rgba(255,255,255,.8)">僅靠擁有就需負擔成本的別墅時代已經結束。大沼模式將不使用的日程交付住宿運營，讓別墅本身產生收益。</p>
@@ -732,31 +748,132 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
       </div>
     </div>
     <div class="rev-disclaimer fade-up">
-      ※以上為模擬數值，不保證實際收益。入住率・收益因市場環境・運營狀況而有所變動。投資判斷請自行承擔責任。
+      ※以上為方案③（1棟別墅業主）的模擬數值，不保證實際收益。入住率・收益因市場環境・營運狀況而有所變動。投資判斷請自行承擔責任。
+    </div>
+
+    <!-- 管理アコーディオン -->
+    <div style="margin-top:clamp(56px,7vw,100px)">
+      <div class="sec-label fade-up" style="margin-bottom:14px">Management</div>
+      <h3 class="fade-up" style="font-family:var(--serif-jp);font-size:clamp(18px,2.2vw,30px);font-weight:300;color:var(--white);margin-bottom:24px">業主，只需享受使用。</h3>
+      <p class="fade-up" style="font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:rgba(255,255,255,.72);max-width:680px;margin-bottom:clamp(32px,4vw,52px)">別墅管理的一切繁瑣，全由專業團隊承擔。</p>
+      <div class="accordion fade-up">
+        <div class="accordion-item open">
+          <div class="accordion-header"><span class="accordion-title">預約管理 / 入住・退房對應</span><div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="accordion-body"><div class="accordion-body-inner">從住宿預約受理到客人的入住・退房對應，全部由專業人員負責。對業主的報告僅限月報。</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><span class="accordion-title">住客對應・客訴處理</span><div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="accordion-body"><div class="accordion-body-inner">客人的詢問、需求、問題處理，全由Ido運營團隊24小時對應。業主完全不需要直接處理。</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><span class="accordion-title">清潔・客房整備</span><div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="accordion-body"><div class="accordion-body-inner">退房後的清潔、換床換被、補充備品，全由專業人員執行。始終維持飯店等級的狀態。</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><span class="accordion-title">建物維護・定期檢查</span><div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="accordion-body"><div class="accordion-body-inner">設備定期檢查、修繕、消耗品補充一併管理。結合Wellnest Home的高耐久設計，長期維持資產價值。</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><span class="accordion-title">除雪・冬季特別管理</span><div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="accordion-body"><div class="accordion-body-inner">北海道冬季不可或缺的除雪作業由專業團隊負責。積雪季節也確保交通與建物安全。</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><span class="accordion-title">溫泉設施管理</span><div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="accordion-body"><div class="accordion-body-inner">天然溫泉的水質管理、清潔、設備維護由專業人員執行。始終維持安全舒適的溫泉環境。</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><span class="accordion-title">餐廳・餐飲設施管理</span><div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="accordion-body"><div class="accordion-body-inner">從食材採購到廚師管理，統一負責餐飲設施整體運營。持續進行活用道南食材的菜單開發。</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><span class="accordion-title">騎馬設施・馬匹飼育管理</span><div class="accordion-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+          <div class="accordion-body"><div class="accordion-body-inner">馬匹健康管理、牧場維護、騎馬教練安排，由專業團隊統一管理騎馬設施全體。</div></div>
+        </div>
+      </div>
+      <div class="mgmt-owner">
+        <div class="mgmt-owner-card fade-up">
+          <h3 class="mgmt-owner-title">業主優先使用</h3>
+          <p class="mgmt-owner-text">溫泉、餐廳、騎馬設施業主可優先使用。住宿自己別墅期間，可以特別賓客身分享受所有設施。</p>
+        </div>
+        <div class="mgmt-owner-card fade-up">
+          <h3 class="mgmt-owner-title">月度報告</h3>
+          <p class="mgmt-owner-text">以月報形式提供入住實績、收益狀況、設施狀態。業主即使身在遠方，也能即時掌握度假村狀況。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SPONSORS -->
+<!-- ⑩ OPS -->
+<section id="ops">
+  <div class="inner">
+    <div class="sec-label fade-up">Operations</div>
+    <h2 class="sec-title fade-up" style="color:var(--white)">專案運營體制</h2>
+    <div class="ops-intro fade-up">
+      <p style="font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.75);line-height:1.9;margin-bottom:16px">為讓業主與投資人能安心參與，<br>各領域專家相互連結，負責運營・維護管理。</p>
+      <p style="font-size:clamp(13px,1.4vw,15px);line-height:2;color:rgba(255,255,255,.6)">設施運營・維護管理方面，以株式會社Ido為核心，各領域專業團隊相互連結，負責任地對應。業主無需進行繁瑣的管理業務，可專注於使用與資產持有。</p>
+    </div>
+    <div class="ops-grid">
+      <div class="ops-card fade-up">
+        <div class="ops-card-role">Architecture</div>
+        <h3 class="ops-card-name">Wellnest Home</h3>
+        <p class="ops-card-desc">以日本最高水準隔熱・耐久性能著稱的住宅建商。提供能應對大沼嚴酷氣候、100年後仍保有價值的高品質別墅。</p>
+      </div>
+      <div class="ops-card fade-up">
+        <div class="ops-card-role">Planning &amp; Operations</div>
+        <h3 class="ops-card-name">株式會社 Ido</h3>
+        <p class="ops-card-desc">負責本專案企劃・運營管理的核心企業。統一管理16棟別墅的運營、設施管理及與業主・投資人的溝通。</p>
+      </div>
+      <div class="ops-card fade-up">
+        <div class="ops-card-role">Specialist Team</div>
+        <h3 class="ops-card-name">各領域專家</h3>
+        <p class="ops-card-desc">住宿・餐飲・溫泉・建物管理・清潔・行銷・騎馬各領域，由專業團隊全時待命。建構讓業主無需擔憂管理問題的完善體制。</p>
+      </div>
+    </div>
+    <div class="ops-tags-wrap fade-up">
+      <h3 class="ops-tags-title">對應業務</h3>
+      <div class="ops-tags">
+        <span class="ops-tag">住宿營運</span>
+        <span class="ops-tag">建築</span>
+        <span class="ops-tag">不動產</span>
+        <span class="ops-tag">溫泉設施</span>
+        <span class="ops-tag">飲食</span>
+        <span class="ops-tag">清潔</span>
+        <span class="ops-tag">行銷</span>
+        <span class="ops-tag">騎馬設施營運</span>
+        <span class="ops-tag">馬匹飼育管理</span>
+        <span class="ops-tag">除雪</span>
+        <span class="ops-tag">建物維護管理</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑪ SPONSORS -->
 <section id="sponsors">
   <div class="inner">
-    <div class="sponsors-label">Partner &amp; Sponsors</div>
-    <div class="sponsors-grid">
-      <img src="../../sponsors/wellnesthome.png" alt="Wellnest Home">
-      <img src="../../sponsors/cocochiyo.png" alt="Cocochiyo">
-      <img src="../../sponsors/fairway.png" alt="Fairway">
-      <img src="../../sponsors/pado-musee.png" alt="Pado Musee">
-      <img src="../../sponsors/hobsons.png" alt="Hobson's">
-      <img src="../../sponsors/issatsu-no-kai.png" alt="一冊の会">
-      <img src="../../sponsors/nanae-town.png" alt="七飯町">
-      <img src="../../sponsors/hokuden.png" alt="北電">
-      <img src="../../sponsors/komatsu-uchida.png" alt="小松内田">
-      <img src="../../sponsors/nagareyama.png" alt="流山">
+    <div class="sponsors-inner">
+      <div class="sec-label fade-up" style="text-align:center">Partner &amp; Sponsors</div>
+      <h2 class="fade-up" style="font-family:var(--serif-jp);font-size:clamp(18px,2.2vw,28px);font-weight:300;color:var(--white);text-align:center;margin-bottom:14px">支持本專案的合作夥伴</h2>
+      <p class="fade-up" style="font-size:13px;color:rgba(255,255,255,.45);text-align:center;line-height:2;margin-bottom:0">本專案透過建築、營運、餐飲、健康療癒、馬匹療法等<br>各領域企業・專家的合作，持續推進。</p>
+      <div class="sponsors-divider fade-up"></div>
+      <div class="sponsors-grid fade-up">
+        <img src="../../sponsors/wellnesthome.png" alt="Wellnest Home">
+        <img src="../../sponsors/cocochiyo.png" alt="Cocochiyo">
+        <img src="../../sponsors/fairway.png" alt="Fairway">
+        <img src="../../sponsors/pado-musee.png" alt="Pado Musee">
+        <img src="../../sponsors/hobsons.png" alt="Hobson's">
+        <img src="../../sponsors/issatsu-no-kai.png" alt="一冊の会">
+        <img src="../../sponsors/nanae-town.png" alt="七飯町">
+        <img src="../../sponsors/hokuden.png" alt="北電">
+        <img src="../../sponsors/komatsu-uchida.png" alt="小松内田">
+        <img src="../../sponsors/nagareyama.png" alt="流山">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ⑩ CONTACT -->
+<!-- ⑫ CONTACT -->
 <section id="contact">
   <div class="inner">
     <div class="contact-inner">
@@ -766,33 +883,23 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
       <form id="contact-form" action="https://formspree.io/f/mjgqjppv" method="POST" class="fade-up">
         <input type="hidden" name="_subject" value="【大沼度假別墅】詢問">
         <div class="form-row">
-          <div class="form-group">
-            <label>姓名<span>*</span></label>
-            <input type="text" name="name" placeholder="王 大明" required>
-          </div>
-          <div class="form-group">
-            <label>電話號碼</label>
-            <input type="tel" name="tel" placeholder="+886-9-0000-0000">
-          </div>
+          <div class="form-group"><label>姓名<span>*</span></label><input type="text" name="name" placeholder="王 大明" required></div>
+          <div class="form-group"><label>電話號碼</label><input type="tel" name="tel" placeholder="+886-9-0000-0000"></div>
         </div>
-        <div class="form-group">
-          <label>電子郵件<span>*</span></label>
-          <input type="email" name="email" placeholder="your@email.com" required>
-        </div>
+        <div class="form-group"><label>電子郵件<span>*</span></label><input type="email" name="email" placeholder="your@email.com" required></div>
         <div class="form-group">
           <label>詢問類別</label>
           <select name="inquiry_type">
             <option value="">請選擇</option>
             <option>索取資料</option>
+            <option>方案①（土地取得＋事業出售）相關諮詢</option>
+            <option>方案②（16棟開發・度假村事業化）相關諮詢</option>
+            <option>方案③（1棟別墅業主）相關諮詢</option>
             <option>希望現地參觀</option>
-            <option>購買・投資相關諮詢</option>
             <option>其他</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>訊息<span>*</span></label>
-          <textarea name="message" placeholder="請填寫您的問題・需求" required></textarea>
-        </div>
+        <div class="form-group"><label>訊息<span>*</span></label><textarea name="message" placeholder="請填寫您的問題・需求" required></textarea></div>
         <button type="submit" class="form-submit">送出</button>
         <p class="form-note">您提供的資訊僅用於回覆詢問，不作其他用途。</p>
       </form>
@@ -825,7 +932,7 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
 </div>
 
 <div class="mobile-cta">
-  <a href="tel:0000000000" class="mobile-cta-secondary">電話諮詢</a>
+  <a href="#plans" class="mobile-cta-secondary">3種參與方式</a>
   <a href="#contact" class="mobile-cta-primary">索取資料</a>
 </div>
 
@@ -847,9 +954,7 @@ function goToSlide(n) {
   document.querySelectorAll('.hero-dot')[currentSlide].classList.remove('active');
   currentSlide = n;
   const nextEl = slides[currentSlide];
-  nextEl.style.animation = 'none';
-  nextEl.offsetHeight;
-  nextEl.style.animation = '';
+  nextEl.style.animation = 'none'; nextEl.offsetHeight; nextEl.style.animation = '';
   nextEl.classList.add('active');
   document.querySelectorAll('.hero-dot')[currentSlide].classList.add('active');
   clearInterval(slideTimer);
@@ -860,7 +965,7 @@ slideTimer = setInterval(nextSlide, 6000);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 55); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 document.querySelectorAll('.accordion-header').forEach(header => {
