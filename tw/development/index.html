@@ -3,676 +3,2556 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>北海道大沼 5.5萬坪度假村開發計畫 | ONUMA RESORT DEVELOPMENT</title>
-  <meta name="description" content="約55,021坪大規模度假村開發用地。針對投資者、事業者提供3種參與方式。規劃16棟別墅、溫泉、餐廳、馬術設施的健康度假村。">
-  <meta property="og:title" content="北海道大沼 5.5萬坪度假村開發計畫">
-  <meta property="og:description" content="融合自然、溫泉、住宿、餐飲與健康的北海道代表性度假村開發構想。針對投資者、事業者提供3種參與方式。">
-  <meta property="og:image" content="../../ヴィラ/上空ヴィライメージ.png">
+  <title>北海道大沼 5.5萬坪度假村開發計畫｜ONUMA RESORT DEVELOPMENT</title>
+  <meta name="description" content="北海道大沼國定公園。約55,021坪大地，規劃16棟別墅・天然溫泉・餐廳・馬術設施。針對投資者・事業者提供3種參與方式。">
+  <meta property="og:title" content="北海道大沼 5.5萬坪度假村開發計畫｜ONUMA RESORT DEVELOPMENT">
+  <meta property="og:description" content="約55,021坪大地，規劃16棟別墅・天然溫泉・餐廳・馬術設施。針對投資者・事業者提供3種參與方式。">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="../../ヴィラ/上空ヴィライメージ.png">
   <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ===== 変数 ===== */
     :root {
       --gold:       #B8975A;
       --gold-light: #D8BE8A;
-      --gold-dark:  #8C6D36;
-      --black:      #0A0A0A;
-      --ink:        #1A1A1A;
-      --off-white:  #F5F3EF;
-      --gray-dark:  #141414;
-      --gray-mid:   #6B6B6B;
-      --gray-light: #ADADAD;
+      --gold-dark:  #9A7A3F;
       --white:      #FFFFFF;
-      --green-deep: #182516;
-      --serif: "Noto Serif TC","Georgia",serif;
-      --sans:  "Noto Sans TC","Helvetica Neue",Arial,sans-serif;
-      --pad: clamp(80px,10vw,140px);
-      --side: clamp(24px,6vw,96px);
-    }
-    html { scroll-behavior: smooth; }
-    html, body { overflow-x: hidden; }
-    body { font-family: var(--sans); color: var(--ink); background: var(--black); }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
+      --off-white:  #F5F3EE;
+      --cream:      #EDE8DF;
+      --black:      #080808;
+      --ink:        #161616;
+      --green-deep: #1C2B1E;
+      --green-mid:  #2D4030;
+      --gray-dark:  #1A1A1A;
+      --gray-mid:   #5A5A5A;
+      --gray-light: #9A9A9A;
 
-    .section-label {
-      font-family: var(--sans); font-size: 10px; letter-spacing: .35em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block;
+      --serif-en: 'Cormorant Garamond', serif;
+      --serif-jp: 'Noto Serif JP', serif;
+      --sans-jp:  'Noto Sans JP', 'Helvetica Neue', sans-serif;
+      --section-pad: clamp(80px, 10vw, 140px);
     }
-    .fade-up { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-    /* ─── Header ─── */
-    .site-header {
+    /* ===== リセット ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--sans-jp); font-weight: 300; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== ナビ ===== */
+    nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: 60px; display: flex; align-items: center; justify-content: space-between;
-      padding: 0 var(--side);
-      background: rgba(10,10,10,.92); backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px clamp(24px, 5vw, 72px);
+      background: linear-gradient(to bottom, rgba(4,4,4,.82) 0%, rgba(4,4,4,.48) 60%, transparent 100%);
+      transition: background .4s ease, padding .4s ease;
     }
-    .header-logo { font-family: var(--sans); font-size: 9.5px; letter-spacing: .28em; color: var(--gold); text-transform: uppercase; }
-    .header-nav { display: flex; align-items: center; gap: 24px; }
-    .header-nav a { font-size: 10.5px; letter-spacing: .06em; color: rgba(255,255,255,.45); transition: color .3s; }
-    .header-nav a:hover { color: var(--gold-light); }
-    .nav-cta {
-      border: 1px solid rgba(184,151,90,.45); padding: 7px 18px;
-      color: var(--gold-light) !important; font-size: 10px !important; letter-spacing: .08em !important;
-      transition: background .3s, border-color .3s !important;
+    nav.scrolled { background: rgba(8,8,8,.94); backdrop-filter: blur(10px); padding-top: 16px; padding-bottom: 16px; }
+    .nav-logo { font-family: var(--serif-en); font-size: clamp(12px,1.3vw,16px); font-weight: 400; letter-spacing: .22em; }
+    .nav-logo span { display: block; font-size: 9px; letter-spacing: .3em; color: var(--gold-light); margin-top: 2px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 11px; letter-spacing: .18em; color: rgba(255,255,255,.88); transition: color .3s; }
+    .nav-links a:hover { color: var(--white); }
+    .btn-nav {
+      font-size: 11px; letter-spacing: .18em; padding: 10px 22px;
+      border: 1px solid var(--gold); color: var(--gold);
+      transition: background .3s, color .3s;
     }
-    .nav-cta:hover { background: rgba(184,151,90,.1) !important; border-color: var(--gold) !important; }
+    .btn-nav:hover { background: var(--gold); color: var(--black); }
 
-    /* ─── Hero ─── */
-    #hero { position: relative; height: 100svh; min-height: 620px; overflow: hidden; }
+    /* ===== ボタン ===== */
+    .btn-primary {
+      display: inline-block; padding: clamp(14px,2vw,18px) clamp(28px,4vw,50px);
+      background: var(--gold); color: var(--black);
+      font-family: var(--sans-jp); font-size: clamp(12px,1.2vw,14px); font-weight: 400; letter-spacing: .2em;
+      transition: background .3s, transform .3s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block; padding: clamp(14px,2vw,18px) clamp(28px,4vw,50px);
+      border: 1px solid rgba(255,255,255,.82); color: var(--white);
+      font-family: var(--sans-jp); font-size: clamp(12px,1.2vw,14px); font-weight: 300; letter-spacing: .2em;
+      transition: border-color .3s, transform .3s;
+    }
+    .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+    .btn-dark {
+      display: inline-block; padding: clamp(14px,2vw,18px) clamp(28px,4vw,50px);
+      background: var(--ink); color: var(--white);
+      font-family: var(--sans-jp); font-size: clamp(12px,1.2vw,14px); font-weight: 300; letter-spacing: .2em;
+      transition: background .3s, transform .3s; border: none; cursor: pointer; width: 100%;
+    }
+    .btn-dark:hover { background: var(--green-deep); transform: translateY(-2px); }
+
+    /* ===== 共通 ===== */
+    .section-label {
+      font-family: var(--serif-en); font-size: 11px; letter-spacing: .35em; color: var(--gold);
+      text-transform: uppercase; margin-bottom: clamp(14px,1.8vw,20px);
+    }
+    .section-label-dark { color: var(--gold-dark); }
+    .divider { width: 36px; height: 1px; background: var(--gold); margin: clamp(20px,2.5vw,32px) 0; }
+    .divider-center { margin-left: auto; margin-right: auto; }
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ===== 1. HERO SLIDESHOW ===== */
+    #hero { position: relative; width: 100%; height: 100svh; min-height: 600px; overflow: hidden; }
+
+    /* Ken Burns keyframes — 各スライドで始点を変えてリズムを出す */
+    @keyframes kb-center  { from { transform: scale(1.0) translate(0, 0);       } to { transform: scale(1.1) translate(0, 0);        } }
+    @keyframes kb-left    { from { transform: scale(1.0) translate(1%, 0);      } to { transform: scale(1.1) translate(-1%, -.5%);   } }
+    @keyframes kb-right   { from { transform: scale(1.0) translate(-1%, 0);     } to { transform: scale(1.1) translate(1%, -.5%);    } }
+    @keyframes kb-upleft  { from { transform: scale(1.0) translate(.8%, .8%);   } to { transform: scale(1.1) translate(-.8%, -.8%);  } }
+    @keyframes kb-upright { from { transform: scale(1.0) translate(-.8%, .8%);  } to { transform: scale(1.1) translate(.8%, -.8%);   } }
+    @keyframes kb-down    { from { transform: scale(1.02) translate(0, -.5%);   } to { transform: scale(1.1) translate(0, .5%);      } }
+    @keyframes kb-slow    { from { transform: scale(1.0) translate(0, 0);       } to { transform: scale(1.08) translate(0, 0);       } }
+
+    /* ヴィラ × 馬 スライドショー（7枚） */
     .hero-slide {
-      position: absolute; inset: 0; background-size: cover; background-position: center;
-      opacity: 0; transition: opacity 1.6s ease;
-      animation: kb 14s ease-in-out infinite alternate;
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.8s ease;
+      will-change: transform, opacity;
     }
     .hero-slide.active { opacity: 1; }
-    @keyframes kb { from { transform: scale(1); } to { transform: scale(1.07); } }
+
+    /* ① ヴィラ外観（昼） */
+    .hero-slide:nth-child(1) {
+      background-image: url('../../ヴィラ/外観.jpg');
+      background-position: center 42%;
+    }
+    .hero-slide:nth-child(1).active { animation: kb-center 7s ease-in-out forwards; }
+
+    /* ② ヴィラ内装リビング */
+    .hero-slide:nth-child(2) {
+      background-image: url('../../ヴィラ/リビング.jpg');
+      background-position: center center;
+    }
+    .hero-slide:nth-child(2).active { animation: kb-left 7s ease-in-out forwards; }
+
+    /* ③ 馬の放牧風景 */
+    .hero-slide:nth-child(3) {
+      background-image: url('../../放牧場/乗馬.jpg');
+      background-position: center 38%;
+    }
+    .hero-slide:nth-child(3).active { animation: kb-right 7s ease-in-out forwards; }
+
+    /* ④ ヴィラ外観（別アングル・空撮） */
+    .hero-slide:nth-child(4) {
+      background-image: url('../../ヴィラ/上空ヴィライメージ.png');
+      background-position: center 50%;
+    }
+    .hero-slide:nth-child(4).active { animation: kb-upleft 7s ease-in-out forwards; }
+
+    /* ⑤ ヴィラ内装ダイニング */
+    .hero-slide:nth-child(5) {
+      background-image: url('../../ヴィラ/ダイニング.jpg');
+      background-position: center center;
+    }
+    .hero-slide:nth-child(5).active { animation: kb-upright 7s ease-in-out forwards; }
+
+    /* ⑥ オーナーと馬のふれあい */
+    .hero-slide:nth-child(6) {
+      background-image: url('../../放牧場/ホースセラピー.jpg');
+      background-position: center 35%;
+    }
+    .hero-slide:nth-child(6).active { animation: kb-down 7s ease-in-out forwards; }
+
+    /* ⑦ 乗馬（夕景イメージ） */
+    .hero-slide:nth-child(7) {
+      background-image: url('../../放牧場/乗馬２.jpg');
+      background-position: center 40%;
+    }
+    .hero-slide:nth-child(7).active { animation: kb-slow 7.5s ease-in-out forwards; }
+
     .hero-overlay {
       position: absolute; inset: 0;
       background:
-        linear-gradient(to right, rgba(0,0,0,.82) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.18) 100%),
-        linear-gradient(to top, rgba(0,0,0,.95) 0%, rgba(0,0,0,.35) 48%, rgba(0,0,0,.1) 100%);
+        linear-gradient(to right,
+          rgba(4,4,4,.62) 0%,
+          rgba(4,4,4,.38) 45%,
+          rgba(4,4,4,.08) 75%,
+          transparent 100%
+        ),
+        linear-gradient(to bottom,
+          rgba(4,4,4,.28) 0%,
+          rgba(4,4,4,.12) 38%,
+          rgba(4,4,4,.60) 70%,
+          rgba(4,4,4,.92) 100%
+        );
     }
-    .hero-body { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; }
-    .hero-text { padding: 0 var(--side) clamp(36px,5vw,52px); }
-    .hero-kicker { font-size: 9.5px; letter-spacing: .2em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 18px; font-family: var(--sans); }
-    .hero-title { font-family: var(--serif); font-size: clamp(22px,3.8vw,58px); font-weight: 300; color: var(--white); line-height: 1.55; margin-bottom: 18px; }
-    .hero-sub { font-size: clamp(12px,1.2vw,15px); color: rgba(255,255,255,.62); line-height: 2.05; font-weight: 300; max-width: 500px; }
+    .hero-content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: clamp(40px,6vw,96px) clamp(24px,6vw,96px);
+    }
+    .hero-eyebrow {
+      font-family: var(--serif-en); font-size: clamp(10px,1vw,11px);
+      letter-spacing: .42em; color: var(--gold); text-transform: uppercase;
+      margin-bottom: clamp(18px,2vw,24px);
+    }
+    /* 上段ラベル：限量6棟別墅業主招募 */
+    .hero-kicker {
+      font-family: var(--serif-jp); font-size: clamp(11px,1.1vw,14px); font-weight: 300;
+      letter-spacing: .22em; color: rgba(255,255,255,.92);
+      margin-bottom: clamp(10px,1.2vw,14px);
+    }
+    /* 中段メインコピー：5.5万坪の大自然を所有する — 現在比 約45%縮小 */
+    .hero-title {
+      font-family: var(--serif-jp); font-size: clamp(22px,3vw,42px); font-weight: 300;
+      line-height: 1.6; letter-spacing: .06em; word-break: keep-all;
+      max-width: 680px; margin-bottom: clamp(14px,1.8vw,22px);
+    }
+    /* 下段サブコピー */
+    .hero-sub {
+      font-family: var(--sans-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 300;
+      line-height: 2.1; color: rgba(255,255,255,.88);
+      max-width: 480px; margin-bottom: clamp(24px,3vw,40px);
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    /* ─── Metrics strip ─── */
-    .metrics-strip { display: grid; grid-template-columns: repeat(4,1fr); background: rgba(8,8,8,.88); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,.07); padding: 0 var(--side); }
-    .metric { padding: 22px 0 20px; border-right: 1px solid rgba(255,255,255,.07); }
-    .metric:last-child { border-right: none; }
-    .metric-label { font-size: 8.5px; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; margin-bottom: 7px; display: block; }
-    .metric-value { font-family: var(--serif); font-size: clamp(20px,2.6vw,36px); font-weight: 300; color: var(--white); line-height: 1.15; }
-    .metric-unit { font-size: 10px; color: rgba(255,255,255,.32); margin-top: 4px; }
+    /* ヒーロー価格バー */
+    .hero-price-bar {
+      display: flex; align-items: stretch; gap: 0;
+      margin-bottom: clamp(28px,3.5vw,44px);
+    }
+    /* 左：售價 */
+    .hero-price-col-left {
+      display: flex; flex-direction: column; gap: 5px;
+      padding-right: clamp(24px,3.5vw,52px);
+    }
+    /* 縦区切り線 */
+    .hero-price-divider {
+      width: 1px; flex-shrink: 0;
+      background: rgba(255,255,255,.18);
+      margin: 0; align-self: stretch;
+    }
+    /* 右：利回り + 利益 */
+    .hero-price-col-right {
+      display: flex; flex-direction: column; gap: clamp(14px,1.8vw,22px);
+      padding-left: clamp(24px,3.5vw,52px);
+    }
+    .hero-price-sub-item { display: flex; flex-direction: column; gap: 3px; }
 
-    /* ─── Overview ─── */
-    #overview { background: var(--gray-dark); padding: var(--pad) var(--side); }
-    .overview-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-    .overview-title { font-family: var(--serif); font-size: clamp(18px,2.6vw,38px); font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: 20px; }
-    .overview-lead { font-size: clamp(13px,1.2vw,15px); color: rgba(255,255,255,.5); line-height: 2.1; margin-bottom: 56px; }
-    .plan-badges { display: flex; justify-content: center; gap: clamp(10px,2vw,20px); flex-wrap: wrap; }
-    .plan-badge { border: 1px solid rgba(184,151,90,.35); padding: clamp(18px,2.5vw,28px) clamp(18px,2.5vw,32px); text-align: center; flex: 1; min-width: 190px; max-width: 280px; transition: border-color .3s, background .3s; }
-    .plan-badge:hover { border-color: var(--gold); background: rgba(184,151,90,.05); }
-    .plan-badge-num { font-family: var(--serif); font-size: 32px; color: var(--gold); font-weight: 300; margin-bottom: 10px; line-height: 1; }
-    .plan-badge-title { font-size: 12px; color: rgba(255,255,255,.72); letter-spacing: .04em; line-height: 1.75; }
+    /* 共通ラベル */
+    .hp-en-label {
+      font-family: var(--serif-en); font-size: 9px; letter-spacing: .4em;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 2px;
+    }
+    .hp-jp-label {
+      font-family: var(--sans-jp); font-size: clamp(10px,.9vw,11px); font-weight: 300;
+      color: rgba(255,255,255,.75); letter-spacing: .12em;
+    }
 
-    /* ─── Shared ─── */
-    .plan-num { font-family: var(--serif); font-size: clamp(72px,12vw,140px); font-weight: 300; color: var(--gold); opacity: .12; line-height: 1; margin-bottom: -24px; letter-spacing: -.02em; }
-    .section-title { font-family: var(--serif); font-size: clamp(20px,2.8vw,42px); font-weight: 300; line-height: 1.6; }
-    .section-desc { font-size: clamp(13px,1.2vw,15px); line-height: 2.05; margin-top: 14px; }
-    .plan-inner { max-width: 1100px; margin: 0 auto; }
-    .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,5vw,72px); align-items: start; }
-    .invest-block { border-left: 2px solid var(--gold); padding-left: 20px; margin: 28px 0; }
-    .invest-label { font-size: 9.5px; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
-    .invest-value { font-family: var(--serif); font-size: clamp(24px,3.2vw,44px); font-weight: 300; line-height: 1.2; }
-    .invest-sub { font-size: 11.5px; margin-top: 6px; opacity: .45; }
-    .breakdown { border: 1px solid rgba(255,255,255,.09); padding: 18px 22px; margin: 18px 0; }
-    .breakdown-row { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 12.5px; }
-    .breakdown-row:last-child { border-bottom: none; }
-    .br-label { color: rgba(255,255,255,.38); }
-    .br-val { font-family: var(--serif); color: rgba(255,255,255,.8); }
-    .br-val.gold { color: var(--gold-light); }
-    .feat-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .feat-list li { font-size: 13px; line-height: 1.75; padding-left: 16px; position: relative; }
-    .feat-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 1px; background: var(--gold); }
-    .target-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-    .tag { border: 1px solid rgba(184,151,90,.35); padding: 5px 14px; font-size: 11px; letter-spacing: .04em; }
+    /* ① 6億円 — 現在比80%（96px→78px相当） */
+    .hp-price-value {
+      font-family: var(--serif-jp); font-size: clamp(38px,5.6vw,78px);
+      font-weight: 300; color: var(--white); line-height: 1; letter-spacing: .02em;
+    }
 
-    /* ─── Plan 01 ─── */
-    #plan01 { background: var(--black); padding: var(--pad) var(--side); }
-    #plan01 .section-title { color: var(--white); }
-    #plan01 .section-desc { color: rgba(255,255,255,.5); }
-    #plan01 .invest-value { color: var(--white); }
-    #plan01 .feat-list li { color: rgba(255,255,255,.62); }
-    #plan01 .tag { color: var(--gold-light); }
-    .plan01-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    /* ② 約10.36% — 現在比125%（62px→78px相当） */
+    .hp-yield-value {
+      font-family: var(--serif-en); font-size: clamp(38px,5.5vw,76px);
+      font-weight: 300; color: var(--gold-light); line-height: 1; letter-spacing: .01em;
+    }
 
-    /* ─── Plan 02 ─── */
-    #plan02 { background: var(--off-white); padding: var(--pad) var(--side); }
-    #plan02 .section-label { color: var(--gold-dark); }
-    #plan02 .section-title { color: var(--ink); }
-    #plan02 .section-desc { color: var(--gray-mid); }
-    #plan02 .plan-num { color: var(--gold-dark); }
-    #plan02 .invest-value { color: var(--ink); }
-    #plan02 .invest-sub { color: var(--gray-mid); }
-    #plan02 .breakdown { border-color: rgba(0,0,0,.08); }
-    #plan02 .breakdown-row { border-color: rgba(0,0,0,.05); }
-    #plan02 .br-label { color: var(--gray-mid); }
-    #plan02 .br-val { color: var(--ink); }
-    #plan02 .br-val.gold { color: var(--gold-dark); }
-    #plan02 .feat-list li { color: var(--gray-mid); }
-    #plan02 .feat-list li::before { background: var(--gold-dark); }
-    #plan02 .tag { color: var(--gold-dark); border-color: rgba(140,109,54,.35); }
+    /* ③ 約4,735万円 — 現在比120%（28px→34px相当） */
+    .hp-profit-value {
+      font-family: var(--serif-en); font-size: clamp(20px,2.4vw,34px);
+      font-weight: 300; color: rgba(255,255,255,.92); line-height: 1.1; letter-spacing: .01em;
+    }
 
-    .yield-section { margin-bottom: 52px; }
-    .yield-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(8px,1.5vw,16px); }
-    .yield-card { background: var(--ink); padding: clamp(22px,3vw,36px); position: relative; }
-    .yield-card.featured { background: var(--green-deep); border-top: 2px solid var(--gold); }
-    .yield-card.featured::after { content: 'BASE CASE'; position: absolute; top: -1px; right: 14px; font-size: 7.5px; letter-spacing: .18em; color: var(--gold); background: var(--green-deep); padding: 2px 5px; }
-    .yield-occ { font-size: 9.5px; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
-    .yield-gross { font-family: var(--serif); font-size: clamp(34px,5.5vw,68px); font-weight: 300; color: var(--white); line-height: 1; }
-    .yield-gross sup { font-size: .5em; color: var(--gold-light); vertical-align: super; }
-    .yield-type { font-size: 10.5px; color: rgba(255,255,255,.35); letter-spacing: .08em; margin-top: 4px; }
-    .yield-div { height: 1px; background: rgba(255,255,255,.1); margin: 16px 0; }
-    .yield-net-lbl { font-size: 9.5px; color: var(--gold-light); letter-spacing: .12em; margin-bottom: 4px; }
-    .yield-net-val { font-family: var(--serif); font-size: clamp(20px,2.5vw,30px); color: rgba(255,255,255,.82); font-weight: 300; }
+    /* ヒーロー注意書き */
+    .hero-disclaimer {
+      position: absolute; bottom: clamp(14px,2vw,20px); left: clamp(24px,6vw,96px);
+      right: clamp(80px,12vw,180px); /* インジケーターと重ならないよう右余白確保 */
+      font-family: var(--sans-jp); font-size: 10px; font-weight: 300;
+      color: rgba(255,255,255,.55); line-height: 1.7; letter-spacing: .04em;
+      pointer-events: none; z-index: 2;
+    }
 
-    .plan02-col-left { display: flex; flex-direction: column; gap: 4px; }
-    .plan02-col-left img { width: 100%; object-fit: cover; }
-    .plan02-col-left img:first-child { aspect-ratio: 4/3; }
-    .plan02-col-left img:not(:first-child) { aspect-ratio: 16/9; }
-    .detail-blk { margin-bottom: 26px; }
-    .detail-lbl { font-size: 9.5px; letter-spacing: .18em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 8px; }
-    .detail-val { font-family: var(--serif); font-size: clamp(18px,2vw,26px); color: var(--ink); line-height: 1.4; }
-    .detail-sub { font-size: 11.5px; color: var(--gray-mid); margin-top: 4px; }
-    .exit-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-    .exit-list li { font-size: 13px; color: var(--gray-mid); padding-left: 16px; position: relative; line-height: 1.75; }
-    .exit-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 1px; background: var(--gold-dark); }
-    .mgmt-box { background: var(--white); border-left: 3px solid var(--gold); padding: 22px 26px; margin-top: 28px; }
-    .mgmt-box-lbl { font-size: 9.5px; letter-spacing: .18em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 10px; }
-    .mgmt-box-body { font-size: 13px; color: var(--gray-mid); line-height: 2.05; }
+    /* スライドインジケーター */
+    .hero-indicators {
+      position: absolute; bottom: clamp(28px,4vw,44px); right: clamp(24px,4vw,56px);
+      display: flex; gap: 8px; align-items: center;
+    }
+    .hero-dot {
+      width: 24px; height: 1px; background: rgba(255,255,255,.3);
+      transition: background .4s, width .4s; cursor: pointer;
+    }
+    .hero-dot.active { background: var(--gold); width: 40px; }
 
-    /* ─── Plan 03 ─── */
-    #plan03 { background: var(--gray-dark); padding: var(--pad) var(--side); }
-    #plan03 .section-title { color: var(--white); }
-    #plan03 .section-desc { color: rgba(255,255,255,.5); }
-    #plan03 .invest-value { color: var(--white); }
-    #plan03 .invest-sub { color: rgba(255,255,255,.4); }
-    #plan03 .feat-list li { color: rgba(255,255,255,.62); }
-    #plan03 .tag { color: var(--gold-light); }
-    .p3-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
-    .p3-imgs img { width: 100%; object-fit: cover; }
-    .p3-imgs img:first-child { grid-column: 1/-1; aspect-ratio: 16/9; }
-    .p3-imgs img:not(:first-child) { aspect-ratio: 1/1; }
-    .p3-yield-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,.04); margin: 28px 0; }
-    .p3-yi { background: rgba(0,0,0,.25); padding: 18px 20px; }
-    .p3-yi-lbl { font-size: 8.5px; letter-spacing: .12em; color: var(--gold); margin-bottom: 6px; text-transform: uppercase; }
-    .p3-yi-val { font-family: var(--serif); font-size: clamp(18px,2.4vw,30px); color: var(--white); font-weight: 300; line-height: 1.2; }
-    .p3-yi-sub { font-size: 10.5px; color: rgba(255,255,255,.32); margin-top: 3px; }
+    /* ===== 2. FEATURES ===== */
+    #features {
+      background: var(--off-white);
+      padding: var(--section-pad) clamp(24px,6vw,96px);
+    }
+    .features-inner { max-width: 1200px; margin: 0 auto; }
+    .features-header { text-align: center; margin-bottom: clamp(52px,7vw,88px); }
+    .features-header .section-label { color: var(--gold-dark); }
+    .features-title {
+      font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300;
+      color: var(--ink); line-height: 1.6; letter-spacing: .04em;
+    }
 
-    /* ─── Comparison ─── */
-    #comparison { background: var(--off-white); padding: var(--pad) var(--side); }
-    #comparison .section-label { color: var(--gold-dark); }
-    .comparison-inner { max-width: 1100px; margin: 0 auto; }
-    .comparison-title { font-family: var(--serif); font-size: clamp(20px,2.8vw,40px); font-weight: 300; color: var(--ink); line-height: 1.6; margin-bottom: clamp(36px,5vw,56px); }
-    .tbl-wrap { overflow-x: auto; }
-    .cmp-tbl { width: 100%; border-collapse: collapse; min-width: 640px; }
-    .cmp-tbl thead th { padding: 14px 18px; text-align: left; font-size: 11px; letter-spacing: .06em; font-weight: 400; border-bottom: 2px solid var(--gold); }
-    .cmp-tbl thead th:first-child { color: var(--gray-mid); background: var(--off-white); }
-    .cmp-tbl thead th:nth-child(2) { background: var(--ink); color: var(--gold-light); }
-    .cmp-tbl thead th:nth-child(3) { background: var(--green-deep); color: var(--gold-light); }
-    .cmp-tbl thead th:nth-child(4) { background: #1a1a1a; color: var(--gold-light); }
-    .cmp-tbl tbody td { padding: 13px 18px; font-size: 12.5px; border-bottom: 1px solid rgba(0,0,0,.06); vertical-align: top; line-height: 1.65; }
-    .cmp-tbl tbody td:first-child { font-size: 10px; letter-spacing: .08em; color: var(--gray-mid); background: var(--off-white); white-space: nowrap; }
-    .cmp-tbl tbody td:not(:first-child) { background: var(--white); color: var(--ink); }
-    .cmp-tbl tbody tr:last-child td { border-bottom: none; }
-    .td-num { font-family: var(--serif); font-size: 14px; color: var(--gold-dark); }
-    .td-risk-low { color: #2e7d32; font-size: 12px; }
-    .td-risk-mid { color: #c8a217; font-size: 12px; }
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1px,0.15vw,2px);
+      background: rgba(0,0,0,.06);
+    }
+    .feature-card {
+      background: var(--white);
+      padding: clamp(36px,4vw,56px) clamp(28px,3vw,44px);
+      display: flex; flex-direction: column;
+      transition: box-shadow .3s;
+    }
+    .feature-card:hover { box-shadow: 0 0 0 2px var(--gold) inset; }
+    .feature-num {
+      font-family: var(--serif-en); font-size: clamp(52px,6vw,80px); font-weight: 300;
+      line-height: 1; color: var(--cream); letter-spacing: -.02em;
+      margin-bottom: clamp(16px,2vw,24px);
+    }
+    /* 画像差し替え場所: 各FEATUREカードの画像 */
+    .feature-img {
+      width: 100%; aspect-ratio: 16/9; overflow: hidden;
+      margin-bottom: clamp(20px,2.5vw,30px);
+    }
+    .feature-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .feature-card:hover .feature-img img { transform: scale(1.04); }
+    .feature-card-title {
+      font-family: var(--serif-jp); font-size: clamp(16px,1.6vw,20px); font-weight: 400;
+      color: var(--ink); line-height: 1.55; margin-bottom: clamp(12px,1.5vw,18px);
+    }
+    .feature-card-body {
+      font-size: clamp(13px,1.1vw,14px); color: var(--gray-mid); line-height: 2.0; flex: 1;
+    }
 
-    /* ─── Appeal ─── */
-    #appeal { background: var(--black); padding: var(--pad) var(--side); }
-    .appeal-inner { max-width: 820px; margin: 0 auto; text-align: center; }
-    .appeal-title { font-family: var(--serif); font-size: clamp(18px,2.8vw,40px); font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: 20px; }
-    .appeal-body { font-size: clamp(13px,1.2vw,15px); color: rgba(255,255,255,.5); line-height: 2.2; }
-    .appeal-nums { display: flex; justify-content: center; gap: clamp(20px,4vw,56px); flex-wrap: wrap; margin: 48px 0; padding: 40px 0; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); }
-    .a-num { text-align: center; }
-    .a-num-val { font-family: var(--serif); font-size: clamp(24px,3.8vw,50px); font-weight: 300; color: var(--gold-light); line-height: 1.1; }
-    .a-num-lbl { font-size: 9.5px; letter-spacing: .12em; color: rgba(255,255,255,.3); margin-top: 8px; }
+    /* ===== 3. LIMITED OWNERSHIP ===== */
+    #limited {
+      background: var(--green-deep);
+      padding: var(--section-pad) clamp(24px,6vw,96px);
+    }
+    .limited-inner { max-width: 1100px; margin: 0 auto; }
+    .limited-header { text-align: center; margin-bottom: clamp(52px,7vw,80px); }
+    .limited-title {
+      font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300;
+      color: var(--white); line-height: 1.6;
+    }
+    .limited-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: clamp(10px,1.2vw,16px);
+    }
+    .limited-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+      padding: clamp(20px,2.5vw,32px) clamp(16px,2vw,24px);
+      text-align: center;
+      transition: border-color .3s, background .3s;
+    }
+    .limited-card:hover { border-color: rgba(184,151,90,.4); background: rgba(255,255,255,.07); }
+    .limited-card-icon { color: var(--gold); margin: 0 auto clamp(12px,1.5vw,16px); width: 32px; height: 32px; }
+    .limited-card-icon svg { width: 100%; height: 100%; }
+    .limited-card-title {
+      font-family: var(--serif-jp); font-size: clamp(13px,1.2vw,15px); font-weight: 400;
+      color: var(--white); line-height: 1.55;
+    }
 
-    /* ─── Contact ─── */
-    #contact { background: var(--off-white); padding: var(--pad) var(--side); }
-    .contact-inner { max-width: 620px; margin: 0 auto; }
-    .contact-header { text-align: center; margin-bottom: clamp(40px,5vw,60px); }
-    #contact .section-label { color: var(--gold-dark); }
-    .contact-title { font-family: var(--serif); font-size: clamp(20px,2.5vw,36px); font-weight: 300; color: var(--ink); line-height: 1.65; }
-    .contact-lead { font-size: clamp(12px,1.1vw,14px); color: var(--gray-mid); line-height: 1.95; max-width: 480px; margin: 14px auto 0; }
-    .cform { display: flex; flex-direction: column; gap: 15px; }
-    .fg { display: flex; flex-direction: column; gap: 6px; }
-    .fg label { font-size: 11px; letter-spacing: .08em; color: var(--gray-mid); }
-    .fg label span { color: var(--gold-dark); margin-left: 2px; }
-    .fg input, .fg textarea, .fg select { width: 100%; padding: 12px 14px; background: var(--white); border: 1px solid rgba(0,0,0,.11); color: var(--ink); font-family: var(--sans); font-size: 14px; font-weight: 300; outline: none; transition: border-color .3s; -webkit-appearance: none; border-radius: 0; }
-    .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--gold); }
-    .fg textarea { height: 100px; resize: vertical; }
-    .btn-submit { width: 100%; padding: 16px; background: var(--gold); color: var(--black); font-size: 12px; letter-spacing: .18em; text-align: center; cursor: pointer; border: none; font-family: var(--sans); transition: background .3s; }
-    .btn-submit:hover { background: var(--gold-light); }
-    .form-note { font-size: 11px; color: var(--gray-light); text-align: center; margin-top: 10px; line-height: 1.8; }
+    /* ===== LIGHTBOX ===== */
+    .lb-overlay {
+      display: none; position: fixed; inset: 0; z-index: 300;
+      background: rgba(0,0,0,.92);
+      align-items: center; justify-content: center;
+      padding: clamp(16px,4vw,48px);
+    }
+    .lb-overlay.active { display: flex; flex-direction: column; }
+    .lb-img-wrap { position: relative; max-width: 90vw; max-height: 80vh; }
+    .lb-overlay img {
+      display: block; max-width: 90vw; max-height: 75vh;
+      object-fit: contain;
+      box-shadow: 0 24px 80px rgba(0,0,0,.6);
+    }
+    .lb-caption {
+      margin-top: 14px; text-align: center;
+      font-family: var(--sans-jp); font-size: 12px; letter-spacing: .12em;
+      color: rgba(255,255,255,.45);
+    }
+    .lb-close {
+      position: fixed; top: clamp(16px,3vw,28px); right: clamp(16px,3vw,28px);
+      width: 44px; height: 44px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.08); border-radius: 50%;
+      transition: background .2s;
+    }
+    .lb-close:hover { background: rgba(255,255,255,.18); }
+    .lb-close svg { width: 20px; height: 20px; stroke: rgba(255,255,255,.8); }
+    /* クリック可能な画像にカーソル表示 */
+    .zoomable { cursor: zoom-in; }
 
-    /* ─── Footer ─── */
-    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,.05); padding: 36px var(--side) 28px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
-    .footer-logo { font-family: var(--sans); font-size: 9.5px; letter-spacing: .28em; color: var(--gold); text-transform: uppercase; }
-    .footer-sub { font-size: 10.5px; color: rgba(255,255,255,.22); margin-top: 4px; }
-    .footer-link { font-size: 10.5px; letter-spacing: .06em; color: rgba(255,255,255,.32); border: 1px solid rgba(255,255,255,.1); padding: 9px 18px; transition: color .3s, border-color .3s; }
-    .footer-link:hover { color: var(--gold-light); border-color: rgba(184,151,90,.4); }
-    .footer-copy { font-size: 9.5px; color: rgba(255,255,255,.15); text-align: center; margin-top: 20px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+    /* ===== ACCORDION (Ownership) ===== */
+    .accord-grid {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: clamp(6px,0.8vw,10px);
+    }
+    .accord-item {
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition: border-color .3s;
+      overflow: hidden;
+    }
+    .accord-item.open { border-color: rgba(184,151,90,.3); }
+    .accord-trigger {
+      width: 100%; display: flex; align-items: center; gap: clamp(14px,1.8vw,20px);
+      padding: clamp(20px,2.5vw,28px) clamp(20px,2.5vw,28px);
+      cursor: pointer; border: none; background: transparent;
+      text-align: left;
+    }
+    .accord-icon {
+      flex-shrink: 0; width: 36px; height: 36px; color: var(--gold);
+    }
+    .accord-icon svg { width: 100%; height: 100%; }
+    .accord-title-wrap { flex: 1; }
+    .accord-title {
+      font-family: var(--serif-jp); font-size: clamp(14px,1.4vw,17px); font-weight: 400;
+      color: var(--white); line-height: 1.4;
+    }
+    .accord-arrow {
+      flex-shrink: 0; width: 20px; height: 20px; color: rgba(255,255,255,.4);
+      transition: transform .35s ease, color .3s;
+    }
+    .accord-arrow svg { width: 100%; height: 100%; }
+    .accord-item.open .accord-arrow { transform: rotate(180deg); color: var(--gold); }
+    .accord-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s cubic-bezier(.4,0,.2,1), padding .35s ease;
+      padding: 0 clamp(20px,2.5vw,28px);
+    }
+    .accord-item.open .accord-body { max-height: 300px; padding-bottom: clamp(20px,2.5vw,28px); }
+    .accord-body p {
+      font-size: clamp(13px,1.2vw,14px); color: rgba(255,255,255,.55);
+      line-height: 2.0; border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: clamp(14px,1.8vw,18px);
+    }
 
-    /* ─── Modal ─── */
-    .modal-ov { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 200; align-items: center; justify-content: center; }
-    .modal-ov.active { display: flex; }
-    .modal-box { background: var(--off-white); padding: clamp(36px,5vw,56px); max-width: 430px; width: 90%; text-align: center; }
-    .modal-icon { margin-bottom: 16px; }
-    .modal-ttl { font-family: var(--serif); font-size: clamp(16px,1.8vw,22px); color: var(--ink); margin-bottom: 10px; }
-    .modal-msg { font-size: 13px; color: var(--gray-mid); line-height: 1.85; margin-bottom: 22px; }
-    .modal-cls { font-size: 12px; letter-spacing: .12em; color: var(--gray-mid); cursor: pointer; border: 1px solid rgba(0,0,0,.15); padding: 10px 26px; transition: border-color .3s; display: inline-block; }
-    .modal-cls:hover { border-color: var(--ink); color: var(--ink); }
+    /* ===== 4. PRIVATE VILLAS ===== */
+    #villas { background: var(--black); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .villas-inner { max-width: 1200px; margin: 0 auto; }
+    .villas-header { margin-bottom: clamp(44px,5.5vw,68px); }
+    .villas-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,44px); font-weight: 300; color: var(--white); line-height: 1.6; }
+    /* 画像差し替え場所: ヴィラ/上空ヴィライメージ.png */
+    .villa-aerial { width: 100%; aspect-ratio: 21/9; object-fit: cover; object-position: center; margin-bottom: clamp(24px,3vw,36px); }
+    /* 画像差し替え場所: ヴィラ/ 各室内・外観 */
+    .villa-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: clamp(36px,4.5vw,56px); }
+    .villa-img { aspect-ratio: 4/3; overflow: hidden; }
+    .villa-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .villa-img:hover img { transform: scale(1.04); }
+    .villa-specs { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(1px,.15vw,2px); background: rgba(255,255,255,.06); }
+    .villa-spec { background: rgba(255,255,255,.03); padding: clamp(24px,3vw,36px) clamp(20px,2.5vw,30px); }
+    .villa-spec-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: .3em; color: var(--gold); margin-bottom: 10px; }
+    .villa-spec-value { font-family: var(--serif-jp); font-size: clamp(18px,2vw,26px); font-weight: 300; line-height: 1.4; }
+    .villa-spec-note { font-size: 12px; color: var(--gray-light); margin-top: 8px; line-height: 1.7; }
 
-    /* ─── Responsive ─── */
+    /* ===== 4.4 WELLNEST INTRO ===== */
+    #wellnest-intro { background: var(--white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .wni-inner { max-width: 1100px; margin: 0 auto; }
+    .wni-header { margin-bottom: clamp(56px,7vw,88px); }
+    .wni-eyebrow { font-family: var(--serif-en); font-size: 9px; letter-spacing: .45em; color: var(--gold-dark); text-transform: uppercase; margin-bottom: clamp(14px,1.8vw,20px); }
+    .wni-title { font-family: var(--serif-jp); font-size: clamp(28px,3.5vw,52px); font-weight: 300; color: var(--ink); line-height: 1.5; margin-bottom: clamp(18px,2.2vw,28px); }
+    .wni-sub { font-family: var(--serif-jp); font-size: clamp(13px,1.2vw,15px); font-weight: 300; color: var(--gray-mid); line-height: 1.95; white-space: nowrap; }
+    @media (max-width: 640px) { .wni-sub { white-space: normal; word-break: keep-all; overflow-wrap: normal; } }
+    .wni-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(16px,2vw,28px); }
+    .wni-card {
+      background: var(--white); border-radius: 2px;
+      padding: 0;
+      box-shadow: 0 2px 18px rgba(0,0,0,.07), 0 0 0 1px rgba(0,0,0,.04);
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .wni-card-img-wrap { width: 100%; height: 260px; overflow: hidden; flex-shrink: 0; }
+    .wni-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in; transition: transform .5s ease; }
+    .wni-card-img-wrap img:hover { transform: scale(1.04); }
+    .wni-card-content { padding: clamp(28px,3.5vw,44px) clamp(24px,3vw,40px); display: flex; flex-direction: column; gap: 14px; flex: 1; position: relative; }
+    .wni-card-num {
+      font-family: var(--serif-en); font-size: clamp(64px,8vw,108px);
+      font-weight: 300; line-height: 1; color: rgba(0,0,0,.045);
+      position: absolute; top: clamp(10px,1.5vw,18px); right: clamp(12px,2vw,20px);
+      letter-spacing: -.02em; pointer-events: none; user-select: none;
+    }
+    .wni-card-en { font-family: var(--serif-en); font-size: 9px; letter-spacing: .38em; color: var(--gold-dark); text-transform: uppercase; }
+    .wni-card-title { font-family: var(--serif-jp); font-size: clamp(15px,1.6vw,20px); font-weight: 300; color: var(--ink); line-height: 1.5; }
+    .wni-card-sub { font-family: var(--serif-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 300; color: var(--gray-mid); line-height: 1.6; }
+    .wni-divider { width: 28px; height: 1px; background: var(--gold); }
+    .wni-card-body { font-family: var(--sans-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 300; color: var(--gray-dark); line-height: 2.2; flex: 1; }
+
+    /* ===== 4.5 WELLNEST HOME ===== */
+    #wellnest { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .wn-inner { max-width: 1100px; margin: 0 auto; }
+    .wn-header { margin-bottom: clamp(48px,6vw,72px); }
+    .wn-title { font-family: var(--serif-jp); font-size: clamp(26px,3.2vw,46px); font-weight: 300; color: var(--ink); line-height: 1.55; margin-bottom: clamp(16px,2vw,24px); }
+    .wn-sub { font-family: var(--sans-jp); font-size: clamp(13px,1.2vw,15px); color: var(--gray-mid); line-height: 2.1; font-weight: 300; max-width: 640px; }
+
+    .wn-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(12px,1.5vw,20px); margin-bottom: clamp(40px,5vw,64px); }
+
+    .wn-card {
+      position: relative; cursor: pointer; overflow: hidden;
+      background: var(--white); border-radius: 2px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+    .wn-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.12); }
+
+    .wn-card-img-wrap { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+    .wn-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .5s ease; display: block; }
+    .wn-card:hover .wn-card-img-wrap img { transform: scale(1.06); filter: brightness(.75); }
+
+    /* 写真上のヒントオーバーレイ */
+    .wn-card-hint {
+      position: absolute; top: 0; left: 0; right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, transparent 100%);
+      display: flex; align-items: center; gap: 7px;
+      font-family: var(--serif-en); font-size: 10px; letter-spacing: .22em;
+      color: rgba(255,255,255,.85); text-transform: uppercase;
+      transition: opacity .4s;
+      pointer-events: none;
+    }
+    .wn-card-hint-icon {
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.7);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; line-height: 1; color: rgba(255,255,255,.9);
+      flex-shrink: 0;
+    }
+
+    .wn-card-body { padding: clamp(16px,1.8vw,22px); }
+    .wn-card-num { font-family: var(--serif-en); font-size: 11px; letter-spacing: .3em; color: var(--gold-dark); margin-bottom: 6px; }
+    .wn-card-title { font-family: var(--serif-jp); font-size: clamp(13px,1.3vw,16px); font-weight: 300; color: var(--ink); line-height: 1.55; margin-bottom: 5px; }
+    .wn-card-sub { font-family: var(--sans-jp); font-size: clamp(11px,1vw,12px); color: var(--gray-mid); line-height: 1.7; }
+
+    /* WELLNEST モーダル */
+    .wn-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 300;
+      background: rgba(0,0,0,.82); align-items: center; justify-content: center;
+      padding: clamp(16px,4vw,48px);
+    }
+    .wn-modal-overlay.active { display: flex; }
+    .wn-modal-box {
+      background: var(--white); max-width: 1000px; width: 90vw;
+      max-height: 90vh; overflow: hidden; position: relative;
+      display: grid; grid-template-columns: 1fr 1fr;
+      box-shadow: 0 32px 80px rgba(0,0,0,.5);
+    }
+    .wn-modal-img-col {
+      display: flex; align-items: center; justify-content: center;
+      background: #F2F2F0; overflow: hidden;
+      min-height: 320px;
+    }
+    .wn-modal-img-col img {
+      max-width: 100%; max-height: 100%;
+      width: auto; height: auto;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .wn-modal-text-col { padding: clamp(28px,4vw,44px) clamp(20px,3vw,36px); display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
+    .wn-modal-en { font-family: var(--serif-en); font-size: 9px; letter-spacing: .4em; color: var(--gold-dark); text-transform: uppercase; }
+    .wn-modal-title { font-family: var(--serif-jp); font-size: clamp(15px,1.6vw,20px); font-weight: 300; color: var(--ink); line-height: 1.5; }
+    .wn-modal-sub { font-family: var(--sans-jp); font-size: clamp(11px,1vw,13px); color: var(--gray-mid); line-height: 1.7; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .wn-modal-desc { font-family: var(--sans-jp); font-size: clamp(12px,1.1vw,14px); color: var(--gray-dark); line-height: 2.1; font-weight: 300; white-space: pre-line; }
+    .wn-modal-close {
+      position: absolute; top: 14px; right: 16px;
+      width: 32px; height: 32px; background: rgba(0,0,0,.55); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;
+      border-radius: 50%; transition: background .3s;
+    }
+    .wn-modal-close:hover { background: rgba(0,0,0,.8); }
+
+    /* ボトムリンクボタン */
+    .wn-link-wrap { text-align: center; }
+    .wn-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--serif-en); font-size: 11px; letter-spacing: .28em;
+      color: var(--ink); text-transform: uppercase;
+      border-bottom: 1px solid rgba(0,0,0,.3); padding-bottom: 3px;
+      transition: color .3s, border-color .3s;
+    }
+    .wn-link:hover { color: var(--gold-dark); border-color: var(--gold-dark); }
+    .wn-link svg { width: 14px; height: 14px; }
+
+    /* ===== 6. OWNERSHIP WITHOUT HASSLE ===== */
+    #ownership { background: var(--ink); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .ownership-inner { max-width: 1100px; margin: 0 auto; }
+    .ownership-header { text-align: center; margin-bottom: clamp(16px,2vw,24px); }
+    .ownership-title { font-family: var(--serif-jp); font-size: clamp(26px,3.5vw,50px); font-weight: 300; color: var(--white); line-height: 1.65; }
+    .ownership-lead {
+      text-align: center; font-size: clamp(14px,1.4vw,17px); color: rgba(255,255,255,.6);
+      line-height: 2.1; max-width: 600px; margin: clamp(20px,2.5vw,32px) auto clamp(52px,7vw,80px);
+    }
+    .service-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; }
+    .service-card {
+      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06);
+      padding: clamp(24px,3vw,36px) clamp(14px,1.5vw,20px); text-align: center;
+      transition: border-color .3s, background .3s;
+    }
+    .service-card:hover { border-color: rgba(184,151,90,.3); background: rgba(255,255,255,.05); }
+    .service-card-icon { color: var(--gold); width: 32px; height: 32px; margin: 0 auto clamp(10px,1.2vw,14px); }
+    .service-card-icon svg { width: 100%; height: 100%; }
+    .service-card-name { font-family: var(--serif-jp); font-size: clamp(12px,1.1vw,14px); font-weight: 400; color: var(--white); line-height: 1.5; }
+    .ownership-cta-note {
+      margin-top: clamp(40px,5vw,60px); text-align: center;
+      font-size: clamp(13px,1.2vw,15px); color: rgba(255,255,255,.45); line-height: 1.9;
+    }
+
+    /* ===== 7. INVESTMENT ===== */
+    #investment { background: var(--green-deep); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .investment-inner { max-width: 1100px; margin: 0 auto; }
+    .investment-header { margin-bottom: clamp(36px,5vw,60px); }
+    .investment-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,44px); font-weight: 300; color: var(--white); line-height: 1.6; }
+    .investment-lead { font-family: var(--sans-jp); font-size: clamp(13px,1.3vw,15px); color: rgba(255,255,255,.5); line-height: 2.1; margin-top: clamp(16px,2vw,24px); max-width: 640px; }
+
+    /* シミュレーションフロー */
+    .inv-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(6px,.8vw,10px); margin-bottom: clamp(24px,3vw,36px); }
+    .inv-flow-card { padding: clamp(18px,2.2vw,28px) clamp(14px,1.8vw,22px); background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); display: flex; flex-direction: column; gap: 8px; }
+    .inv-flow-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .32em; color: var(--gold-light); text-transform: uppercase; }
+    .inv-flow-value { font-family: var(--serif-en); font-size: clamp(18px,2vw,28px); font-weight: 300; color: var(--white); line-height: 1.2; }
+    .inv-flow-unit { font-family: var(--sans-jp); font-size: 11px; color: rgba(255,255,255,.38); }
+
+    /* コスト内訳 */
+    .inv-cost-block { display: grid; grid-template-columns: auto 1fr; gap: 0; margin-bottom: clamp(20px,2.5vw,28px); border: 1px solid rgba(255,255,255,.07); }
+    .inv-cost-header { grid-column: 1/-1; padding: 14px clamp(14px,1.8vw,22px); background: rgba(255,255,255,.03); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .inv-cost-header-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; }
+    .inv-cost-header-value { font-family: var(--serif-en); font-size: clamp(16px,1.8vw,22px); color: var(--white); margin-top: 4px; }
+    .inv-cost-items { grid-column: 1/-1; display: flex; }
+    .inv-cost-item { flex: 1; padding: clamp(12px,1.5vw,18px) clamp(14px,1.8vw,22px); border-right: 1px solid rgba(255,255,255,.05); }
+    .inv-cost-item:last-child { border-right: none; }
+    .inv-cost-item-label { font-size: 10px; letter-spacing: .18em; color: rgba(255,255,255,.35); margin-bottom: 5px; }
+    .inv-cost-item-value { font-family: var(--serif-en); font-size: clamp(14px,1.4vw,17px); color: rgba(255,255,255,.65); }
+
+    /* 利回り巨大表示 */
+    .inv-yield-stage { text-align: center; padding: clamp(48px,7vw,96px) 0 clamp(40px,6vw,80px); border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); margin-bottom: clamp(28px,3.5vw,44px); }
+    .inv-yield-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: .5em; color: var(--gold); text-transform: uppercase; margin-bottom: clamp(16px,2vw,24px); }
+    .inv-yield-num { font-family: var(--serif-en); font-size: clamp(80px,14vw,180px); font-weight: 300; color: var(--white); line-height: 1; letter-spacing: -.01em; }
+    .inv-yield-pct { font-size: clamp(32px,5vw,72px); color: var(--gold-light); vertical-align: super; margin-left: 4px; }
+    .inv-yield-basis { font-family: var(--sans-jp); font-size: 12px; color: rgba(255,255,255,.3); margin-top: clamp(12px,1.5vw,18px); letter-spacing: .1em; }
+
+    .inv-noi-row { display: flex; justify-content: center; gap: clamp(40px,5vw,72px); margin-bottom: clamp(28px,3.5vw,44px); flex-wrap: wrap; }
+    .inv-noi-item { text-align: center; }
+    .inv-noi-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 8px; }
+    .inv-noi-value { font-family: var(--serif-en); font-size: clamp(20px,2.2vw,30px); font-weight: 300; color: var(--white); }
+    .inv-noi-unit { font-family: var(--sans-jp); font-size: 11px; color: rgba(255,255,255,.35); margin-top: 3px; }
+
+    .inv-disclaimer { font-size: 11px; color: rgba(255,255,255,.28); line-height: 2; border-top: 1px solid rgba(255,255,255,.05); padding-top: clamp(16px,2vw,24px); }
+
+    /* ===== 6. WHY ONUMA MODEL ===== */
+    #why-onuma { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .why-inner { max-width: 1100px; margin: 0 auto; }
+    .why-header { margin-bottom: clamp(40px,5vw,64px); }
+    .why-title { font-family: var(--serif-jp); font-size: clamp(26px,3.2vw,48px); font-weight: 300; color: var(--ink); line-height: 1.55; }
+    .why-sub { font-family: var(--serif-jp); font-size: clamp(16px,1.8vw,22px); font-weight: 300; color: var(--ink); line-height: 1.9; margin-top: clamp(20px,2.5vw,32px); }
+    .why-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: start; margin-top: clamp(48px,6vw,72px); }
+    .why-text { font-family: var(--sans-jp); font-size: clamp(13px,1.3vw,15px); color: var(--gray-dark); line-height: 2.2; }
+    .why-text ul { margin: 12px 0 24px 0; padding: 0; list-style: none; }
+    .why-text ul li { padding: 7px 0 7px 18px; border-bottom: 1px solid rgba(0,0,0,.06); position: relative; font-size: clamp(12px,1.2vw,14px); color: var(--gray-mid); }
+    .why-text ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold-dark); }
+    .why-text strong { font-weight: 400; color: var(--ink); }
+    .why-img-wrap { position: relative; cursor: pointer; }
+    .why-img-wrap img { width: 100%; border-radius: 2px; box-shadow: 0 24px 64px rgba(0,0,0,.12); transition: transform .5s ease, box-shadow .5s ease; }
+    .why-img-wrap:hover img { transform: scale(1.015); box-shadow: 0 32px 80px rgba(0,0,0,.18); }
+    .why-img-caption { font-size: 10px; letter-spacing: .22em; color: var(--gray-mid); text-align: center; margin-top: 12px; text-transform: uppercase; }
+
+    /* ===== 8. SMART OWNER SYSTEM ===== */
+    #smart-owner { background: var(--black); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .smart-inner { max-width: 1100px; margin: 0 auto; }
+    .smart-header { margin-bottom: clamp(40px,5vw,64px); }
+    .smart-title { font-family: var(--serif-jp); font-size: clamp(26px,3.2vw,48px); font-weight: 300; color: var(--white); line-height: 1.55; }
+    .smart-sub { font-family: var(--serif-jp); font-size: clamp(15px,1.6vw,20px); font-weight: 300; color: rgba(255,255,255,.55); line-height: 1.9; margin-top: clamp(16px,2vw,24px); }
+    .smart-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: center; }
+    .smart-img-wrap { position: relative; cursor: pointer; }
+    .smart-img-wrap img { width: 100%; border-radius: 2px; box-shadow: 0 24px 64px rgba(0,0,0,.4); transition: transform .5s ease; }
+    .smart-img-wrap:hover img { transform: scale(1.015); }
+    .smart-features { display: flex; flex-direction: column; gap: 0; }
+    .smart-feature-item { padding: clamp(18px,2vw,24px) 0; border-bottom: 1px solid rgba(255,255,255,.06); display: flex; flex-direction: column; gap: 6px; }
+    .smart-feature-item:first-child { border-top: 1px solid rgba(255,255,255,.06); }
+    .smart-feature-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; }
+    .smart-feature-text { font-family: var(--sans-jp); font-size: clamp(13px,1.3vw,15px); color: rgba(255,255,255,.7); line-height: 1.8; }
+    .smart-disclaimer { font-size: 11px; color: rgba(255,255,255,.25); line-height: 2; border-top: 1px solid rgba(255,255,255,.06); padding-top: clamp(16px,2vw,24px); margin-top: clamp(40px,5vw,64px); }
+
+    /* Investment redesign (image-centric) */
+    .inv-img-wrap { position: relative; cursor: pointer; margin-bottom: clamp(32px,4vw,56px); border-radius: 2px; overflow: hidden; box-shadow: 0 24px 72px rgba(0,0,0,.5); }
+    .inv-img-wrap img { width: 100%; display: block; transition: transform .6s ease; }
+    .inv-img-wrap:hover img { transform: scale(1.01); }
+    .inv-data-row { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(1px,2px,2px); background: rgba(255,255,255,.06); margin-bottom: clamp(24px,3vw,36px); }
+    .inv-data-cell { background: var(--green-deep); padding: clamp(20px,2.5vw,32px) clamp(14px,1.8vw,22px); }
+    .inv-data-label { font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 10px; }
+    .inv-data-value { font-family: var(--serif-en); font-size: clamp(18px,2vw,26px); font-weight: 300; color: var(--white); line-height: 1.2; }
+    .inv-data-unit { font-family: var(--sans-jp); font-size: 10px; color: rgba(255,255,255,.35); margin-top: 5px; }
+
+    /* ===== 8. ONSEN ===== */
+    #onsen { background: var(--black); padding: var(--section-pad) 0; }
+    .onsen-inner { max-width: 1200px; margin: 0 auto; padding: 0 clamp(24px,6vw,96px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: center; }
+    /* 画像差し替え場所: レストラン・温泉棟/温泉/ */
+    .onsen-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .onsen-img-main { grid-column: 1/-1; aspect-ratio: 16/9; overflow: hidden; }
+    .onsen-img-sub { aspect-ratio: 1/1; overflow: hidden; }
+    .onsen-img-main img, .onsen-img-sub img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .onsen-img-main:hover img, .onsen-img-sub:hover img { transform: scale(1.04); }
+    .onsen-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300; color: var(--white); line-height: 1.65; }
+    .onsen-body { font-size: clamp(13px,1.3vw,15px); color: rgba(255,255,255,.65); line-height: 2.2; margin-top: clamp(18px,2.5vw,28px); }
+    .onsen-note { margin-top: clamp(18px,2vw,26px); padding: clamp(14px,1.8vw,20px); border-left: 2px solid var(--gold); background: rgba(255,255,255,.03); font-size: clamp(12px,1.1vw,14px); color: rgba(255,255,255,.55); line-height: 1.9; }
+
+    /* ===== 9. DINING ===== */
+    #dining { background: var(--ink); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .dining-inner { max-width: 1200px; margin: 0 auto; }
+    /* 画像差し替え場所: レストラン・温泉棟/レストラン/レストラン棟外観.JPG */
+    .dining-hero-img { width: 100%; aspect-ratio: 21/9; overflow: hidden; margin-bottom: clamp(40px,5vw,60px); }
+    .dining-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+    .dining-cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,80px); align-items: start; }
+    .dining-title { font-family: var(--serif-jp); font-size: clamp(22px,2.8vw,40px); font-weight: 300; color: var(--white); line-height: 1.65; }
+    .dining-body { font-size: clamp(13px,1.3vw,15px); color: rgba(255,255,255,.65); line-height: 2.2; margin-top: clamp(18px,2.5vw,28px); }
+    .dining-note { margin-top: clamp(18px,2vw,26px); font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.9; border-top: 1px solid rgba(255,255,255,.08); padding-top: clamp(14px,1.8vw,20px); }
+    /* 画像差し替え場所: レストラン・温泉棟/レストラン/料理1〜3, 内観 */
+    .dining-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .dining-photo { aspect-ratio: 1/1; overflow: hidden; }
+    .dining-photo:first-child { grid-column: 1/-1; aspect-ratio: 16/9; }
+    .dining-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .dining-photo:hover img { transform: scale(1.04); }
+
+    /* ===== 10. HORSE ===== */
+    #horse { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .horse-inner { max-width: 1200px; margin: 0 auto; }
+    .horse-header { text-align: center; margin-bottom: clamp(48px,6vw,72px); }
+    .horse-header .section-label { color: var(--gold-dark); }
+    .horse-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300; color: var(--ink); line-height: 1.6; }
+    .horse-lead { font-size: clamp(13px,1.3vw,15px); color: var(--gray-mid); line-height: 2.0; max-width: 560px; margin: clamp(16px,2vw,24px) auto 0; }
+    /* 画像差し替え場所: 放牧場/ 各馬・乗馬・ホースセラピー画像 */
+    .horse-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: clamp(40px,5vw,56px); }
+    .horse-photo { aspect-ratio: 1/1; overflow: hidden; }
+    .horse-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .horse-photo:hover img { transform: scale(1.04); }
+    .horse-features { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(12px,1.5vw,18px); }
+    .horse-feat { padding: clamp(24px,3vw,36px) clamp(18px,2vw,26px); background: var(--white); border-bottom: 2px solid transparent; transition: border-color .3s; }
+    .horse-feat:hover { border-color: var(--gold); }
+    .horse-feat-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: .3em; color: var(--gold); margin-bottom: 10px; }
+    .horse-feat-title { font-family: var(--serif-jp); font-size: clamp(14px,1.4vw,17px); font-weight: 400; color: var(--ink); margin-bottom: 8px; }
+    .horse-feat-desc { font-size: clamp(12px,1.1vw,13px); color: var(--gray-mid); line-height: 1.85; }
+
+    /* ===== CONCEPT MOVIE ===== */
+    #concept-movie {
+      background: var(--green-deep);
+      padding: var(--section-pad) clamp(24px,6vw,96px);
+    }
+    .concept-movie-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .concept-movie-header {
+      text-align: center;
+      margin-bottom: clamp(36px,5vw,60px);
+    }
+    .concept-movie-title {
+      font-family: var(--serif-jp);
+      font-size: clamp(22px,3vw,40px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.65;
+    }
+    .concept-movie-body {
+      font-size: clamp(13px,1.3vw,15px);
+      color: rgba(255,255,255,.6);
+      line-height: 2.1;
+      max-width: 640px;
+      margin: clamp(16px,2vw,24px) auto 0;
+    }
+    .concept-movie-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 24px 72px rgba(0,0,0,.45);
+    }
+    .concept-movie-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .concept-movie-note {
+      margin-top: clamp(16px,2vw,20px);
+      text-align: center;
+      font-size: 11px;
+      color: rgba(255,255,255,.28);
+      line-height: 1.8;
+      letter-spacing: .04em;
+    }
+
+    /* ===== 11. OWNER EXPERIENCE ===== */
+    #experience { background: var(--ink); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .experience-inner { max-width: 1000px; margin: 0 auto; }
+    .experience-header { text-align: center; margin-bottom: clamp(56px,7vw,90px); }
+    .experience-title { font-family: var(--serif-jp); font-size: clamp(24px,3vw,42px); font-weight: 300; color: var(--white); line-height: 1.6; }
+    .timeline { position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, rgba(184,151,90,.35) 10%, rgba(184,151,90,.35) 90%, transparent); transform: translateX(-50%); }
+    .tl-item { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,72px); margin-bottom: clamp(44px,5.5vw,68px); align-items: center; }
+    .tl-item:nth-child(even) .tl-text { order: 2; }
+    .tl-item:nth-child(even) .tl-visual { order: 1; }
+    .tl-time { font-family: var(--serif-en); font-size: 11px; letter-spacing: .3em; color: var(--gold); margin-bottom: 12px; }
+    .tl-heading { font-family: var(--serif-jp); font-size: clamp(18px,2vw,26px); font-weight: 300; color: var(--white); line-height: 1.55; margin-bottom: 12px; }
+    .tl-desc { font-size: clamp(13px,1.2vw,14px); color: rgba(255,255,255,.58); line-height: 2.0; }
+    /* 画像差し替え場所: タイムライン各コマの写真 */
+    .tl-visual { aspect-ratio: 4/3; overflow: hidden; }
+    .tl-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== 12. CTA ===== */
+    #contact { background: var(--off-white); padding: var(--section-pad) clamp(24px,6vw,96px); }
+    .contact-inner { max-width: 720px; margin: 0 auto; }
+    .contact-header { text-align: center; margin-bottom: clamp(44px,5.5vw,68px); }
+    .contact-header .section-label { color: var(--gold-dark); }
+    .contact-title { font-family: var(--serif-jp); font-size: clamp(22px,2.8vw,40px); font-weight: 300; color: var(--ink); line-height: 1.65; }
+    .contact-lead { font-size: clamp(13px,1.3vw,15px); color: var(--gray-mid); line-height: 1.9; max-width: 480px; margin: clamp(16px,2vw,22px) auto 0; }
+    .contact-form { display: flex; flex-direction: column; gap: clamp(14px,1.8vw,18px); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px,1.2vw,16px); }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-label { font-size: 11px; letter-spacing: .15em; color: var(--gray-mid); }
+    .form-label span { color: var(--gold-dark); margin-left: 3px; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 13px 15px; background: var(--white); border: 1px solid rgba(0,0,0,.12);
+      color: var(--ink); font-family: var(--sans-jp); font-size: 14px; font-weight: 300;
+      outline: none; transition: border-color .3s; -webkit-appearance: none;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { height: 110px; resize: vertical; }
+    .form-submit { margin-top: 4px; }
+    .form-note { font-size: 11px; color: var(--gray-light); text-align: center; margin-top: 14px; line-height: 1.8; }
+
+    /* 法的注記 */
+    .legal-note {
+      max-width: 720px; margin: clamp(32px,4vw,48px) auto 0; padding-top: clamp(20px,2.5vw,28px);
+      border-top: 1px solid rgba(0,0,0,.08);
+      font-size: 11px; color: var(--gray-light); line-height: 2.0;
+    }
+
+    /* ===== SPONSORS ===== */
+    #sponsors {
+      background: var(--off-white);
+      padding: clamp(64px,8vw,100px) clamp(24px,6vw,96px);
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+    .sponsors-inner { max-width: 1100px; margin: 0 auto; }
+    .sponsors-header { text-align: center; margin-bottom: clamp(40px,5vw,60px); }
+    .sponsors-title {
+      font-family: var(--serif-jp);
+      font-size: clamp(18px,2vw,26px);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: .18em;
+    }
+    .sponsors-title::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      margin: 14px auto 0;
+    }
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: clamp(14px,2vw,24px);
+    }
+    .sponsor-card {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(18px,2.5vw,28px) clamp(14px,2vw,22px);
+      box-shadow: 0 1px 6px rgba(0,0,0,.05);
+    }
+    .sponsor-card img {
+      max-width: 100%;
+      max-height: 56px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
     @media (max-width: 900px) {
-      .plan-grid { grid-template-columns: 1fr; }
-      .yield-cards { grid-template-columns: 1fr; }
-      .p3-imgs { grid-template-columns: 1fr; }
-      .p3-imgs img:first-child { grid-column: auto; }
+      .sponsors-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
+      .sponsor-card img { max-height: 44px; }
+    }
+
+    /* モーダル */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 200; align-items: center; justify-content: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-box { background: var(--off-white); padding: clamp(36px,5vw,56px); max-width: 440px; width: 90%; text-align: center; }
+    .modal-icon { color: var(--gold); margin-bottom: 18px; }
+    .modal-title { font-family: var(--serif-jp); font-size: clamp(17px,1.8vw,22px); color: var(--ink); margin-bottom: 10px; }
+    .modal-body { font-size: 13px; color: var(--gray-mid); line-height: 1.85; margin-bottom: 22px; }
+    .modal-close { font-size: 12px; letter-spacing: .2em; color: var(--gray-mid); cursor: pointer; border: 1px solid rgba(0,0,0,.15); padding: 11px 28px; transition: border-color .3s; }
+    .modal-close:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* ===== 6 VILLAS ONLY ===== */
+    #six-villas {
+      background: var(--green-deep);
+      padding: var(--section-pad) clamp(24px,6vw,96px);
+    }
+    .sv-inner { max-width: 1100px; margin: 0 auto; }
+
+    .sv-header { margin-bottom: clamp(48px,6vw,80px); text-align: center; }
+    .sv-title {
+      font-family: var(--serif-jp); font-size: clamp(26px,3.2vw,46px);
+      font-weight: 300; color: var(--white); line-height: 1.55;
+      margin-bottom: clamp(16px,2vw,24px);
+    }
+    .sv-sub {
+      font-family: var(--sans-jp); font-size: clamp(13px,1.2vw,15px);
+      color: rgba(255,255,255,.5); line-height: 2; font-weight: 300;
+    }
+
+    /* 左右グリッド */
+    .sv-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,96px); align-items: start; }
+
+    /* 左：仕様カード */
+    .sv-specs { display: flex; flex-direction: column; gap: 0; }
+    .sv-spec-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: clamp(18px,2.2vw,28px) 0;
+    }
+    .sv-spec-row:first-child { border-top: 1px solid rgba(255,255,255,.07); }
+    .sv-spec-label {
+      font-family: var(--serif-en); font-size: 9px;
+      letter-spacing: .35em; color: var(--gold); text-transform: uppercase;
+      display: flex; align-items: center;
+    }
+    .sv-spec-value {
+      font-family: var(--serif-jp); font-size: clamp(14px,1.5vw,20px);
+      font-weight: 300; color: var(--white); line-height: 1.4;
+    }
+    .sv-spec-large {
+      font-family: var(--serif-en); font-size: clamp(28px,3.2vw,46px);
+      font-weight: 300; color: var(--white); line-height: 1;
+    }
+
+    /* 管理費内容 */
+    .sv-mgmt { margin-top: clamp(28px,3.5vw,44px); }
+    .sv-mgmt-label {
+      font-family: var(--serif-en); font-size: 9px; letter-spacing: .35em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: clamp(12px,1.5vw,18px);
+    }
+    .sv-mgmt-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    }
+    .sv-mgmt-item {
+      font-family: var(--sans-jp); font-size: clamp(11px,1vw,13px);
+      color: rgba(255,255,255,.55); line-height: 1;
+      padding: 9px 0 9px 14px; border-bottom: 1px solid rgba(255,255,255,.05);
+      position: relative;
+    }
+    .sv-mgmt-item::before { content: '—'; position: absolute; left: 0; color: var(--gold-dark); }
+    .sv-mgmt-note {
+      font-size: 11px; color: rgba(255,255,255,.25);
+      margin-top: clamp(12px,1.5vw,16px); line-height: 1.8;
+    }
+
+    /* 右：特典 */
+    .sv-benefits { display: flex; flex-direction: column; gap: 0; }
+    .sv-benefit {
+      display: flex; gap: clamp(16px,2vw,24px); align-items: flex-start;
+      padding: clamp(18px,2.2vw,26px) 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .sv-benefit:first-child { border-top: 1px solid rgba(255,255,255,.07); }
+    .sv-benefit-icon {
+      flex-shrink: 0; width: clamp(32px,2.8vw,40px); height: clamp(32px,2.8vw,40px);
+      color: var(--gold); margin-top: 2px;
+    }
+    .sv-benefit-icon svg { width: 100%; height: 100%; }
+    .sv-benefit-body { display: flex; flex-direction: column; gap: 5px; }
+    .sv-benefit-en {
+      font-family: var(--serif-en); font-size: 9px; letter-spacing: .3em;
+      color: var(--gold-light); text-transform: uppercase;
+    }
+    .sv-benefit-title {
+      font-family: var(--serif-jp); font-size: clamp(14px,1.4vw,17px);
+      font-weight: 300; color: var(--white); line-height: 1.4;
+    }
+    .sv-benefit-desc {
+      font-family: var(--sans-jp); font-size: clamp(11px,1vw,13px);
+      color: rgba(255,255,255,.48); line-height: 1.9; font-weight: 300;
+    }
+
+    /* CTA */
+    .sv-cta {
+      margin-top: clamp(48px,6vw,80px);
+      padding-top: clamp(32px,4vw,48px);
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex; flex-direction: column; align-items: center; gap: clamp(20px,2.5vw,28px);
+    }
+    .sv-cta-text {
+      font-family: var(--serif-jp); font-size: clamp(15px,1.6vw,20px);
+      font-weight: 300; color: rgba(255,255,255,.7); text-align: center; line-height: 1.8;
+    }
+    .sv-cta-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+    /* 中間CTA（後方互換のため残す） */
+    .mid-cta { padding: clamp(56px,8vw,96px) clamp(24px,6vw,96px); text-align: center; }
+    .mid-cta-title { font-family: var(--serif-jp); font-size: clamp(20px,2.8vw,38px); font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: clamp(28px,3.5vw,44px); }
+    .mid-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* フッター */
+    footer { background: var(--black); padding: clamp(44px,6vw,68px) clamp(24px,6vw,96px) clamp(28px,4vw,44px); border-top: 1px solid rgba(255,255,255,.05); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { font-family: var(--serif-en); font-size: 18px; letter-spacing: .22em; margin-bottom: 8px; }
+    .footer-sub { font-size: 11px; letter-spacing: .15em; color: var(--gray-light); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.22); line-height: 1.85; text-align: right; }
+
+    /* スマホ固定CTA */
+    .fixed-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; background: rgba(8,8,8,.95); backdrop-filter: blur(8px); padding: 12px 16px; padding-bottom: calc(12px + env(safe-area-inset-bottom)); flex-direction: row; gap: 8px; border-top: 1px solid rgba(255,255,255,.06); }
+    .fixed-cta a { flex: 1; padding: 13px 8px; text-align: center; font-size: 12px; letter-spacing: .1em; }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 1024px) {
+      .feature-grid { grid-template-columns: repeat(2,1fr); }
+      .limited-grid { grid-template-columns: repeat(3,1fr); }
+      .accord-grid { grid-template-columns: repeat(2,1fr); }
+      .horse-features { grid-template-columns: repeat(2,1fr); }
+      .inv-flow { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 768px) {
-      .metrics-strip { grid-template-columns: repeat(2,1fr); }
-      .header-nav a:not(.nav-cta) { display: none; }
-      .plan-badges { flex-direction: column; align-items: center; }
-      .plan-badge { max-width: 100%; width: 100%; }
-      .p3-yield-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .limited-grid { grid-template-columns: repeat(2,1fr); }
+      .villa-grid { grid-template-columns: repeat(2,1fr); }
+      .villa-specs { grid-template-columns: 1fr; }
+      .accord-grid { grid-template-columns: 1fr; }
+      .onsen-inner { grid-template-columns: 1fr; }
+      .dining-cols { grid-template-columns: 1fr; }
+      .horse-features { grid-template-columns: 1fr; }
+      .timeline::before { display: none; }
+      .tl-item { grid-template-columns: 1fr; gap: 18px; }
+      .tl-item:nth-child(even) .tl-text { order: unset; }
+      .tl-item:nth-child(even) .tl-visual { order: unset; }
+      .footer-copy { text-align: left; }
+      .form-row { grid-template-columns: 1fr; }
+      .inv-flow { grid-template-columns: repeat(2,1fr); }
+      .inv-data-row { grid-template-columns: repeat(2,1fr); }
+      .wni-grid { grid-template-columns: 1fr; }
+      .why-body { grid-template-columns: 1fr; }
+      .smart-body { grid-template-columns: 1fr; }
+      .sv-body { grid-template-columns: 1fr; }
+      .sv-spec-row { grid-template-columns: 5fr 7fr; gap: clamp(16px,2vw,24px); }
+      .wn-grid { grid-template-columns: repeat(2,1fr); }
+      .wn-modal-box { grid-template-columns: 1fr; width: 95vw; overflow-y: auto; }
+      .wn-modal-img-col { min-height: 240px; max-height: 50vw; }
     }
-    @media (max-width: 480px) {
-      .metrics-strip { grid-template-columns: 1fr 1fr; }
-      .yield-cards { grid-template-columns: 1fr; }
-      .p3-yield-grid { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .limited-grid { grid-template-columns: repeat(2,1fr); }
+      .accord-grid { grid-template-columns: 1fr; }
+      .horse-grid { grid-template-columns: 1fr 1fr; }
+      .horse-photo:last-child { display: none; }
+      .villa-grid { grid-template-columns: 1fr 1fr; }
+      .fixed-cta { display: flex; }
+      #contact { padding-bottom: calc(var(--section-pad) + 70px); }
+      .inv-data-row { grid-template-columns: 1fr 1fr; }
+      .hero-price-col-left { padding-right: clamp(16px,4vw,24px); }
+      .hero-price-col-right { padding-left: clamp(16px,4vw,24px); gap: 12px; }
+
+      /* ── ヒーロー：ボタン・注記・インジケーターの重なり解消 ── */
+      /* hero-content の下余白を大きく取り、ボタンがdisclaimerと重ならないようにする */
+      .hero-content {
+        padding-bottom: 96px;
+      }
+      /* ボタンを縦並びにして幅いっぱいに */
+      .hero-btns {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 300px;
+      }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-outline {
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+      /* 注記：右余白をモバイル幅に合わせ縮小・行間確保 */
+      .hero-disclaimer {
+        bottom: 16px;
+        left: clamp(20px, 5vw, 36px);
+        right: clamp(20px, 5vw, 36px);
+        font-size: 10px;
+        line-height: 1.8;
+      }
+      /* インジケーター：注記と被らないよう上方へ */
+      .hero-indicators {
+        bottom: auto;
+        top: clamp(80px, 14vw, 110px);
+        right: clamp(20px, 5vw, 36px);
+      }
+    }
+    @media (max-width: 420px) {
+      /* スマホ縦小型: 価格バー縦積み */
+      .hero-price-bar { flex-direction: column; gap: clamp(14px,4vw,20px); }
+      .hero-price-divider { display: none; }
+      .hero-price-col-left { padding-right: 0; }
+      .hero-price-col-right { padding-left: 0; }
+      /* 極小端末: さらに下余白を確保 */
+      .hero-content { padding-bottom: 110px; }
+      .hero-disclaimer {
+        bottom: 14px;
+        font-size: 9.5px;
+        line-height: 1.75;
+      }
+    }
+    @media (max-width: 400px) {
+      .limited-grid { grid-template-columns: 1fr; }
+      .inv-data-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── Header ── -->
-<header class="site-header">
-  <div class="header-logo">ONUMA RESORT DEVELOPMENT</div>
-  <nav class="header-nav">
-    <a href="#plan01">方案①</a>
-    <a href="#plan02">方案②</a>
-    <a href="#plan03">方案③</a>
-    <a href="#contact" class="nav-cta">聯絡我們</a>
+  <!-- ===== ナビ ===== -->
+  <nav id="nav">
+    <div class="nav-logo">
+      ONUMA RESORT DEVELOPMENT
+      <span>HOKKAIDO, JAPAN</span>
+    </div>
+    <div class="nav-links">
+      <a href="#features">大沼魅力</a>
+      <a href="#wellnest-intro">Wellnest Home</a>
+      <a href="#onsen">設施</a>
+      <a href="#dev-vision">開發構想</a>
+      <a href="#contact" class="btn-nav">聯絡我們</a>
+    </div>
   </nav>
-</header>
 
-<!-- ── Hero ── -->
-<section id="hero">
-  <div class="hero-slide active" style="background-image:url('../../大沼・駒ヶ岳/大沼_駒ヶ岳.JPG')"></div>
-  <div class="hero-slide" style="background-image:url('../../ヴィラ/上空ヴィライメージ.png')"></div>
-  <div class="hero-slide" style="background-image:url('../../マスタープラン.png')"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-body">
-    <div class="hero-text">
-      <p class="hero-kicker fade-up">Hokkaido · Onuma National Quasi-Park · Resort Development Project</p>
-      <h1 class="hero-title fade-up">北海道大沼國定公園<br>5.5萬坪度假村開發計畫</h1>
-      <p class="hero-sub fade-up">
-        融合自然、溫泉、住宿、餐飲與健康的<br>
-        北海道代表性度假村開發構想。<br>
-        投資者與事業者可依策略選擇3種不同的參與方式。
+  <!-- ===== 1. HERO ===== -->
+  <section id="hero">
+    <!-- 画像差し替え場所: .hero-slide の background-image (CSS内 .hero-slide:nth-child(1)〜(7)) -->
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">ONUMA RESORT DEVELOPMENT — HOKKAIDO</p>
+      <p class="hero-kicker">針對投資者・事業者的大沼度假村開發計畫</p>
+      <h1 class="hero-title">為什麼是大沼？<br>為什麼是這片土地？</h1>
+      <p class="hero-sub">
+        北海道大沼國定公園，約55,021坪的廣闊大地。<br>
+        溫泉・美食・騎馬・健康生活齊聚一堂，<br>
+        請深入了解這項度假村開發計畫的全貌。
+      </p>
+      <div class="hero-price-bar">
+        <div class="hero-price-col-left">
+          <span class="hp-en-label">Site Area</span>
+          <span class="hp-jp-label">基地面積</span>
+          <span class="hp-price-value" style="font-size:clamp(28px,4vw,58px);">55,021坪</span>
+        </div>
+        <div class="hero-price-divider"></div>
+        <div class="hero-price-col-right">
+          <div class="hero-price-sub-item">
+            <span class="hp-en-label">Development Plan</span>
+            <span class="hp-jp-label">開發規劃</span>
+            <span class="hp-yield-value" style="font-size:clamp(28px,3.8vw,54px);">16棟別墅</span>
+          </div>
+          <div class="hero-price-sub-item">
+            <span class="hp-en-label">Total Development Cost</span>
+            <span class="hp-jp-label">總開發費用（預估）</span>
+            <span class="hp-profit-value">約21.1億日圓</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#dev-vision" class="btn-primary">查看開發構想</a>
+        <a href="#contact" class="btn-outline">聯絡我們・索取資料</a>
+      </div>
+    </div>
+    <div class="hero-indicators" id="heroIndicators"></div>
+    <p class="hero-disclaimer">
+      ※本頁所載數字均為模擬計算之參考值，不保證未來實際收益。
+    </p>
+  </section>
+
+  <!-- ===== 2. FEATURES ===== -->
+  <section id="features">
+    <div class="features-inner">
+      <div class="features-header fade-up">
+        <p class="section-label section-label-dark">Why Onuma</p>
+        <h2 class="features-title">大沼度假村所能實現的價值</h2>
+        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
+      </div>
+
+      <div class="feature-grid">
+
+        <!-- 01 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">01</div>
+          <!-- 画像差し替え場所: ヴィラ/リビング.jpg（オーナー利用イメージ） -->
+          <div class="feature-img">
+            <img src="../../ヴィラ/リビング.jpg" alt="業主可使用的別墅客廳" loading="lazy">
+          </div>
+          <div class="feature-card-title">尊享專屬<br>私人豪華別墅</div>
+          <p class="feature-card-body">購入後可作為第二居所自由使用，與家人或貴賓共享北海道・大沼的四季之美。</p>
+        </div>
+
+        <!-- 02 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">02</div>
+          <!-- 画像差し替え場所: ヴィラ/上空ヴィライメージ.png（資産保有イメージ） -->
+          <div class="feature-img">
+            <img src="../../ヴィラ/上空ヴィライメージ.png" alt="別墅空拍 資產持有示意" loading="lazy">
+          </div>
+          <div class="feature-card-title">傳承世代的珍貴資產</div>
+          <p class="feature-card-body">別墅以所有資產形式持有，兼顧資產保值、子女傳承及未來增值潛力，是極具稀缺性的頂級不動產資產。</p>
+        </div>
+
+        <!-- 03 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">03</div>
+          <!-- 画像差し替え場所: ヴィラ/ベッドルーム.jpg（宿泊運用イメージ） -->
+          <div class="feature-img">
+            <img src="../../ヴィラ/ベッドルーム.jpg" alt="住宿營運示意" loading="lazy">
+          </div>
+          <div class="feature-card-title">空閒期間，<br>委託出租創收</div>
+          <p class="feature-card-body">業主不使用期間，可委託營運方出租，創造穩定收益。模擬試算每晚25萬日圓，入住率70%。</p>
+        </div>
+
+        <!-- 04 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">04</div>
+          <!-- 画像差し替え場所: ヴィラ/外観.jpg（管理代行イメージ） -->
+          <div class="feature-img">
+            <img src="../../ヴィラ/外観.jpg" alt="代理管理 別墅外觀" loading="lazy">
+          </div>
+          <div class="feature-card-title">全程委託，<br>尊享無憂持有</div>
+          <p class="feature-card-body">清潔、建物維護、預訂管理、迎賓服務、除雪、溫泉與餐廳棟運營，乃至馬匹照護，全部由專業團隊一手包辦。</p>
+        </div>
+
+        <!-- 05 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">05</div>
+          <!-- 画像差し替え場所: レストラン・温泉棟/温泉/露天風呂.png（温泉・美食・乗馬） -->
+          <div class="feature-img">
+            <img src="../../レストラン・温泉棟/温泉/露天風呂.png" alt="溫泉・美食・騎馬度假村服務" loading="lazy">
+          </div>
+          <div class="feature-card-title">溫泉・美食・騎馬，<br>化為日常的尊榮</div>
+          <p class="feature-card-body">園區內設有天然溫泉館、頂級餐廳、廣闊放牧場及騎馬療癒區。業主享有優先使用權與尊榮特典。</p>
+        </div>
+
+        <!-- 06 -->
+        <div class="feature-card fade-up">
+          <div class="feature-num">06</div>
+          <!-- 画像差し替え場所: ヴィラ/ダイニング.jpg（スマートオーナーシップイメージ） -->
+          <div class="feature-img">
+            <img src="../../ヴィラ/ダイニング.jpg" alt="智慧業主方案示意" loading="lazy">
+          </div>
+          <div class="feature-card-title">智慧管理平台，<br>隨時掌握您的資產</div>
+          <p class="feature-card-body">業主使用排程、出租收益報告、餐廳預訂、騎馬體驗、專屬管家尊榮服務，未來透過專屬平台一站式掌控。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. LIMITED OWNERSHIP ===== -->
+  <section id="limited">
+    <div class="limited-inner">
+      <div class="limited-header fade-up">
+        <p class="section-label">Limited Ownership</p>
+        <h2 class="limited-title">成為業主，您將擁有的尊榮一切</h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="limited-grid fade-up">
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <div class="limited-card-title">約1公頃（10,000㎡）<br>私人專屬地界</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <div class="limited-card-title">約350㎡<br>頂級豪華別墅</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="limited-card-title">全球僅限6席</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 009 9"/></svg>
+          </div>
+          <div class="limited-card-title">私人<br>高爾夫球場</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="limited-card-title">BBQ空間</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="limited-card-title">天然溫泉<br>業主優先</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <div class="limited-card-title">頂級餐廳<br>優先預訂</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/></svg>
+          </div>
+          <div class="limited-card-title">騎馬體驗<br>業主特典</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="limited-card-title">專屬管家<br>尊榮服務</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="limited-card-title">委託出租<br>收益管理</div>
+        </div>
+
+        <div class="limited-card">
+          <div class="limited-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="limited-card-title">全程管理<br>清潔維護</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. PRIVATE VILLAS ===== -->
+  <section id="villas">
+    <div class="villas-inner">
+      <div class="villas-header fade-up">
+        <p class="section-label">Private Villas</p>
+        <h2 class="villas-title">約1公頃（10,000㎡，約3,000坪）私人地界，<br>坐落約350㎡頂級豪華別墅。</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- 画像差し替え場所: ヴィラ/上空ヴィライメージ.png -->
+      <img class="villa-aerial fade-up" src="../../ヴィラ/上空ヴィライメージ.png" alt="別墅空拍示意" loading="lazy">
+
+      <!-- 画像差し替え場所: ヴィラ/ 各室内・外観写真 -->
+      <div class="villa-grid fade-up">
+        <div class="villa-img"><img src="../../ヴィラ/外観.jpg" alt="別墅外觀" loading="lazy"></div>
+        <div class="villa-img"><img src="../../ヴィラ/リビング.jpg" alt="別墅客廳" loading="lazy"></div>
+        <div class="villa-img"><img src="../../ヴィラ/ベッドルーム.jpg" alt="別墅臥室" loading="lazy"></div>
+        <div class="villa-img"><img src="../../ヴィラ/ダイニング.jpg" alt="別墅餐廳" loading="lazy"></div>
+        <div class="villa-img"><img src="../../ヴィラ/バスルーム.jpg" alt="別墅浴室" loading="lazy"></div>
+        <div class="villa-img"><img src="../../ヴィラ/プライベートゴルフ.jpg" alt="私人推桿高爾夫" loading="lazy"></div>
+      </div>
+
+      <div class="villa-specs fade-up">
+        <div class="villa-spec">
+          <div class="villa-spec-label">Scale</div>
+          <div class="villa-spec-value">全球僅限6席</div>
+          <div class="villa-spec-note">全球僅此6席，此後永不增建。</div>
+        </div>
+        <div class="villa-spec">
+          <div class="villa-spec-label">Site / Floor</div>
+          <div class="villa-spec-value">約1公頃（10,000㎡）/<br>約350㎡</div>
+          <div class="villa-spec-note">約3,000坪獨立私人地界，尊榮寬裕的居住空間。</div>
+        </div>
+        <div class="villa-spec">
+          <div class="villa-spec-label">Included</div>
+          <div class="villa-spec-value">私人露台、BBQ、<br>推桿高爾夫</div>
+          <div class="villa-spec-note">每棟別墅均配備豪華專屬戶外設施。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4.4 WELLNEST INTRO ===== -->
+  <section id="wellnest-intro">
+    <div class="wni-inner">
+
+      <div class="wni-header fade-up">
+        <p class="wni-eyebrow">Wellnest Home × Onuma</p>
+        <h2 class="wni-title">日本頂級節能建築，<br>為百年後的傳承而生。</h2>
+        <p class="wni-sub">日本頂級永續住宅品牌WELLNEST HOME與北海道・大沼的絕美自然相遇，孕育了這個世界級的私人豪華別墅計畫。</p>
+        <div class="divider" style="background:var(--gold-dark);"></div>
+      </div>
+
+      <div class="wni-grid">
+
+        <!-- 01 -->
+        <div class="wni-card fade-up">
+          <div class="wni-card-img-wrap">
+            <img src="../../ヴィラ/外観.jpg" alt="WELLNEST HOME 別墅外觀" loading="lazy">
+          </div>
+          <div class="wni-card-content">
+            <div class="wni-card-num">01</div>
+            <span class="wni-card-en">About Wellnest Home</span>
+            <h3 class="wni-card-title">日本頂級節能住宅品牌</h3>
+            <p class="wni-card-sub">專為百年傳承而設計</p>
+            <div class="wni-divider"></div>
+            <p class="wni-card-body">WELLNEST HOME是日本享譽最高的節能住宅品牌，透過高隔熱・高氣密・計劃換氣技術，打造全年舒適健康的居住環境。<br><br>以世界級的永續建築理念，讓每一棟別墅都成為能跨越世代傳承的百年資產。</p>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="wni-card fade-up">
+          <div class="wni-card-img-wrap">
+            <img src="../../ヴィラ/ベッドルーム.jpg" alt="高性能建築 別墅臥室" loading="lazy">
+          </div>
+          <div class="wni-card-content">
+            <div class="wni-card-num">02</div>
+            <span class="wni-card-en">Why Wellnest Home</span>
+            <h3 class="wni-card-title">北海道嚴寒氣候的最佳建築解答</h3>
+            <p class="wni-card-sub">卓越的建築性能，才能守護資產價值。</p>
+            <div class="wni-divider"></div>
+            <p class="wni-card-body">北海道嚴苛的氣候考驗著每一棟建築。唯有世界級的高隔熱・高氣密・計劃換氣技術，才能實現冬暖夏涼、室內恆溫的頂級居住品質。<br><br>建築性能越卓越，維護成本越低，資產保值年限越長。WELLNEST HOME的理念，正是讓這片北海道土地的價值，百年後依然完整傳承。</p>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="wni-card fade-up">
+          <div class="wni-card-img-wrap">
+            <img src="../../images/wellnest-onuma.webp" alt="WELLNEST HOME × 大沼" loading="lazy">
+          </div>
+          <div class="wni-card-content">
+            <div class="wni-card-num">03</div>
+            <span class="wni-card-en">Wellnest Home × Onuma</span>
+            <h3 class="wni-card-title">WELLNEST HOME × ONUMA</h3>
+            <p class="wni-card-sub">北海道大沼，傳承百年的尊榮資產。</p>
+            <div class="wni-divider"></div>
+            <p class="wni-card-body">這不只是一棟別墅，而是一份傳承給下一代的珍貴家族資產。<br><br>WELLNEST HOME × ONUMA，以世界級永續建築守護北海道大沼的絕美自然，讓資產價值跨越百年，完整留存。</p>
+          </div>
+        </div>
+
+
+      <!-- Wellnest Home 公式リンク -->
+      <div class="wn-link-wrap fade-up" style="margin-top:clamp(40px,5vw,60px);">
+        <a href="https://wellnesthome.jp/" target="_blank" rel="noopener noreferrer" class="wn-link">
+          了解更多 Wellnest Home
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. OWNERSHIP WITHOUT HASSLE ===== -->
+  <section id="ownership">
+    <div class="ownership-inner">
+      <div class="ownership-header fade-up">
+        <p class="section-label">Ownership Without Hassle</p>
+        <h2 class="ownership-title">坐享所有，<br>無需操心任何管理。</h2>
+      </div>
+      <p class="ownership-lead fade-up">
+        別墅管理、出租營運、馬匹照護、<br>
+        溫泉・餐廳全棟運營，乃至專屬管家尊榮服務，<br>
+        業主只需盡情享受北海道的尊榮時光。
+      </p>
+
+      <div class="accord-grid fade-up">
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">別墅管理</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>24小時專業設施管理團隊常駐，為業主與賓客打造最安心的住宿環境，全面守護度假村安全。</p></div>
+        </div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3z"/><path d="M9 3v18"/><path d="M3 9h6"/><path d="M3 15h6"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">清潔</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>從別墅到餐廳棟、溫泉棟、所有共用設施，均由專屬清潔團隊負責，全年維持最高規格的潔淨環境。</p></div>
+        </div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">預訂管理</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>業主排程、出租預訂、入住資訊等，未來透過專屬數位平台統一管理。詳情請索取完整計畫書。</p></div>
+        </div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">入住接待</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>專業迎賓團隊於入住時全程引導，提供頂級酒店級的入住體驗。即使首次到訪，也能感受最溫暖的尊榮款待。</p></div>
+        </div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">賓客服務</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>住宿期間所有賓客需求與緊急狀況，由專業服務人員全程處理，業主零負擔，賓客滿意度最大化。</p></div>
+        </div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3l1.5 1.5"/><path d="M7.5 7.5l1 1"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="4"/><path d="M5.5 18.5l1-1"/><path d="M17.5 6.5l1-1"/><path d="M18.5 18.5l-1-1"/><path d="M6.5 6.5l-1-1"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">除雪</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>冬季由專業除雪團隊全面維護園區道路，確保即使在大雪季節也能安心駕車入場，充分享受北海道純白冬日之美。</p></div>
+        </div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8C8 10 5.9 16.17 3.82 20.33L5.71 21l1-2.3A4.49 4.49 0 008 19c7 0 7-8 13-8V8z"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">馬匹飼育</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>專業馬匹飼育師全年常駐，負責馬匹日常餵養、健康管理與馬廄維護，確保安全提供頂級騎馬體驗與馬術治療。</p></div>
+        </div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">溫泉管理</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>溫泉館由專業管理團隊負責溫度調控、清潔消毒與設備維護，全年維持最高品質的天然溫泉環境。</p></div>
+        </div>
+
+        <div class="accord-item">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title">餐廳營運</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>以大沼和牛、函館近海海鮮、道南有機蔬菜等頂級北海道食材為核心，呈現主廚精心創作的餐桌體驗。業主享有優先預訂與獨家特別菜單特典。</p></div>
+        </div>
+
+        <div class="accord-item" style="border-color:rgba(184,151,90,.2); background:rgba(184,151,90,.04);">
+          <button class="accord-trigger" aria-expanded="false">
+            <div class="accord-icon" style="color:var(--gold-light);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="accord-title-wrap"><div class="accord-title" style="color:var(--gold-light);">專屬管家尊榮服務</div></div>
+            <div class="accord-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </button>
+          <div class="accord-body"><p>餐廳預訂、設施安排、機場接送、活動規劃等，專屬管家全程一對一服務。讓您在北海道的每一刻，都是難忘的尊榮體驗。</p></div>
+        </div>
+
+      </div>
+
+      <p class="ownership-cta-note fade-up">
+        管理服務詳細內容及費用請索取完整計畫書。<br>
+        業主專屬數位管理平台，正積極規劃建置中。
       </p>
     </div>
-    <div class="metrics-strip">
-      <div class="metric fade-up">
-        <span class="metric-label">基地面積</span>
-        <div class="metric-value">55,021<span style="font-size:.52em;color:var(--gold-light);margin-left:3px;">坪</span></div>
-        <div class="metric-unit">約18.2公頃</div>
+  </section>
+
+  <!-- ===== 6. WHY ONUMA MODEL ===== -->
+  <section id="why-onuma">
+    <div class="why-inner">
+      <div class="why-header fade-up">
+        <p class="section-label section-label-dark">Why Onuma Model</p>
+        <h2 class="why-title">為何選擇ONUMA，而非傳統別墅。</h2>
+        <p class="why-sub">
+          坐擁北海道的尊榮生活，<br>
+          零管理負擔，全程委託。
+        </p>
+        <div class="divider" style="background: rgba(0,0,0,.12);"></div>
       </div>
-      <div class="metric fade-up">
-        <span class="metric-label">開發規劃</span>
-        <div class="metric-value">16<span style="font-size:.52em;color:var(--gold-light);margin-left:3px;">棟</span></div>
-        <div class="metric-unit">別墅</div>
-      </div>
-      <div class="metric fade-up">
-        <span class="metric-label">總開發費用</span>
-        <div class="metric-value">21.1<span style="font-size:.52em;color:var(--gold-light);margin-left:3px;">億日圓</span></div>
-        <div class="metric-unit">（預估）</div>
-      </div>
-      <div class="metric fade-up">
-        <span class="metric-label">土地取得費用</span>
-        <div class="metric-value">8.17<span style="font-size:.52em;color:var(--gold-light);margin-left:3px;">億日圓</span></div>
-        <div class="metric-unit">（預估）</div>
+
+      <div class="why-body">
+        <div class="why-text fade-up">
+          <p>傳統別墅的購買，往往伴隨以下棘手問題。</p>
+          <ul>
+            <li>除雪・建物維護的高額費用與繁瑣手續</li>
+            <li>空置期間的固定費用持續累積</li>
+            <li>個人難以獨力實現出租收益化</li>
+            <li>建物老化・修繕的長期應對負擔</li>
+          </ul>
+
+          <p style="margin-bottom:20px;"><strong>ONUMA PRIVATE RESORT</strong> 由專業營運團隊統一負責以下所有事項。</p>
+          <ul>
+            <li>住宿出租營運・前台迎賓服務</li>
+            <li>全區設施維護與管理</li>
+            <li>專屬管家尊榮服務</li>
+            <li>騎馬設施與廣闊放牧場管理</li>
+            <li>天然溫泉設施全年運營與維護</li>
+            <li>頂級餐廳與餐飲全棟運營</li>
+          </ul>
+
+          <p style="margin-top:8px;">業主只需專注享受北海道的尊榮生活，其餘一切交給我們。</p>
+        </div>
+
+        <div class="why-img-wrap fade-up">
+          <img src="../../images/comparison.png" alt="傳統別墅與ONUMA模式的比較" loading="lazy">
+          <p class="why-img-caption">Comparison — Traditional Villa vs. Onuma Model</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── Overview ── -->
-<section id="overview">
-  <div class="overview-inner">
-    <span class="section-label fade-up">Project Overview</span>
-    <h2 class="overview-title fade-up">依投資者、事業者策略<br>可選擇3種參與方式</h2>
-    <p class="overview-lead fade-up">本計畫依投資者、事業者及業主各自的目標，<br>提供3種不同的參與方式供選擇。</p>
-    <div class="plan-badges fade-up">
-      <div class="plan-badge">
-        <div class="plan-badge-num">01</div>
-        <div class="plan-badge-title">土地取得＋<br>附開發計畫事業出售</div>
+  <!-- ===== 7. INVESTMENT & RENTAL PROGRAM ===== -->
+  <section id="investment">
+    <div class="investment-inner">
+
+      <div class="investment-header fade-up">
+        <p class="section-label">Investment &amp; Rental Program</p>
+        <h2 class="investment-title">不只是度假屋，<br>更是創造穩定收益的頂級資產。</h2>
+        <div class="divider"></div>
+        <p class="investment-lead">
+          自住享樂與出租收益並行，<br>
+          讓北海道的資產為您持續創造價值。
+        </p>
       </div>
-      <div class="plan-badge">
-        <div class="plan-badge-num">02</div>
-        <div class="plan-badge-title">16棟別墅開發・<br>度假村營運</div>
+
+      <!-- 収益シミュレーション画像（メイン） -->
+      <div class="inv-img-wrap fade-up">
+        <img src="../../images/revenue-simulation-re2.png" alt="收益模擬試算" loading="lazy">
       </div>
-      <div class="plan-badge">
-        <div class="plan-badge-num">03</div>
-        <div class="plan-badge-title">1棟別墅<br>業主置產</div>
+
+      <!-- 售價 + キーデータ -->
+      <div class="inv-data-row fade-up">
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Asking Price</div>
+          <div class="inv-data-value">1棟 6億日圓</div>
+          <div class="inv-data-unit">預估售價（約新台幣12億元）</div>
+        </div>
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Nightly Rate</div>
+          <div class="inv-data-value">25萬日圓</div>
+          <div class="inv-data-unit">預估住宿單價（每晚）</div>
+        </div>
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Occupancy</div>
+          <div class="inv-data-value">70%</div>
+          <div class="inv-data-unit">預估入住率</div>
+        </div>
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Annual Revenue</div>
+          <div class="inv-data-value">5,475萬日圓</div>
+          <div class="inv-data-unit">年間住宿營收（預估）</div>
+        </div>
       </div>
+
+      <!-- コスト + NOI -->
+      <div class="inv-data-row fade-up" style="margin-bottom: clamp(40px,5vw,72px);">
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Annual Cost</div>
+          <div class="inv-data-value">950萬日圓</div>
+          <div class="inv-data-unit">管理費600萬 / 稅務20萬 / 水電費120萬</div>
+        </div>
+        <div class="inv-data-cell">
+          <div class="inv-data-label">Annual NOI</div>
+          <div class="inv-data-value">6,387萬日圓</div>
+          <div class="inv-data-unit">年間純收益（預估）</div>
+        </div>
+        <div class="inv-data-cell" style="grid-column: span 2; background: rgba(184,151,90,.12); border-left: 2px solid rgba(184,151,90,.35);">
+          <div class="inv-data-label" style="color:var(--gold);">參考實質報酬率</div>
+          <div class="inv-data-value" style="font-size: clamp(32px,4vw,54px); color:var(--gold-light);">約10.36%</div>
+          <div class="inv-data-unit">NOI ÷ 售價（參考值，依實際入住率變動）</div>
+        </div>
+      </div>
+
+      <p class="inv-disclaimer fade-up">
+        ※本模擬試算為參考值，不保證任何實際收益。<br>
+        ※實際收益因住宿單價、入住率、匯率、營運費用等因素而有所變動。<br>
+        ※在日本持有不動產之稅務問題，請洽日本或台灣之專業稅務顧問。
+      </p>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── Plan 01 ── -->
-<section id="plan01">
-  <div class="plan-inner">
-    <div class="plan-num fade-up">01</div>
-    <div class="plan-grid">
-      <div>
-        <span class="section-label fade-up">Plan 01 — 土地開發型</span>
-        <h2 class="section-title fade-up">土地取得＋<br>附開發計畫<br>事業出售</h2>
-        <p class="section-desc fade-up">取得約5.5萬坪土地，完成16棟別墅規劃、溫泉設施、餐廳及總體規劃後，以事業形式出售給飯店業者、投資基金或開發商的模式。</p>
-        <div class="invest-block fade-up">
-          <div class="invest-label">初期投資</div>
-          <div class="invest-value">約8.17億日圓</div>
-          <div class="invest-sub">土地取得費8億日圓＋相關費用1,715萬日圓</div>
+  <!-- ===== 8. SMART OWNER SYSTEM ===== -->
+  <section id="smart-owner">
+    <div class="smart-inner">
+
+      <div class="smart-header fade-up">
+        <p class="section-label">Smart Owner System</p>
+        <h2 class="smart-title">專屬管理平台，<br>隨時掌控您的北海道資產。</h2>
+        <div class="divider"></div>
+        <p class="smart-sub">
+          業主排程、出租收益報告、餐廳預訂、騎馬體驗、管家服務，<br>
+          未來透過專屬智慧平台，隨時隨地一站式管理您的北海道資產。
+        </p>
+      </div>
+
+      <div class="smart-body fade-up">
+        <div class="smart-img-wrap">
+          <img src="../../images/app-management.png" alt="智慧業主系統示意" loading="lazy">
         </div>
-        <div class="breakdown fade-up">
-          <div class="breakdown-row"><span class="br-label">土地取得費用</span><span class="br-val">800,000,000日圓</span></div>
-          <div class="breakdown-row"><span class="br-label">土地取得相關費用</span><span class="br-val">17,150,000日圓</span></div>
-          <div class="breakdown-row"><span class="br-label">合計</span><span class="br-val gold">817,150,000日圓</span></div>
+
+        <div class="smart-features">
+          <div class="smart-feature-item">
+            <span class="smart-feature-label">Owner Stay</span>
+            <span class="smart-feature-text">隨時線上設定業主自用日期，靈活掌握北海道專屬時光。</span>
+          </div>
+          <div class="smart-feature-item">
+            <span class="smart-feature-label">Rental Operation</span>
+            <span class="smart-feature-text">即時查看出租入住率及收益報告，輕鬆掌握資產表現。</span>
+          </div>
+          <div class="smart-feature-item">
+            <span class="smart-feature-label">Resort Booking</span>
+            <span class="smart-feature-text">一鍵預訂天然溫泉、頂級餐廳、騎馬體驗等所有度假村設施。</span>
+          </div>
+          <div class="smart-feature-item">
+            <span class="smart-feature-label">Concierge</span>
+            <span class="smart-feature-text">出發前或返台後，隨時透過平台提出管家服務需求，全程零障礙。</span>
+          </div>
         </div>
-        <ul class="feat-list fade-up">
-          <li>以較低初期投資參與計畫</li>
-          <li>降低開發風險</li>
-          <li>相對短期的出場策略</li>
-          <li>預設出售對象為飯店業者與投資基金</li>
-        </ul>
-        <div class="target-tags fade-up">
-          <span class="tag">投資基金</span>
-          <span class="tag">飯店業者</span>
-          <span class="tag">開發商</span>
+      </div>
+
+      <p class="smart-disclaimer fade-up">
+        ※上述平台功能目前仍處於規劃構想階段，示意圖僅供參考。<br>
+        ※實際系統功能規格將於正式推出前確定，有可能有所調整。<br>
+        ※本平台服務目前尚未正式提供。
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===== 9. ONSEN ===== -->
+  <section id="onsen">
+    <div class="onsen-inner">
+      <div class="fade-up">
+        <!-- 画像差し替え場所: レストラン・温泉棟/温泉/ -->
+        <div class="onsen-imgs">
+          <div class="onsen-img-main"><img src="../../レストラン・温泉棟/温泉/露天風呂.png" alt="度假村露天溫泉" loading="lazy"></div>
+          <div class="onsen-img-sub"><img src="../../レストラン・温泉棟/温泉/室内温泉.png" alt="室內溫泉" loading="lazy"></div>
+          <div class="onsen-img-sub"><img src="../../レストラン・温泉棟/温泉/温泉脱衣所.png" alt="溫泉更衣室" loading="lazy"></div>
         </div>
       </div>
       <div class="fade-up">
-        <img class="plan01-img" src="../../マスタープラン.png" alt="基地總體規劃">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Plan 02 ── -->
-<section id="plan02">
-  <div class="plan-inner">
-    <div class="plan-num fade-up">02</div>
-    <span class="section-label fade-up">Plan 02 — 度假村營運型</span>
-    <h2 class="section-title fade-up">16棟別墅開發・<br>度假村營運</h2>
-    <p class="section-desc fade-up" style="max-width:680px;margin-bottom:44px;">整體開發基地，完善16棟別墅、天然溫泉、餐廳、觀景設施與馬術設施，打造北海道代表性健康度假村並進行營運管理。</p>
-
-    <div class="yield-section fade-up">
-      <div class="yield-cards">
-        <div class="yield-card">
-          <div class="yield-occ">入住率 50%</div>
-          <div class="yield-gross">14.3<sup>%</sup></div>
-          <div class="yield-type">表面報酬率</div>
-          <div class="yield-div"></div>
-          <div class="yield-net-lbl">NET YIELD</div>
-          <div class="yield-net-val">13.1%</div>
-        </div>
-        <div class="yield-card featured">
-          <div class="yield-occ">入住率 60%</div>
-          <div class="yield-gross">17.2<sup>%</sup></div>
-          <div class="yield-type">表面報酬率</div>
-          <div class="yield-div"></div>
-          <div class="yield-net-lbl">NET YIELD</div>
-          <div class="yield-net-val">15.8%</div>
-        </div>
-        <div class="yield-card">
-          <div class="yield-occ">入住率 70%</div>
-          <div class="yield-gross">20.1<sup>%</sup></div>
-          <div class="yield-type">表面報酬率</div>
-          <div class="yield-div"></div>
-          <div class="yield-net-lbl">NET YIELD</div>
-          <div class="yield-net-val">18.4%</div>
+        <p class="section-label">Onsen & Spa</p>
+        <h2 class="onsen-title">大地的饋贈，<br>私人天然溫泉。</h2>
+        <div class="divider"></div>
+        <p class="onsen-body">
+          園區內的天然溫泉館，是北海道大地最珍貴的饋贈。業主享有優先使用的尊榮特典，透過日常穩定營運維持最高品質，同時持續提升整個度假村的資產價值。
+        </p>
+        <div class="onsen-note">
+          別墅業主享有優先入浴、時段預留等多項尊榮特典。<br>
+          詳細內容請索取完整計畫書。
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="plan-grid">
-      <div class="plan02-col-left fade-up">
-        <img src="../../ヴィラ/外観.jpg" alt="別墅外觀">
-        <img src="../../レストラン・温泉棟/温泉/露天風呂.png" alt="溫泉設施">
-        <img src="../../レストラン・温泉棟/レストラン/レストラン内観.png" alt="餐廳">
+  <!-- ===== 9. DINING ===== -->
+  <section id="dining">
+    <div class="dining-inner">
+      <!-- 画像差し替え場所: レストラン・温泉棟/レストラン/レストラン棟外観.JPG -->
+      <div class="dining-hero-img fade-up">
+        <img src="../../レストラン・温泉棟/レストラン/レストラン棟外観.JPG" alt="度假村餐廳棟外觀" loading="lazy">
+      </div>
+      <div class="dining-cols">
+        <div class="fade-up">
+          <p class="section-label">Farm to Table</p>
+          <h2 class="dining-title">以大沼為食材，<br>呈現北海道的頂級饗宴。</h2>
+          <div class="divider"></div>
+          <p class="dining-body">
+            大沼和牛、函館近海頂級海鮮、道南有機時令蔬菜。只有這片土地才能孕育的食材，在主廚巧手下匯聚成一場難忘的饗宴。<br><br>
+            餐廳館每日穩定運營，為度假村注入活力，也進一步提升整體資產的市場吸引力與價值。
+          </p>
+          <div class="dining-note">別墅業主享有優先預訂座位及獨家主廚特別菜單等尊榮特典。</div>
+        </div>
+        <!-- 画像差し替え場所: レストラン内観、料理1〜3 -->
+        <div class="dining-photos fade-up">
+          <div class="dining-photo"><img src="../../レストラン・温泉棟/レストラン/レストラン内観.png" alt="餐廳內觀" loading="lazy"></div>
+          <div class="dining-photo"><img src="../../レストラン・温泉棟/レストラン/料理１.jpg" alt="使用大沼食材的料理" loading="lazy"></div>
+          <div class="dining-photo"><img src="../../レストラン・温泉棟/レストラン/料理２.jpg" alt="北海道時令食材料理" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10. HORSE ===== -->
+  <section id="horse">
+    <div class="horse-inner">
+      <div class="horse-header fade-up">
+        <p class="section-label section-label-dark">Horse & Wellness</p>
+        <h2 class="horse-title">與馬為伴，<br>北海道療癒生活的核心。</h2>
+        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
+        <p class="horse-lead">晨霧中，馬匹在廣闊放牧場中悠然吃草。騎馬體驗、馬術心靈療癒、與退役馬的溫柔相遇。在世界任何頂級度假村都找不到的，正是這種與自然生命深刻共存的真實體驗。</p>
+      </div>
+
+      <!-- 画像差し替え場所: 放牧場/ 各馬・乗馬・ホースセラピー画像 -->
+      <div class="horse-grid fade-up">
+        <div class="horse-photo"><img src="../../放牧場/乗馬.jpg" alt="度假村內騎馬體驗" loading="lazy"></div>
+        <div class="horse-photo"><img src="../../放牧場/ホースセラピー.jpg" alt="馬術治療" loading="lazy"></div>
+        <div class="horse-photo"><img src="../../放牧場/乗馬・ふれあい場.png" alt="與馬互動空間" loading="lazy"></div>
+      </div>
+
+      <div class="horse-features fade-up">
+        <div class="horse-feat">
+          <div class="horse-feat-label">Activity</div>
+          <div class="horse-feat-title">騎馬體驗</div>
+          <div class="horse-feat-desc">在北海道壯闊大自然中與馬同行，感受人與自然最純粹的連結。專業教練全程陪同，適合初學者至進階騎士。</div>
+        </div>
+        <div class="horse-feat">
+          <div class="horse-feat-label">Therapy</div>
+          <div class="horse-feat-title">馬術心靈療癒</div>
+          <div class="horse-feat-desc">與馬的深度互動帶來身心深層療癒，是北海道獨有的wellness體驗。適合全家大小，孩童與大人同樣受益。</div>
+        </div>
+        <div class="horse-feat">
+          <div class="horse-feat-label">Welfare</div>
+          <div class="horse-feat-title">退役競馬守護計畫</div>
+          <div class="horse-feat-desc">為結束賽場生涯的退役競馬提供第二個家，讓牠們在北海道的廣闊大地安享餘生。這是ONUMA PRIVATE RESORT對生命與自然永恆承諾的體現。</div>
+        </div>
+        <div class="horse-feat">
+          <div class="horse-feat-label">Nature</div>
+          <div class="horse-feat-title">北海道放牧場絕景</div>
+          <div class="horse-feat-desc">清晨薄霧中，馬匹在廣闊草場悠然漫步的景致。這是任何金錢都無法複製、只有ONUMA才能擁有的無價之景。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONCEPT MOVIE ===== -->
+  <section id="concept-movie">
+    <div class="concept-movie-inner">
+      <div class="concept-movie-header fade-up">
+        <p class="section-label">Concept Movie</p>
+        <h2 class="concept-movie-title">以影像，感受大沼的無限可能。</h2>
+        <div class="divider divider-center"></div>
+        <p class="concept-movie-body">
+          本概念短片呈現ONUMA PRIVATE RESORT所追求的世界觀。
+          北海道大沼的絕美自然、天然溫泉、頂級美食、馬匹與療癒體驗相互交融，
+          探索一個全新北海道尊榮生活的無限可能。
+        </p>
+      </div>
+
+      <div class="concept-movie-frame fade-up">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/LoBX0BZg3MY?rel=0&playsinline=1"
+          title="ONUMA PRIVATE RESORT 概念短片"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="concept-movie-note fade-up">
+        ※本影片為表現計畫世界觀之概念短片，部分畫面含非當地拍攝之示意影像。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 11. OWNER EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="experience-inner">
+      <div class="experience-header fade-up">
+        <p class="section-label">A Day in ONUMA</p>
+        <h2 class="experience-title">想像您在大沼的某一天。</h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Morning — 07:00</div>
+            <div class="tl-heading">在私人露台品咖啡，<br>駒ヶ岳清晨靜靜甦醒。</div>
+            <p class="tl-desc">晨霧散去，天空倒映於湖面，只有鳥鳴輕輕迴響。這份寧靜，是台北繁華都市生活所給不了的。</p>
+          </div>
+          <!-- 画像差し替え場所: 大沼・駒ヶ岳/大沼_駒ヶ岳.JPG -->
+          <div class="tl-visual"><img src="../../大沼・駒ヶ岳/大沼_駒ヶ岳.JPG" alt="大沼駒ヶ岳的清晨景色" loading="lazy"></div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Afternoon — 13:00</div>
+            <div class="tl-heading">與馬同行，<br>在綠意盎然的午後漫步。</div>
+            <p class="tl-desc">在廣闊放牧場中，與馬並肩漫步。這裡的「豐盛」，不是商業利益的積累，而是與自然生命真正連結的深度富足。</p>
+          </div>
+          <!-- 画像差し替え場所: 放牧場/乗馬２.jpg -->
+          <div class="tl-visual"><img src="../../放牧場/乗馬２.jpg" alt="大自然中的騎馬" loading="lazy"></div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Evening — 17:00</div>
+            <div class="tl-heading">天然溫泉，<br>洗去一天的塵囂。</div>
+            <p class="tl-desc">夕陽將駒ヶ岳染成橙紅，獨享露天溫泉的純粹寧靜。隨著溫泉的暖意，時間感漸漸消融，心境歸零。</p>
+          </div>
+          <!-- 画像差し替え場所: レストラン・温泉棟/温泉/露天風呂.png -->
+          <div class="tl-visual"><img src="../../レストラン・温泉棟/温泉/露天風呂.png" alt="度假村露天溫泉" loading="lazy"></div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Dinner — 19:30</div>
+            <div class="tl-heading">大沼和牛，<br>函館頂級海鮮。</div>
+            <p class="tl-desc">在這片土地孕育的頂級食材，在這個空間被主廚用心詮釋。每一盤，都是北海道最真實的味道與深度。</p>
+          </div>
+          <!-- 画像差し替え場所: レストラン・温泉棟/レストラン/料理３.jpg -->
+          <div class="tl-visual"><img src="../../レストラン・温泉棟/レストラン/料理３.jpg" alt="大沼和牛と函館海鮮のディナー" loading="lazy"></div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-text">
+            <div class="tl-time">Late Night — 22:00</div>
+            <div class="tl-heading">篝火聲靜靜燃燒，<br>滿天繁星無限延伸。</div>
+            <p class="tl-desc">走上私人露台，抬頭便是無盡的星河。篝火聲靜靜燃燒，深夜無聲無擾。此刻，靜靜感受到——這裡，是真正屬於自己的地方。</p>
+          </div>
+          <!-- 画像差し替え場所: 大沼・駒ヶ岳/星.jpg -->
+          <div class="tl-visual"><img src="../../images/starry-sky.jpg" alt="從大沼仰望滿天繁星" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6 VILLAS ONLY ===== -->
+  <section id="six-villas">
+    <div class="sv-inner">
+
+      <div class="sv-header fade-up">
+        <p class="section-label" style="color:var(--gold-light);">6 Villas Only</p>
+        <h2 class="sv-title">全球僅限6席的業主資格。<br>您所擁有的，<br>遠不止於一棟豪華別墅。</h2>
+        <div class="divider" style="margin:0 auto;"></div>
+        <p class="sv-sub">
+          約1公頃（10,000㎡）私人專屬地界。約350㎡頂級豪華別墅。<br>
+          天然溫泉、頂級餐飲、騎馬療癒、專屬管家，化為您的日常。<br><br>
+          全球僅限6席，一旦售罄，永不再有。<br>
+          這是北海道最後的極稀有私人豪華別墅計畫。
+        </p>
+      </div>
+
+      <div class="sv-body">
+
+        <!-- 左：仕様・価格 -->
+        <div class="fade-up">
+          <div class="sv-specs">
+            <div class="sv-spec-row">
+              <div class="sv-spec-label">Asking Price</div>
+              <div>
+                <div style="font-family:var(--sans-jp); font-size:10px; color:rgba(255,255,255,.4); margin-bottom:4px;">售價</div>
+                <div class="sv-spec-large">6億日圓</div>
+              </div>
+            </div>
+            <div class="sv-spec-row">
+              <div class="sv-spec-label">Monthly Fee</div>
+              <div>
+                <div style="font-family:var(--sans-jp); font-size:10px; color:rgba(255,255,255,.4); margin-bottom:4px;">每月管理費</div>
+                <div class="sv-spec-large">50萬日圓<span style="font-size:clamp(12px,1.2vw,16px); color:rgba(255,255,255,.45); font-family:var(--sans-jp);">/月</span></div>
+              </div>
+            </div>
+            <div class="sv-spec-row">
+              <div class="sv-spec-label">Site Area</div>
+              <div>
+                <div style="font-family:var(--sans-jp); font-size:10px; color:rgba(255,255,255,.4); margin-bottom:4px;">專屬地塊面積</div>
+                <div class="sv-spec-value">約1ha（10,000㎡）<br><span style="font-size:clamp(11px,1vw,13px); color:rgba(255,255,255,.45);">約3,000坪</span></div>
+              </div>
+            </div>
+            <div class="sv-spec-row">
+              <div class="sv-spec-label">Villa Area</div>
+              <div>
+                <div style="font-family:var(--sans-jp); font-size:10px; color:rgba(255,255,255,.4); margin-bottom:4px;">別墅面積</div>
+                <div class="sv-spec-value">約350㎡</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 管理費に含まれる内容 -->
+          <div class="sv-mgmt">
+            <div class="sv-mgmt-label">Monthly Fee Includes</div>
+            <div class="sv-mgmt-grid">
+              <div class="sv-mgmt-item">別墅管理・清潔</div>
+              <div class="sv-mgmt-item">共用設施管理</div>
+              <div class="sv-mgmt-item">餐廳棟管理</div>
+              <div class="sv-mgmt-item">溫泉棟管理</div>
+              <div class="sv-mgmt-item">園區管理</div>
+              <div class="sv-mgmt-item">24小時安全管理</div>
+              <div class="sv-mgmt-item">預訂・入住接待</div>
+              <div class="sv-mgmt-item">賓客服務</div>
+              <div class="sv-mgmt-item">專屬管家尊榮服務</div>
+              <div class="sv-mgmt-item">冬季除雪</div>
+            </div>
+            <p class="sv-mgmt-note">※如有自有馬匹，飼育管理費另行洽詢。</p>
+          </div>
+        </div>
+
+        <!-- 右：オーナー特典 -->
+        <div class="sv-benefits fade-up">
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M3.5 12c0-1.8 1.2-3 2.5-3s2.5 1.2 2.5 3-1.2 3-2.5 3-2.5-1.2-2.5-3z"/>
+                <path d="M8.5 12h7M20 8l-3 4 3 4M15.5 12c0 3-2.5 5-5.5 6"/>
+                <path d="M8.5 9V7a2 2 0 0 1 2-2h3"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Horse Membership</span>
+              <span class="sv-benefit-title">騎馬權</span>
+              <span class="sv-benefit-desc">自由使用園區內的頂級騎馬設施，讓與馬相伴的療癒時光成為您在北海道的日常。</span>
+            </div>
+          </div>
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Priority Dining</span>
+              <span class="sv-benefit-title">餐廳優先預訂權</span>
+              <span class="sv-benefit-desc">優先於一般賓客預訂度假村頂級餐廳，獨享主廚以北海道食材精心設計的業主專屬套餐。</span>
+            </div>
+          </div>
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Priority Onsen</span>
+              <span class="sv-benefit-title">溫泉優先預訂權</span>
+              <span class="sv-benefit-desc">無論任何時段均享有優先入浴權，在最美的時刻獨享北海道大地孕育的珍貴天然溫泉。</span>
+            </div>
+          </div>
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Concierge</span>
+              <span class="sv-benefit-title">專屬管家尊榮服務</span>
+              <span class="sv-benefit-desc">從機場接送、餐廳預訂、活動安排到觀光規劃，專屬管家全程一對一貼身服務，讓每次北海道之旅都完美無缺。</span>
+            </div>
+          </div>
+
+          <div class="sv-benefit">
+            <div class="sv-benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="sv-benefit-body">
+              <span class="sv-benefit-en">Rental Program</span>
+              <span class="sv-benefit-title">住宿營運計劃參加權</span>
+              <span class="sv-benefit-desc">未使用期間可委託出租營運，創造穩定收益。參考實質報酬率約10.36%。</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="sv-cta fade-up">
+        <p class="sv-cta-text">全球僅限6席，先詢先得。現正接受完整計畫書索取及線上說明會預約。</p>
+        <div class="sv-cta-btns">
+          <a href="#contact" class="btn-primary">索取完整計畫書</a>
+          <a href="#contact" class="btn-outline">預約線上說明會</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 大沼5.5萬坪開發構想 ===== -->
+  <section id="dev-vision" style="background:var(--black); padding:var(--section-pad) clamp(24px,6vw,96px);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="fade-up">
+        <p class="section-label">Development Vision</p>
+        <h2 style="font-family:var(--serif-jp); font-size:clamp(26px,3.5vw,52px); font-weight:300; color:var(--white); line-height:1.55; margin-bottom:clamp(16px,2vw,24px);">大沼5.5萬坪<br>開發構想。</h2>
+        <div class="divider"></div>
+        <p style="font-size:clamp(13px,1.3vw,15px); color:rgba(255,255,255,.58); line-height:2.2; max-width:640px; margin-top:clamp(16px,2vw,24px);">
+          北海道大沼國定公園，約55,021坪（約18.2公頃）的廣闊大地。<br>
+          規劃16棟別墅、天然溫泉、餐廳、牧場與馬術設施的健康度假村開發構想。<br>
+          Wellnest Home的建築理念與大沼自然環境交融而生的這項計畫，針對投資者・事業者提供3種參與方式。
+        </p>
+      </div>
+
+      <!-- マスタープラン -->
+      <div class="fade-up" style="margin-top:clamp(40px,5vw,64px);">
+        <img src="../../マスタープラン.png" alt="大沼度假村 總體規劃" style="width:100%; display:block; box-shadow:0 24px 72px rgba(0,0,0,.5);">
+      </div>
+
+      <!-- 規模指標 -->
+      <div class="fade-up" style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(1px,2px,2px); background:rgba(255,255,255,.06); margin-top:clamp(24px,3vw,36px);">
+        <div style="background:rgba(255,255,255,.03); padding:clamp(20px,2.5vw,32px) clamp(14px,1.8vw,22px);">
+          <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.32em; color:var(--gold-light); text-transform:uppercase; margin-bottom:10px;">Site Area</div>
+          <div style="font-family:var(--serif-en); font-size:clamp(20px,2.4vw,32px); font-weight:300; color:var(--white); line-height:1.2;">55,021<span style="font-size:.55em; color:rgba(255,255,255,.45);">坪</span></div>
+          <div style="font-size:11px; color:rgba(255,255,255,.35); margin-top:5px;">約18.2公頃</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03); padding:clamp(20px,2.5vw,32px) clamp(14px,1.8vw,22px);">
+          <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.32em; color:var(--gold-light); text-transform:uppercase; margin-bottom:10px;">Villa Plan</div>
+          <div style="font-family:var(--serif-en); font-size:clamp(20px,2.4vw,32px); font-weight:300; color:var(--white); line-height:1.2;">16<span style="font-size:.55em; color:rgba(255,255,255,.45);">棟</span></div>
+          <div style="font-size:11px; color:rgba(255,255,255,.35); margin-top:5px;">計畫別墅數量</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03); padding:clamp(20px,2.5vw,32px) clamp(14px,1.8vw,22px);">
+          <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.32em; color:var(--gold-light); text-transform:uppercase; margin-bottom:10px;">Total Cost</div>
+          <div style="font-family:var(--serif-en); font-size:clamp(20px,2.4vw,32px); font-weight:300; color:var(--white); line-height:1.2;">21.1<span style="font-size:.55em; color:rgba(255,255,255,.45);">億日圓</span></div>
+          <div style="font-size:11px; color:rgba(255,255,255,.35); margin-top:5px;">總開發費用（預估）</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03); padding:clamp(20px,2.5vw,32px) clamp(14px,1.8vw,22px);">
+          <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.32em; color:var(--gold-light); text-transform:uppercase; margin-bottom:10px;">Land Cost</div>
+          <div style="font-family:var(--serif-en); font-size:clamp(20px,2.4vw,32px); font-weight:300; color:var(--white); line-height:1.2;">8.17<span style="font-size:.55em; color:rgba(255,255,255,.45);">億日圓</span></div>
+          <div style="font-size:11px; color:rgba(255,255,255,.35); margin-top:5px;">土地取得費用（預估）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3種參與方式 ===== -->
+  <section style="background:var(--off-white); padding:var(--section-pad) clamp(24px,6vw,96px);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="fade-up" style="text-align:center; margin-bottom:clamp(48px,6vw,80px);">
+        <p class="section-label section-label-dark">Participation Plans</p>
+        <h2 style="font-family:var(--serif-jp); font-size:clamp(22px,3vw,42px); font-weight:300; color:var(--ink); line-height:1.6;">依投資者・事業者策略<br>可選擇3種參與方式</h2>
+        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
+        <p style="font-size:clamp(13px,1.2vw,15px); color:var(--gray-mid); line-height:2.0; max-width:560px; margin:clamp(16px,2vw,24px) auto 0;">
+          本計畫針對投資者・事業者・業主各自的目標，<br>提供3種不同的參與方式供選擇。
+        </p>
+      </div>
+
+      <!-- プランカード3枚 -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1.5vw,20px);" class="fade-up">
+
+        <!-- Plan 01 -->
+        <div style="background:var(--black); padding:clamp(32px,4vw,52px) clamp(24px,3vw,40px); display:flex; flex-direction:column; gap:16px;">
+          <div style="font-family:var(--serif-en); font-size:clamp(52px,7vw,90px); font-weight:300; line-height:1; color:rgba(255,255,255,.08); letter-spacing:-.02em;">01</div>
+          <p style="font-family:var(--serif-en); font-size:9px; letter-spacing:.32em; color:var(--gold); text-transform:uppercase;">Land Development</p>
+          <h3 style="font-family:var(--serif-jp); font-size:clamp(16px,1.6vw,20px); font-weight:300; color:var(--white); line-height:1.6;">土地取得＋<br>附開發計畫<br>事業出售</h3>
+          <div class="divider"></div>
+          <p style="font-size:13px; color:rgba(255,255,255,.5); line-height:1.95; flex:1;">取得約5.5萬坪土地，完成16棟別墅構想・總體規劃後，以事業形式出售給飯店業者・投資基金・開發商的模式。</p>
+          <div style="border-left:2px solid var(--gold); padding-left:16px; margin-top:8px;">
+            <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.28em; color:var(--gold); margin-bottom:5px;">INITIAL INVESTMENT</div>
+            <div style="font-family:var(--serif-jp); font-size:clamp(20px,2.4vw,30px); font-weight:300; color:var(--white);">約8.17億日圓</div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;">
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">投資基金</span>
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">飯店業者</span>
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">開發商</span>
+          </div>
+        </div>
+
+        <!-- Plan 02 -->
+        <div style="background:var(--green-deep); border-top:2px solid var(--gold); padding:clamp(32px,4vw,52px) clamp(24px,3vw,40px); display:flex; flex-direction:column; gap:16px; position:relative;">
+          <div style="position:absolute; top:10px; right:16px; font-size:8px; letter-spacing:.2em; color:var(--gold);">BASE CASE</div>
+          <div style="font-family:var(--serif-en); font-size:clamp(52px,7vw,90px); font-weight:300; line-height:1; color:rgba(255,255,255,.08); letter-spacing:-.02em;">02</div>
+          <p style="font-family:var(--serif-en); font-size:9px; letter-spacing:.32em; color:var(--gold); text-transform:uppercase;">Resort Operation</p>
+          <h3 style="font-family:var(--serif-jp); font-size:clamp(16px,1.6vw,20px); font-weight:300; color:var(--white); line-height:1.6;">16棟別墅開發・<br>度假村營運</h3>
+          <div class="divider"></div>
+          <p style="font-size:13px; color:rgba(255,255,255,.5); line-height:1.95; flex:1;">整體開發基地，完善16棟別墅・天然溫泉・餐廳・馬術設施，打造北海道代表性健康度假村並進行營運管理。</p>
+          <div style="border-left:2px solid var(--gold); padding-left:16px; margin-top:8px;">
+            <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.28em; color:var(--gold); margin-bottom:5px;">GROSS YIELD (60% OCC.)</div>
+            <div style="font-family:var(--serif-jp); font-size:clamp(16px,1.8vw,22px); font-weight:300; color:var(--gold-light);">表面 17.2% / 淨 15.8%</div>
+          </div>
+          <div style="border-left:2px solid rgba(255,255,255,.15); padding-left:16px;">
+            <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.28em; color:var(--gold); margin-bottom:5px;">TOTAL COST</div>
+            <div style="font-family:var(--serif-jp); font-size:clamp(18px,2vw,24px); font-weight:300; color:var(--white);">約21.1億日圓</div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;">
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">事業者</span>
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">投資基金</span>
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">聯合開發</span>
+          </div>
+        </div>
+
+        <!-- Plan 03 -->
+        <div style="background:var(--black); padding:clamp(32px,4vw,52px) clamp(24px,3vw,40px); display:flex; flex-direction:column; gap:16px;">
+          <div style="font-family:var(--serif-en); font-size:clamp(52px,7vw,90px); font-weight:300; line-height:1; color:rgba(255,255,255,.08); letter-spacing:-.02em;">03</div>
+          <p style="font-family:var(--serif-en); font-size:9px; letter-spacing:.32em; color:var(--gold); text-transform:uppercase;">Villa Ownership</p>
+          <h3 style="font-family:var(--serif-jp); font-size:clamp(16px,1.6vw,20px); font-weight:300; color:var(--white); line-height:1.6;">1棟別墅<br>業主置產</h3>
+          <div class="divider"></div>
+          <p style="font-size:13px; color:rgba(255,255,255,.5); line-height:1.95; flex:1;">購置1棟別墅，業主自用的同時，閒置期間作為住宿設施對外營運的模式。</p>
+          <div style="border-left:2px solid var(--gold); padding-left:16px; margin-top:8px;">
+            <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.28em; color:var(--gold); margin-bottom:5px;">ASKING PRICE</div>
+            <div style="font-family:var(--serif-jp); font-size:clamp(20px,2.4vw,30px); font-weight:300; color:var(--white);">約9,993萬日圓</div>
+          </div>
+          <div style="border-left:2px solid rgba(255,255,255,.15); padding-left:16px;">
+            <div style="font-family:var(--serif-en); font-size:9px; letter-spacing:.28em; color:var(--gold); margin-bottom:5px;">NET YIELD (60% OCC.)</div>
+            <div style="font-family:var(--serif-jp); font-size:clamp(16px,1.8vw,22px); font-weight:300; color:var(--gold-light);">表面 17.53% / 淨 15.72%</div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;">
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">個人投資者</span>
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">法人</span>
+            <span style="border:1px solid rgba(184,151,90,.35); padding:4px 12px; font-size:10px; color:var(--gold-light);">高資產人士</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 比較テーブル -->
+      <div class="fade-up" style="margin-top:clamp(48px,6vw,80px); overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; min-width:640px;">
+          <thead>
+            <tr>
+              <th style="padding:14px 18px; text-align:left; font-size:10px; letter-spacing:.12em; font-weight:400; border-bottom:2px solid var(--gold-dark); color:var(--gray-mid); background:var(--off-white);"></th>
+              <th style="padding:14px 18px; text-align:left; font-size:11px; letter-spacing:.06em; font-weight:400; border-bottom:2px solid var(--gold); background:var(--ink); color:var(--gold-light);">方案① 土地開發型</th>
+              <th style="padding:14px 18px; text-align:left; font-size:11px; letter-spacing:.06em; font-weight:400; border-bottom:2px solid var(--gold); background:var(--green-deep); color:var(--gold-light);">方案② 度假村營運型</th>
+              <th style="padding:14px 18px; text-align:left; font-size:11px; letter-spacing:.06em; font-weight:400; border-bottom:2px solid var(--gold); background:var(--ink); color:var(--gold-light);">方案③ 別墅業主型</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:13px 18px; font-size:9.5px; letter-spacing:.14em; color:var(--gray-mid); background:var(--off-white); white-space:nowrap; border-bottom:1px solid rgba(0,0,0,.06);">初期投資</td>
+              <td style="padding:13px 18px; background:#fff; border-bottom:1px solid rgba(0,0,0,.06);"><span style="font-family:var(--serif-jp); font-size:15px; color:var(--gold-dark);">約8.17億日圓</span></td>
+              <td style="padding:13px 18px; background:#fff; border-bottom:1px solid rgba(0,0,0,.06);"><span style="font-family:var(--serif-jp); font-size:15px; color:var(--gold-dark);">約21.1億日圓</span></td>
+              <td style="padding:13px 18px; background:#fff; border-bottom:1px solid rgba(0,0,0,.06);"><span style="font-family:var(--serif-jp); font-size:15px; color:var(--gold-dark);">約9,993萬日圓</span></td>
+            </tr>
+            <tr>
+              <td style="padding:13px 18px; font-size:9.5px; letter-spacing:.14em; color:var(--gray-mid); background:var(--off-white); white-space:nowrap; border-bottom:1px solid rgba(0,0,0,.06);">預期收益</td>
+              <td style="padding:13px 18px; font-size:13px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06);">出售利益（市值）</td>
+              <td style="padding:13px 18px; font-size:13px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06);">表面報酬率 17.2〜20.1%</td>
+              <td style="padding:13px 18px; font-size:13px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06);">年收入 約1,752萬日圓</td>
+            </tr>
+            <tr>
+              <td style="padding:13px 18px; font-size:9.5px; letter-spacing:.14em; color:var(--gray-mid); background:var(--off-white); white-space:nowrap; border-bottom:1px solid rgba(0,0,0,.06);">投資回收</td>
+              <td style="padding:13px 18px; font-size:13px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06);">相對短期</td>
+              <td style="padding:13px 18px; font-size:13px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06);">中長期</td>
+              <td style="padding:13px 18px; font-size:13px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06);">中期</td>
+            </tr>
+            <tr>
+              <td style="padding:13px 18px; font-size:9.5px; letter-spacing:.14em; color:var(--gray-mid); background:var(--off-white); white-space:nowrap; border-bottom:1px solid rgba(0,0,0,.06);">目標投資者</td>
+              <td style="padding:13px 18px; font-size:12px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06); line-height:1.7;">投資基金<br>飯店業者<br>開發商</td>
+              <td style="padding:13px 18px; font-size:12px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06); line-height:1.7;">事業者<br>投資基金<br>聯合開發</td>
+              <td style="padding:13px 18px; font-size:12px; color:var(--ink); background:#fff; border-bottom:1px solid rgba(0,0,0,.06); line-height:1.7;">個人投資者<br>法人・高資產人士</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="fade-up" style="text-align:center; margin-top:clamp(48px,6vw,72px);">
+        <p style="font-family:var(--serif-jp); font-size:clamp(15px,1.6vw,20px); font-weight:300; color:var(--gray-mid); margin-bottom:clamp(20px,2.5vw,28px);">如需詳細資料或個別洽詢，歡迎聯絡我們。</p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <a href="#contact" class="btn-primary">聯絡我們・索取資料</a>
+          <a href="#contact" class="btn-dark" style="width:auto;">洽詢開發計畫詳情</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 協贊企業 ===== -->
+  <section id="sponsors">
+    <div class="sponsors-inner">
+      <div class="sponsors-header fade-up">
+        <h2 class="sponsors-title">協贊企業</h2>
+      </div>
+      <div class="sponsors-grid fade-up">
+        <div class="sponsor-card"><img src="../../sponsors/cocochiyo.png" alt="cocochiyo" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/fairway.png" alt="Fairway" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/wellnesthome.png" alt="Wellnest Home" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/pado-musee.png" alt="ぱどミュゼ" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/hobsons.png" alt="ホブソンズ" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/issatsu-no-kai.png" alt="一冊の会" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/nanae-town.png" alt="七飯町役場" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/hokuden.png" alt="北電" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/komatsu-uchida.png" alt="小松内田" loading="lazy"></div>
+        <div class="sponsor-card"><img src="../../sponsors/nagareyama.png" alt="流山" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 12. CTA ===== -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-header fade-up">
+        <p class="section-label section-label-dark">Contact</p>
+        <h2 class="contact-title">詳細資料・<br>個別洽詢申請。</h2>
+        <div class="divider divider-center" style="background:var(--gold-dark);"></div>
+        <p class="contact-lead">如需參與本計畫或索取詳細資料，請填寫下方表單，我們的負責人將盡快與您個別聯繫。</p>
+      </div>
+
+      <form id="contact-form" class="contact-form fade-up"
+            action="https://formspree.io/f/mjgqjppv"
+            method="POST">
+        <input type="hidden" name="_subject" value="【大沼開発LP-TW】お問い合わせ">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">姓名<span>*</span></label>
+            <input type="text" name="name" placeholder="王小明" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">公司名稱</label>
+            <input type="text" name="company" placeholder="○○股份有限公司">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">電子郵件<span>*</span></label>
+            <input type="email" name="email" placeholder="example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">電話號碼</label>
+            <input type="tel" name="tel" placeholder="0900-000-000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">感興趣的方案</label>
+          <select name="plan" style="width:100%; padding:13px 15px; background:var(--white); border:1px solid rgba(0,0,0,.12); color:var(--ink); font-family:var(--sans-jp); font-size:14px; font-weight:300; outline:none; -webkit-appearance:none; border-radius:0;">
+            <option value="">請選擇</option>
+            <option value="plan01">方案① 土地取得＋附開發計畫事業出售</option>
+            <option value="plan02">方案② 16棟別墅開發・度假村營運</option>
+            <option value="plan03">方案③ 1棟別墅業主置產</option>
+            <option value="all">對所有方案均有興趣</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">諮詢內容</label>
+          <textarea name="message" placeholder="索取詳細資料、個別面談申請等。"></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-dark">送出</button>
+        </div>
+        <p class="form-note">您所提供的個人資料，僅用於本計畫相關業務之聯繫，絕不作其他用途。</p>
+      </form>
+
+      <div class="legal-note fade-up">
+        ※所載收益模擬試算為參考值，不保證任何實際收益。<br>
+        ※計畫內容、服務內容、費用及營運方式未來可能有所調整。<br>
+        ※圖像包含完成示意CG及概念示意圖，非實際竣工照片。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">ONUMA RESORT DEVELOPMENT</div>
+        <div class="footer-sub">北海道大沼國定公園｜5.5萬坪度假村開發計畫</div>
       </div>
       <div>
-        <div class="detail-blk fade-up">
-          <div class="detail-lbl">總開發費用</div>
-          <div class="detail-val">約21.1億日圓</div>
-        </div>
-        <div class="detail-blk fade-up">
-          <div class="detail-lbl">開發規模</div>
-          <div class="detail-val">55,021坪<span style="font-size:.6em;color:var(--gray-mid);margin-left:8px;">（約18.2公頃）</span></div>
-        </div>
-        <div class="detail-blk fade-up">
-          <div class="detail-lbl">別墅棟數</div>
-          <div class="detail-val">16棟</div>
-        </div>
-        <div class="detail-blk fade-up">
-          <div class="detail-lbl">退出策略</div>
-          <ul class="exit-list">
-            <li>長期持有營運收益</li>
-            <li>以飯店度假村事業形式出售</li>
-            <li>出售給投資基金</li>
-            <li>與海外資本共同事業化</li>
-          </ul>
-        </div>
-        <div class="mgmt-box fade-up">
-          <div class="mgmt-box-lbl">營運體制</div>
-          <p class="mgmt-box-body">以株式會社Ido為核心，整合住宿營運、建築、不動產、溫浴設施、餐飲、行銷等各領域專家團隊，從開發到開業後的整體營運，一貫提供完整服務。</p>
-        </div>
-        <div class="target-tags fade-up" style="margin-top:20px;">
-          <span class="tag" style="color:var(--gold-dark);border-color:rgba(140,109,54,.35);">事業者</span>
-          <span class="tag" style="color:var(--gold-dark);border-color:rgba(140,109,54,.35);">投資基金</span>
-          <span class="tag" style="color:var(--gold-dark);border-color:rgba(140,109,54,.35);">聯合開發</span>
-        </div>
+        <p class="footer-copy">
+          本資料所載資訊為計劃階段之內容，未來可能有所變更。<br>
+          © 2025 ONUMA PRIVATE RESORT
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ── Plan 03 ── -->
-<section id="plan03">
-  <div class="plan-inner">
-    <div class="plan-num fade-up">03</div>
-    <div class="plan-grid">
-      <div>
-        <span class="section-label fade-up">Plan 03 — 別墅業主型</span>
-        <h2 class="section-title fade-up">1棟別墅<br>業主置產</h2>
-        <p class="section-desc fade-up">購置1棟別墅，業主自用的同時，閒置期間作為住宿設施對外營運的模式。</p>
-        <div class="invest-block fade-up">
-          <div class="invest-label">購置價格</div>
-          <div class="invest-value">約9,993萬日圓</div>
-          <div class="invest-sub">土地300坪＋1棟別墅</div>
-        </div>
-        <div class="p3-yield-grid fade-up">
-          <div class="p3-yi">
-            <div class="p3-yi-lbl">年收入（60%入住率）</div>
-            <div class="p3-yi-val">1,752<span style="font-size:.5em;color:var(--gold-light);">萬日圓</span></div>
-          </div>
-          <div class="p3-yi">
-            <div class="p3-yi-lbl">表面報酬率</div>
-            <div class="p3-yi-val">17.53<span style="font-size:.5em;color:var(--gold-light);">%</span></div>
-          </div>
-          <div class="p3-yi">
-            <div class="p3-yi-lbl">淨報酬率</div>
-            <div class="p3-yi-val">15.72<span style="font-size:.5em;color:var(--gold-light);">%</span></div>
-          </div>
-          <div class="p3-yi">
-            <div class="p3-yi-lbl">入住率</div>
-            <div class="p3-yi-val">60<span style="font-size:.5em;color:var(--gold-light);">%</span></div>
-          </div>
-        </div>
-        <ul class="feat-list fade-up">
-          <li>擁有北海道私人別墅</li>
-          <li>非自用期間可作收益用途</li>
-          <li>資產持有與運用並存</li>
-        </ul>
-        <div class="target-tags fade-up">
-          <span class="tag">個人投資者</span>
-          <span class="tag">法人</span>
-          <span class="tag">高資產人士</span>
-        </div>
+  <!-- スマホ固定CTA -->
+  <div class="fixed-cta">
+    <a href="#dev-vision" class="btn-outline">查看開發構想</a>
+    <a href="#contact" class="btn-primary">聯絡我們</a>
+  </div>
+
+  <!-- ライトボックス -->
+  <div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" aria-label="關閉">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="lb-img-wrap">
+      <img id="lbImg" src="" alt="">
+    </div>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+
+  <!-- 成功モーダル -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box">
+      <div class="modal-icon">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       </div>
-      <div class="p3-imgs fade-up">
-        <img src="../../ヴィラ/外観.jpg" alt="別墅外觀">
-        <img src="../../ヴィラ/リビング.jpg" alt="別墅客廳">
-        <img src="../../ヴィラ/ベッドルーム.jpg" alt="別墅臥室">
+      <div class="modal-title">感謝您的詢問</div>
+      <div class="modal-body">已收到您的申請，感謝您對ONUMA PRIVATE RESORT的興趣。<br>專屬顧問將於24小時內與您個別聯繫，為您安排專屬說明。</div>
+      <button class="modal-close" onclick="document.getElementById('successModal').classList.remove('active')">關閉</button>
+    </div>
+  </div>
+
+  <!-- エラーモーダル -->
+  <div class="modal-overlay" id="errorModal">
+    <div class="modal-box">
+      <div class="modal-icon" style="color:#c0392b;">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
       </div>
+      <div class="modal-title">傳送失敗</div>
+      <div class="modal-body">非常抱歉，傳送過程中發生錯誤。<br>請稍後再試。</div>
+      <button class="modal-close" onclick="document.getElementById('errorModal').classList.remove('active')">關閉</button>
     </div>
   </div>
-</section>
 
-<!-- ── Comparison ── -->
-<section id="comparison">
-  <div class="comparison-inner">
-    <span class="section-label fade-up">Comparison</span>
-    <h2 class="comparison-title fade-up">三種投資策略比較</h2>
-    <div class="tbl-wrap fade-up">
-      <table class="cmp-tbl">
-        <thead>
-          <tr>
-            <th></th>
-            <th>方案①<br><span style="font-weight:300;font-size:.88em;">土地開發型</span></th>
-            <th>方案②<br><span style="font-weight:300;font-size:.88em;">度假村營運型</span></th>
-            <th>方案③<br><span style="font-weight:300;font-size:.88em;">別墅業主型</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>參與方式</td><td>土地取得＋<br>附開發計畫事業出售</td><td>16棟別墅開發・<br>度假村營運</td><td>購置1棟別墅・<br>自用兼出租</td></tr>
-          <tr><td>初期投資</td><td class="td-num">約8.17億日圓</td><td class="td-num">約21.1億日圓</td><td class="td-num">約9,993萬日圓</td></tr>
-          <tr><td>預期收益</td><td>出售利益（市值）</td><td>表面報酬率<br>17.2〜20.1%</td><td>年收入<br>約1,752萬日圓</td></tr>
-          <tr><td>投資回收</td><td>相對短期</td><td>中長期</td><td>中期</td></tr>
-          <tr><td>營運風險</td><td class="td-risk-low">低</td><td class="td-risk-mid">中〜高</td><td class="td-risk-low">低（委託管理）</td></tr>
-          <tr><td>退出策略</td><td>事業出售</td><td>出售・持續營運<br>基金組成</td><td>出售・持續營運</td></tr>
-          <tr><td>目標投資者</td><td>投資基金<br>飯店業者<br>開發商</td><td>事業者<br>投資基金<br>聯合開發</td><td>個人投資者<br>法人・高資產人士</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+  <script>
+    // ===== ナビスクロール =====
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
 
-<!-- ── Appeal ── -->
-<section id="appeal">
-  <div class="appeal-inner">
-    <span class="section-label fade-up" style="color:var(--gold);">Project Value</span>
-    <h2 class="appeal-title fade-up">稀有的5.5萬坪土地，<br>可選擇3種事業策略的<br>度假村開發計畫。</h2>
-    <div class="appeal-nums fade-up">
-      <div class="a-num"><div class="a-num-val">55,021<span style="font-size:.48em;color:rgba(255,255,255,.45);">坪</span></div><div class="a-num-lbl">基地面積</div></div>
-      <div class="a-num"><div class="a-num-val">16<span style="font-size:.48em;color:rgba(255,255,255,.45);">棟</span></div><div class="a-num-lbl">計畫別墅</div></div>
-      <div class="a-num"><div class="a-num-val">17.2<span style="font-size:.48em;color:rgba(255,255,255,.45);">%</span></div><div class="a-num-lbl">表面報酬率（60%入住率）</div></div>
-      <div class="a-num"><div class="a-num-val">15.8<span style="font-size:.48em;color:rgba(255,255,255,.45);">%</span></div><div class="a-num-lbl">淨報酬率（60%入住率）</div></div>
-    </div>
-    <p class="appeal-body fade-up">
-      本計畫充分發揮約55,021坪的稀有規模，<br>
-      提供①土地取得＋附開發計畫事業出售、②16棟別墅開發・度假村營運、③1棟別墅業主置產<br>
-      三種事業策略供選擇的度假村開發計畫。<br><br>
-      可依投資者、事業者及業主各自的目標，靈活選擇最適合的參與方式。
-    </p>
-  </div>
-</section>
+    // ===== ヒーロースライドショー =====
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicatorsEl = document.getElementById('heroIndicators');
+    let currentSlide = 0;
+    let slideTimer;
 
-<!-- ── Contact ── -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="contact-header">
-      <span class="section-label">聯絡我們</span>
-      <h2 class="contact-title">詳細資料・個別洽詢</h2>
-      <p class="contact-lead">如需參與本計畫或索取詳細資料，請填寫下方表單，我們的負責人將盡快與您個別聯繫。</p>
-    </div>
-    <form id="cform" class="cform" action="https://formspree.io/f/mjgqjppv" method="POST">
-      <input type="hidden" name="_subject" value="【大沼開発LP-TW】お問い合わせ">
-      <div class="fg"><label>姓名<span>*</span></label><input type="text" name="name" required placeholder="王 小明"></div>
-      <div class="fg"><label>公司名稱</label><input type="text" name="company" placeholder="○○股份有限公司"></div>
-      <div class="fg"><label>電子郵件<span>*</span></label><input type="email" name="email" required placeholder="example@company.com"></div>
-      <div class="fg">
-        <label>感興趣的方案</label>
-        <select name="plan">
-          <option value="">請選擇</option>
-          <option value="plan01">方案① 土地取得＋附開發計畫事業出售</option>
-          <option value="plan02">方案② 16棟別墅開發・度假村營運</option>
-          <option value="plan03">方案③ 1棟別墅業主置產</option>
-          <option value="all">對所有方案均有興趣</option>
-        </select>
-      </div>
-      <div class="fg"><label>洽詢內容</label><textarea name="message" placeholder="索取詳細資料、個別面談申請等"></textarea></div>
-      <button type="submit" class="btn-submit">送出</button>
-      <p class="form-note">※您所填寫的資料僅用於本計畫相關業務之聯繫。</p>
-    </form>
-  </div>
-</section>
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(i));
+      indicatorsEl.appendChild(dot);
+    });
 
-<!-- ── Footer ── -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">ONUMA RESORT DEVELOPMENT</div>
-      <div class="footer-sub">北海道大沼國定公園｜5.5萬坪度假村開發計畫</div>
-    </div>
-    <a href="../../tw/" class="footer-link">← 返回別墅業主置產LP</a>
-  </div>
-  <p class="footer-copy">© ONUMA PRIVATE RESORT. All rights reserved.<br>※本頁所載數字及報酬率均為模擬計算之參考值，不保證未來實際收益。</p>
-</footer>
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      document.querySelectorAll('.hero-dot')[currentSlide].classList.remove('active');
+      currentSlide = n;
+      const nextEl = slides[currentSlide];
+      // Ken Burns アニメーションをリセット（同じスライドに戻った時も再生）
+      nextEl.style.animation = 'none';
+      nextEl.offsetHeight; // reflow を強制
+      nextEl.style.animation = '';
+      nextEl.classList.add('active');
+      document.querySelectorAll('.hero-dot')[currentSlide].classList.add('active');
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextSlide, 6000);
+    }
+    function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
+    slideTimer = setInterval(nextSlide, 6000);
 
-<!-- ── Modals ── -->
-<div class="modal-ov" id="m-ok">
-  <div class="modal-box">
-    <div class="modal-icon" style="color:var(--gold);">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="8,12 11,15 16,9"/></svg>
-    </div>
-    <div class="modal-ttl">已成功送出</div>
-    <div class="modal-msg">感謝您的洽詢。<br>我們的負責人將於2〜3個工作天內與您聯繫。</div>
-    <div class="modal-cls" id="m-ok-cls">關閉</div>
-  </div>
-</div>
-<div class="modal-ov" id="m-err">
-  <div class="modal-box">
-    <div class="modal-icon" style="color:#c0392b;">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-    </div>
-    <div class="modal-ttl">送出失敗</div>
-    <div class="modal-msg">請稍後再試一次，造成不便敬請見諒。</div>
-    <div class="modal-cls" id="m-err-cls">關閉</div>
-  </div>
-</div>
+    // ===== スムーズスクロール =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+      });
+    });
 
-<script>
-  const slides = document.querySelectorAll('.hero-slide');
-  let cur = 0;
-  setInterval(() => {
-    slides[cur].classList.remove('active');
-    cur = (cur + 1) % slides.length;
-    slides[cur].classList.add('active');
-  }, 7000);
+    // ===== フェードアップ =====
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.fade-up'));
+        const idx = siblings.indexOf(entry.target);
+        entry.target.style.transitionDelay = Math.min(idx * 60, 240) + 'ms';
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
 
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 55);
-        obs.unobserve(e.target);
+    // ===== ライトボックス =====
+    const lbOverlay = document.getElementById('lbOverlay');
+    const lbImg     = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbClose   = document.getElementById('lbClose');
+
+    // セクション内のすべての img を対象に（ヒーロースライド・ナビロゴは除く）
+    document.querySelectorAll('section img:not(.wn-card img), .villa-aerial').forEach(img => {
+      img.classList.add('zoomable');
+      img.addEventListener('click', () => openLb(img.src, img.alt));
+    });
+
+    function openLb(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt;
+      lbCaption.textContent = alt || '';
+      lbOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLb() {
+      lbOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      // メモリ解放を少し遅らせる
+      setTimeout(() => { lbImg.src = ''; }, 300);
+    }
+
+    lbClose.addEventListener('click', closeLb);
+    lbOverlay.addEventListener('click', e => { if (e.target === lbOverlay) closeLb(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+    // ===== アコーディオン =====
+    document.querySelectorAll('.accord-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.accord-item');
+        const isOpen = item.classList.contains('open');
+
+        // 他のアイテムをすべて閉じる
+        document.querySelectorAll('.accord-item.open').forEach(openItem => {
+          openItem.classList.remove('open');
+          openItem.querySelector('.accord-trigger').setAttribute('aria-expanded', 'false');
+        });
+
+        // クリックしたものが閉じていれば開く
+        if (!isOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ===== フォーム送信 =====
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = '傳送中...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST', body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          document.getElementById('successModal').classList.add('active');
+        } else {
+          const data = await res.json().catch(() => ({}));
+          console.error('Formspree error', res.status, data);
+          document.getElementById('errorModal').classList.add('active');
+        }
+      } catch (err) {
+        console.error('Formspree fetch error', err);
+        document.getElementById('errorModal').classList.add('active');
+      } finally {
+        btn.textContent = '索取完整計畫書';
+        btn.disabled = false;
       }
     });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-  const form = document.getElementById('cform');
-  const mOk = document.getElementById('m-ok');
-  const mErr = document.getElementById('m-err');
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const r = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-    r.ok ? (form.reset(), mOk.classList.add('active')) : mErr.classList.add('active');
-  });
-  document.getElementById('m-ok-cls').onclick = () => mOk.classList.remove('active');
-  document.getElementById('m-err-cls').onclick = () => mErr.classList.remove('active');
-  mOk.addEventListener('click', e => { if (e.target === mOk) mOk.classList.remove('active'); });
-  mErr.addEventListener('click', e => { if (e.target === mErr) mErr.classList.remove('active'); });
-</script>
+    // フォーム用モーダルを背景クリックで閉じる
+    document.querySelectorAll('#successModal, #errorModal').forEach(o => {
+      o.addEventListener('click', e => { if (e.target === o) o.classList.remove('active'); });
+    });
+  </script>
 </body>
 </html>
