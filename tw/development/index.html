@@ -275,20 +275,31 @@ body.modal-open{overflow:hidden}
 
 /* OPS → PROJECT PARTNERS */
 #ops{background:var(--black)}
-.ops-intro{max-width:760px;margin-bottom:clamp(48px,6vw,76px)}
-.partners-subtitle{font-size:clamp(13px,1.4vw,15px);line-height:2.1;color:rgba(255,255,255,.6);margin-bottom:clamp(48px,6vw,76px);max-width:760px}
-.partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,22px)}
-.partner-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:clamp(22px,2.8vw,36px) clamp(16px,2vw,26px);display:flex;flex-direction:column;gap:14px;transition:border-color .35s,background .35s}
-.partner-card:hover{background:rgba(255,255,255,.07);border-color:rgba(184,151,90,.35)}
-.partner-card-cat{font-family:var(--serif-en);font-size:9.5px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;line-height:1.4}
-.partner-card-logo{height:48px;display:flex;align-items:center}
-.partner-card-logo img{max-height:40px;max-width:150px;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.72;transition:opacity .35s}
-.partner-card:hover .partner-card-logo img{opacity:.95}
-.partner-card-name{font-family:var(--serif-jp);font-size:clamp(14px,1.5vw,17px);font-weight:300;color:var(--white);line-height:1.4}
-.partner-card-desc{font-size:12px;line-height:1.95;color:rgba(255,255,255,.52);flex:1}
-@media(max-width:1200px){.partners-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:768px){.partners-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.partners-grid{grid-template-columns:1fr}}
+.partners-lead{font-size:clamp(13px,1.4vw,15px);line-height:2.1;color:rgba(255,255,255,.55);max-width:680px;margin-bottom:clamp(56px,8vw,96px)}
+.pcat-group{margin-bottom:clamp(44px,6vw,72px)}
+.pcat-group:last-of-type{margin-bottom:0}
+.pcat-label{font-family:var(--serif-en);font-size:10px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;padding-bottom:18px;border-bottom:1px solid rgba(184,151,90,.22);margin-bottom:clamp(24px,3vw,36px)}
+.pcat-logos{display:flex;flex-wrap:wrap;gap:clamp(12px,2vw,20px)}
+.plogo-btn{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);height:clamp(72px,8vw,96px);padding:0 clamp(20px,3vw,36px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .35s,border-color .35s,transform .35s;min-width:clamp(140px,18vw,200px);position:relative}
+.plogo-btn:hover{background:rgba(255,255,255,.09);border-color:rgba(184,151,90,.4);transform:scale(1.03)}
+.plogo-btn img{max-height:clamp(32px,4vw,48px);max-width:clamp(100px,14vw,160px);width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.7;transition:opacity .35s}
+.plogo-btn:hover img{opacity:.96}
+.plogo-text{font-family:var(--serif-jp);font-size:clamp(13px,1.4vw,16px);font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.06em;transition:color .35s}
+.plogo-btn:hover .plogo-text{color:var(--white)}
+.partners-closing{margin-top:clamp(56px,8vw,96px);padding-top:clamp(40px,5vw,60px);border-top:1px solid rgba(255,255,255,.07)}
+.partners-closing p{font-size:clamp(13px,1.4vw,15px);line-height:2.2;color:rgba(255,255,255,.5);max-width:760px}
+.pmodal{position:fixed;inset:0;z-index:1300;display:none;align-items:center;justify-content:center;padding:clamp(16px,3vw,48px)}
+.pmodal.active{display:flex}
+.pmodal-bg{position:absolute;inset:0;background:rgba(0,0,0,.88);cursor:pointer}
+.pmodal-box{position:relative;background:var(--gray-dark);border:1px solid rgba(184,151,90,.18);max-width:600px;width:100%;padding:clamp(32px,4vw,56px);z-index:1}
+.pmodal-close{position:absolute;top:18px;right:20px;background:none;border:none;color:rgba(255,255,255,.5);font-size:20px;cursor:pointer;line-height:1;transition:color .25s}
+.pmodal-close:hover{color:var(--white)}
+.pmodal-cat{font-family:var(--serif-en);font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.pmodal-logo{height:52px;display:flex;align-items:center;margin-bottom:20px}
+.pmodal-logo img{max-height:44px;max-width:180px;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.85}
+.pmodal-name{font-family:var(--serif-jp);font-size:clamp(17px,2vw,22px);font-weight:300;color:var(--white);margin-bottom:18px;line-height:1.35}
+.pmodal-desc{font-size:13px;line-height:2;color:rgba(255,255,255,.62)}
+@media(max-width:600px){.pcat-logos{gap:10px}.plogo-btn{min-width:calc(50% - 5px)}}
 
 /* SPONSORS */
 #sponsors{background:var(--ink);padding:clamp(60px,8vw,100px) clamp(24px,5vw,80px)}
@@ -733,82 +744,187 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   <div class="inner">
     <div class="sec-label fade-up">Project Partners</div>
     <h2 class="sec-title fade-up" style="color:var(--white)">支持本專案的<br>專業企業・營運團隊</h2>
-    <p class="partners-subtitle fade-up">住宿營運、建築、不動產、溫泉、餐飲、設施管理、騎馬營運。各領域代表性專業企業相互合作，支撐本專案的價值與品質。</p>
-    <div class="partners-grid">
+    <p class="partners-lead fade-up">各領域代表性專業企業相互合作，支撐本專案的價值與品質。</p>
 
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">住宿營運・行銷</div>
-        <div class="partner-card-logo"><img src="../../sponsors/snowpeak.png" alt="Snow Peak" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-        <div class="partner-card-name">Snow Peak</div>
-        <p class="partner-card-desc">日本代表性戶外品牌。在全國展開地方創生・觀光開發事業，活用戶外體驗創造住宿價值的專業知識，負責別墅營運及露營設施、體驗型內容的企劃・製作。</p>
+    <div class="pcat-group fade-up">
+      <div class="pcat-label">住宿營運・行銷</div>
+      <div class="pcat-logos">
+        <button class="plogo-btn" data-partner="snowpeak" aria-label="Snow Peak 詳細">
+          <img src="../../sponsors/snowpeak.png" alt="Snow Peak">
+        </button>
+        <button class="plogo-btn" data-partner="kamori" aria-label="加森觀光 詳細">
+          <img src="../../sponsors/kamori-kanko.png" alt="加森觀光">
+        </button>
       </div>
+    </div>
 
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">住宿營運・行銷</div>
-        <div class="partner-card-logo"><img src="../../sponsors/kamori-kanko.png" alt="加森觀光" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-        <div class="partner-card-name">加森觀光</div>
-        <p class="partner-card-desc">北海道代表性綜合度假村營運企業。展開飯店、滑雪場、觀光設施、餐飲設施等多元事業，長年接待國內外大量觀光客。活用豐富的度假村營運知識，提供世界級的款待服務。</p>
+    <div class="pcat-group fade-up">
+      <div class="pcat-label">建築</div>
+      <div class="pcat-logos">
+        <button class="plogo-btn" data-partner="wellnest" aria-label="Wellnest Home 詳細">
+          <img src="../../sponsors/wellnesthome.png" alt="Wellnest Home">
+        </button>
+        <button class="plogo-btn" data-partner="jun" aria-label="順工務店 詳細">
+          <img src="../../sponsors/jun-koumuten.png" alt="順工務店">
+        </button>
       </div>
+    </div>
 
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">建築</div>
-        <div class="partner-card-logo"><img src="../../sponsors/wellnesthome.png" alt="Wellnest Home" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-        <div class="partner-card-name">Wellnest Home</div>
-        <p class="partner-card-desc">以日本最高水準隔熱性能・耐久性能著稱的住宅建商。負責別墅的企劃・設計・建築，目標在大沼嚴酷的自然環境下，打造100年後仍能保有價值的住宅。</p>
+    <div class="pcat-group fade-up">
+      <div class="pcat-label">不動產</div>
+      <div class="pcat-logos">
+        <button class="plogo-btn" data-partner="ido" aria-label="株式會社Ido 詳細">
+          <img src="../../sponsors/ido.jpg" alt="株式會社Ido">
+        </button>
       </div>
+    </div>
 
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">建築</div>
-        <div class="partner-card-logo" style="min-height:48px"></div>
-        <div class="partner-card-name">順工務店</div>
-        <p class="partner-card-desc">熟悉北海道氣候風土的建築公司。與Wellnest Home合作，施工具備高隔熱・高耐久性能的木造建築。活用工匠技術與地域知識，支持打造傳承至下一世代的百年建築。</p>
+    <div class="pcat-group fade-up">
+      <div class="pcat-label">溫泉設施</div>
+      <div class="pcat-logos">
+        <button class="plogo-btn" data-partner="kooken" aria-label="鉱研工業 詳細">
+          <img src="../../sponsors/kooken-kogyo.png" alt="鉱研工業">
+        </button>
       </div>
+    </div>
 
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">不動產</div>
-        <div class="partner-card-logo" style="min-height:48px"></div>
-        <div class="partner-card-name">株式會社 Ido</div>
-        <p class="partner-card-desc">統括本專案企劃・銷售・運營・管理的核心企業。從不動產開發到住宿設施運營一條龍管理，業主・投資人的溝通窗口也一元化。建構讓業主安心持有的運營體制。</p>
+    <div class="pcat-group fade-up">
+      <div class="pcat-label">餐飲</div>
+      <div class="pcat-logos">
+        <button class="plogo-btn" data-partner="cocochiyo" aria-label="Cocochiyo Cafe 詳細">
+          <img src="../../sponsors/cocochiyo.png" alt="Cocochiyo Cafe">
+        </button>
+        <button class="plogo-btn" data-partner="hobsons" aria-label="Hobson's 詳細">
+          <img src="../../sponsors/hobsons.png" alt="Hobson's">
+        </button>
       </div>
+    </div>
 
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">溫泉設施</div>
-        <div class="partner-card-logo"><img src="../../sponsors/kooken-kogyo.png" alt="鉱研工業" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-        <div class="partner-card-name">鉱研工業</div>
-        <p class="partner-card-desc">溫泉・地下水開發領域日本頂尖的專業企業。作為一貫承包溫泉掘削、設備設計、動力設備設置的地下開發專業公司，支持本專案的溫泉設施整備。</p>
+    <div class="pcat-group fade-up">
+      <div class="pcat-label">清潔・除雪・建物維護管理</div>
+      <div class="pcat-logos">
+        <button class="plogo-btn" data-partner="iclean" aria-label="I clean 詳細">
+          <img src="../../sponsors/iclean.png" alt="I clean">
+        </button>
       </div>
+    </div>
 
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">餐飲</div>
-        <div class="partner-card-logo"><img src="../../sponsors/cocochiyo.png" alt="Cocochiyo Cafe" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-        <div class="partner-card-name">Cocochiyo Cafe</div>
-        <p class="partner-card-desc">在新宿御苑設有本店的人氣咖啡廳。擁有在P-1大賽榮獲日本第一布丁的實績，活用高度的商品開發能力，負責研發使用大沼乳製品的新名物甜點。</p>
+    <div class="pcat-group fade-up">
+      <div class="pcat-label">騎馬設施營運・馬匹飼育管理</div>
+      <div class="pcat-logos">
+        <button class="plogo-btn" data-partner="pado" aria-label="パドミュゼ 詳細">
+          <img src="../../sponsors/pado-musee.png" alt="パドミュゼ">
+        </button>
       </div>
+    </div>
 
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">餐飲</div>
-        <div class="partner-card-logo"><img src="../../sponsors/hobsons.png" alt="Hobson's" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-        <div class="partner-card-name">Hobson's</div>
-        <p class="partner-card-desc">發源自美國西海岸的頂級冰淇淋品牌。自1985年進入日本以來，持續深受眾多粉絲喜愛的人氣店家。目標開發活用大沼豐富自然與北海道食材的原創冰淇淋。</p>
-      </div>
-
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">清潔・除雪・建物維護管理</div>
-        <div class="partner-card-logo" style="min-height:48px"></div>
-        <div class="partner-card-name">I clean</div>
-        <p class="partner-card-desc">株式會社Ido的清潔・設施管理部門。活用在飯店清潔、餐廳清潔、住宅清潔等各種現場累積的專業知識，負責別墅・溫泉設施・公共設施的清潔管理。並一併對應冬季除雪及建物維護管理。</p>
-      </div>
-
-      <div class="partner-card fade-up">
-        <div class="partner-card-cat">騎馬設施營運・馬匹飼育管理</div>
-        <div class="partner-card-logo"><img src="../../sponsors/pado-musee.png" alt="パドミュゼ" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-        <div class="partner-card-name">パドミュゼ</div>
-        <p class="partner-card-desc">專攻騎馬・馬匹療法的馬文化設施。致力於透過與馬的互動促進身心健康及教育活動，擁有豐富實績。負責從騎馬體驗課程的企劃營運到馬匹飼育管理、馬匹療法的導入。</p>
-      </div>
-
+    <div class="partners-closing fade-up">
+      <p>本專案透過建築、觀光、溫泉、餐飲、騎馬、設施管理等各領域代表性專業企業的合作進行營運。業主無需進行複雜的設施營運或管理業務，可專注於使用與資產持有，我們已建構完善的體制。</p>
     </div>
   </div>
 </section>
+
+<!-- partner modals TW -->
+<div class="pmodal" id="pm-snowpeak" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">住宿營運・行銷</div>
+    <div class="pmodal-logo"><img src="../../sponsors/snowpeak.png" alt="Snow Peak"></div>
+    <div class="pmodal-name">Snow Peak</div>
+    <p class="pmodal-desc">日本代表性戶外品牌。在全國展開地方創生・觀光開發事業，活用戶外體驗創造住宿價值的專業知識，負責別墅營運及露營設施、體驗型內容的企劃・製作。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-kamori" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">住宿營運・行銷</div>
+    <div class="pmodal-logo"><img src="../../sponsors/kamori-kanko.png" alt="加森觀光"></div>
+    <div class="pmodal-name">加森觀光</div>
+    <p class="pmodal-desc">北海道代表性綜合度假村營運企業。展開飯店、滑雪場、觀光設施、餐飲設施等多元事業，長年接待國內外大量觀光客。活用豐富的度假村營運知識，提供世界級的款待服務。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-wellnest" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">建築</div>
+    <div class="pmodal-logo"><img src="../../sponsors/wellnesthome.png" alt="Wellnest Home"></div>
+    <div class="pmodal-name">Wellnest Home</div>
+    <p class="pmodal-desc">以日本最高水準隔熱性能・耐久性能著稱的住宅建商。負責別墅的企劃・設計・建築，目標在大沼嚴酷的自然環境下，打造100年後仍能保有價值的住宅。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-jun" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">建築</div>
+    <div class="pmodal-logo"><img src="../../sponsors/jun-koumuten.png" alt="順工務店"></div>
+    <div class="pmodal-name">順工務店</div>
+    <p class="pmodal-desc">熟悉北海道氣候風土的建築公司。與Wellnest Home合作，施工具備高隔熱・高耐久性能的木造建築。活用工匠技術與地域知識，支持打造傳承至下一世代的百年建築。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-ido" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">不動產</div>
+    <div class="pmodal-logo"><img src="../../sponsors/ido.jpg" alt="株式會社Ido"></div>
+    <div class="pmodal-name">株式會社 Ido</div>
+    <p class="pmodal-desc">統括本專案企劃・銷售・運營・管理的核心企業。從不動產開發到住宿設施運營一條龍管理，業主・投資人的溝通窗口也一元化。建構讓業主安心持有的運營體制。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-kooken" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">溫泉設施</div>
+    <div class="pmodal-logo"><img src="../../sponsors/kooken-kogyo.png" alt="鉱研工業"></div>
+    <div class="pmodal-name">鉱研工業</div>
+    <p class="pmodal-desc">溫泉・地下水開發領域日本頂尖的專業企業。作為一貫承包溫泉掘削、設備設計、動力設備設置的地下開發專業公司，支持本專案的溫泉設施整備。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-cocochiyo" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">餐飲</div>
+    <div class="pmodal-logo"><img src="../../sponsors/cocochiyo.png" alt="Cocochiyo Cafe"></div>
+    <div class="pmodal-name">Cocochiyo Cafe</div>
+    <p class="pmodal-desc">在新宿御苑設有本店的人氣咖啡廳。擁有在P-1大賽榮獲日本第一布丁的實績，活用高度的商品開發能力，負責研發使用大沼乳製品的新名物甜點。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-hobsons" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">餐飲</div>
+    <div class="pmodal-logo"><img src="../../sponsors/hobsons.png" alt="Hobson's"></div>
+    <div class="pmodal-name">Hobson's</div>
+    <p class="pmodal-desc">發源自美國西海岸的頂級冰淇淋品牌。自1985年進入日本以來，持續深受眾多粉絲喜愛的人氣店家。目標開發活用大沼豐富自然與北海道食材的原創冰淇淋。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-iclean" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">清潔・除雪・建物維護管理</div>
+    <div class="pmodal-logo"><img src="../../sponsors/iclean.png" alt="I clean"></div>
+    <div class="pmodal-name">I clean</div>
+    <p class="pmodal-desc">株式會社Ido的清潔・設施管理部門。活用在飯店清潔、餐廳清潔、住宅清潔等各種現場累積的專業知識，負責別墅・溫泉設施・公共設施的清潔管理。並一併對應冬季除雪及建物維護管理。</p>
+  </div>
+</div>
+<div class="pmodal" id="pm-pado" role="dialog" aria-modal="true">
+  <div class="pmodal-bg" data-pmclose></div>
+  <div class="pmodal-box">
+    <button class="pmodal-close" data-pmclose aria-label="關閉">✕</button>
+    <div class="pmodal-cat">騎馬設施營運・馬匹飼育管理</div>
+    <div class="pmodal-logo"><img src="../../sponsors/pado-musee.png" alt="パドミュゼ"></div>
+    <div class="pmodal-name">パドミュゼ</div>
+    <p class="pmodal-desc">專攻騎馬・馬匹療法的馬文化設施。致力於透過與馬的互動促進身心健康及教育活動，擁有豐富實績。負責從騎馬體驗課程的企劃營運到馬匹飼育管理、馬匹療法的導入，提供大沼獨有的健康療癒體驗。</p>
+  </div>
+</div>
 
 <!-- ⑪ SPONSORS -->
 <section id="sponsors">
@@ -1140,6 +1256,39 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 });
 
 // 體驗卡片 → 詳情彈窗
+// パートナーロゴ → モーダル
+(function(){
+  let pmLast = null;
+  function openPM(id) {
+    const m = document.getElementById('pm-' + id);
+    if (!m) return;
+    pmLast = document.activeElement;
+    m.classList.add('active');
+    document.body.classList.add('modal-open');
+    m.querySelector('.pmodal-close').focus();
+  }
+  function closePM(m) {
+    m.classList.remove('active');
+    if (!document.querySelector('.detail-modal.active')) document.body.classList.remove('modal-open');
+    if (pmLast) pmLast.focus();
+  }
+  document.querySelectorAll('.plogo-btn').forEach(btn => {
+    btn.addEventListener('click', () => openPM(btn.dataset.partner));
+    btn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPM(btn.dataset.partner); }
+    });
+  });
+  document.querySelectorAll('.pmodal [data-pmclose]').forEach(el => {
+    el.addEventListener('click', () => closePM(el.closest('.pmodal')));
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      const open = document.querySelector('.pmodal.active');
+      if (open) closePM(open);
+    }
+  });
+})();
+
 let lastFocused = null;
 function openModal(id) {
   const modal = document.getElementById('modal-' + id);
