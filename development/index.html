@@ -292,10 +292,13 @@ body.modal-open{overflow:hidden}
 .pcat-group:last-of-type{margin-bottom:0}
 .pcat-label{font-family:var(--serif-en);font-size:10px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;padding-bottom:18px;border-bottom:1px solid rgba(184,151,90,.22);margin-bottom:clamp(24px,3vw,36px)}
 .pcat-logos{display:flex;flex-wrap:wrap;gap:clamp(12px,2vw,20px)}
-.plogo-btn{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);height:clamp(72px,8vw,96px);padding:0 clamp(20px,3vw,36px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .35s,border-color .35s,transform .35s;min-width:clamp(140px,18vw,200px);position:relative}
-.plogo-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(184,151,90,.45);transform:scale(1.03)}
-.plogo-btn img{max-height:clamp(32px,4vw,48px);max-width:clamp(100px,14vw,160px);width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.75;transition:opacity .35s,filter .35s}
-.plogo-btn:hover img{opacity:1;filter:grayscale(0)}
+.plogo-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.plogo-btn{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);height:clamp(72px,8vw,96px);padding:0 clamp(20px,3vw,36px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .35s,border-color .35s,transform .35s;min-width:clamp(140px,18vw,200px);position:relative;overflow:hidden}
+.plogo-btn::after{content:"詳細を見る →";position:absolute;bottom:0;left:0;right:0;background:rgba(184,151,90,.88);color:var(--black);font-family:var(--sans-jp);font-size:10px;letter-spacing:.12em;font-weight:500;padding:5px 0;text-align:center;transform:translateY(100%);transition:transform .3s ease}
+.plogo-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(184,151,90,.55);transform:scale(1.03)}
+.plogo-btn:hover::after{transform:translateY(0)}
+.plogo-btn img{max-height:clamp(32px,4vw,48px);max-width:clamp(100px,14vw,160px);width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.75;transition:opacity .35s,filter .35s,transform .3s}
+.plogo-btn:hover img{opacity:1;filter:grayscale(0);transform:translateY(-4px)}
 .plogo-text{font-family:var(--serif-jp);font-size:clamp(13px,1.4vw,16px);font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.06em;transition:color .35s}
 .plogo-btn:hover .plogo-text{color:var(--white)}
 .partners-closing{margin-top:clamp(56px,8vw,96px);padding-top:clamp(40px,5vw,60px);border-top:1px solid rgba(255,255,255,.07)}
