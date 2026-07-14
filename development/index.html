@@ -130,21 +130,64 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .exp-card.large img{aspect-ratio:21/9}
 @media(max-width:700px){.exp-grid{grid-template-columns:1fr}.exp-card.large img{aspect-ratio:4/3}}
 
-/* ⑤ WELLNEST */
-#wellnest{background:var(--off-white)}
-.wellnest-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
-.wellnest-image img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.wellnest-content .sec-label{color:var(--gold-dark)}
-.wellnest-content .sec-title{color:var(--ink)}
-.wellnest-lead{font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:var(--gray-mid);margin-bottom:clamp(28px,3.5vw,48px)}
-.wellnest-features{display:flex;flex-direction:column}
-.wellnest-feat{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.08)}
-.wellnest-feat:last-child{border-bottom:none}
-.wellnest-feat-icon{width:44px;height:44px;background:rgba(154,122,63,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.wellnest-feat-icon svg{width:20px;height:20px;stroke:var(--gold-dark);fill:none;stroke-width:1.5}
-.wellnest-feat-title{font-family:var(--serif-jp);font-size:15px;font-weight:400;color:var(--ink);margin-bottom:5px}
-.wellnest-feat-text{font-size:13px;line-height:1.9;color:var(--gray-mid)}
-@media(max-width:900px){.wellnest-inner{grid-template-columns:1fr}}
+/* ⑤ WELLNEST（トップページ wni セクションと同一デザイン） */
+#wellnest{background:var(--white)}
+.wni-inner{max-width:1100px;margin:0 auto}
+.wni-header{margin-bottom:clamp(56px,7vw,88px)}
+.wni-eyebrow{font-family:var(--serif-en);font-size:9px;letter-spacing:.45em;color:var(--gold-dark);text-transform:uppercase;margin-bottom:clamp(14px,1.8vw,20px)}
+.wni-title{font-family:var(--serif-jp);font-size:clamp(28px,3.5vw,52px);font-weight:300;color:var(--ink);line-height:1.5;margin-bottom:clamp(18px,2.2vw,28px)}
+.wni-sub{font-family:var(--serif-jp);font-size:clamp(13px,1.2vw,15px);font-weight:300;color:var(--gray-mid);line-height:1.95}
+.wni-divider-line{width:36px;height:1px;background:var(--gold-dark);margin-top:clamp(20px,2.5vw,32px)}
+.wni-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.wni-card{background:var(--white);border-radius:2px;box-shadow:0 2px 18px rgba(0,0,0,.07),0 0 0 1px rgba(0,0,0,.04);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.wni-card-img-wrap{width:100%;height:260px;overflow:hidden;flex-shrink:0}
+.wni-card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.wni-card-img-wrap img:hover{transform:scale(1.04)}
+.wni-card-content{padding:clamp(28px,3.5vw,44px) clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:14px;flex:1;position:relative}
+.wni-card-num{font-family:var(--serif-en);font-size:clamp(64px,8vw,108px);font-weight:300;line-height:1;color:rgba(0,0,0,.045);position:absolute;top:clamp(10px,1.5vw,18px);right:clamp(12px,2vw,20px);letter-spacing:-.02em;pointer-events:none;user-select:none}
+.wni-card-en{font-family:var(--serif-en);font-size:9px;letter-spacing:.38em;color:var(--gold-dark);text-transform:uppercase}
+.wni-card-title{font-family:var(--serif-jp);font-size:clamp(15px,1.6vw,20px);font-weight:300;color:var(--ink);line-height:1.5}
+.wni-card-sub{font-family:var(--serif-jp);font-size:clamp(12px,1.1vw,14px);font-weight:300;color:var(--gray-mid);line-height:1.6}
+.wni-divider{width:28px;height:1px;background:var(--gold)}
+.wni-card-body{font-family:var(--sans-jp);font-size:clamp(12px,1.1vw,14px);font-weight:300;color:var(--gray-dark);line-height:2.2;flex:1}
+.wn-link-wrap{text-align:center;margin-top:clamp(40px,5vw,60px)}
+.wn-link{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif-en);font-size:11px;letter-spacing:.28em;color:var(--gold-dark);border:1px solid rgba(154,122,63,.4);padding:14px 30px;text-transform:uppercase;transition:background .3s,color .3s}
+.wn-link:hover{background:var(--gold-dark);color:#fff}
+@media(max-width:900px){.wni-grid{grid-template-columns:1fr}}
+
+/* 体験カード クリックUI */
+.exp-clickable{cursor:pointer}
+.exp-clickable:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.exp-more{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:11px;letter-spacing:.15em;color:var(--gold);border-bottom:1px solid rgba(184,151,90,.4);padding-bottom:4px}
+.exp-arrow{display:inline-block;transition:transform .3s ease}
+.exp-clickable:hover .exp-arrow{transform:translateX(6px)}
+.exp-clickable:hover .exp-more{color:var(--gold-light)}
+
+/* 詳細モーダル（体験カード用） */
+.detail-modal{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px)}
+.detail-modal.active{display:flex}
+.detail-modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.85);cursor:pointer}
+.detail-modal-box{position:relative;background:var(--ink);max-width:1080px;width:100%;max-height:90vh;overflow-y:auto;-webkit-overflow-scrolling:touch;box-shadow:0 32px 80px rgba(0,0,0,.6)}
+.detail-modal-box.light{background:var(--white)}
+.detail-modal-close{position:sticky;top:14px;margin-left:auto;margin-right:16px;z-index:5;width:38px;height:38px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.3);border-radius:50%;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.detail-modal-close:hover{background:var(--gold);color:var(--black)}
+.detail-modal-content{padding:0 clamp(24px,4vw,60px) clamp(36px,5vw,64px)}
+.dm-label{font-family:var(--serif-en);font-size:11px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.dm-title{font-family:var(--serif-jp);font-size:clamp(22px,2.8vw,38px);font-weight:300;line-height:1.6;color:var(--white);margin-bottom:20px}
+.dm-body{font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,.68);line-height:2.2;margin-bottom:24px}
+.dm-note{padding:clamp(14px,1.8vw,20px);border-left:2px solid var(--gold);background:rgba(255,255,255,.04);font-size:clamp(12px,1.1vw,14px);color:rgba(255,255,255,.55);line-height:1.9;margin-bottom:28px}
+.dm-imgs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:28px}
+.dm-img-main{grid-column:1/-1;aspect-ratio:16/9;overflow:hidden}
+.dm-img-sub{aspect-ratio:1/1;overflow:hidden}
+.dm-imgs img{width:100%;height:100%;object-fit:cover}
+.dm-feats{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.5vw,18px)}
+.dm-feat{padding:clamp(20px,2.5vw,30px) clamp(16px,2vw,24px);background:rgba(255,255,255,.04);border-bottom:2px solid transparent;transition:border-color .3s}
+.dm-feat:hover{border-color:var(--gold)}
+.dm-feat-label{font-family:var(--serif-en);font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:8px;text-transform:uppercase}
+.dm-feat-title{font-family:var(--serif-jp);font-size:clamp(14px,1.4vw,17px);font-weight:400;color:var(--white);margin-bottom:8px}
+.dm-feat-desc{font-size:clamp(12px,1.1vw,13px);color:rgba(255,255,255,.6);line-height:1.85}
+body.modal-open{overflow:hidden}
+@media(max-width:640px){.dm-feats{grid-template-columns:1fr}}
 
 /* ⑥ PLANS */
 #plans{background:var(--gray-dark)}
@@ -259,14 +302,14 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 
 /* ⑪ SPONSORS */
 #sponsors{background:var(--ink);padding:clamp(60px,8vw,100px) clamp(24px,5vw,80px)}
-.sponsors-inner{max-width:1000px;margin:0 auto;text-align:center}
-.sponsors-section-label{font-family:var(--serif-en);font-size:11px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
-.sponsors-section-title{font-family:var(--serif-jp);font-size:clamp(20px,2.5vw,30px);font-weight:300;color:var(--white);margin-bottom:14px}
-.sponsors-section-sub{font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.45);margin-bottom:clamp(40px,5vw,64px);line-height:1.9}
+.sponsors-inner{max-width:1080px;margin:0 auto;text-align:center}
 .sponsors-divider{width:40px;height:1px;background:var(--gold);margin:0 auto clamp(40px,5vw,64px)}
-.sponsors-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(28px,5vw,60px) clamp(32px,6vw,72px)}
-.sponsors-grid img{height:32px;width:auto;max-width:120px;object-fit:contain;filter:brightness(0) invert(1);opacity:.38;transition:opacity .4s}
-.sponsors-grid img:hover{opacity:.75}
+.sponsors-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,2vw,24px)}
+.sponsor-cell{background:#FCFBF9;border:1px solid rgba(184,151,90,.15);display:flex;align-items:center;justify-content:center;height:clamp(80px,9vw,110px);padding:clamp(14px,1.8vw,22px) clamp(16px,2vw,26px);transition:border-color .35s,box-shadow .35s}
+.sponsor-cell:hover{border-color:rgba(184,151,90,.5);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.sponsor-cell img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+@media(max-width:900px){.sponsors-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.sponsors-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ⑫ CONTACT */
 #contact{background:var(--off-white);padding:var(--section-pad) clamp(24px,5vw,80px)}
@@ -342,23 +385,9 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">Hokkaido Onuma Quasi-National Park</div>
-    <h1 class="hero-title">北海道の大地に、<br>16棟だけのリゾートが生まれる。</h1>
-    <p class="hero-subtitle">5.5万坪の国定公園の自然に抱かれ、<br>天然温泉、レストラン、乗馬施設をすべて備えた<br>唯一無二のリゾートヴィラ。</p>
-    <p class="hero-plan-note">土地取得、リゾート事業化、1棟所有。<br>目的に応じて選べる3つの参画方法。</p>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-num">55,021<span style="font-size:.5em;margin-left:4px">坪</span></div>
-        <div class="hero-stat-label">総開発面積</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">16</div>
-        <div class="hero-stat-label">限定棟数</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label">参画方法</div>
-      </div>
-    </div>
+    <h1 class="hero-title">16棟のヴィラ開発構想。<br>3つの参画方法をご提案します。</h1>
+    <p class="hero-subtitle">北海道・大沼に計画する、16棟限定のリゾートヴィラ開発プロジェクト。<br>土地と開発計画を取得する方法、16棟すべてを開発・事業化する方法、<br>ヴィラ1棟を所有する方法。<br>投資方針や目的に応じて選べる、3つの参画方法をご紹介します。</p>
+    <p class="hero-plan-note">土地取得・リゾート事業化・ヴィラ1棟所有。<br>目的に応じて選べる3つのプロジェクト参画方法。</p>
     <div class="hero-btns">
       <a href="#plans" class="btn-primary">3つの参画方法を見る</a>
       <a href="#contact" class="btn-outline">資料請求・お問い合わせ</a>
@@ -436,9 +465,9 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
     <div class="why-access fade-up">
       <h3 class="why-access-title">アクセス — 都市からの距離感が、ちょうどいい。</h3>
       <div class="access-items">
-        <div class="access-item"><div><span class="access-num">約20</span><span class="access-unit">分</span></div><div class="access-label">函館空港から車で</div></div>
-        <div class="access-item"><div><span class="access-num">約3</span><span class="access-unit">時間</span></div><div class="access-label">東京から函館空港まで（飛行機）</div></div>
-        <div class="access-item"><div><span class="access-num">2031</span></div><div class="access-label">北海道新幹線（新函館北斗駅）開業予定</div></div>
+        <div class="access-item"><div><span class="access-num">約4</span><span class="access-unit">時間</span></div><div class="access-label">東京駅から新函館北斗駅まで<br>北海道新幹線</div></div>
+        <div class="access-item"><div><span class="access-num">約20</span><span class="access-unit">分</span></div><div class="access-label">新函館北斗駅から大沼プロジェクト予定地まで<br>車で</div></div>
+        <div class="access-item"><div><span class="access-num">約40</span><span class="access-unit">分</span></div><div class="access-label">函館空港から大沼プロジェクト予定地まで<br>車で</div></div>
       </div>
     </div>
   </div>
@@ -451,52 +480,47 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
     <h2 class="sec-title fade-up" style="color:var(--white)">大沼でしかできない体験。</h2>
     <p class="sec-lead fade-up">自然、温泉、食、馬、癒し。ここに来る理由が、いくつもある。</p>
     <div class="exp-grid">
-      <div class="exp-card large fade-up">
-        <img src="../レストラン・温泉棟/レストラン/レストラン棟外観.JPG" alt="レストラン外観">
+      <div class="exp-card fade-up exp-clickable" data-detail="villa" role="button" tabindex="0" aria-label="ヴィラの詳細を見る">
+        <img src="../ヴィラ/リビング.jpg" alt="ヴィラ">
         <div class="exp-card-overlay"></div>
         <div class="exp-card-content">
-          <div class="exp-card-tag">Dining</div>
-          <h3 class="exp-card-title">北海道の食材と、駒ヶ岳の眺望。</h3>
-          <p class="exp-card-text">敷地内レストランでは、道南の食材を活かした料理を提供。窓の外に広がる駒ヶ岳を眺めながら食事をする時間は、ここでしか叶わない贅沢です。</p>
+          <div class="exp-card-tag">Villa Life</div>
+          <h3 class="exp-card-title">自然と暮らすための、プライベートヴィラ。</h3>
+          <p class="exp-card-text">高断熱・高耐久のWellnest Homeによるヴィラ。北海道の厳しい冬も、穏やかな温もりの中で過ごせます。</p>
+          <div class="exp-more">ヴィラの詳細を見る <span class="exp-arrow">→</span></div>
         </div>
       </div>
-      <div class="exp-card fade-up">
+      <div class="exp-card fade-up exp-clickable" data-detail="onsen" role="button" tabindex="0" aria-label="温泉の詳細を見る">
         <img src="../レストラン・温泉棟/温泉/露天風呂.png" alt="露天風呂">
         <div class="exp-card-overlay"></div>
         <div class="exp-card-content">
           <div class="exp-card-tag">Onsen</div>
           <h3 class="exp-card-title">天然温泉と、静寂の時間。</h3>
           <p class="exp-card-text">敷地内に湧く天然温泉。露天風呂に浸かりながら、北海道の空気と駒ヶ岳の景色を独り占めする。</p>
+          <div class="exp-more">温泉の詳細を見る <span class="exp-arrow">→</span></div>
         </div>
       </div>
-      <div class="exp-card fade-up">
+      <div class="exp-card fade-up exp-clickable" data-detail="dining" role="button" tabindex="0" aria-label="ダイニングの詳細を見る">
+        <img src="../レストラン・温泉棟/レストラン/レストラン棟外観.JPG" alt="レストラン外観">
+        <div class="exp-card-overlay"></div>
+        <div class="exp-card-content">
+          <div class="exp-card-tag">Dining</div>
+          <h3 class="exp-card-title">北海道の食材と、駒ヶ岳の眺望。</h3>
+          <p class="exp-card-text">敷地内レストランでは、道南の食材を活かした料理を提供。窓の外に広がる駒ヶ岳を眺めながら食事をする贅沢を。</p>
+          <div class="exp-more">ダイニングの詳細を見る <span class="exp-arrow">→</span></div>
+        </div>
+      </div>
+      <div class="exp-card fade-up exp-clickable" data-detail="horse" role="button" tabindex="0" aria-label="乗馬・ホースセラピーの詳細を見る">
         <img src="../放牧場/乗馬.jpg" alt="乗馬">
         <div class="exp-card-overlay"></div>
         <div class="exp-card-content">
-          <div class="exp-card-tag">Equestrian</div>
-          <h3 class="exp-card-title">馬と共に生きる、大沼の暮らし。</h3>
-          <p class="exp-card-text">広大な放牧場での乗馬体験。馬とふれあうホースセラピーは、日常のストレスを静かにほぐします。</p>
+          <div class="exp-card-tag">Equestrian &amp; Horse Therapy</div>
+          <h3 class="exp-card-title">馬と共に生きる、大沼のウェルネス。</h3>
+          <p class="exp-card-text">広大な自然の中での乗馬体験と、馬とのコミュニケーションを通じたホースセラピー。馬と過ごす時間が、心と身体を静かに整えます。</p>
+          <div class="exp-more">乗馬・ホースセラピーの詳細を見る <span class="exp-arrow">→</span></div>
         </div>
       </div>
-      <div class="exp-card fade-up">
-        <img src="../放牧場/ホースセラピー.jpg" alt="ホースセラピー">
-        <div class="exp-card-overlay"></div>
-        <div class="exp-card-content">
-          <div class="exp-card-tag">Horse Therapy</div>
-          <h3 class="exp-card-title">ホースセラピー。</h3>
-          <p class="exp-card-text">馬との深いコミュニケーションを通じた癒し。欧州で広がる最新のウェルネス体験を、大沼の自然の中で。</p>
-        </div>
-      </div>
-      <div class="exp-card fade-up">
-        <img src="../ヴィラ/リビング.jpg" alt="ヴィラ">
-        <div class="exp-card-overlay"></div>
-        <div class="exp-card-content">
-          <div class="exp-card-tag">Villa Life</div>
-          <h3 class="exp-card-title">プライベートヴィラという、逃げ場所。</h3>
-          <p class="exp-card-text">高断熱・高耐久のWellnest Homeによるヴィラ。北海道の厳しい冬も、穏やかな温もりの中で過ごせます。</p>
-        </div>
-      </div>
-      <div class="exp-card fade-up">
+      <div class="exp-card large fade-up">
         <img src="../images/starry-sky.jpg" alt="星空">
         <div class="exp-card-overlay"></div>
         <div class="exp-card-content">
@@ -509,34 +533,55 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   </div>
 </section>
 
-<!-- ⑤ WELLNEST HOME -->
+<!-- ⑤ WELLNEST HOME（トップページ「100年後も価値を残すために。」と同一コンテンツ） -->
 <section id="wellnest">
-  <div class="inner">
-    <div class="wellnest-inner">
-      <div class="wellnest-image fade-up">
-        <img src="../images/wellnest-onuma.webp" alt="Wellnest Home">
-      </div>
-      <div class="fade-up">
-        <div class="wellnest-content">
-          <div class="sec-label">Architecture</div>
-          <h2 class="sec-title">なぜ、Wellnest Homeなのか。</h2>
-          <p class="wellnest-lead">100年後も価値を残すために。北海道の過酷な自然環境に耐え、世代を超えて受け継がれるヴィラを建てるためには、建築の質が問われます。Wellnest Homeは、日本最高水準の断熱・耐久性能と自然素材にこだわった住宅メーカーです。</p>
-          <div class="wellnest-features">
-            <div class="wellnest-feat">
-              <div class="wellnest-feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-              <div><div class="wellnest-feat-title">高断熱・高気密</div><p class="wellnest-feat-text">北海道の冬でも快適な室内環境を実現。エネルギーコストを抑え、長期にわたって資産価値を維持します。</p></div>
-            </div>
-            <div class="wellnest-feat">
-              <div class="wellnest-feat-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-              <div><div class="wellnest-feat-title">自然素材へのこだわり</div><p class="wellnest-feat-text">化学物質に頼らない、自然素材を使った内装。居住者の健康を長期的に守る設計思想です。</p></div>
-            </div>
-            <div class="wellnest-feat">
-              <div class="wellnest-feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-              <div><div class="wellnest-feat-title">100年後も価値を残す耐久性</div><p class="wellnest-feat-text">日本の住宅の平均寿命は約30年。Wellnest Homeは100年住み続けられる耐久性を設計段階から組み込みます。</p></div>
-            </div>
-          </div>
+  <div class="wni-inner">
+    <div class="wni-header fade-up">
+      <p class="wni-eyebrow">Wellnest Home × Onuma</p>
+      <h2 class="wni-title">100年後も価値を残すために。</h2>
+      <p class="wni-sub">北海道・大沼の自然と、WELLNEST HOMEの建築思想が出会い、このプロジェクトは生まれました。</p>
+      <div class="wni-divider-line"></div>
+    </div>
+    <div class="wni-grid">
+      <div class="wni-card fade-up">
+        <div class="wni-card-img-wrap"><img src="../ヴィラ/外観.jpg" alt="WELLNEST HOME ヴィラ外観" loading="lazy"></div>
+        <div class="wni-card-content">
+          <div class="wni-card-num">01</div>
+          <span class="wni-card-en">About Wellnest Home</span>
+          <h3 class="wni-card-title">WELLNEST HOMEとは？</h3>
+          <p class="wni-card-sub">100年先を見据えた住まいづくり</p>
+          <div class="wni-divider"></div>
+          <p class="wni-card-body">Wellnest Homeは、高断熱・高気密・計画換気によって、一年を通して快適で健康的な住環境を追求する住宅ブランドです。<br><br>木造建築の可能性を最大限に活かし、世代を超えて受け継がれる「100年住宅」を目指しています。<br><br>高い耐久性と省エネルギー性能を兼ね備えた住まいづくりを行っています。</p>
         </div>
       </div>
+      <div class="wni-card fade-up">
+        <div class="wni-card-img-wrap"><img src="../ヴィラ/ベッドルーム.jpg" alt="高断熱・高気密 ヴィラベッドルーム" loading="lazy"></div>
+        <div class="wni-card-content">
+          <div class="wni-card-num">02</div>
+          <span class="wni-card-en">Why Wellnest Home</span>
+          <h3 class="wni-card-title">なぜWellnest Homeなのか？</h3>
+          <p class="wni-card-sub">建築性能が、滞在体験を変える。</p>
+          <div class="wni-divider"></div>
+          <p class="wni-card-body">北海道の自然を楽しむためには、美しいデザインだけでなく、厳しい寒さや積雪に耐える建築性能が欠かせません。<br><br>高断熱・高気密・計画換気によって、冬は暖かく、夏は涼しく、室内の温度差を抑えた快適な環境を実現。<br><br>快適性と健康、そして建物の長寿命化を追求するWellnest Homeの思想は、この土地を100年先へ受け継いでいきたいという私たちの想いと重なっています。</p>
+        </div>
+      </div>
+      <div class="wni-card fade-up">
+        <div class="wni-card-img-wrap"><img src="../images/wellnest-onuma.webp" alt="WELLNEST HOME × 大沼" loading="lazy"></div>
+        <div class="wni-card-content">
+          <div class="wni-card-num">03</div>
+          <span class="wni-card-en">Wellnest Home × Onuma</span>
+          <h3 class="wni-card-title">WELLNEST HOME × ONUMA</h3>
+          <p class="wni-card-sub">大沼の自然を、100年後へ。</p>
+          <div class="wni-divider"></div>
+          <p class="wni-card-body">駒ヶ岳や大沼の雄大な自然を楽しみながら、冬も夏も快適に過ごせるヴィラを目指します。<br><br>環境負荷を抑える木造建築と、高性能な住環境を融合することで、この土地の価値を未来へ受け継ぐリゾートを構想しています。<br><br>単なる別荘ではなく、自然と共生する次世代の資産として。</p>
+        </div>
+      </div>
+    </div>
+    <div class="wn-link-wrap fade-up">
+      <a href="https://wellnesthome.jp/" target="_blank" rel="noopener noreferrer" class="wn-link">
+        Wellnest Homeについて詳しく見る
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -695,6 +740,75 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   </div>
 </section>
 
+<!-- ⑩ PROJECT OPS -->
+<section id="ops">
+  <div class="inner">
+    <div class="sec-label fade-up">Operations</div>
+    <h2 class="sec-title fade-up" style="color:var(--white)">プロジェクト運営体制</h2>
+    <div class="ops-intro fade-up">
+      <p style="font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.75);line-height:1.9;margin-bottom:16px">オーナー様や投資家様が安心して参画できるよう、<br>各分野の専門家が連携し、運営・維持管理を行います。</p>
+      <p style="font-size:clamp(13px,1.4vw,15px);line-height:2;color:rgba(255,255,255,.6)">施設運営・維持管理については、株式会社Idoを中心に、各分野のスペシャリストチームが連携し、責任を持って対応いたします。オーナー様は煩雑な管理業務を行う必要はなく、利用と資産保有に集中することができます。</p>
+    </div>
+    <div class="ops-grid">
+      <div class="ops-card fade-up">
+        <div class="ops-card-role">Architecture</div>
+        <h3 class="ops-card-name">Wellnest Home</h3>
+        <p class="ops-card-desc">日本最高水準の断熱・耐久性能で知られる住宅メーカー。大沼の過酷な気候条件に対応した、100年後も価値を残す高品質ヴィラを提供。</p>
+      </div>
+      <div class="ops-card fade-up">
+        <div class="ops-card-role">Planning &amp; Operations</div>
+        <h3 class="ops-card-name">株式会社 Ido</h3>
+        <p class="ops-card-desc">本プロジェクトの企画・運営管理を担う中核企業。16棟のヴィラ運用、施設管理、オーナー・投資家とのコミュニケーションを一元管理。</p>
+      </div>
+      <div class="ops-card fade-up">
+        <div class="ops-card-role">Specialist Team</div>
+        <h3 class="ops-card-name">各分野の専門家</h3>
+        <p class="ops-card-desc">住宿・飲食・温泉・建物管理・清掃・マーケティング・乗馬の各分野において、専門チームが常時対応。オーナーが管理に悩む必要がない体制を構築。</p>
+      </div>
+    </div>
+    <div class="ops-tags-wrap fade-up">
+      <h3 class="ops-tags-title">対応業務</h3>
+      <div class="ops-tags">
+        <span class="ops-tag">宿泊運営</span>
+        <span class="ops-tag">建築</span>
+        <span class="ops-tag">不動産</span>
+        <span class="ops-tag">温泉施設</span>
+        <span class="ops-tag">飲食</span>
+        <span class="ops-tag">清掃</span>
+        <span class="ops-tag">マーケティング</span>
+        <span class="ops-tag">乗馬施設運営</span>
+        <span class="ops-tag">馬の飼育管理</span>
+        <span class="ops-tag">除雪</span>
+        <span class="ops-tag">建物維持管理</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑪ SPONSORS -->
+<section id="sponsors">
+  <div class="inner">
+    <div class="sponsors-inner">
+      <div class="sec-label fade-up" style="text-align:center">Partner &amp; Sponsors</div>
+      <h2 class="fade-up" style="font-family:var(--serif-jp);font-size:clamp(20px,2.5vw,30px);font-weight:300;color:var(--white);text-align:center;margin-bottom:14px">本プロジェクトを支えるパートナー企業</h2>
+      <p class="fade-up" style="font-size:13px;color:rgba(255,255,255,.45);text-align:center;line-height:2;margin-bottom:0">本プロジェクトは、建築、運営、飲食、ウェルネス、ホースセラピーなど、<br>様々な分野の企業・専門家との連携により推進されています。</p>
+      <div class="sponsors-divider fade-up"></div>
+      <div class="sponsors-grid fade-up">
+        <div class="sponsor-cell"><img src="../sponsors/wellnesthome.png" alt="Wellnest Home" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/cocochiyo.png" alt="Cocochiyo" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/fairway.png" alt="Fairway" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/pado-musee.png" alt="Pado Musee" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/hobsons.png" alt="Hobson's" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/issatsu-no-kai.png" alt="一冊の会" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/nanae-town.png" alt="七飯町" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/hokuden.png" alt="北電" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/komatsu-uchida.png" alt="小松内田" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+        <div class="sponsor-cell"><img src="../sponsors/nagareyama.png" alt="流山" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ⑦ ONUMA MODEL (プラン③詳細) -->
 <section id="model">
   <div class="inner">
@@ -822,75 +936,6 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   </div>
 </section>
 
-<!-- ⑩ PROJECT OPS -->
-<section id="ops">
-  <div class="inner">
-    <div class="sec-label fade-up">Operations</div>
-    <h2 class="sec-title fade-up" style="color:var(--white)">プロジェクト運営体制</h2>
-    <div class="ops-intro fade-up">
-      <p style="font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.75);line-height:1.9;margin-bottom:16px">オーナー様や投資家様が安心して参画できるよう、<br>各分野の専門家が連携し、運営・維持管理を行います。</p>
-      <p style="font-size:clamp(13px,1.4vw,15px);line-height:2;color:rgba(255,255,255,.6)">施設運営・維持管理については、株式会社Idoを中心に、各分野のスペシャリストチームが連携し、責任を持って対応いたします。オーナー様は煩雑な管理業務を行う必要はなく、利用と資産保有に集中することができます。</p>
-    </div>
-    <div class="ops-grid">
-      <div class="ops-card fade-up">
-        <div class="ops-card-role">Architecture</div>
-        <h3 class="ops-card-name">Wellnest Home</h3>
-        <p class="ops-card-desc">日本最高水準の断熱・耐久性能で知られる住宅メーカー。大沼の過酷な気候条件に対応した、100年後も価値を残す高品質ヴィラを提供。</p>
-      </div>
-      <div class="ops-card fade-up">
-        <div class="ops-card-role">Planning &amp; Operations</div>
-        <h3 class="ops-card-name">株式会社 Ido</h3>
-        <p class="ops-card-desc">本プロジェクトの企画・運営管理を担う中核企業。16棟のヴィラ運用、施設管理、オーナー・投資家とのコミュニケーションを一元管理。</p>
-      </div>
-      <div class="ops-card fade-up">
-        <div class="ops-card-role">Specialist Team</div>
-        <h3 class="ops-card-name">各分野の専門家</h3>
-        <p class="ops-card-desc">住宿・飲食・温泉・建物管理・清掃・マーケティング・乗馬の各分野において、専門チームが常時対応。オーナーが管理に悩む必要がない体制を構築。</p>
-      </div>
-    </div>
-    <div class="ops-tags-wrap fade-up">
-      <h3 class="ops-tags-title">対応業務</h3>
-      <div class="ops-tags">
-        <span class="ops-tag">宿泊運営</span>
-        <span class="ops-tag">建築</span>
-        <span class="ops-tag">不動産</span>
-        <span class="ops-tag">温泉施設</span>
-        <span class="ops-tag">飲食</span>
-        <span class="ops-tag">清掃</span>
-        <span class="ops-tag">マーケティング</span>
-        <span class="ops-tag">乗馬施設運営</span>
-        <span class="ops-tag">馬の飼育管理</span>
-        <span class="ops-tag">除雪</span>
-        <span class="ops-tag">建物維持管理</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ⑪ SPONSORS -->
-<section id="sponsors">
-  <div class="inner">
-    <div class="sponsors-inner">
-      <div class="sec-label fade-up" style="text-align:center">Partner &amp; Sponsors</div>
-      <h2 class="fade-up" style="font-family:var(--serif-jp);font-size:clamp(20px,2.5vw,30px);font-weight:300;color:var(--white);text-align:center;margin-bottom:14px">本プロジェクトを支えるパートナー企業</h2>
-      <p class="fade-up" style="font-size:13px;color:rgba(255,255,255,.45);text-align:center;line-height:2;margin-bottom:0">本プロジェクトは、建築、運営、飲食、ウェルネス、ホースセラピーなど、<br>様々な分野の企業・専門家との連携により推進されています。</p>
-      <div class="sponsors-divider fade-up"></div>
-      <div class="sponsors-grid fade-up">
-        <img src="../sponsors/wellnesthome.png" alt="Wellnest Home">
-        <img src="../sponsors/cocochiyo.png" alt="Cocochiyo">
-        <img src="../sponsors/fairway.png" alt="Fairway">
-        <img src="../sponsors/pado-musee.png" alt="Pado Musee">
-        <img src="../sponsors/hobsons.png" alt="Hobson's">
-        <img src="../sponsors/issatsu-no-kai.png" alt="一冊の会">
-        <img src="../sponsors/nanae-town.png" alt="七飯町">
-        <img src="../sponsors/hokuden.png" alt="北電">
-        <img src="../sponsors/komatsu-uchida.png" alt="小松内田">
-        <img src="../sponsors/nagareyama.png" alt="流山">
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ⑫ CONTACT -->
 <section id="contact">
   <div class="inner">
@@ -954,6 +999,77 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
   <a href="#contact" class="mobile-cta-primary">資料請求</a>
 </div>
 
+<!-- 体験詳細モーダル：Onsen（トップページ Onsen & Spa と同一内容） -->
+<div class="detail-modal" id="modal-onsen" role="dialog" aria-modal="true" aria-label="温泉の詳細">
+  <div class="detail-modal-bg" data-close></div>
+  <div class="detail-modal-box">
+    <button class="detail-modal-close" data-close aria-label="閉じる">✕</button>
+    <div class="detail-modal-content">
+      <div class="dm-label">Onsen &amp; Spa</div>
+      <h3 class="dm-title">敷地内に息づく、<br>天然温泉。</h3>
+      <div class="dm-imgs">
+        <div class="dm-img-main"><img src="../レストラン・温泉棟/温泉/露天風呂.png" alt="リゾート内露天風呂" loading="lazy"></div>
+        <div class="dm-img-sub"><img src="../レストラン・温泉棟/温泉/室内温泉.png" alt="室内温泉" loading="lazy"></div>
+        <div class="dm-img-sub"><img src="../レストラン・温泉棟/温泉/温泉脱衣所.png" alt="温泉脱衣所" loading="lazy"></div>
+      </div>
+      <p class="dm-body">敷地内の温泉棟は、ヴィラオーナーと宿泊ゲスト、一般利用者を迎えるリゾート内温泉施設。日常的に運営されることで、施設の品質と維持管理を保ち、リゾート全体の価値を高め続けます。</p>
+      <div class="dm-note">ヴィラオーナーには優先利用・特典利用を設ける想定です。<br>詳細は資料にてご案内します。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 体験詳細モーダル：Dining（トップページ リゾートダイニングと同一内容） -->
+<div class="detail-modal" id="modal-dining" role="dialog" aria-modal="true" aria-label="ダイニングの詳細">
+  <div class="detail-modal-bg" data-close></div>
+  <div class="detail-modal-box">
+    <button class="detail-modal-close" data-close aria-label="閉じる">✕</button>
+    <div class="detail-modal-content">
+      <div class="dm-label">Farm to Table</div>
+      <h3 class="dm-title">大沼の恵みを味わう、<br>リゾートダイニング。</h3>
+      <div class="dm-imgs">
+        <div class="dm-img-main"><img src="../レストラン・温泉棟/レストラン/レストラン棟外観.JPG" alt="リゾートレストラン棟外観" loading="lazy"></div>
+        <div class="dm-img-sub"><img src="../レストラン・温泉棟/レストラン/レストラン内観.png" alt="レストラン内観" loading="lazy"></div>
+        <div class="dm-img-sub"><img src="../レストラン・温泉棟/レストラン/料理１.jpg" alt="大沼の食材を使った料理" loading="lazy"></div>
+      </div>
+      <p class="dm-body">大沼和牛、函館近海の海鮮、道南の旬野菜。この地だけで生まれる食材が、一皿の上に集まる。<br><br>レストラン棟はリゾート内のダイニングとして、宿泊ゲストや一般のお客様にもひらかれた場所。日常的に稼働する食の場が、リゾートに活気と価値をもたらします。</p>
+      <div class="dm-note">ヴィラオーナーには優先予約・特別メニューなどの特典を想定しています。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 体験詳細モーダル：Horse（トップページ「馬と過ごす、北海道のウェルネス。」と同一内容） -->
+<div class="detail-modal" id="modal-horse" role="dialog" aria-modal="true" aria-label="乗馬・ホースセラピーの詳細">
+  <div class="detail-modal-bg" data-close></div>
+  <div class="detail-modal-box">
+    <button class="detail-modal-close" data-close aria-label="閉じる">✕</button>
+    <div class="detail-modal-content">
+      <div class="dm-label">Horse &amp; Wellness</div>
+      <h3 class="dm-title">馬と過ごす、<br>北海道のウェルネス。</h3>
+      <p class="dm-body">広大な放牧場で馬が草をはむ朝の光景。乗馬体験、ホースセラピー、引退馬との触れ合い。他のどこにもない、生き物との共存がこのリゾートの核心にある。</p>
+      <div class="dm-imgs">
+        <div class="dm-img-main"><img src="../放牧場/乗馬.jpg" alt="リゾート内乗馬体験" loading="lazy"></div>
+        <div class="dm-img-sub"><img src="../放牧場/ホースセラピー.jpg" alt="ホースセラピー" loading="lazy"></div>
+        <div class="dm-img-sub"><img src="../放牧場/乗馬・ふれあい場.png" alt="馬とのふれあい場" loading="lazy"></div>
+      </div>
+      <div class="dm-feats">
+        <div class="dm-feat"><div class="dm-feat-label">Activity</div><div class="dm-feat-title">乗馬体験</div><div class="dm-feat-desc">大自然の中を馬と歩く体験。初心者から上級者まで、インストラクターが対応します。</div></div>
+        <div class="dm-feat"><div class="dm-feat-label">Therapy</div><div class="dm-feat-title">ホースセラピー</div><div class="dm-feat-desc">馬との触れ合いが心身に与えるポジティブな効果。子どもから大人まで体験できます。</div></div>
+        <div class="dm-feat"><div class="dm-feat-label">Welfare</div><div class="dm-feat-title">引退馬支援</div><div class="dm-feat-desc">競走馬や乗用馬として生涯を終えた馬たちに第二の居場所を。リゾートが担うもうひとつの役割。</div></div>
+        <div class="dm-feat"><div class="dm-feat-label">Nature</div><div class="dm-feat-title">放牧場の景観</div><div class="dm-feat-desc">朝霧の中、馬が草をはむ景色。それ自体がこのリゾートにしか存在しない価値です。</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 体験詳細モーダル：Villa（#wellnest セクションをJSで複製表示＝内容の二重管理なし） -->
+<div class="detail-modal" id="modal-villa" role="dialog" aria-modal="true" aria-label="ヴィラの詳細">
+  <div class="detail-modal-bg" data-close></div>
+  <div class="detail-modal-box light">
+    <button class="detail-modal-close" data-close aria-label="閉じる">✕</button>
+    <div class="detail-modal-content" id="villa-modal-content" style="padding-top:8px"></div>
+  </div>
+</div>
+
 <script>
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
@@ -993,6 +1109,45 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
   });
+});
+
+// 体験カード → 詳細モーダル
+let lastFocused = null;
+function openModal(id) {
+  const modal = document.getElementById('modal-' + id);
+  if (!modal) return;
+  if (id === 'villa') {
+    const holder = document.getElementById('villa-modal-content');
+    if (!holder.hasChildNodes()) {
+      const clone = document.querySelector('#wellnest .wni-inner').cloneNode(true);
+      clone.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+      holder.appendChild(clone);
+    }
+  }
+  lastFocused = document.activeElement;
+  modal.classList.add('active');
+  document.body.classList.add('modal-open');
+  modal.querySelector('.detail-modal-close').focus();
+}
+function closeModal(modal) {
+  modal.classList.remove('active');
+  document.body.classList.remove('modal-open');
+  if (lastFocused) lastFocused.focus();
+}
+document.querySelectorAll('.exp-clickable').forEach(card => {
+  card.addEventListener('click', () => openModal(card.dataset.detail));
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.detail); }
+  });
+});
+document.querySelectorAll('.detail-modal [data-close]').forEach(el => {
+  el.addEventListener('click', () => closeModal(el.closest('.detail-modal')));
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const open = document.querySelector('.detail-modal.active');
+    if (open) closeModal(open);
+  }
 });
 
 const form = document.getElementById('contact-form');
