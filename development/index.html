@@ -76,23 +76,21 @@ section{padding:var(--section-pad) clamp(24px,5vw,80px)}
 .fade-up.visible{opacity:1;transform:none}
 
 /* ② PROJECT */
-#project{background:var(--ink)}
-.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);align-items:start}
-.project-image{position:relative}
-.project-image img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.project-badge{position:absolute;top:20px;left:20px;background:rgba(8,8,8,.7);border:1px solid rgba(184,151,90,.4);padding:10px 18px;font-size:11px;letter-spacing:.2em;color:var(--gold)}
-.project-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);margin-top:clamp(24px,3vw,40px)}
-.project-stat{background:var(--ink);padding:22px 18px;text-align:center}
-.project-stat-num{font-family:var(--serif-en);font-size:clamp(16px,1.8vw,24px);color:var(--gold);font-weight:300;letter-spacing:.04em}
-.project-stat-label{font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.5);margin-top:5px}
-.facility-list{margin-top:clamp(28px,3.5vw,48px);display:flex;flex-direction:column}
-.facility-item{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.facility-item:last-child{border-bottom:none}
-.facility-icon{width:36px;height:36px;border:1px solid rgba(184,151,90,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.facility-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.5}
-.facility-name{font-size:14px;letter-spacing:.06em}
-.facility-note{font-size:11px;color:var(--gray-light);margin-left:auto;letter-spacing:.05em}
-@media(max-width:900px){.project-grid{grid-template-columns:1fr}}
+#project{background:var(--ink);padding:0}
+.project-layout{display:grid;grid-template-columns:55% 1fr;min-height:clamp(560px,70vh,860px)}
+.project-visual{position:relative;overflow:hidden}
+.project-visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 8s ease}
+.project-visual:hover img{transform:scale(1.04)}
+.project-visual-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,8,8,0) 60%,rgba(22,22,22,.7) 100%)}
+.project-content{background:var(--ink);padding:clamp(48px,6vw,88px) clamp(32px,4vw,64px);display:flex;flex-direction:column;justify-content:center}
+.project-eyebrow{font-family:var(--serif-en);font-size:10px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin-bottom:clamp(20px,3vw,32px)}
+.project-heading{font-family:var(--serif-jp);font-size:clamp(18px,2.2vw,28px);font-weight:300;line-height:1.65;color:var(--white);margin-bottom:clamp(24px,3vw,36px)}
+.project-body{font-size:clamp(13px,1.3vw,15px);line-height:2.15;color:rgba(255,255,255,.62);margin-bottom:clamp(36px,5vw,60px)}
+.project-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.07)}
+.project-stat{background:var(--ink);padding:clamp(18px,2.5vw,28px) clamp(14px,2vw,22px)}
+.project-stat-num{font-family:var(--serif-en);font-size:clamp(18px,2vw,26px);color:var(--gold);font-weight:300;letter-spacing:.03em;line-height:1.2;margin-bottom:6px}
+.project-stat-label{font-size:10.5px;letter-spacing:.14em;color:rgba(255,255,255,.45);line-height:1.55}
+@media(max-width:960px){.project-layout{grid-template-columns:1fr;min-height:auto}.project-visual{height:56vw;min-height:300px}.project-visual-overlay{background:none}.project-content{padding:clamp(40px,8vw,64px) clamp(24px,5vw,48px)}}
 
 /* ③ WHY */
 #why{background:var(--black)}
@@ -416,29 +414,31 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
 
 <!-- ② PROJECT OVERVIEW -->
 <section id="project">
-  <div class="inner">
-    <div class="sec-label fade-up">Project Overview</div>
-    <h2 class="sec-title fade-up" style="color:var(--white)">5.5万坪に、16棟だけ。</h2>
-    <div class="project-grid">
-      <div class="project-image fade-up">
-        <img src="../マスタープラン.png" alt="マスタープラン">
-        <div class="project-badge">MASTER PLAN</div>
-        <div class="project-stats">
-          <div class="project-stat"><div class="project-stat-num">55,021坪</div><div class="project-stat-label">総面積</div></div>
-          <div class="project-stat"><div class="project-stat-num">16棟</div><div class="project-stat-label">限定ヴィラ数</div></div>
-          <div class="project-stat"><div class="project-stat-num">300坪</div><div class="project-stat-label">1棟あたり土地</div></div>
-          <div class="project-stat"><div class="project-stat-num">国定公園</div><div class="project-stat-label">大沼・七飯町</div></div>
+  <div class="project-layout">
+    <div class="project-visual fade-up">
+      <img src="../ヴィラ/上空ヴィライメージ２.png" alt="大沼リゾートヴィラ 上空イメージ">
+      <div class="project-visual-overlay"></div>
+    </div>
+    <div class="project-content fade-up">
+      <div class="project-eyebrow">Project Overview</div>
+      <h2 class="project-heading">北海道大沼国定公園<br>5.5万坪のプライベートリゾート構想</h2>
+      <p class="project-body">駒ヶ岳と大沼湖を望む約55,000坪の広大な敷地。<br><br>わずか16棟のプライベートヴィラを中心に、天然温泉、レストラン、乗馬施設、ホースセラピーエリアを備えた北海道でも希少なウェルネスリゾートを計画しています。<br><br>自然と建築、温泉と馬が共存する、新しい滞在価値を創出します。</p>
+      <div class="project-stats">
+        <div class="project-stat">
+          <div class="project-stat-num">55,000坪</div>
+          <div class="project-stat-label">総開発面積</div>
         </div>
-      </div>
-      <div class="fade-up">
-        <p style="font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:rgba(255,255,255,.75);margin-bottom:clamp(28px,3.5vw,44px)">北海道大沼国定公園。駒ヶ岳を望み、大沼湖が広がるこの土地に、5.5万坪のリゾートを開発します。ヴィラはわずか16棟。1棟あたり土地300坪とWellnest Homeが手掛けるヴィラが一体となって、あなただけの特別な場所になります。</p>
-        <div class="facility-list">
-          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div><span class="facility-name">プライベートヴィラ</span><span class="facility-note">16棟限定</span></div>
-          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="facility-name">天然温泉（露天・室内）</span><span class="facility-note">共用施設</span></div>
-          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div><span class="facility-name">レストラン棟</span><span class="facility-note">共用施設</span></div>
-          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="9" ry="3"/><path d="M12 14V4"/><path d="M8 7c0-2.2 1.8-4 4-4s4 1.8 4 4"/></svg></div><span class="facility-name">乗馬施設・放牧場</span><span class="facility-note">共用施設</span></div>
-          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><span class="facility-name">ホースセラピーエリア</span><span class="facility-note">共用施設</span></div>
-          <div class="facility-item"><div class="facility-icon"><svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/></svg></div><span class="facility-name">自然散策エリア</span><span class="facility-note">園内全域</span></div>
+        <div class="project-stat">
+          <div class="project-stat-num">16棟</div>
+          <div class="project-stat-label">限定ヴィラ数</div>
+        </div>
+        <div class="project-stat">
+          <div class="project-stat-num">約10,000㎡</div>
+          <div class="project-stat-label">1棟あたり敷地面積</div>
+        </div>
+        <div class="project-stat">
+          <div class="project-stat-num" style="font-family:var(--serif-jp);font-size:clamp(14px,1.5vw,18px)">大沼国定公園</div>
+          <div class="project-stat-label">北海道七飯町</div>
         </div>
       </div>
     </div>
