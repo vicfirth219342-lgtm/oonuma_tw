@@ -295,8 +295,8 @@ body.modal-open{overflow:hidden}
 .plogo-btn::after{content:"詳細を見る →";position:absolute;bottom:0;left:0;right:0;background:rgba(184,151,90,.88);color:var(--black);font-family:var(--sans-jp);font-size:10px;letter-spacing:.12em;font-weight:500;padding:5px 0;text-align:center;transform:translateY(100%);transition:transform .3s ease}
 .plogo-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(184,151,90,.55);transform:scale(1.03)}
 .plogo-btn:hover::after{transform:translateY(0)}
-.plogo-btn img{max-height:clamp(32px,4vw,48px);max-width:clamp(100px,14vw,160px);width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.75;transition:opacity .35s,filter .35s,transform .3s}
-.plogo-btn:hover img{opacity:1;filter:grayscale(0);transform:translateY(-4px)}
+.plogo-btn img{max-height:clamp(32px,4vw,48px);max-width:clamp(100px,14vw,160px);width:auto;height:auto;object-fit:contain;filter:none;opacity:1;transition:opacity .35s,transform .3s}
+.plogo-btn:hover img{opacity:1;filter:none;transform:translateY(-4px)}
 .plogo-text{font-family:var(--serif-jp);font-size:clamp(13px,1.4vw,16px);font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.06em;transition:color .35s}
 .plogo-btn:hover .plogo-text{color:var(--white)}
 .partners-closing{margin-top:clamp(56px,8vw,96px);padding-top:clamp(40px,5vw,60px);border-top:1px solid rgba(255,255,255,.07)}
@@ -310,7 +310,7 @@ body.modal-open{overflow:hidden}
 .pmodal-close:hover{color:var(--white)}
 .pmodal-cat{font-family:var(--serif-en);font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
 .pmodal-logo{height:52px;display:flex;align-items:center;margin-bottom:20px}
-.pmodal-logo img{max-height:44px;max-width:180px;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.85}
+.pmodal-logo img{max-height:44px;max-width:180px;width:auto;height:auto;object-fit:contain;filter:none;opacity:1}
 .pmodal-name{font-family:var(--serif-jp);font-size:clamp(17px,2vw,22px);font-weight:300;color:var(--white);margin-bottom:18px;line-height:1.35}
 .pmodal-desc{font-size:13px;line-height:2;color:rgba(255,255,255,.62)}
 @media(max-width:600px){.pcat-logos{gap:10px}.plogo-btn{min-width:calc(50% - 5px)}}
@@ -322,8 +322,8 @@ body.modal-open{overflow:hidden}
 .sponsors-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.8vw,20px)}
 .sponsor-cell{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;height:clamp(76px,8vw,100px);padding:clamp(14px,1.8vw,22px) clamp(16px,2vw,26px);transition:border-color .35s,background .35s}
 .sponsor-cell:hover{background:rgba(255,255,255,.09);border-color:rgba(184,151,90,.4)}
-.sponsor-cell img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.7;transition:opacity .35s,filter .35s}
-.sponsor-cell:hover img{opacity:1;filter:grayscale(0)}
+.sponsor-cell img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;filter:none;opacity:1;transition:opacity .35s}
+.sponsor-cell:hover img{opacity:1;filter:none}
 @media(max-width:900px){.sponsors-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.sponsors-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -433,8 +433,8 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
           <div class="project-stat-label">限定ヴィラ数</div>
         </div>
         <div class="project-stat">
-          <div class="project-stat-num">約10,000㎡</div>
-          <div class="project-stat-label">1棟あたり敷地面積</div>
+          <div class="project-stat-num">1,000㎡</div>
+          <div class="project-stat-label">1棟あたり敷地面積（約300坪）</div>
         </div>
         <div class="project-stat">
           <div class="project-stat-num" style="font-family:var(--serif-jp);font-size:clamp(14px,1.5vw,18px)">大沼国定公園</div>
@@ -621,7 +621,7 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
         <div class="plan-tag">Land Acquisition &amp; Exit</div>
         <h3 class="plan-title">土地取得＋<br>開発計画付き事業売却</h3>
         <div class="plan-price-label">初期投資</div>
-        <div class="plan-price">約8.17億円</div>
+        <div class="plan-price">約9.8億円</div>
         <p class="plan-desc">約5.5万坪の土地を取得し、ヴィラ16棟・天然温泉・レストラン・乗馬施設などを含む開発計画と事業構想を整えた上で、ホテル事業者、リゾート事業者、デベロッパー、投資ファンドなどへ開発プロジェクトとして売却するプランです。</p>
         <ul class="plan-features">
           <li>建築前の段階で事業価値を高める</li>
@@ -632,7 +632,7 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
         <div class="plan-exit">
           <div class="plan-exit-label">Exit</div>
           開発計画付き土地・事業として売却<br>
-          <span style="font-size:11px;color:rgba(255,255,255,.45)">内訳：土地取得費 約8億円 ／ 取得関連費用 約1,715万円</span>
+          <span style="font-size:11px;color:rgba(255,255,255,.45)">内訳：土地取得費 約9.5億円 ／ 取得関連費用 約3,000万円</span>
         </div>
       </div>
 
@@ -716,7 +716,7 @@ footer{background:var(--black);padding:clamp(36px,5vw,56px) clamp(24px,5vw,80px)
           <tbody>
             <tr>
               <td>初期投資</td>
-              <td><span class="comp-price">約8.17億円</span></td>
+              <td><span class="comp-price">約9.8億円</span></td>
               <td class="comp-highlight"><span class="comp-price">約21.1億円</span></td>
               <td><span class="comp-price">約9,993万円</span></td>
             </tr>
